@@ -7,5 +7,5 @@ zone_id = ""
 webpack_config = "webpack.config.js"
 
 [site]
-bucket = "../vue/dist/client"
+bucket = "../dist/ssr"
 entry-point = "."
