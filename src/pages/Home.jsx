@@ -213,19 +213,13 @@ export default function Home(props) {
 
   useEffect(() => {
     async function getData() {
-      const graphs = await import('../config/graph.json');
-      console.log(graphs);
-      setGraphData(graphs.default());
+      setGraphData({});
     }
     async function getTimeSeriesData() {
-      const currentTimeSeries = await import('../config/timeSeries.json');
-      console.log(currentTimeSeries);
-      setTimeSeriesData(currentTimeSeries.default());
+      setTimeSeriesData({});
     }
     async function getConfigDates() {
-      const currentDates = await import('../config/dates');
-      console.log(currentDates);
-      setConfigDates(currentDates.default());
+      setConfigDates([]);
     }
     getData();
     getTimeSeriesData();
