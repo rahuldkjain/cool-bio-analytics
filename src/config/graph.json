@@ -1,0 +1,7569 @@
+{
+    "2020-03-20": {
+        "delta": {
+            "users": 4
+        },
+        "delta7": {
+            "users": 4
+        },
+        "total": {
+            "users": 4
+        }
+    },
+    "2020-03-21": {
+        "delta7": {
+            "users": 4
+        },
+        "total": {
+            "users": 4
+        }
+    },
+    "2020-03-22": {
+        "delta": {
+            "users": 2
+        },
+        "delta7": {
+            "users": 6
+        },
+        "total": {
+            "users": 6
+        }
+    },
+    "2020-03-23": {
+        "delta7": {
+            "users": 6
+        },
+        "total": {
+            "users": 6
+        }
+    },
+    "2020-03-24": {
+        "delta": {
+            "users": 1
+        },
+        "delta7": {
+            "users": 7
+        },
+        "total": {
+            "users": 7
+        }
+    },
+    "2020-03-25": {
+        "delta": {
+            "users": 8
+        },
+        "delta7": {
+            "users": 15
+        },
+        "total": {
+            "users": 15
+        }
+    },
+    "2020-03-26": {
+        "delta": {
+            "users": 5
+        },
+        "delta7": {
+            "users": 20
+        },
+        "total": {
+            "users": 20
+        }
+    },
+    "2020-03-27": {
+        "delta": {
+            "users": 9
+        },
+        "delta7": {
+            "users": 25
+        },
+        "total": {
+            "users": 29
+        }
+    },
+    "2020-03-28": {
+        "delta": {
+            "users": 10
+        },
+        "delta7": {
+            "users": 35
+        },
+        "total": {
+            "users": 39
+        }
+    },
+    "2020-03-29": {
+        "delta": {
+            "deceased": 2
+        },
+        "delta7": {
+            "users": 33,
+            "deceased": 2
+        },
+        "total": {
+            "users": 39,
+            "deceased": 2
+        }
+    },
+    "2020-03-30": {
+        "delta": {
+            "users": 8,
+            "deceased": 2
+        },
+        "delta7": {
+            "users": 41,
+            "deceased": 4
+        },
+        "total": {
+            "users": 47,
+            "deceased": 4
+        }
+    },
+    "2020-03-31": {
+        "delta": {
+            "users": 19,
+            "deceased": 1
+        },
+        "delta7": {
+            "users": 59,
+            "deceased": 5
+        },
+        "total": {
+            "users": 66,
+            "deceased": 5
+        }
+    },
+    "2020-04-01": {
+        "delta": {
+            "users": 32,
+            "deceased": 1
+        },
+        "delta7": {
+            "users": 83,
+            "deceased": 6
+        },
+        "total": {
+            "users": 98,
+            "deceased": 6
+        }
+    },
+    "2020-04-02": {
+        "delta": {
+            "users": 9,
+            "deceased": 2
+        },
+        "delta7": {
+            "users": 87,
+            "deceased": 8
+        },
+        "total": {
+            "users": 107,
+            "deceased": 8
+        }
+    },
+    "2020-04-03": {
+        "delta": {
+            "users": 47
+        },
+        "delta7": {
+            "users": 125,
+            "deceased": 8
+        },
+        "total": {
+            "users": 154,
+            "deceased": 8
+        }
+    },
+    "2020-04-04": {
+        "delta": {
+            "users": 25,
+            "deceased": 3
+        },
+        "delta7": {
+            "users": 140,
+            "deceased": 11
+        },
+        "total": {
+            "users": 179,
+            "deceased": 11
+        }
+    },
+    "2020-04-05": {
+        "delta": {
+            "users": 14,
+            "deceased": 2,
+            "recovered": 3,
+            "tested": 2812
+        },
+        "delta7": {
+            "users": 154,
+            "deceased": 11,
+            "recovered": 3,
+            "tested": 2812
+        },
+        "total": {
+            "users": 193,
+            "deceased": 13,
+            "recovered": 3,
+            "tested": 2812
+        }
+    },
+    "2020-04-06": {
+        "delta": {
+            "users": 63,
+            "deceased": 2,
+            "recovered": 8
+        },
+        "delta7": {
+            "users": 209,
+            "deceased": 11,
+            "recovered": 11,
+            "tested": 2812
+        },
+        "total": {
+            "users": 256,
+            "deceased": 15,
+            "recovered": 11,
+            "tested": 2812
+        }
+    },
+    "2020-04-07": {
+        "delta": {
+            "users": 34,
+            "deceased": 6,
+            "recovered": 10,
+            "tested": 958
+        },
+        "delta7": {
+            "users": 224,
+            "deceased": 16,
+            "recovered": 21,
+            "tested": 3770
+        },
+        "total": {
+            "users": 290,
+            "deceased": 21,
+            "recovered": 21,
+            "tested": 3770
+        }
+    },
+    "2020-04-08": {
+        "delta": {
+            "users": 51,
+            "deceased": 3,
+            "recovered": 4,
+            "tested": 286
+        },
+        "delta7": {
+            "users": 243,
+            "deceased": 18,
+            "recovered": 25,
+            "tested": 4056
+        },
+        "total": {
+            "users": 341,
+            "deceased": 24,
+            "recovered": 25,
+            "tested": 4056
+        }
+    },
+    "2020-04-09": {
+        "delta": {
+            "users": 70,
+            "deceased": 9,
+            "tested": 1079
+        },
+        "delta7": {
+            "users": 304,
+            "deceased": 25,
+            "recovered": 25,
+            "tested": 5135
+        },
+        "total": {
+            "users": 411,
+            "deceased": 33,
+            "recovered": 25,
+            "tested": 5135
+        }
+    },
+    "2020-04-10": {
+        "delta": {
+            "users": 40,
+            "deceased": 3,
+            "recovered": 12,
+            "tested": 1914
+        },
+        "delta7": {
+            "users": 297,
+            "deceased": 28,
+            "recovered": 37,
+            "tested": 7049
+        },
+        "total": {
+            "users": 451,
+            "deceased": 36,
+            "recovered": 37,
+            "tested": 7049
+        }
+    },
+    "2020-04-11": {
+        "delta": {
+            "users": 78,
+            "deceased": 4,
+            "recovered": 1,
+            "tested": 1467
+        },
+        "delta7": {
+            "users": 350,
+            "deceased": 29,
+            "recovered": 38,
+            "tested": 8516
+        },
+        "total": {
+            "users": 529,
+            "deceased": 40,
+            "recovered": 38,
+            "tested": 8516
+        }
+    },
+    "2020-04-12": {
+        "delta": {
+            "users": 33,
+            "deceased": 3,
+            "recovered": 3,
+            "tested": 1965
+        },
+        "delta7": {
+            "users": 369,
+            "deceased": 30,
+            "recovered": 38,
+            "tested": 7669
+        },
+        "total": {
+            "users": 562,
+            "deceased": 43,
+            "recovered": 41,
+            "tested": 10481
+        }
+    },
+    "2020-04-13": {
+        "delta": {
+            "users": 52,
+            "deceased": 7,
+            "recovered": 10
+        },
+        "delta7": {
+            "users": 358,
+            "deceased": 35,
+            "recovered": 40,
+            "tested": 7669
+        },
+        "total": {
+            "users": 614,
+            "deceased": 50,
+            "recovered": 51,
+            "tested": 10481
+        }
+    },
+    "2020-04-14": {
+        "delta": {
+            "users": 127,
+            "deceased": 3,
+            "recovered": 13,
+            "tested": -2376
+        },
+        "delta7": {
+            "users": 451,
+            "deceased": 32,
+            "recovered": 43,
+            "tested": 4335
+        },
+        "total": {
+            "users": 741,
+            "deceased": 53,
+            "recovered": 64,
+            "tested": 8105
+        }
+    },
+    "2020-04-15": {
+        "delta": {
+            "users": 197,
+            "tested": 1491
+        },
+        "delta7": {
+            "users": 597,
+            "deceased": 29,
+            "recovered": 39,
+            "tested": 5540
+        },
+        "total": {
+            "users": 938,
+            "deceased": 53,
+            "recovered": 64,
+            "tested": 9596
+        }
+    },
+    "2020-04-16": {
+        "delta": {
+            "users": 226,
+            "deceased": 2,
+            "recovered": 6,
+            "tested": 3896
+        },
+        "delta7": {
+            "users": 753,
+            "deceased": 22,
+            "recovered": 45,
+            "tested": 8357
+        },
+        "total": {
+            "users": 1164,
+            "deceased": 55,
+            "recovered": 70,
+            "tested": 13492
+        }
+    },
+    "2020-04-17": {
+        "delta": {
+            "users": 146,
+            "deceased": 14,
+            "tested": 1810
+        },
+        "delta7": {
+            "users": 859,
+            "deceased": 33,
+            "recovered": 33,
+            "tested": 8253
+        },
+        "total": {
+            "users": 1310,
+            "deceased": 69,
+            "recovered": 70,
+            "tested": 15302
+        }
+    },
+    "2020-04-18": {
+        "delta": {
+            "users": 92,
+            "recovered": 57,
+            "tested": -324
+        },
+        "delta7": {
+            "users": 873,
+            "deceased": 29,
+            "recovered": 89,
+            "tested": 6462
+        },
+        "total": {
+            "users": 1402,
+            "deceased": 69,
+            "recovered": 127,
+            "tested": 14978
+        }
+    },
+    "2020-04-19": {
+        "delta": {
+            "users": 5,
+            "deceased": 3,
+            "recovered": 4,
+            "tested": 2857
+        },
+        "delta7": {
+            "users": 845,
+            "deceased": 29,
+            "recovered": 90,
+            "tested": 7354
+        },
+        "total": {
+            "users": 1407,
+            "deceased": 72,
+            "recovered": 131,
+            "tested": 17835
+        }
+    },
+    "2020-04-20": {
+        "delta": {
+            "users": 78,
+            "deceased": 4,
+            "recovered": 7,
+            "tested": 1307
+        },
+        "delta7": {
+            "users": 871,
+            "deceased": 26,
+            "recovered": 87,
+            "tested": 8661
+        },
+        "total": {
+            "users": 1485,
+            "deceased": 76,
+            "recovered": 138,
+            "tested": 19142
+        }
+    },
+    "2020-04-21": {
+        "delta": {
+            "users": 67,
+            "deceased": 4,
+            "recovered": 10,
+            "tested": 1763
+        },
+        "delta7": {
+            "users": 811,
+            "deceased": 27,
+            "recovered": 84,
+            "tested": 12800
+        },
+        "total": {
+            "users": 1552,
+            "deceased": 80,
+            "recovered": 148,
+            "tested": 20905
+        }
+    },
+    "2020-04-22": {
+        "delta": {
+            "users": 35,
+            "recovered": 4,
+            "tested": 1759
+        },
+        "delta7": {
+            "users": 649,
+            "deceased": 27,
+            "recovered": 88,
+            "tested": 13068
+        },
+        "total": {
+            "users": 1587,
+            "deceased": 80,
+            "recovered": 152,
+            "tested": 22664
+        }
+    },
+    "2020-04-23": {
+        "delta": {
+            "users": 100,
+            "deceased": 3,
+            "recovered": 51,
+            "tested": 1884
+        },
+        "delta7": {
+            "users": 523,
+            "deceased": 28,
+            "recovered": 133,
+            "tested": 11056
+        },
+        "total": {
+            "users": 1687,
+            "deceased": 83,
+            "recovered": 203,
+            "tested": 24548
+        }
+    },
+    "2020-04-24": {
+        "delta": {
+            "users": 159,
+            "deceased": 9,
+            "recovered": 7,
+            "tested": 1685
+        },
+        "delta7": {
+            "users": 536,
+            "deceased": 23,
+            "recovered": 140,
+            "tested": 10931
+        },
+        "total": {
+            "users": 1846,
+            "deceased": 92,
+            "recovered": 210,
+            "tested": 26233
+        }
+    },
+    "2020-04-25": {
+        "delta": {
+            "users": 99,
+            "deceased": 7,
+            "recovered": 71,
+            "tested": 1633
+        },
+        "delta7": {
+            "users": 543,
+            "deceased": 30,
+            "recovered": 154,
+            "tested": 12888
+        },
+        "total": {
+            "users": 1945,
+            "deceased": 99,
+            "recovered": 281,
+            "tested": 27866
+        }
+    },
+    "2020-04-26": {
+        "delta": {
+            "users": 145,
+            "deceased": 4,
+            "recovered": 21,
+            "tested": -2634
+        },
+        "delta7": {
+            "users": 683,
+            "deceased": 31,
+            "recovered": 171,
+            "tested": 7397
+        },
+        "total": {
+            "users": 2090,
+            "deceased": 103,
+            "recovered": 302,
+            "tested": 25232
+        }
+    },
+    "2020-04-27": {
+        "delta": {
+            "users": 75,
+            "deceased": 7,
+            "recovered": 55,
+            "tested": 1777
+        },
+        "delta7": {
+            "users": 680,
+            "deceased": 34,
+            "recovered": 219,
+            "tested": 7867
+        },
+        "total": {
+            "users": 2165,
+            "deceased": 110,
+            "recovered": 357,
+            "tested": 27009
+        }
+    },
+    "2020-04-28": {
+        "delta": {
+            "users": 222,
+            "deceased": 10,
+            "recovered": 16,
+            "tested": 4051
+        },
+        "delta7": {
+            "users": 835,
+            "deceased": 40,
+            "recovered": 225,
+            "tested": 10155
+        },
+        "total": {
+            "users": 2387,
+            "deceased": 120,
+            "recovered": 373,
+            "tested": 31060
+        }
+    },
+    "2020-04-29": {
+        "delta": {
+            "users": 173,
+            "deceased": 10,
+            "recovered": 88,
+            "tested": 2777
+        },
+        "delta7": {
+            "users": 973,
+            "deceased": 50,
+            "recovered": 309,
+            "tested": 11173
+        },
+        "total": {
+            "users": 2560,
+            "deceased": 130,
+            "recovered": 461,
+            "tested": 33837
+        }
+    },
+    "2020-04-30": {
+        "delta": {
+            "users": 65,
+            "deceased": 7,
+            "recovered": 21,
+            "tested": 7875
+        },
+        "delta7": {
+            "users": 938,
+            "deceased": 54,
+            "recovered": 279,
+            "tested": 17164
+        },
+        "total": {
+            "users": 2625,
+            "deceased": 137,
+            "recovered": 482,
+            "tested": 41712
+        }
+    },
+    "2020-05-01": {
+        "delta": {
+            "users": 90,
+            "deceased": 8,
+            "recovered": 42,
+            "tested": 2404
+        },
+        "delta7": {
+            "users": 869,
+            "deceased": 53,
+            "recovered": 314,
+            "tested": 17883
+        },
+        "total": {
+            "users": 2715,
+            "deceased": 145,
+            "recovered": 524,
+            "tested": 44116
+        }
+    },
+    "2020-05-02": {
+        "delta": {
+            "users": 73,
+            "deceased": 6,
+            "recovered": 100,
+            "tested": 2462
+        },
+        "delta7": {
+            "users": 843,
+            "deceased": 52,
+            "recovered": 343,
+            "tested": 18712
+        },
+        "total": {
+            "users": 2788,
+            "deceased": 151,
+            "recovered": 624,
+            "tested": 46578
+        }
+    },
+    "2020-05-03": {
+        "delta": {
+            "users": 49,
+            "deceased": 5,
+            "recovered": 174,
+            "tested": 2608
+        },
+        "delta7": {
+            "users": 747,
+            "deceased": 53,
+            "recovered": 496,
+            "tested": 23954
+        },
+        "total": {
+            "users": 2837,
+            "deceased": 156,
+            "recovered": 798,
+            "tested": 49186
+        }
+    },
+    "2020-05-04": {
+        "delta": {
+            "users": 105,
+            "deceased": 9,
+            "recovered": 58,
+            "tested": 2909
+        },
+        "delta7": {
+            "users": 777,
+            "deceased": 55,
+            "recovered": 499,
+            "tested": 25086
+        },
+        "total": {
+            "users": 2942,
+            "deceased": 165,
+            "recovered": 856,
+            "tested": 52095
+        }
+    },
+    "2020-05-05": {
+        "delta": {
+            "users": 107,
+            "deceased": 11,
+            "recovered": 144,
+            "tested": 2500
+        },
+        "delta7": {
+            "users": 662,
+            "deceased": 56,
+            "recovered": 627,
+            "tested": 23535
+        },
+        "total": {
+            "users": 3049,
+            "deceased": 176,
+            "recovered": 1000,
+            "tested": 54595
+        }
+    },
+    "2020-05-06": {
+        "delta": {
+            "users": 89,
+            "deceased": 9,
+            "recovered": 99
+        },
+        "delta7": {
+            "users": 578,
+            "deceased": 55,
+            "recovered": 638,
+            "tested": 20758
+        },
+        "total": {
+            "users": 3138,
+            "deceased": 185,
+            "recovered": 1099,
+            "tested": 54595
+        }
+    },
+    "2020-05-07": {
+        "delta": {
+            "users": 114,
+            "deceased": 8,
+            "recovered": 132,
+            "tested": 6425
+        },
+        "delta7": {
+            "users": 627,
+            "deceased": 56,
+            "recovered": 749,
+            "tested": 19308
+        },
+        "total": {
+            "users": 3252,
+            "deceased": 193,
+            "recovered": 1231,
+            "tested": 61020
+        }
+    },
+    "2020-05-08": {
+        "delta": {
+            "users": 89,
+            "deceased": 7,
+            "recovered": 118,
+            "tested": 2685
+        },
+        "delta7": {
+            "users": 626,
+            "deceased": 55,
+            "recovered": 825,
+            "tested": 19589
+        },
+        "total": {
+            "users": 3341,
+            "deceased": 200,
+            "recovered": 1349,
+            "tested": 63705
+        }
+    },
+    "2020-05-09": {
+        "delta": {
+            "users": 116,
+            "deceased": 11,
+            "recovered": 131,
+            "tested": 4305
+        },
+        "delta7": {
+            "users": 669,
+            "deceased": 60,
+            "recovered": 856,
+            "tested": 21432
+        },
+        "total": {
+            "users": 3457,
+            "deceased": 211,
+            "recovered": 1480,
+            "tested": 68010
+        }
+    },
+    "2020-05-10": {
+        "delta": {
+            "users": 157,
+            "deceased": 4,
+            "recovered": 196,
+            "tested": 4059
+        },
+        "delta7": {
+            "users": 777,
+            "deceased": 59,
+            "recovered": 878,
+            "tested": 22883
+        },
+        "total": {
+            "users": 3614,
+            "deceased": 215,
+            "recovered": 1676,
+            "tested": 72069
+        }
+    },
+    "2020-05-11": {
+        "delta": {
+            "users": 171,
+            "deceased": 6,
+            "recovered": 71,
+            "tested": 3970
+        },
+        "delta7": {
+            "users": 843,
+            "deceased": 56,
+            "recovered": 891,
+            "tested": 23944
+        },
+        "total": {
+            "users": 3785,
+            "deceased": 221,
+            "recovered": 1747,
+            "tested": 76039
+        }
+    },
+    "2020-05-12": {
+        "delta": {
+            "users": 201,
+            "deceased": 4,
+            "recovered": 113,
+            "tested": 4846
+        },
+        "delta7": {
+            "users": 937,
+            "deceased": 49,
+            "recovered": 860,
+            "tested": 26290
+        },
+        "total": {
+            "users": 3986,
+            "deceased": 225,
+            "recovered": 1860,
+            "tested": 80885
+        }
+    },
+    "2020-05-13": {
+        "delta": {
+            "users": 187,
+            "deceased": 7,
+            "recovered": 144,
+            "tested": 5018
+        },
+        "delta7": {
+            "users": 1035,
+            "deceased": 47,
+            "recovered": 905,
+            "tested": 31308
+        },
+        "total": {
+            "users": 4173,
+            "deceased": 232,
+            "recovered": 2004,
+            "tested": 85903
+        }
+    },
+    "2020-05-14": {
+        "delta": {
+            "users": 253,
+            "deceased": 5,
+            "recovered": 167,
+            "tested": 3857
+        },
+        "delta7": {
+            "users": 1174,
+            "deceased": 44,
+            "recovered": 940,
+            "tested": 28740
+        },
+        "total": {
+            "users": 4426,
+            "deceased": 237,
+            "recovered": 2171,
+            "tested": 89760
+        }
+    },
+    "2020-05-15": {
+        "delta": {
+            "users": 169,
+            "deceased": 2,
+            "recovered": 112,
+            "tested": 4089
+        },
+        "delta7": {
+            "users": 1254,
+            "deceased": 39,
+            "recovered": 934,
+            "tested": 30144
+        },
+        "total": {
+            "users": 4595,
+            "deceased": 239,
+            "recovered": 2283,
+            "tested": 93849
+        }
+    },
+    "2020-05-16": {
+        "delta": {
+            "users": 195,
+            "deceased": 4,
+            "recovered": 32,
+            "tested": 5828
+        },
+        "delta7": {
+            "users": 1333,
+            "deceased": 32,
+            "recovered": 835,
+            "tested": 31667
+        },
+        "total": {
+            "users": 4790,
+            "deceased": 243,
+            "recovered": 2315,
+            "tested": 99677
+        }
+    },
+    "2020-05-17": {
+        "delta": {
+            "users": 187,
+            "deceased": 5,
+            "recovered": 88,
+            "tested": 4221
+        },
+        "delta7": {
+            "users": 1363,
+            "deceased": 33,
+            "recovered": 727,
+            "tested": 31829
+        },
+        "total": {
+            "users": 4977,
+            "deceased": 248,
+            "recovered": 2403,
+            "tested": 103898
+        }
+    },
+    "2020-05-18": {
+        "delta": {
+            "users": 259,
+            "deceased": 4,
+            "recovered": 32,
+            "tested": 8270
+        },
+        "delta7": {
+            "users": 1451,
+            "deceased": 31,
+            "recovered": 688,
+            "tested": 36129
+        },
+        "total": {
+            "users": 5236,
+            "deceased": 252,
+            "recovered": 2435,
+            "tested": 112168
+        }
+    },
+    "2020-05-19": {
+        "delta": {
+            "users": 229,
+            "deceased": 6,
+            "recovered": 196,
+            "tested": 4305
+        },
+        "delta7": {
+            "users": 1479,
+            "deceased": 33,
+            "recovered": 771,
+            "tested": 35588
+        },
+        "total": {
+            "users": 5465,
+            "deceased": 258,
+            "recovered": 2631,
+            "tested": 116473
+        }
+    },
+    "2020-05-20": {
+        "delta": {
+            "users": 270,
+            "deceased": 9,
+            "recovered": 103,
+            "tested": 4264
+        },
+        "delta7": {
+            "users": 1562,
+            "deceased": 35,
+            "recovered": 730,
+            "tested": 34834
+        },
+        "total": {
+            "users": 5735,
+            "deceased": 267,
+            "recovered": 2734,
+            "tested": 120737
+        }
+    },
+    "2020-05-21": {
+        "delta": {
+            "users": 246,
+            "deceased": 4,
+            "recovered": 110,
+            "tested": 4871
+        },
+        "delta7": {
+            "users": 1555,
+            "deceased": 34,
+            "recovered": 673,
+            "tested": 35848
+        },
+        "total": {
+            "users": 5981,
+            "deceased": 271,
+            "recovered": 2844,
+            "tested": 125608
+        }
+    },
+    "2020-05-22": {
+        "delta": {
+            "users": 189,
+            "deceased": 1,
+            "recovered": 245,
+            "tested": 3452
+        },
+        "delta7": {
+            "users": 1575,
+            "deceased": 33,
+            "recovered": 806,
+            "tested": 35211
+        },
+        "total": {
+            "users": 6170,
+            "deceased": 272,
+            "recovered": 3089,
+            "tested": 129060
+        }
+    },
+    "2020-05-23": {
+        "delta": {
+            "users": 201,
+            "deceased": 9,
+            "recovered": 178,
+            "tested": 3709
+        },
+        "delta7": {
+            "users": 1581,
+            "deceased": 38,
+            "recovered": 952,
+            "tested": 33092
+        },
+        "total": {
+            "users": 6371,
+            "deceased": 281,
+            "recovered": 3267,
+            "tested": 132769
+        }
+    },
+    "2020-05-24": {
+        "delta": {
+            "users": 294,
+            "deceased": 9,
+            "recovered": 141,
+            "tested": 3120
+        },
+        "delta7": {
+            "users": 1688,
+            "deceased": 42,
+            "recovered": 1005,
+            "tested": 31991
+        },
+        "total": {
+            "users": 6665,
+            "deceased": 290,
+            "recovered": 3408,
+            "tested": 135889
+        }
+    },
+    "2020-05-25": {
+        "delta": {
+            "users": 194,
+            "deceased": 10,
+            "recovered": 163,
+            "tested": 2695
+        },
+        "delta7": {
+            "users": 1623,
+            "deceased": 48,
+            "recovered": 1136,
+            "tested": 26416
+        },
+        "total": {
+            "users": 6859,
+            "deceased": 300,
+            "recovered": 3571,
+            "tested": 138584
+        }
+    },
+    "2020-05-26": {
+        "delta": {
+            "users": 165,
+            "deceased": 5,
+            "recovered": 118,
+            "tested": 2924
+        },
+        "delta7": {
+            "users": 1559,
+            "deceased": 47,
+            "recovered": 1058,
+            "tested": 25035
+        },
+        "total": {
+            "users": 7024,
+            "deceased": 305,
+            "recovered": 3689,
+            "tested": 141508
+        }
+    },
+    "2020-05-27": {
+        "delta": {
+            "users": 237,
+            "deceased": 8,
+            "recovered": 238,
+            "tested": 4636
+        },
+        "delta7": {
+            "users": 1526,
+            "deceased": 46,
+            "recovered": 1193,
+            "tested": 25407
+        },
+        "total": {
+            "users": 7261,
+            "deceased": 313,
+            "recovered": 3927,
+            "tested": 146144
+        }
+    },
+    "2020-05-28": {
+        "delta": {
+            "users": 192,
+            "deceased": 8,
+            "recovered": 123,
+            "tested": 5038
+        },
+        "delta7": {
+            "users": 1472,
+            "deceased": 50,
+            "recovered": 1206,
+            "tested": 25574
+        },
+        "total": {
+            "users": 7453,
+            "deceased": 321,
+            "recovered": 4050,
+            "tested": 151182
+        }
+    },
+    "2020-05-29": {
+        "delta": {
+            "users": 192,
+            "deceased": 13,
+            "recovered": 219,
+            "tested": 4254
+        },
+        "delta7": {
+            "users": 1475,
+            "deceased": 62,
+            "recovered": 1180,
+            "tested": 26376
+        },
+        "total": {
+            "users": 7645,
+            "deceased": 334,
+            "recovered": 4269,
+            "tested": 155436
+        }
+    },
+    "2020-05-30": {
+        "delta": {
+            "users": 246,
+            "deceased": 9,
+            "recovered": 175,
+            "tested": 6116
+        },
+        "delta7": {
+            "users": 1520,
+            "deceased": 62,
+            "recovered": 1177,
+            "tested": 28783
+        },
+        "total": {
+            "users": 7891,
+            "deceased": 343,
+            "recovered": 4444,
+            "tested": 161552
+        }
+    },
+    "2020-05-31": {
+        "delta": {
+            "users": 198,
+            "deceased": 7,
+            "recovered": 398,
+            "tested": 6256
+        },
+        "delta7": {
+            "users": 1424,
+            "deceased": 60,
+            "recovered": 1434,
+            "tested": 31919
+        },
+        "total": {
+            "users": 8089,
+            "deceased": 350,
+            "recovered": 4842,
+            "tested": 167808
+        }
+    },
+    "2020-06-01": {
+        "delta": {
+            "users": 194,
+            "deceased": 8,
+            "recovered": 161,
+            "tested": 4211
+        },
+        "delta7": {
+            "users": 1424,
+            "deceased": 58,
+            "recovered": 1432,
+            "tested": 33435
+        },
+        "total": {
+            "users": 8283,
+            "deceased": 358,
+            "recovered": 5003,
+            "tested": 172019
+        }
+    },
+    "2020-06-02": {
+        "delta": {
+            "users": 137,
+            "deceased": 6,
+            "recovered": 218,
+            "tested": 5462
+        },
+        "delta7": {
+            "users": 1396,
+            "deceased": 59,
+            "recovered": 1532,
+            "tested": 35973
+        },
+        "total": {
+            "users": 8420,
+            "deceased": 364,
+            "recovered": 5221,
+            "tested": 177481
+        }
+    },
+    "2020-06-03": {
+        "delta": {
+            "users": 168,
+            "deceased": 7,
+            "recovered": 224,
+            "tested": 6181
+        },
+        "delta7": {
+            "users": 1327,
+            "deceased": 58,
+            "recovered": 1518,
+            "tested": 37518
+        },
+        "total": {
+            "users": 8588,
+            "deceased": 371,
+            "recovered": 5445,
+            "tested": 183662
+        }
+    },
+    "2020-06-04": {
+        "delta": {
+            "users": 174,
+            "deceased": 6,
+            "recovered": 192,
+            "tested": 5590
+        },
+        "delta7": {
+            "users": 1309,
+            "deceased": 56,
+            "recovered": 1587,
+            "tested": 38070
+        },
+        "total": {
+            "users": 8762,
+            "deceased": 377,
+            "recovered": 5637,
+            "tested": 189252
+        }
+    },
+    "2020-06-05": {
+        "delta": {
+            "users": 234,
+            "deceased": 7,
+            "recovered": 241,
+            "tested": 5997
+        },
+        "delta7": {
+            "users": 1351,
+            "deceased": 50,
+            "recovered": 1609,
+            "tested": 39813
+        },
+        "total": {
+            "users": 8996,
+            "deceased": 384,
+            "recovered": 5878,
+            "tested": 195249
+        }
+    },
+    "2020-06-06": {
+        "delta": {
+            "users": 232,
+            "deceased": 15,
+            "recovered": 230,
+            "tested": 5664
+        },
+        "delta7": {
+            "users": 1337,
+            "deceased": 56,
+            "recovered": 1664,
+            "tested": 39361
+        },
+        "total": {
+            "users": 9228,
+            "deceased": 399,
+            "recovered": 6108,
+            "tested": 200913
+        }
+    },
+    "2020-06-07": {
+        "delta": {
+            "users": 173,
+            "deceased": 13,
+            "recovered": 223,
+            "tested": 7601
+        },
+        "delta7": {
+            "users": 1312,
+            "deceased": 62,
+            "recovered": 1489,
+            "tested": 40706
+        },
+        "total": {
+            "users": 9401,
+            "deceased": 412,
+            "recovered": 6331,
+            "tested": 208514
+        }
+    },
+    "2020-06-08": {
+        "delta": {
+            "users": 237,
+            "deceased": 2,
+            "recovered": 205,
+            "tested": 6680
+        },
+        "delta7": {
+            "users": 1355,
+            "deceased": 56,
+            "recovered": 1533,
+            "tested": 43175
+        },
+        "total": {
+            "users": 9638,
+            "deceased": 414,
+            "recovered": 6536,
+            "tested": 215194
+        }
+    },
+    "2020-06-09": {
+        "delta": {
+            "users": 211,
+            "deceased": 6,
+            "recovered": 193,
+            "tested": 5742
+        },
+        "delta7": {
+            "users": 1429,
+            "deceased": 56,
+            "recovered": 1508,
+            "tested": 43455
+        },
+        "total": {
+            "users": 9849,
+            "deceased": 420,
+            "recovered": 6729,
+            "tested": 220936
+        }
+    },
+    "2020-06-10": {
+        "delta": {
+            "users": 200,
+            "deceased": 7,
+            "recovered": 163,
+            "tested": 7106
+        },
+        "delta7": {
+            "users": 1461,
+            "deceased": 56,
+            "recovered": 1447,
+            "tested": 44380
+        },
+        "total": {
+            "users": 10049,
+            "deceased": 427,
+            "recovered": 6892,
+            "tested": 228042
+        }
+    },
+    "2020-06-11": {
+        "delta": {
+            "users": 192,
+            "deceased": 4,
+            "recovered": 150,
+            "tested": 5698
+        },
+        "delta7": {
+            "users": 1479,
+            "deceased": 54,
+            "recovered": 1405,
+            "tested": 44488
+        },
+        "total": {
+            "users": 10241,
+            "deceased": 431,
+            "recovered": 7042,
+            "tested": 233740
+        }
+    },
+    "2020-06-12": {
+        "delta": {
+            "users": 202,
+            "deceased": 9,
+            "recovered": 159,
+            "tested": 7721
+        },
+        "delta7": {
+            "users": 1447,
+            "deceased": 56,
+            "recovered": 1323,
+            "tested": 46212
+        },
+        "total": {
+            "users": 10443,
+            "deceased": 440,
+            "recovered": 7201,
+            "tested": 241461
+        }
+    },
+    "2020-06-13": {
+        "delta": {
+            "users": 198,
+            "deceased": 7,
+            "recovered": 176,
+            "tested": 5512
+        },
+        "delta7": {
+            "users": 1413,
+            "deceased": 48,
+            "recovered": 1269,
+            "tested": 46060
+        },
+        "total": {
+            "users": 10641,
+            "deceased": 447,
+            "recovered": 7377,
+            "tested": 246973
+        }
+    },
+    "2020-06-14": {
+        "delta": {
+            "users": 161,
+            "deceased": 12,
+            "recovered": 300,
+            "tested": 5789
+        },
+        "delta7": {
+            "users": 1401,
+            "deceased": 47,
+            "recovered": 1346,
+            "tested": 44248
+        },
+        "total": {
+            "users": 10802,
+            "deceased": 459,
+            "recovered": 7677,
+            "tested": 252762
+        }
+    },
+    "2020-06-15": {
+        "delta": {
+            "users": 133,
+            "deceased": 6,
+            "recovered": 226,
+            "tested": 5278
+        },
+        "delta7": {
+            "users": 1297,
+            "deceased": 51,
+            "recovered": 1367,
+            "tested": 42846
+        },
+        "total": {
+            "users": 10935,
+            "deceased": 465,
+            "recovered": 7903,
+            "tested": 258040
+        }
+    },
+    "2020-06-16": {
+        "delta": {
+            "users": 148,
+            "deceased": 11,
+            "recovered": 249,
+            "tested": 5943
+        },
+        "delta7": {
+            "users": 1234,
+            "deceased": 56,
+            "recovered": 1423,
+            "tested": 43047
+        },
+        "total": {
+            "users": 11083,
+            "deceased": 476,
+            "recovered": 8152,
+            "tested": 263983
+        }
+    },
+    "2020-06-17": {
+        "delta": {
+            "users": 161,
+            "deceased": 6,
+            "recovered": 236,
+            "tested": 7222
+        },
+        "delta7": {
+            "users": 1195,
+            "deceased": 55,
+            "recovered": 1496,
+            "tested": 43163
+        },
+        "total": {
+            "users": 11244,
+            "deceased": 482,
+            "recovered": 8388,
+            "tested": 271205
+        }
+    },
+    "2020-06-18": {
+        "delta": {
+            "users": 182,
+            "deceased": 4,
+            "recovered": 244,
+            "tested": 6246
+        },
+        "delta7": {
+            "users": 1185,
+            "deceased": 55,
+            "recovered": 1590,
+            "tested": 43711
+        },
+        "total": {
+            "users": 11426,
+            "deceased": 486,
+            "recovered": 8632,
+            "tested": 277451
+        }
+    },
+    "2020-06-19": {
+        "delta": {
+            "users": 156,
+            "deceased": 9,
+            "recovered": 116,
+            "tested": 5223
+        },
+        "delta7": {
+            "users": 1139,
+            "deceased": 55,
+            "recovered": 1547,
+            "tested": 41213
+        },
+        "total": {
+            "users": 11582,
+            "deceased": 495,
+            "recovered": 8748,
+            "tested": 282674
+        }
+    },
+    "2020-06-20": {
+        "delta": {
+            "users": 142,
+            "deceased": 6,
+            "recovered": 132,
+            "tested": 8157
+        },
+        "delta7": {
+            "users": 1083,
+            "deceased": 54,
+            "recovered": 1503,
+            "tested": 43858
+        },
+        "total": {
+            "users": 11724,
+            "deceased": 501,
+            "recovered": 8880,
+            "tested": 290831
+        }
+    },
+    "2020-06-21": {
+        "delta": {
+            "users": 179,
+            "deceased": 14,
+            "recovered": 135,
+            "tested": 6112
+        },
+        "delta7": {
+            "users": 1101,
+            "deceased": 56,
+            "recovered": 1338,
+            "tested": 44181
+        },
+        "total": {
+            "users": 11903,
+            "deceased": 515,
+            "recovered": 9015,
+            "tested": 296943
+        }
+    },
+    "2020-06-22": {
+        "delta": {
+            "users": 175,
+            "deceased": 6,
+            "recovered": 200,
+            "tested": 5730
+        },
+        "delta7": {
+            "users": 1143,
+            "deceased": 56,
+            "recovered": 1312,
+            "tested": 44633
+        },
+        "total": {
+            "users": 12078,
+            "deceased": 521,
+            "recovered": 9215,
+            "tested": 302673
+        }
+    },
+    "2020-06-23": {
+        "delta": {
+            "users": 183,
+            "deceased": 4,
+            "recovered": 120,
+            "tested": 5139
+        },
+        "delta7": {
+            "users": 1178,
+            "deceased": 49,
+            "recovered": 1183,
+            "tested": 43829
+        },
+        "total": {
+            "users": 12261,
+            "deceased": 525,
+            "recovered": 9335,
+            "tested": 307812
+        }
+    },
+    "2020-06-24": {
+        "delta": {
+            "users": 187,
+            "deceased": 9,
+            "recovered": 138,
+            "tested": 7166
+        },
+        "delta7": {
+            "users": 1204,
+            "deceased": 52,
+            "recovered": 1085,
+            "tested": 43773
+        },
+        "total": {
+            "users": 12448,
+            "deceased": 534,
+            "recovered": 9473,
+            "tested": 314978
+        }
+    },
+    "2020-06-25": {
+        "delta": {
+            "users": 147,
+            "deceased": 8,
+            "recovered": 146,
+            "tested": 6617
+        },
+        "delta7": {
+            "users": 1169,
+            "deceased": 56,
+            "recovered": 987,
+            "tested": 44144
+        },
+        "total": {
+            "users": 12595,
+            "deceased": 542,
+            "recovered": 9619,
+            "tested": 321595
+        }
+    },
+    "2020-06-26": {
+        "delta": {
+            "users": 203,
+            "deceased": 4,
+            "recovered": 185,
+            "tested": 7484
+        },
+        "delta7": {
+            "users": 1216,
+            "deceased": 51,
+            "recovered": 1056,
+            "tested": 46405
+        },
+        "total": {
+            "users": 12798,
+            "deceased": 546,
+            "recovered": 9804,
+            "tested": 329079
+        }
+    },
+    "2020-06-27": {
+        "delta": {
+            "users": 167,
+            "deceased": 4,
+            "recovered": 167,
+            "tested": 7962
+        },
+        "delta7": {
+            "users": 1241,
+            "deceased": 49,
+            "recovered": 1091,
+            "tested": 46210
+        },
+        "total": {
+            "users": 12965,
+            "deceased": 550,
+            "recovered": 9971,
+            "tested": 337041
+        }
+    },
+    "2020-06-28": {
+        "delta": {
+            "users": 221,
+            "deceased": 7,
+            "recovered": 113,
+            "tested": 7795
+        },
+        "delta7": {
+            "users": 1283,
+            "deceased": 42,
+            "recovered": 1069,
+            "tested": 47893
+        },
+        "total": {
+            "users": 13186,
+            "deceased": 557,
+            "recovered": 10084,
+            "tested": 344836
+        }
+    },
+    "2020-06-29": {
+        "delta": {
+            "users": 184,
+            "deceased": 7,
+            "recovered": 115,
+            "tested": 8776
+        },
+        "delta7": {
+            "users": 1292,
+            "deceased": 43,
+            "recovered": 984,
+            "tested": 50939
+        },
+        "total": {
+            "users": 13370,
+            "deceased": 564,
+            "recovered": 10199,
+            "tested": 353612
+        }
+    },
+    "2020-06-30": {
+        "delta": {
+            "users": 223,
+            "deceased": 8,
+            "recovered": 196,
+            "tested": 11855
+        },
+        "delta7": {
+            "users": 1332,
+            "deceased": 47,
+            "recovered": 1060,
+            "tested": 57655
+        },
+        "total": {
+            "users": 13593,
+            "deceased": 572,
+            "recovered": 10395,
+            "tested": 365467
+        }
+    },
+    "2020-07-01": {
+        "delta": {
+            "users": 268,
+            "deceased": 9,
+            "recovered": 260,
+            "tested": 7344
+        },
+        "delta7": {
+            "users": 1413,
+            "deceased": 47,
+            "recovered": 1182,
+            "tested": 57833
+        },
+        "total": {
+            "users": 13861,
+            "deceased": 581,
+            "recovered": 10655,
+            "tested": 372811
+        }
+    },
+    "2020-07-02": {
+        "delta": {
+            "users": 245,
+            "deceased": 8,
+            "recovered": 160,
+            "tested": 7844
+        },
+        "delta7": {
+            "users": 1511,
+            "deceased": 47,
+            "recovered": 1196,
+            "tested": 59060
+        },
+        "total": {
+            "users": 14106,
+            "deceased": 589,
+            "recovered": 10815,
+            "tested": 380655
+        }
+    },
+    "2020-07-03": {
+        "delta": {
+            "users": 191,
+            "deceased": 4,
+            "recovered": 234,
+            "tested": 8525
+        },
+        "delta7": {
+            "users": 1499,
+            "deceased": 47,
+            "recovered": 1245,
+            "tested": 60101
+        },
+        "total": {
+            "users": 14297,
+            "deceased": 593,
+            "recovered": 11049,
+            "tested": 389180
+        }
+    },
+    "2020-07-04": {
+        "delta": {
+            "users": 307,
+            "deceased": 5,
+            "recovered": 185,
+            "tested": 9149
+        },
+        "delta7": {
+            "users": 1639,
+            "deceased": 48,
+            "recovered": 1263,
+            "tested": 61288
+        },
+        "total": {
+            "users": 14604,
+            "deceased": 598,
+            "recovered": 11234,
+            "tested": 398329
+        }
+    },
+    "2020-07-05": {
+        "delta": {
+            "users": 326,
+            "deceased": 10,
+            "recovered": 177,
+            "tested": 9553
+        },
+        "delta7": {
+            "users": 1744,
+            "deceased": 51,
+            "recovered": 1327,
+            "tested": 63046
+        },
+        "total": {
+            "users": 14930,
+            "deceased": 608,
+            "recovered": 11411,
+            "tested": 407882
+        }
+    },
+    "2020-07-06": {
+        "delta": {
+            "users": 354,
+            "deceased": 9,
+            "recovered": 168,
+            "tested": 9520
+        },
+        "delta7": {
+            "users": 1914,
+            "deceased": 53,
+            "recovered": 1380,
+            "tested": 63790
+        },
+        "total": {
+            "users": 15284,
+            "deceased": 617,
+            "recovered": 11579,
+            "tested": 417402
+        }
+    },
+    "2020-07-07": {
+        "delta": {
+            "users": 343,
+            "deceased": 5,
+            "recovered": 189,
+            "tested": 9741
+        },
+        "delta7": {
+            "users": 2034,
+            "deceased": 50,
+            "recovered": 1373,
+            "tested": 61676
+        },
+        "total": {
+            "users": 15627,
+            "deceased": 622,
+            "recovered": 11768,
+            "tested": 427143
+        }
+    },
+    "2020-07-08": {
+        "delta": {
+            "users": 409,
+            "deceased": 7,
+            "recovered": 219,
+            "tested": 10787
+        },
+        "delta7": {
+            "users": 2175,
+            "deceased": 48,
+            "recovered": 1332,
+            "tested": 65119
+        },
+        "total": {
+            "users": 16036,
+            "deceased": 629,
+            "recovered": 11987,
+            "tested": 437930
+        }
+    },
+    "2020-07-09": {
+        "delta": {
+            "users": 305,
+            "deceased": 5,
+            "recovered": 245,
+            "tested": 11750
+        },
+        "delta7": {
+            "users": 2235,
+            "deceased": 45,
+            "recovered": 1417,
+            "tested": 69025
+        },
+        "total": {
+            "users": 16341,
+            "deceased": 634,
+            "recovered": 12232,
+            "tested": 449680
+        }
+    },
+    "2020-07-10": {
+        "delta": {
+            "users": 316,
+            "deceased": 4,
+            "recovered": 249,
+            "tested": 11261
+        },
+        "delta7": {
+            "users": 2360,
+            "deceased": 45,
+            "recovered": 1432,
+            "tested": 71761
+        },
+        "total": {
+            "users": 16657,
+            "deceased": 638,
+            "recovered": 12481,
+            "tested": 460941
+        }
+    },
+    "2020-07-11": {
+        "delta": {
+            "users": 544,
+            "deceased": 6,
+            "recovered": 198,
+            "tested": 13520
+        },
+        "delta7": {
+            "users": 2597,
+            "deceased": 46,
+            "recovered": 1445,
+            "tested": 76132
+        },
+        "total": {
+            "users": 17201,
+            "deceased": 644,
+            "recovered": 12679,
+            "tested": 474461
+        }
+    },
+    "2020-07-12": {
+        "delta": {
+            "users": 431,
+            "deceased": 9,
+            "recovered": 197,
+            "tested": 11715
+        },
+        "delta7": {
+            "users": 2702,
+            "deceased": 45,
+            "recovered": 1465,
+            "tested": 78294
+        },
+        "total": {
+            "users": 17632,
+            "deceased": 653,
+            "recovered": 12876,
+            "tested": 486176
+        }
+    },
+    "2020-07-13": {
+        "delta": {
+            "users": 575,
+            "deceased": 10,
+            "recovered": 332,
+            "tested": 23047
+        },
+        "delta7": {
+            "users": 2923,
+            "deceased": 46,
+            "recovered": 1629,
+            "tested": 91821
+        },
+        "total": {
+            "users": 18207,
+            "deceased": 663,
+            "recovered": 13208,
+            "tested": 509223
+        }
+    },
+    "2020-07-14": {
+        "delta": {
+            "users": 798,
+            "deceased": 10,
+            "recovered": 367,
+            "tested": 12477
+        },
+        "delta7": {
+            "users": 3378,
+            "deceased": 51,
+            "recovered": 1807,
+            "tested": 94557
+        },
+        "total": {
+            "users": 19005,
+            "deceased": 673,
+            "recovered": 13575,
+            "tested": 521700
+        }
+    },
+    "2020-07-15": {
+        "delta": {
+            "users": 638,
+            "deceased": 9,
+            "recovered": 333,
+            "tested": 18783
+        },
+        "delta7": {
+            "users": 3607,
+            "deceased": 53,
+            "recovered": 1921,
+            "tested": 102553
+        },
+        "total": {
+            "users": 19643,
+            "deceased": 682,
+            "recovered": 13908,
+            "tested": 540483
+        }
+    },
+    "2020-07-16": {
+        "delta": {
+            "users": 735,
+            "deceased": 7,
+            "recovered": 219,
+            "tested": 12599
+        },
+        "delta7": {
+            "users": 4037,
+            "deceased": 55,
+            "recovered": 1895,
+            "tested": 103402
+        },
+        "total": {
+            "users": 20378,
+            "deceased": 689,
+            "recovered": 14127,
+            "tested": 553082
+        }
+    },
+    "2020-07-17": {
+        "delta": {
+            "users": 704,
+            "deceased": 9,
+            "recovered": 387,
+            "tested": 14282
+        },
+        "delta7": {
+            "users": 4425,
+            "deceased": 60,
+            "recovered": 2033,
+            "tested": 106423
+        },
+        "total": {
+            "users": 21082,
+            "deceased": 698,
+            "recovered": 14514,
+            "tested": 567364
+        }
+    },
+    "2020-07-18": {
+        "delta": {
+            "users": 681,
+            "deceased": 8,
+            "recovered": 350,
+            "tested": 16291
+        },
+        "delta7": {
+            "users": 4562,
+            "deceased": 62,
+            "recovered": 2185,
+            "tested": 109194
+        },
+        "total": {
+            "users": 21763,
+            "deceased": 706,
+            "recovered": 14864,
+            "tested": 583655
+        }
+    },
+    "2020-07-19": {
+        "delta": {
+            "users": 837,
+            "deceased": 15,
+            "recovered": 447,
+            "tested": 15985
+        },
+        "delta7": {
+            "users": 4968,
+            "deceased": 68,
+            "recovered": 2435,
+            "tested": 113464
+        },
+        "total": {
+            "users": 22600,
+            "deceased": 721,
+            "recovered": 15311,
+            "tested": 599640
+        }
+    },
+    "2020-07-20": {
+        "delta": {
+            "users": 710,
+            "deceased": 17,
+            "recovered": 373,
+            "tested": 16222
+        },
+        "delta7": {
+            "users": 5103,
+            "deceased": 75,
+            "recovered": 2476,
+            "tested": 106639
+        },
+        "total": {
+            "users": 23310,
+            "deceased": 738,
+            "recovered": 15684,
+            "tested": 615862
+        }
+    },
+    "2020-07-21": {
+        "delta": {
+            "users": 785,
+            "deceased": 18,
+            "recovered": 573,
+            "tested": 15205
+        },
+        "delta7": {
+            "users": 5090,
+            "deceased": 83,
+            "recovered": 2682,
+            "tested": 109367
+        },
+        "total": {
+            "users": 24095,
+            "deceased": 756,
+            "recovered": 16257,
+            "tested": 631067
+        }
+    },
+    "2020-07-22": {
+        "delta": {
+            "users": 747,
+            "deceased": 14,
+            "recovered": 579,
+            "tested": 13936
+        },
+        "delta7": {
+            "users": 5199,
+            "deceased": 88,
+            "recovered": 2928,
+            "tested": 104520
+        },
+        "total": {
+            "users": 24842,
+            "deceased": 770,
+            "recovered": 16836,
+            "tested": 645003
+        }
+    },
+    "2020-07-23": {
+        "delta": {
+            "users": 632,
+            "deceased": 10,
+            "recovered": 523,
+            "tested": 13866
+        },
+        "delta7": {
+            "users": 5096,
+            "deceased": 91,
+            "recovered": 3232,
+            "tested": 105787
+        },
+        "total": {
+            "users": 25474,
+            "deceased": 780,
+            "recovered": 17359,
+            "tested": 658869
+        }
+    },
+    "2020-07-24": {
+        "delta": {
+            "users": 736,
+            "deceased": 11,
+            "recovered": 507,
+            "tested": 11286
+        },
+        "delta7": {
+            "users": 5128,
+            "deceased": 93,
+            "recovered": 3352,
+            "tested": 102791
+        },
+        "total": {
+            "users": 26210,
+            "deceased": 791,
+            "recovered": 17866,
+            "tested": 670155
+        }
+    },
+    "2020-07-25": {
+        "delta": {
+            "users": 716,
+            "deceased": 8,
+            "recovered": 622,
+            "tested": 14264
+        },
+        "delta7": {
+            "users": 5163,
+            "deceased": 93,
+            "recovered": 3624,
+            "tested": 100764
+        },
+        "total": {
+            "users": 26926,
+            "deceased": 799,
+            "recovered": 18488,
+            "tested": 684419
+        }
+    },
+    "2020-07-26": {
+        "delta": {
+            "users": 874,
+            "deceased": 12,
+            "recovered": 644,
+            "tested": 13752
+        },
+        "delta7": {
+            "users": 5200,
+            "deceased": 90,
+            "recovered": 3821,
+            "tested": 98531
+        },
+        "total": {
+            "users": 27800,
+            "deceased": 811,
+            "recovered": 19132,
+            "tested": 698171
+        }
+    },
+    "2020-07-27": {
+        "delta": {
+            "users": 789,
+            "deceased": 9,
+            "recovered": 659,
+            "tested": 13811
+        },
+        "delta7": {
+            "users": 5279,
+            "deceased": 82,
+            "recovered": 4107,
+            "tested": 96120
+        },
+        "total": {
+            "users": 28589,
+            "deceased": 820,
+            "recovered": 19791,
+            "tested": 711982
+        }
+    },
+    "2020-07-28": {
+        "delta": {
+            "users": 628,
+            "deceased": 10,
+            "recovered": 552,
+            "tested": 12691
+        },
+        "delta7": {
+            "users": 5122,
+            "deceased": 74,
+            "recovered": 4086,
+            "tested": 93606
+        },
+        "total": {
+            "users": 29217,
+            "deceased": 830,
+            "recovered": 20343,
+            "tested": 724673
+        }
+    },
+    "2020-07-29": {
+        "delta": {
+            "users": 917,
+            "deceased": 14,
+            "recovered": 591,
+            "tested": 14313
+        },
+        "delta7": {
+            "users": 5292,
+            "deceased": 74,
+            "recovered": 4098,
+            "tested": 93983
+        },
+        "total": {
+            "users": 30134,
+            "deceased": 844,
+            "recovered": 20934,
+            "tested": 738986
+        }
+    },
+    "2020-07-30": {
+        "delta": {
+            "users": 834,
+            "deceased": 13,
+            "recovered": 723,
+            "tested": 13938
+        },
+        "delta7": {
+            "users": 5494,
+            "deceased": 77,
+            "recovered": 4298,
+            "tested": 94055
+        },
+        "total": {
+            "users": 30968,
+            "deceased": 857,
+            "recovered": 21657,
+            "tested": 752924
+        }
+    },
+    "2020-07-31": {
+        "delta": {
+            "users": 838,
+            "deceased": 10,
+            "recovered": 614,
+            "tested": 14647
+        },
+        "delta7": {
+            "users": 5596,
+            "deceased": 76,
+            "recovered": 4405,
+            "tested": 97416
+        },
+        "total": {
+            "users": 31806,
+            "deceased": 867,
+            "recovered": 22271,
+            "tested": 767571
+        }
+    },
+    "2020-08-01": {
+        "delta": {
+            "users": 808,
+            "deceased": 9,
+            "recovered": 698,
+            "tested": 16198
+        },
+        "delta7": {
+            "users": 5688,
+            "deceased": 77,
+            "recovered": 4481,
+            "tested": 99350
+        },
+        "total": {
+            "users": 32614,
+            "deceased": 876,
+            "recovered": 22969,
+            "tested": 783769
+        }
+    },
+    "2020-08-02": {
+        "delta": {
+            "users": 921,
+            "deceased": 10,
+            "recovered": 581,
+            "tested": 15731
+        },
+        "delta7": {
+            "users": 5735,
+            "deceased": 75,
+            "recovered": 4418,
+            "tested": 101329
+        },
+        "total": {
+            "users": 33535,
+            "deceased": 886,
+            "recovered": 23550,
+            "tested": 799500
+        }
+    },
+    "2020-08-03": {
+        "delta": {
+            "users": 750,
+            "deceased": 14,
+            "recovered": 549,
+            "tested": 12862
+        },
+        "delta7": {
+            "users": 5696,
+            "deceased": 80,
+            "recovered": 4308,
+            "tested": 100380
+        },
+        "total": {
+            "users": 34285,
+            "deceased": 900,
+            "recovered": 24099,
+            "tested": 812362
+        }
+    },
+    "2020-08-04": {
+        "delta": {
+            "users": 797,
+            "deceased": 12,
+            "recovered": 1315,
+            "tested": 13361
+        },
+        "delta7": {
+            "users": 5865,
+            "deceased": 82,
+            "recovered": 5071,
+            "tested": 101050
+        },
+        "total": {
+            "users": 35082,
+            "deceased": 912,
+            "recovered": 25414,
+            "tested": 825723
+        }
+    },
+    "2020-08-05": {
+        "delta": {
+            "users": 652,
+            "deceased": 17,
+            "recovered": 650,
+            "tested": 12318
+        },
+        "delta7": {
+            "users": 5600,
+            "deceased": 85,
+            "recovered": 5130,
+            "tested": 99055
+        },
+        "total": {
+            "users": 35734,
+            "deceased": 929,
+            "recovered": 26064,
+            "tested": 838041
+        }
+    },
+    "2020-08-06": {
+        "delta": {
+            "users": 830,
+            "deceased": 17,
+            "recovered": 838,
+            "tested": 8443
+        },
+        "delta7": {
+            "users": 5596,
+            "deceased": 89,
+            "recovered": 5245,
+            "tested": 93560
+        },
+        "total": {
+            "users": 36564,
+            "deceased": 946,
+            "recovered": 26902,
+            "tested": 846484
+        }
+    },
+    "2020-08-07": {
+        "delta": {
+            "users": 734,
+            "deceased": 16,
+            "recovered": 719,
+            "tested": 13437
+        },
+        "delta7": {
+            "users": 5492,
+            "deceased": 95,
+            "recovered": 5350,
+            "tested": 92350
+        },
+        "total": {
+            "users": 37298,
+            "deceased": 962,
+            "recovered": 27621,
+            "tested": 859921
+        }
+    },
+    "2020-08-08": {
+        "delta": {
+            "users": 859,
+            "deceased": 15,
+            "recovered": 732,
+            "tested": 14757
+        },
+        "delta7": {
+            "users": 5543,
+            "deceased": 101,
+            "recovered": 5384,
+            "tested": 90909
+        },
+        "total": {
+            "users": 38157,
+            "deceased": 977,
+            "recovered": 28353,
+            "tested": 874678
+        }
+    },
+    "2020-08-09": {
+        "delta": {
+            "users": 868,
+            "deceased": 19,
+            "recovered": 667,
+            "tested": 17020
+        },
+        "delta7": {
+            "users": 5490,
+            "deceased": 110,
+            "recovered": 5470,
+            "tested": 92198
+        },
+        "total": {
+            "users": 39025,
+            "deceased": 996,
+            "recovered": 29020,
+            "tested": 891698
+        }
+    },
+    "2020-08-10": {
+        "delta": {
+            "users": 866,
+            "deceased": 19,
+            "recovered": 654,
+            "tested": 18228
+        },
+        "delta7": {
+            "users": 5606,
+            "deceased": 115,
+            "recovered": 5575,
+            "tested": 97564
+        },
+        "total": {
+            "users": 39891,
+            "deceased": 1015,
+            "recovered": 29674,
+            "tested": 909926
+        }
+    },
+    "2020-08-11": {
+        "delta": {
+            "users": 843,
+            "deceased": 18,
+            "recovered": 922,
+            "tested": 21217
+        },
+        "delta7": {
+            "users": 5652,
+            "deceased": 121,
+            "recovered": 5182,
+            "tested": 105420
+        },
+        "total": {
+            "users": 40734,
+            "deceased": 1033,
+            "recovered": 30596,
+            "tested": 931143
+        }
+    },
+    "2020-08-12": {
+        "delta": {
+            "users": 870,
+            "deceased": 15,
+            "recovered": 643,
+            "tested": 20679
+        },
+        "delta7": {
+            "users": 5870,
+            "deceased": 119,
+            "recovered": 5175,
+            "tested": 113781
+        },
+        "total": {
+            "users": 41604,
+            "deceased": 1048,
+            "recovered": 31239,
+            "tested": 951822
+        }
+    },
+    "2020-08-13": {
+        "delta": {
+            "users": 1014,
+            "deceased": 17,
+            "recovered": 596,
+            "tested": 20224
+        },
+        "delta7": {
+            "users": 6054,
+            "deceased": 119,
+            "recovered": 4933,
+            "tested": 125562
+        },
+        "total": {
+            "users": 42618,
+            "deceased": 1065,
+            "recovered": 31835,
+            "tested": 972046
+        }
+    },
+    "2020-08-14": {
+        "delta": {
+            "users": 796,
+            "deceased": 16,
+            "recovered": 570,
+            "tested": 20126
+        },
+        "delta7": {
+            "users": 6116,
+            "deceased": 119,
+            "recovered": 4784,
+            "tested": 132251
+        },
+        "total": {
+            "users": 43414,
+            "deceased": 1081,
+            "recovered": 32405,
+            "tested": 992172
+        }
+    },
+    "2020-08-15": {
+        "delta": {
+            "users": 1019,
+            "deceased": 13,
+            "recovered": 948,
+            "tested": 21160
+        },
+        "delta7": {
+            "users": 6276,
+            "deceased": 117,
+            "recovered": 5000,
+            "tested": 138654
+        },
+        "total": {
+            "users": 44433,
+            "deceased": 1094,
+            "recovered": 33353,
+            "tested": 1013332
+        }
+    },
+    "2020-08-16": {
+        "delta": {
+            "users": 1022,
+            "deceased": 11,
+            "recovered": 685,
+            "tested": 22011
+        },
+        "delta7": {
+            "users": 6430,
+            "deceased": 109,
+            "recovered": 5018,
+            "tested": 143645
+        },
+        "total": {
+            "users": 45455,
+            "deceased": 1105,
+            "recovered": 34038,
+            "tested": 1035343
+        }
+    },
+    "2020-08-17": {
+        "delta": {
+            "users": 930,
+            "deceased": 23,
+            "recovered": 987,
+            "tested": 19862
+        },
+        "delta7": {
+            "users": 6494,
+            "deceased": 113,
+            "recovered": 5351,
+            "tested": 145279
+        },
+        "total": {
+            "users": 46385,
+            "deceased": 1128,
+            "recovered": 35025,
+            "tested": 1055205
+        }
+    },
+    "2020-08-18": {
+        "delta": {
+            "users": 990,
+            "deceased": 13,
+            "recovered": 688,
+            "tested": 17370
+        },
+        "delta7": {
+            "users": 6641,
+            "deceased": 108,
+            "recovered": 5117,
+            "tested": 141432
+        },
+        "total": {
+            "users": 47375,
+            "deceased": 1141,
+            "recovered": 35713,
+            "tested": 1072575
+        }
+    },
+    "2020-08-19": {
+        "delta": {
+            "users": 976,
+            "deceased": 18,
+            "recovered": 762,
+            "tested": 17364
+        },
+        "delta7": {
+            "users": 6747,
+            "deceased": 111,
+            "recovered": 5236,
+            "tested": 138117
+        },
+        "total": {
+            "users": 48351,
+            "deceased": 1159,
+            "recovered": 36475,
+            "tested": 1089939
+        }
+    },
+    "2020-08-20": {
+        "delta": {
+            "users": 1142,
+            "deceased": 12,
+            "recovered": 1065,
+            "tested": 21219
+        },
+        "delta7": {
+            "users": 6875,
+            "deceased": 106,
+            "recovered": 5705,
+            "tested": 139112
+        },
+        "total": {
+            "users": 49493,
+            "deceased": 1171,
+            "recovered": 37540,
+            "tested": 1111158
+        }
+    },
+    "2020-08-21": {
+        "delta": {
+            "users": 1147,
+            "deceased": 14,
+            "recovered": 987,
+            "tested": 22668
+        },
+        "delta7": {
+            "users": 7226,
+            "deceased": 104,
+            "recovered": 6122,
+            "tested": 141654
+        },
+        "total": {
+            "users": 50640,
+            "deceased": 1185,
+            "recovered": 38527,
+            "tested": 1133826
+        }
+    },
+    "2020-08-22": {
+        "delta": {
+            "users": 1226,
+            "deceased": 21,
+            "recovered": 872,
+            "tested": 24684
+        },
+        "delta7": {
+            "users": 7433,
+            "deceased": 112,
+            "recovered": 6046,
+            "tested": 145178
+        },
+        "total": {
+            "users": 51866,
+            "deceased": 1206,
+            "recovered": 39399,
+            "tested": 1158510
+        }
+    },
+    "2020-08-23": {
+        "delta": {
+            "users": 1263,
+            "deceased": 23,
+            "recovered": 991,
+            "tested": 22770
+        },
+        "delta7": {
+            "users": 7674,
+            "deceased": 124,
+            "recovered": 6352,
+            "tested": 145937
+        },
+        "total": {
+            "users": 53129,
+            "deceased": 1229,
+            "recovered": 40390,
+            "tested": 1181280
+        }
+    },
+    "2020-08-24": {
+        "delta": {
+            "users": 1292,
+            "deceased": 17,
+            "recovered": 841,
+            "tested": 22425
+        },
+        "delta7": {
+            "users": 8036,
+            "deceased": 118,
+            "recovered": 6206,
+            "tested": 148500
+        },
+        "total": {
+            "users": 54421,
+            "deceased": 1246,
+            "recovered": 41231,
+            "tested": 1203705
+        }
+    },
+    "2020-08-25": {
+        "delta": {
+            "users": 1379,
+            "deceased": 19,
+            "recovered": 1079,
+            "tested": 22854
+        },
+        "delta7": {
+            "users": 8425,
+            "deceased": 124,
+            "recovered": 6597,
+            "tested": 153984
+        },
+        "total": {
+            "users": 55800,
+            "deceased": 1265,
+            "recovered": 42310,
+            "tested": 1226559
+        }
+    },
+    "2020-08-26": {
+        "delta": {
+            "users": 1064,
+            "deceased": 17,
+            "recovered": 936,
+            "tested": 21462
+        },
+        "delta7": {
+            "users": 8513,
+            "deceased": 123,
+            "recovered": 6771,
+            "tested": 158082
+        },
+        "total": {
+            "users": 56864,
+            "deceased": 1282,
+            "recovered": 43246,
+            "tested": 1248021
+        }
+    },
+    "2020-08-27": {
+        "delta": {
+            "users": 1317,
+            "deceased": 24,
+            "recovered": 1207,
+            "tested": 23825
+        },
+        "delta7": {
+            "users": 8688,
+            "deceased": 135,
+            "recovered": 6913,
+            "tested": 160688
+        },
+        "total": {
+            "users": 58181,
+            "deceased": 1306,
+            "recovered": 44453,
+            "tested": 1271846
+        }
+    },
+    "2020-08-28": {
+        "delta": {
+            "users": 1252,
+            "deceased": 17,
+            "recovered": 943,
+            "tested": 25853
+        },
+        "delta7": {
+            "users": 8793,
+            "deceased": 138,
+            "recovered": 6869,
+            "tested": 163873
+        },
+        "total": {
+            "users": 59433,
+            "deceased": 1323,
+            "recovered": 45396,
+            "tested": 1297699
+        }
+    },
+    "2020-08-29": {
+        "delta": {
+            "users": 1442,
+            "deceased": 22,
+            "recovered": 1017,
+            "tested": 27152
+        },
+        "delta7": {
+            "users": 9009,
+            "deceased": 139,
+            "recovered": 7014,
+            "tested": 166341
+        },
+        "total": {
+            "users": 60875,
+            "deceased": 1345,
+            "recovered": 46413,
+            "tested": 1324851
+        }
+    },
+    "2020-08-30": {
+        "delta": {
+            "users": 1558,
+            "deceased": 29,
+            "recovered": 1054,
+            "tested": 24963
+        },
+        "delta7": {
+            "users": 9304,
+            "deceased": 145,
+            "recovered": 7077,
+            "tested": 168534
+        },
+        "total": {
+            "users": 62433,
+            "deceased": 1374,
+            "recovered": 47467,
+            "tested": 1349814
+        }
+    },
+    "2020-08-31": {
+        "delta": {
+            "users": 1532,
+            "deceased": 20,
+            "recovered": 1190,
+            "tested": 27613
+        },
+        "delta7": {
+            "users": 9544,
+            "deceased": 148,
+            "recovered": 7426,
+            "tested": 173722
+        },
+        "total": {
+            "users": 63965,
+            "deceased": 1394,
+            "recovered": 48657,
+            "tested": 1377427
+        }
+    },
+    "2020-09-01": {
+        "delta": {
+            "users": 1525,
+            "deceased": 32,
+            "recovered": 1335,
+            "tested": 20850
+        },
+        "delta7": {
+            "users": 9690,
+            "deceased": 161,
+            "recovered": 7682,
+            "tested": 171718
+        },
+        "total": {
+            "users": 65490,
+            "deceased": 1426,
+            "recovered": 49992,
+            "tested": 1398277
+        }
+    },
+    "2020-09-02": {
+        "delta": {
+            "users": 1424,
+            "deceased": 27,
+            "recovered": 1132,
+            "tested": 21473
+        },
+        "delta7": {
+            "users": 10050,
+            "deceased": 171,
+            "recovered": 7878,
+            "tested": 171729
+        },
+        "total": {
+            "users": 66914,
+            "deceased": 1453,
+            "recovered": 51124,
+            "tested": 1419750
+        }
+    },
+    "2020-09-03": {
+        "delta": {
+            "users": 1672,
+            "deceased": 30,
+            "recovered": 1091,
+            "tested": 23727
+        },
+        "delta7": {
+            "users": 10405,
+            "deceased": 177,
+            "recovered": 7762,
+            "tested": 171631
+        },
+        "total": {
+            "users": 68586,
+            "deceased": 1483,
+            "recovered": 52215,
+            "tested": 1443477
+        }
+    },
+    "2020-09-04": {
+        "delta": {
+            "users": 1658,
+            "deceased": 30,
+            "recovered": 1042,
+            "tested": 25982
+        },
+        "delta7": {
+            "users": 10811,
+            "deceased": 190,
+            "recovered": 7861,
+            "tested": 171760
+        },
+        "total": {
+            "users": 70244,
+            "deceased": 1513,
+            "recovered": 53257,
+            "tested": 1469459
+        }
+    },
+    "2020-09-05": {
+        "delta": {
+            "users": 1636,
+            "deceased": 30,
+            "recovered": 1392,
+            "tested": 25389
+        },
+        "delta7": {
+            "users": 11005,
+            "deceased": 198,
+            "recovered": 8236,
+            "tested": 169997
+        },
+        "total": {
+            "users": 71880,
+            "deceased": 1543,
+            "recovered": 54649,
+            "tested": 1494848
+        }
+    },
+    "2020-09-06": {
+        "delta": {
+            "users": 1694,
+            "deceased": 29,
+            "recovered": 1238,
+            "tested": 24166
+        },
+        "delta7": {
+            "users": 11141,
+            "deceased": 198,
+            "recovered": 8420,
+            "tested": 169200
+        },
+        "total": {
+            "users": 73574,
+            "deceased": 1572,
+            "recovered": 55887,
+            "tested": 1519014
+        }
+    },
+    "2020-09-07": {
+        "delta": {
+            "users": 1885,
+            "deceased": 17,
+            "recovered": 1022,
+            "tested": 22342
+        },
+        "delta7": {
+            "users": 11494,
+            "deceased": 195,
+            "recovered": 8252,
+            "tested": 163929
+        },
+        "total": {
+            "users": 75459,
+            "deceased": 1589,
+            "recovered": 56909,
+            "tested": 1541356
+        }
+    },
+    "2020-09-08": {
+        "delta": {
+            "users": 1864,
+            "deceased": 20,
+            "recovered": 1600,
+            "tested": 22597
+        },
+        "delta7": {
+            "users": 11833,
+            "deceased": 183,
+            "recovered": 8517,
+            "tested": 165676
+        },
+        "total": {
+            "users": 77323,
+            "deceased": 1609,
+            "recovered": 58509,
+            "tested": 1563953
+        }
+    },
+    "2020-09-09": {
+        "delta": {
+            "users": 1869,
+            "deceased": 31,
+            "recovered": 1341,
+            "tested": 23992
+        },
+        "delta7": {
+            "users": 12278,
+            "deceased": 187,
+            "recovered": 8726,
+            "tested": 168195
+        },
+        "total": {
+            "users": 79192,
+            "deceased": 1640,
+            "recovered": 59850,
+            "tested": 1587945
+        }
+    },
+    "2020-09-10": {
+        "delta": {
+            "users": 2187,
+            "deceased": 21,
+            "recovered": 1435,
+            "tested": 23694
+        },
+        "delta7": {
+            "users": 12793,
+            "deceased": 178,
+            "recovered": 9070,
+            "tested": 168162
+        },
+        "total": {
+            "users": 81379,
+            "deceased": 1661,
+            "recovered": 61285,
+            "tested": 1611639
+        }
+    },
+    "2020-09-11": {
+        "delta": {
+            "users": 2240,
+            "deceased": 30,
+            "recovered": 1651,
+            "tested": 23431
+        },
+        "delta7": {
+            "users": 13375,
+            "deceased": 178,
+            "recovered": 9679,
+            "tested": 165611
+        },
+        "total": {
+            "users": 83619,
+            "deceased": 1691,
+            "recovered": 62936,
+            "tested": 1635070
+        }
+    },
+    "2020-09-12": {
+        "delta": {
+            "users": 2347,
+            "deceased": 37,
+            "recovered": 1462,
+            "tested": 23105
+        },
+        "delta7": {
+            "users": 14086,
+            "deceased": 185,
+            "recovered": 9749,
+            "tested": 163327
+        },
+        "total": {
+            "users": 85966,
+            "deceased": 1728,
+            "recovered": 64398,
+            "tested": 1658175
+        }
+    },
+    "2020-09-13": {
+        "delta": {
+            "users": 2281,
+            "deceased": 34,
+            "recovered": 1600,
+            "tested": 21899
+        },
+        "delta7": {
+            "users": 14673,
+            "deceased": 190,
+            "recovered": 10111,
+            "tested": 161060
+        },
+        "total": {
+            "users": 88247,
+            "deceased": 1762,
+            "recovered": 65998,
+            "tested": 1680074
+        }
+    },
+    "2020-09-14": {
+        "delta": {
+            "users": 2483,
+            "deceased": 29,
+            "recovered": 1713,
+            "tested": 20855
+        },
+        "delta7": {
+            "users": 15271,
+            "deceased": 202,
+            "recovered": 10802,
+            "tested": 159573
+        },
+        "total": {
+            "users": 90730,
+            "deceased": 1791,
+            "recovered": 67711,
+            "tested": 1700929
+        }
+    },
+    "2020-09-15": {
+        "delta": {
+            "users": 2323,
+            "deceased": 29,
+            "recovered": 1902,
+            "tested": 20259
+        },
+        "delta7": {
+            "users": 15730,
+            "deceased": 211,
+            "recovered": 11104,
+            "tested": 157235
+        },
+        "total": {
+            "users": 93053,
+            "deceased": 1820,
+            "recovered": 69613,
+            "tested": 1721188
+        }
+    },
+    "2020-09-16": {
+        "delta": {
+            "users": 2462,
+            "deceased": 24,
+            "recovered": 1922,
+            "tested": 15286
+        },
+        "delta7": {
+            "users": 16323,
+            "deceased": 204,
+            "recovered": 11685,
+            "tested": 148529
+        },
+        "total": {
+            "users": 95515,
+            "deceased": 1844,
+            "recovered": 71535,
+            "tested": 1736474
+        }
+    },
+    "2020-09-17": {
+        "delta": {
+            "users": 2391,
+            "deceased": 33,
+            "recovered": 2863,
+            "tested": 25596
+        },
+        "delta7": {
+            "users": 16527,
+            "deceased": 216,
+            "recovered": 13113,
+            "tested": 150431
+        },
+        "total": {
+            "users": 97906,
+            "deceased": 1877,
+            "recovered": 74398,
+            "tested": 1762070
+        }
+    },
+    "2020-09-18": {
+        "delta": {
+            "users": 2552,
+            "deceased": 24,
+            "recovered": 2554,
+            "tested": 20435
+        },
+        "delta7": {
+            "users": 16839,
+            "deceased": 210,
+            "recovered": 14016,
+            "tested": 147435
+        },
+        "total": {
+            "users": 100458,
+            "deceased": 1901,
+            "recovered": 76952,
+            "tested": 1782505
+        }
+    },
+    "2020-09-19": {
+        "delta": {
+            "users": 2607,
+            "deceased": 42,
+            "recovered": 2206,
+            "tested": 19209
+        },
+        "delta7": {
+            "users": 17099,
+            "deceased": 215,
+            "recovered": 14760,
+            "tested": 143539
+        },
+        "total": {
+            "users": 103065,
+            "deceased": 1943,
+            "recovered": 79158,
+            "tested": 1801714
+        }
+    },
+    "2020-09-20": {
+        "delta": {
+            "users": 2579,
+            "deceased": 27,
+            "recovered": 2216,
+            "tested": 20583
+        },
+        "delta7": {
+            "users": 17397,
+            "deceased": 208,
+            "recovered": 15376,
+            "tested": 142223
+        },
+        "total": {
+            "users": 105644,
+            "deceased": 1970,
+            "recovered": 81374,
+            "tested": 1822297
+        }
+    },
+    "2020-09-21": {
+        "delta": {
+            "users": 2523,
+            "deceased": 37,
+            "recovered": 2244,
+            "tested": 21783
+        },
+        "delta7": {
+            "users": 17437,
+            "deceased": 216,
+            "recovered": 15907,
+            "tested": 143151
+        },
+        "total": {
+            "users": 108167,
+            "deceased": 2007,
+            "recovered": 83618,
+            "tested": 1844080
+        }
+    },
+    "2020-09-22": {
+        "delta": {
+            "users": 2544,
+            "deceased": 28,
+            "recovered": 2412,
+            "tested": 17698
+        },
+        "delta7": {
+            "users": 17658,
+            "deceased": 215,
+            "recovered": 16417,
+            "tested": 140590
+        },
+        "total": {
+            "users": 110711,
+            "deceased": 2035,
+            "recovered": 86030,
+            "tested": 1861778
+        }
+    },
+    "2020-09-23": {
+        "delta": {
+            "users": 2346,
+            "deceased": 42,
+            "recovered": 2138,
+            "tested": 23080
+        },
+        "delta7": {
+            "users": 17542,
+            "deceased": 233,
+            "recovered": 16633,
+            "tested": 148384
+        },
+        "total": {
+            "users": 113057,
+            "deceased": 2077,
+            "recovered": 88168,
+            "tested": 1884858
+        }
+    },
+    "2020-09-24": {
+        "delta": {
+            "users": 2304,
+            "deceased": 45,
+            "recovered": 2327,
+            "tested": 19287
+        },
+        "delta7": {
+            "users": 17455,
+            "deceased": 245,
+            "recovered": 16097,
+            "tested": 142075
+        },
+        "total": {
+            "users": 115361,
+            "deceased": 2122,
+            "recovered": 90495,
+            "tested": 1904145
+        }
+    },
+    "2020-09-25": {
+        "delta": {
+            "users": 2227,
+            "deceased": 30,
+            "recovered": 2743,
+            "tested": 25603
+        },
+        "delta7": {
+            "users": 17130,
+            "deceased": 251,
+            "recovered": 16286,
+            "tested": 147243
+        },
+        "total": {
+            "users": 117588,
+            "deceased": 2152,
+            "recovered": 93238,
+            "tested": 1929748
+        }
+    },
+    "2020-09-26": {
+        "delta": {
+            "users": 2311,
+            "deceased": 29,
+            "recovered": 2252,
+            "tested": 22999
+        },
+        "delta7": {
+            "users": 16834,
+            "deceased": 238,
+            "recovered": 16332,
+            "tested": 151033
+        },
+        "total": {
+            "users": 119899,
+            "deceased": 2181,
+            "recovered": 95490,
+            "tested": 1952747
+        }
+    },
+    "2020-09-27": {
+        "delta": {
+            "users": 2310,
+            "deceased": 26,
+            "recovered": 2081,
+            "tested": 18842
+        },
+        "delta7": {
+            "users": 16565,
+            "deceased": 237,
+            "recovered": 16197,
+            "tested": 149292
+        },
+        "total": {
+            "users": 122209,
+            "deceased": 2207,
+            "recovered": 97571,
+            "tested": 1971589
+        }
+    },
+    "2020-09-28": {
+        "delta": {
+            "users": 1957,
+            "deceased": 35,
+            "recovered": 2441,
+            "tested": 21638
+        },
+        "delta7": {
+            "users": 15999,
+            "deceased": 235,
+            "recovered": 16394,
+            "tested": 149147
+        },
+        "total": {
+            "users": 124166,
+            "deceased": 2242,
+            "recovered": 100012,
+            "tested": 1993227
+        }
+    },
+    "2020-09-29": {
+        "delta": {
+            "users": 1877,
+            "deceased": 39,
+            "recovered": 2433,
+            "tested": 18732
+        },
+        "delta7": {
+            "users": 15332,
+            "deceased": 246,
+            "recovered": 16415,
+            "tested": 150181
+        },
+        "total": {
+            "users": 126043,
+            "deceased": 2281,
+            "recovered": 102445,
+            "tested": 2011959
+        }
+    },
+    "2020-09-30": {
+        "delta": {
+            "users": 2004,
+            "deceased": 35,
+            "recovered": 2289,
+            "tested": 23175
+        },
+        "delta7": {
+            "users": 14990,
+            "deceased": 239,
+            "recovered": 16566,
+            "tested": 150276
+        },
+        "total": {
+            "users": 128047,
+            "deceased": 2316,
+            "recovered": 104734,
+            "tested": 2035134
+        }
+    },
+    "2020-10-01": {
+        "delta": {
+            "users": 2041,
+            "deceased": 20,
+            "recovered": 2545,
+            "tested": 28631
+        },
+        "delta7": {
+            "users": 14727,
+            "deceased": 214,
+            "recovered": 16784,
+            "tested": 159620
+        },
+        "total": {
+            "users": 130088,
+            "deceased": 2336,
+            "recovered": 107279,
+            "tested": 2063765
+        }
+    },
+    "2020-10-02": {
+        "delta": {
+            "users": 2019,
+            "deceased": 36,
+            "recovered": 2332,
+            "tested": 29504
+        },
+        "delta7": {
+            "users": 14519,
+            "deceased": 220,
+            "recovered": 16373,
+            "tested": 163521
+        },
+        "total": {
+            "users": 132107,
+            "deceased": 2372,
+            "recovered": 109611,
+            "tested": 2093269
+        }
+    },
+    "2020-10-03": {
+        "delta": {
+            "users": 1811,
+            "deceased": 27,
+            "recovered": 2101,
+            "tested": 24530
+        },
+        "delta7": {
+            "users": 14019,
+            "deceased": 218,
+            "recovered": 16222,
+            "tested": 165052
+        },
+        "total": {
+            "users": 133918,
+            "deceased": 2399,
+            "recovered": 111712,
+            "tested": 2117799
+        }
+    },
+    "2020-10-04": {
+        "delta": {
+            "users": 1720,
+            "deceased": 35,
+            "recovered": 2120,
+            "tested": 90207
+        },
+        "delta7": {
+            "users": 13429,
+            "deceased": 227,
+            "recovered": 16261,
+            "tested": 236417
+        },
+        "total": {
+            "users": 135638,
+            "deceased": 2434,
+            "recovered": 113832,
+            "tested": 2208006
+        }
+    },
+    "2020-10-05": {
+        "delta": {
+            "users": 1460,
+            "deceased": 29,
+            "recovered": 2046,
+            "tested": 24073
+        },
+        "delta7": {
+            "users": 12932,
+            "deceased": 221,
+            "recovered": 15866,
+            "tested": 238852
+        },
+        "total": {
+            "users": 137098,
+            "deceased": 2463,
+            "recovered": 115878,
+            "tested": 2232079
+        }
+    },
+    "2020-10-06": {
+        "delta": {
+            "users": 1570,
+            "deceased": 25,
+            "recovered": 2161,
+            "tested": 25830
+        },
+        "delta7": {
+            "users": 12625,
+            "deceased": 207,
+            "recovered": 15594,
+            "tested": 245950
+        },
+        "total": {
+            "users": 138668,
+            "deceased": 2488,
+            "recovered": 118039,
+            "tested": 2257909
+        }
+    },
+    "2020-10-07": {
+        "delta": {
+            "users": 1639,
+            "deceased": 30,
+            "recovered": 2228,
+            "tested": 31725
+        },
+        "delta7": {
+            "users": 12260,
+            "deceased": 202,
+            "recovered": 15533,
+            "tested": 254500
+        },
+        "total": {
+            "users": 140307,
+            "deceased": 2518,
+            "recovered": 120267,
+            "tested": 2289634
+        }
+    },
+    "2020-10-08": {
+        "delta": {
+            "users": 1715,
+            "deceased": 29,
+            "recovered": 2420,
+            "tested": 30796
+        },
+        "delta7": {
+            "users": 11934,
+            "deceased": 211,
+            "recovered": 15408,
+            "tested": 256665
+        },
+        "total": {
+            "users": 142022,
+            "deceased": 2547,
+            "recovered": 122687,
+            "tested": 2320430
+        }
+    },
+    "2020-10-09": {
+        "delta": {
+            "users": 1607,
+            "deceased": 27,
+            "recovered": 2200,
+            "tested": 28027
+        },
+        "delta7": {
+            "users": 11522,
+            "deceased": 202,
+            "recovered": 15276,
+            "tested": 255188
+        },
+        "total": {
+            "users": 143629,
+            "deceased": 2574,
+            "recovered": 124887,
+            "tested": 2348457
+        }
+    },
+    "2020-10-10": {
+        "delta": {
+            "users": 1616,
+            "deceased": 25,
+            "recovered": 2147,
+            "tested": 29254
+        },
+        "delta7": {
+            "users": 11327,
+            "deceased": 200,
+            "recovered": 15322,
+            "tested": 259912
+        },
+        "total": {
+            "users": 145245,
+            "deceased": 2599,
+            "recovered": 127034,
+            "tested": 2377711
+        }
+    },
+    "2020-10-11": {
+        "delta": {
+            "users": 1575,
+            "deceased": 25,
+            "recovered": 1985,
+            "tested": 26442
+        },
+        "delta7": {
+            "users": 11182,
+            "deceased": 190,
+            "recovered": 15187,
+            "tested": 196147
+        },
+        "total": {
+            "users": 146820,
+            "deceased": 2624,
+            "recovered": 129019,
+            "tested": 2404153
+        }
+    },
+    "2020-10-12": {
+        "delta": {
+            "users": 1478,
+            "deceased": 21,
+            "recovered": 1702,
+            "tested": 24554
+        },
+        "delta7": {
+            "users": 11200,
+            "deceased": 182,
+            "recovered": 14843,
+            "tested": 196628
+        },
+        "total": {
+            "users": 148298,
+            "deceased": 2645,
+            "recovered": 130721,
+            "tested": 2428707
+        }
+    },
+    "2020-10-13": {
+        "delta": {
+            "users": 1463,
+            "deceased": 26,
+            "recovered": 1708,
+            "tested": 25002
+        },
+        "delta7": {
+            "users": 11093,
+            "deceased": 183,
+            "recovered": 14390,
+            "tested": 195800
+        },
+        "total": {
+            "users": 149761,
+            "deceased": 2671,
+            "recovered": 132429,
+            "tested": 2453709
+        }
+    },
+    "2020-10-14": {
+        "delta": {
+            "users": 5515,
+            "deceased": 15,
+            "recovered": 5729,
+            "tested": 27485
+        },
+        "delta7": {
+            "users": 14969,
+            "deceased": 168,
+            "recovered": 17891,
+            "tested": 191560
+        },
+        "total": {
+            "users": 155276,
+            "deceased": 2686,
+            "recovered": 138158,
+            "tested": 2481194
+        }
+    },
+    "2020-10-15": {
+        "delta": {
+            "users": 1308,
+            "deceased": 24,
+            "recovered": 1559,
+            "tested": 27425
+        },
+        "delta7": {
+            "users": 14562,
+            "deceased": 163,
+            "recovered": 17030,
+            "tested": 188189
+        },
+        "total": {
+            "users": 156584,
+            "deceased": 2710,
+            "recovered": 139717,
+            "tested": 2508619
+        }
+    },
+    "2020-10-16": {
+        "delta": {
+            "users": 1352,
+            "deceased": 25,
+            "recovered": 1556,
+            "tested": 25747
+        },
+        "delta7": {
+            "users": 14307,
+            "deceased": 161,
+            "recovered": 16386,
+            "tested": 185909
+        },
+        "total": {
+            "users": 157936,
+            "deceased": 2735,
+            "recovered": 141273,
+            "tested": 2534366
+        }
+    },
+    "2020-10-17": {
+        "delta": {
+            "users": 1222,
+            "deceased": 18,
+            "recovered": 1434,
+            "tested": 26483
+        },
+        "delta7": {
+            "users": 13913,
+            "deceased": 154,
+            "recovered": 15673,
+            "tested": 183138
+        },
+        "total": {
+            "users": 159158,
+            "deceased": 2753,
+            "recovered": 142707,
+            "tested": 2560849
+        }
+    },
+    "2020-10-18": {
+        "delta": {
+            "users": 1030,
+            "deceased": 20,
+            "recovered": 1427,
+            "tested": 24782
+        },
+        "delta7": {
+            "users": 13368,
+            "deceased": 149,
+            "recovered": 15115,
+            "tested": 181478
+        },
+        "total": {
+            "users": 160188,
+            "deceased": 2773,
+            "recovered": 144134,
+            "tested": 2585631
+        }
+    },
+    "2020-10-19": {
+        "delta": {
+            "users": 1015,
+            "deceased": 13,
+            "recovered": 1287,
+            "tested": 21554
+        },
+        "delta7": {
+            "users": 12905,
+            "deceased": 141,
+            "recovered": 14700,
+            "tested": 178478
+        },
+        "total": {
+            "users": 161203,
+            "deceased": 2786,
+            "recovered": 145421,
+            "tested": 2607185
+        }
+    },
+    "2020-10-20": {
+        "delta": {
+            "users": 975,
+            "deceased": 25,
+            "recovered": 1439,
+            "tested": 23093
+        },
+        "delta7": {
+            "users": 12417,
+            "deceased": 140,
+            "recovered": 14431,
+            "tested": 176569
+        },
+        "total": {
+            "users": 162178,
+            "deceased": 2811,
+            "recovered": 146860,
+            "tested": 2630278
+        }
+    },
+    "2020-10-21": {
+        "delta": {
+            "users": 1118,
+            "deceased": 17,
+            "recovered": 1222,
+            "tested": 26546
+        },
+        "delta7": {
+            "users": 8020,
+            "deceased": 142,
+            "recovered": 9924,
+            "tested": 175630
+        },
+        "total": {
+            "users": 163296,
+            "deceased": 2828,
+            "recovered": 148082,
+            "tested": 2656824
+        }
+    },
+    "2020-10-22": {
+        "delta": {
+            "users": 1045,
+            "deceased": 14,
+            "recovered": 1271,
+            "tested": 31014
+        },
+        "delta7": {
+            "users": 7757,
+            "deceased": 132,
+            "recovered": 9636,
+            "tested": 179219
+        },
+        "total": {
+            "users": 164341,
+            "deceased": 2842,
+            "recovered": 149353,
+            "tested": 2687838
+        }
+    },
+    "2020-10-23": {
+        "delta": {
+            "users": 953,
+            "deceased": 13,
+            "recovered": 1325,
+            "tested": 31087
+        },
+        "delta7": {
+            "users": 7358,
+            "deceased": 120,
+            "recovered": 9405,
+            "tested": 184559
+        },
+        "total": {
+            "users": 165294,
+            "deceased": 2855,
+            "recovered": 150678,
+            "tested": 2718925
+        }
+    },
+    "2020-10-24": {
+        "delta": {
+            "users": 1004,
+            "deceased": 20,
+            "recovered": 1268,
+            "tested": 31695
+        },
+        "delta7": {
+            "users": 7140,
+            "deceased": 122,
+            "recovered": 9239,
+            "tested": 189771
+        },
+        "total": {
+            "users": 166298,
+            "deceased": 2875,
+            "recovered": 151946,
+            "tested": 2750620
+        }
+    },
+    "2020-10-25": {
+        "delta": {
+            "users": 951,
+            "deceased": 10,
+            "recovered": 1181,
+            "tested": 31101
+        },
+        "delta7": {
+            "users": 7061,
+            "deceased": 112,
+            "recovered": 8993,
+            "tested": 196090
+        },
+        "total": {
+            "users": 167249,
+            "deceased": 2885,
+            "recovered": 153127,
+            "tested": 2781721
+        }
+    },
+    "2020-10-26": {
+        "delta": {
+            "users": 720,
+            "deceased": 5,
+            "recovered": 1095,
+            "tested": 26099
+        },
+        "delta7": {
+            "users": 6766,
+            "deceased": 104,
+            "recovered": 8801,
+            "tested": 200635
+        },
+        "total": {
+            "users": 167969,
+            "deceased": 2890,
+            "recovered": 154222,
+            "tested": 2807820
+        }
+    },
+    "2020-10-27": {
+        "delta": {
+            "users": 514,
+            "deceased": 8,
+            "recovered": 1010,
+            "tested": 19223
+        },
+        "delta7": {
+            "users": 6305,
+            "deceased": 87,
+            "recovered": 8372,
+            "tested": 196765
+        },
+        "total": {
+            "users": 168483,
+            "deceased": 2898,
+            "recovered": 155232,
+            "tested": 2827043
+        }
+    },
+    "2020-10-28": {
+        "delta": {
+            "users": 788,
+            "deceased": 15,
+            "recovered": 1032,
+            "tested": 25987
+        },
+        "delta7": {
+            "users": 5975,
+            "deceased": 85,
+            "recovered": 8182,
+            "tested": 196206
+        },
+        "total": {
+            "users": 169271,
+            "deceased": 2913,
+            "recovered": 156264,
+            "tested": 2853030
+        }
+    },
+    "2020-10-29": {
+        "delta": {
+            "users": 728,
+            "deceased": 16,
+            "recovered": 1117,
+            "tested": 26232
+        },
+        "delta7": {
+            "users": 5658,
+            "deceased": 87,
+            "recovered": 8028,
+            "tested": 191424
+        },
+        "total": {
+            "users": 169999,
+            "deceased": 2929,
+            "recovered": 157381,
+            "tested": 2879262
+        }
+    },
+    "2020-10-30": {
+        "delta": {
+            "users": 691,
+            "deceased": 12,
+            "recovered": 1074,
+            "tested": 28995
+        },
+        "delta7": {
+            "users": 5396,
+            "deceased": 86,
+            "recovered": 7777,
+            "tested": 189332
+        },
+        "total": {
+            "users": 170690,
+            "deceased": 2941,
+            "recovered": 158455,
+            "tested": 2908257
+        }
+    },
+    "2020-10-31": {
+        "delta": {
+            "users": 669,
+            "deceased": 10,
+            "recovered": 1024,
+            "tested": 26057
+        },
+        "delta7": {
+            "users": 5061,
+            "deceased": 76,
+            "recovered": 7533,
+            "tested": 183694
+        },
+        "total": {
+            "users": 171359,
+            "deceased": 2951,
+            "recovered": 159479,
+            "tested": 2934314
+        }
+    },
+    "2020-11-01": {
+        "delta": {
+            "users": 723,
+            "deceased": 7,
+            "recovered": 1107,
+            "tested": 24569
+        },
+        "delta7": {
+            "users": 4833,
+            "deceased": 73,
+            "recovered": 7459,
+            "tested": 177162
+        },
+        "total": {
+            "users": 172082,
+            "deceased": 2958,
+            "recovered": 160586,
+            "tested": 2958883
+        }
+    },
+    "2020-11-02": {
+        "delta": {
+            "users": 635,
+            "deceased": 7,
+            "recovered": 868,
+            "tested": 24161
+        },
+        "delta7": {
+            "users": 4748,
+            "deceased": 75,
+            "recovered": 7232,
+            "tested": 175224
+        },
+        "total": {
+            "users": 172717,
+            "deceased": 2965,
+            "recovered": 161454,
+            "tested": 2983044
+        }
+    },
+    "2020-11-03": {
+        "delta": {
+            "users": 667,
+            "deceased": 9,
+            "recovered": 912,
+            "tested": 33412
+        },
+        "delta7": {
+            "users": 4901,
+            "deceased": 76,
+            "recovered": 7134,
+            "tested": 189413
+        },
+        "total": {
+            "users": 173384,
+            "deceased": 2974,
+            "recovered": 162366,
+            "tested": 3016456
+        }
+    },
+    "2020-11-04": {
+        "delta": {
+            "users": 707,
+            "deceased": 13,
+            "recovered": 884,
+            "tested": 26191
+        },
+        "delta7": {
+            "users": 4820,
+            "deceased": 74,
+            "recovered": 6986,
+            "tested": 189617
+        },
+        "total": {
+            "users": 174091,
+            "deceased": 2987,
+            "recovered": 163250,
+            "tested": 3042647
+        }
+    },
+    "2020-11-05": {
+        "delta": {
+            "users": 734,
+            "deceased": 5,
+            "recovered": 817,
+            "tested": 26445
+        },
+        "delta7": {
+            "users": 4826,
+            "deceased": 63,
+            "recovered": 6686,
+            "tested": 189830
+        },
+        "total": {
+            "users": 174825,
+            "deceased": 2992,
+            "recovered": 164067,
+            "tested": 3069092
+        }
+    },
+    "2020-11-06": {
+        "delta": {
+            "users": 778,
+            "deceased": 12,
+            "recovered": 856,
+            "tested": 27202
+        },
+        "delta7": {
+            "users": 4913,
+            "deceased": 63,
+            "recovered": 6468,
+            "tested": 188037
+        },
+        "total": {
+            "users": 175603,
+            "deceased": 3004,
+            "recovered": 164923,
+            "tested": 3096294
+        }
+    },
+    "2020-11-07": {
+        "delta": {
+            "users": 865,
+            "deceased": 13,
+            "recovered": 792,
+            "tested": 26776
+        },
+        "delta7": {
+            "users": 5109,
+            "deceased": 66,
+            "recovered": 6236,
+            "tested": 188756
+        },
+        "total": {
+            "users": 176468,
+            "deceased": 3017,
+            "recovered": 165715,
+            "tested": 3123070
+        }
+    },
+    "2020-11-08": {
+        "delta": {
+            "users": 891,
+            "deceased": 11,
+            "recovered": 688,
+            "tested": 28520
+        },
+        "delta7": {
+            "users": 5277,
+            "deceased": 70,
+            "recovered": 5817,
+            "tested": 192707
+        },
+        "total": {
+            "users": 177359,
+            "deceased": 3028,
+            "recovered": 166403,
+            "tested": 3151590
+        }
+    },
+    "2020-11-09": {
+        "delta": {
+            "users": 809,
+            "deceased": 6,
+            "recovered": 681,
+            "tested": 25557
+        },
+        "delta7": {
+            "users": 5451,
+            "deceased": 69,
+            "recovered": 5630,
+            "tested": 194103
+        },
+        "total": {
+            "users": 178168,
+            "deceased": 3034,
+            "recovered": 167084,
+            "tested": 3177147
+        }
+    },
+    "2020-11-10": {
+        "delta": {
+            "users": 900,
+            "deceased": 8,
+            "recovered": 793,
+            "tested": 25353
+        },
+        "delta7": {
+            "users": 5684,
+            "deceased": 68,
+            "recovered": 5511,
+            "tested": 186044
+        },
+        "total": {
+            "users": 179068,
+            "deceased": 3042,
+            "recovered": 167877,
+            "tested": 3202500
+        }
+    },
+    "2020-11-11": {
+        "delta": {
+            "users": 883,
+            "deceased": 13,
+            "recovered": 691,
+            "tested": 25419
+        },
+        "delta7": {
+            "users": 5860,
+            "deceased": 68,
+            "recovered": 5318,
+            "tested": 185272
+        },
+        "total": {
+            "users": 179951,
+            "deceased": 3055,
+            "recovered": 168568,
+            "tested": 3227919
+        }
+    },
+    "2020-11-12": {
+        "delta": {
+            "users": 1046,
+            "deceased": 10,
+            "recovered": 692,
+            "tested": 26538
+        },
+        "delta7": {
+            "users": 6172,
+            "deceased": 73,
+            "recovered": 5193,
+            "tested": 185365
+        },
+        "total": {
+            "users": 180997,
+            "deceased": 3065,
+            "recovered": 169260,
+            "tested": 3254457
+        }
+    },
+    "2020-11-13": {
+        "delta": {
+            "users": 1048,
+            "deceased": 11,
+            "recovered": 833,
+            "tested": 26254
+        },
+        "delta7": {
+            "users": 6442,
+            "deceased": 72,
+            "recovered": 5170,
+            "tested": 184417
+        },
+        "total": {
+            "users": 182045,
+            "deceased": 3076,
+            "recovered": 170093,
+            "tested": 3280711
+        }
+    },
+    "2020-11-14": {
+        "delta": {
+            "users": 1012,
+            "deceased": 7,
+            "recovered": 876,
+            "tested": 28187
+        },
+        "delta7": {
+            "users": 6589,
+            "deceased": 66,
+            "recovered": 5254,
+            "tested": 185828
+        },
+        "total": {
+            "users": 183057,
+            "deceased": 3083,
+            "recovered": 170969,
+            "tested": 3308898
+        }
+    },
+    "2020-11-15": {
+        "delta": {
+            "users": 870,
+            "deceased": 7,
+            "recovered": 722,
+            "tested": 15056
+        },
+        "delta7": {
+            "users": 6568,
+            "deceased": 62,
+            "recovered": 5288,
+            "tested": 172364
+        },
+        "total": {
+            "users": 183927,
+            "deceased": 3090,
+            "recovered": 171691,
+            "tested": 3323954
+        }
+    },
+    "2020-11-16": {
+        "delta": {
+            "users": 597,
+            "deceased": 2,
+            "recovered": 745,
+            "tested": 12972
+        },
+        "delta7": {
+            "users": 6356,
+            "deceased": 58,
+            "recovered": 5352,
+            "tested": 159779
+        },
+        "total": {
+            "users": 184524,
+            "deceased": 3092,
+            "recovered": 172436,
+            "tested": 3336926
+        }
+    },
+    "2020-11-17": {
+        "delta": {
+            "users": 922,
+            "deceased": 10,
+            "recovered": 848,
+            "tested": 17958
+        },
+        "delta7": {
+            "users": 6378,
+            "deceased": 60,
+            "recovered": 5407,
+            "tested": 152384
+        },
+        "total": {
+            "users": 185446,
+            "deceased": 3102,
+            "recovered": 173284,
+            "tested": 3354884
+        }
+    },
+    "2020-11-18": {
+        "delta": {
+            "users": 1209,
+            "deceased": 13,
+            "recovered": 918,
+            "tested": 22815
+        },
+        "delta7": {
+            "users": 6704,
+            "deceased": 60,
+            "recovered": 5634,
+            "tested": 149780
+        },
+        "total": {
+            "users": 186655,
+            "deceased": 3115,
+            "recovered": 174202,
+            "tested": 3377699
+        }
+    },
+    "2020-11-19": {
+        "delta": {
+            "users": 1363,
+            "deceased": 14,
+            "recovered": 887,
+            "tested": 27048
+        },
+        "delta7": {
+            "users": 7021,
+            "deceased": 64,
+            "recovered": 5829,
+            "tested": 150290
+        },
+        "total": {
+            "users": 188018,
+            "deceased": 3129,
+            "recovered": 175089,
+            "tested": 3404747
+        }
+    },
+    "2020-11-20": {
+        "delta": {
+            "users": 1528,
+            "deceased": 9,
+            "recovered": 917,
+            "tested": 31371
+        },
+        "delta7": {
+            "users": 7501,
+            "deceased": 62,
+            "recovered": 5913,
+            "tested": 155407
+        },
+        "total": {
+            "users": 189546,
+            "deceased": 3138,
+            "recovered": 176006,
+            "tested": 3436118
+        }
+    },
+    "2020-11-21": {
+        "delta": {
+            "users": 1700,
+            "deceased": 11,
+            "recovered": 899,
+            "tested": 31691
+        },
+        "delta7": {
+            "users": 8189,
+            "deceased": 66,
+            "recovered": 5936,
+            "tested": 158911
+        },
+        "total": {
+            "users": 191246,
+            "deceased": 3149,
+            "recovered": 176905,
+            "tested": 3467809
+        }
+    },
+    "2020-11-22": {
+        "delta": {
+            "users": 1798,
+            "deceased": 13,
+            "recovered": 1212,
+            "tested": 32371
+        },
+        "delta7": {
+            "users": 9117,
+            "deceased": 72,
+            "recovered": 6426,
+            "tested": 176226
+        },
+        "total": {
+            "users": 193044,
+            "deceased": 3162,
+            "recovered": 178117,
+            "tested": 3500180
+        }
+    },
+    "2020-11-23": {
+        "delta": {
+            "users": 1701,
+            "deceased": 10,
+            "recovered": 1120,
+            "tested": 29926
+        },
+        "delta7": {
+            "users": 10221,
+            "deceased": 80,
+            "recovered": 6801,
+            "tested": 193180
+        },
+        "total": {
+            "users": 194745,
+            "deceased": 3172,
+            "recovered": 179237,
+            "tested": 3530106
+        }
+    },
+    "2020-11-24": {
+        "delta": {
+            "users": 1766,
+            "deceased": 11,
+            "recovered": 1112,
+            "tested": 32265
+        },
+        "delta7": {
+            "users": 11065,
+            "deceased": 81,
+            "recovered": 7065,
+            "tested": 207487
+        },
+        "total": {
+            "users": 196511,
+            "deceased": 3183,
+            "recovered": 180349,
+            "tested": 3562371
+        }
+    },
+    "2020-11-25": {
+        "delta": {
+            "users": 1773,
+            "deceased": 14,
+            "recovered": 996,
+            "tested": 33011
+        },
+        "delta7": {
+            "users": 11629,
+            "deceased": 82,
+            "recovered": 7143,
+            "tested": 217683
+        },
+        "total": {
+            "users": 198284,
+            "deceased": 3197,
+            "recovered": 181345,
+            "tested": 3595382
+        }
+    },
+    "2020-11-26": {
+        "delta": {
+            "users": 1668,
+            "deceased": 12,
+            "recovered": 1199,
+            "tested": 34125
+        },
+        "delta7": {
+            "users": 11934,
+            "deceased": 80,
+            "recovered": 7455,
+            "tested": 224760
+        },
+        "total": {
+            "users": 199952,
+            "deceased": 3209,
+            "recovered": 182544,
+            "tested": 3629507
+        }
+    },
+    "2020-11-27": {
+        "delta": {
+            "users": 1645,
+            "deceased": 15,
+            "recovered": 1152,
+            "tested": 31400
+        },
+        "delta7": {
+            "users": 12051,
+            "deceased": 86,
+            "recovered": 7690,
+            "tested": 224789
+        },
+        "total": {
+            "users": 201597,
+            "deceased": 3224,
+            "recovered": 183696,
+            "tested": 3660907
+        }
+    },
+    "2020-11-28": {
+        "delta": {
+            "users": 1634,
+            "deceased": 13,
+            "recovered": 1317,
+            "tested": 30312
+        },
+        "delta7": {
+            "users": 11985,
+            "deceased": 88,
+            "recovered": 8108,
+            "tested": 223410
+        },
+        "total": {
+            "users": 203231,
+            "deceased": 3237,
+            "recovered": 185013,
+            "tested": 3691219
+        }
+    },
+    "2020-11-29": {
+        "delta": {
+            "users": 1514,
+            "deceased": 13,
+            "recovered": 1508,
+            "tested": 31754
+        },
+        "delta7": {
+            "users": 11701,
+            "deceased": 88,
+            "recovered": 8404,
+            "tested": 222793
+        },
+        "total": {
+            "users": 204745,
+            "deceased": 3250,
+            "recovered": 186521,
+            "tested": 3722973
+        }
+    },
+    "2020-11-30": {
+        "delta": {
+            "users": 1383,
+            "deceased": 10,
+            "recovered": 1576,
+            "tested": 28158
+        },
+        "delta7": {
+            "users": 11383,
+            "deceased": 88,
+            "recovered": 8860,
+            "tested": 221025
+        },
+        "total": {
+            "users": 206128,
+            "deceased": 3260,
+            "recovered": 188097,
+            "tested": 3751131
+        }
+    },
+    "2020-12-01": {
+        "delta": {
+            "users": 1357,
+            "deceased": 10,
+            "recovered": 1683,
+            "tested": 28760
+        },
+        "delta7": {
+            "users": 10974,
+            "deceased": 87,
+            "recovered": 9431,
+            "tested": 217520
+        },
+        "total": {
+            "users": 207485,
+            "deceased": 3270,
+            "recovered": 189780,
+            "tested": 3779891
+        }
+    },
+    "2020-12-02": {
+        "delta": {
+            "users": 1439,
+            "deceased": 17,
+            "recovered": 1838,
+            "tested": 29792
+        },
+        "delta7": {
+            "users": 10640,
+            "deceased": 90,
+            "recovered": 10273,
+            "tested": 214301
+        },
+        "total": {
+            "users": 208924,
+            "deceased": 3287,
+            "recovered": 191618,
+            "tested": 3809683
+        }
+    },
+    "2020-12-03": {
+        "delta": {
+            "users": 1450,
+            "deceased": 13,
+            "recovered": 1569,
+            "tested": 30323
+        },
+        "delta7": {
+            "users": 10422,
+            "deceased": 91,
+            "recovered": 10643,
+            "tested": 210499
+        },
+        "total": {
+            "users": 210374,
+            "deceased": 3300,
+            "recovered": 193187,
+            "tested": 3840006
+        }
+    },
+    "2020-12-04": {
+        "delta": {
+            "users": 1324,
+            "deceased": 14,
+            "recovered": 1556,
+            "tested": 29776
+        },
+        "delta7": {
+            "users": 10101,
+            "deceased": 90,
+            "recovered": 11047,
+            "tested": 208875
+        },
+        "total": {
+            "users": 211698,
+            "deceased": 3314,
+            "recovered": 194743,
+            "tested": 3869782
+        }
+    },
+    "2020-12-05": {
+        "delta": {
+            "users": 1352,
+            "deceased": 12,
+            "recovered": 1449,
+            "tested": 29952
+        },
+        "delta7": {
+            "users": 9819,
+            "deceased": 89,
+            "recovered": 11179,
+            "tested": 208515
+        },
+        "total": {
+            "users": 213050,
+            "deceased": 3326,
+            "recovered": 196192,
+            "tested": 3899734
+        }
+    },
+    "2020-12-06": {
+        "delta": {
+            "users": 1455,
+            "deceased": 11,
+            "recovered": 1585,
+            "tested": 32496
+        },
+        "delta7": {
+            "users": 9760,
+            "deceased": 87,
+            "recovered": 11256,
+            "tested": 209257
+        },
+        "total": {
+            "users": 214505,
+            "deceased": 3337,
+            "recovered": 197777,
+            "tested": 3932230
+        }
+    },
+    "2020-12-07": {
+        "delta": {
+            "users": 1452,
+            "deceased": 10,
+            "recovered": 1390,
+            "tested": 29322
+        },
+        "delta7": {
+            "users": 9829,
+            "deceased": 87,
+            "recovered": 11070,
+            "tested": 210421
+        },
+        "total": {
+            "users": 215957,
+            "deceased": 3347,
+            "recovered": 199167,
+            "tested": 3961552
+        }
+    },
+    "2020-12-08": {
+        "delta": {
+            "users": 1345,
+            "deceased": 11,
+            "recovered": 1497,
+            "tested": 29985
+        },
+        "delta7": {
+            "users": 9817,
+            "deceased": 88,
+            "recovered": 10884,
+            "tested": 211646
+        },
+        "total": {
+            "users": 217302,
+            "deceased": 3358,
+            "recovered": 200664,
+            "tested": 3991537
+        }
+    },
+    "2020-12-09": {
+        "delta": {
+            "users": 1272,
+            "deceased": 8,
+            "recovered": 1323,
+            "tested": 29497
+        },
+        "delta7": {
+            "users": 9650,
+            "deceased": 79,
+            "recovered": 10369,
+            "tested": 211351
+        },
+        "total": {
+            "users": 218574,
+            "deceased": 3366,
+            "recovered": 201987,
+            "tested": 4021034
+        }
+    },
+    "2020-12-10": {
+        "delta": {
+            "users": 1319,
+            "deceased": 7,
+            "recovered": 1307,
+            "tested": 31720
+        },
+        "delta7": {
+            "users": 9519,
+            "deceased": 73,
+            "recovered": 10107,
+            "tested": 212748
+        },
+        "total": {
+            "users": 219893,
+            "deceased": 3373,
+            "recovered": 203294,
+            "tested": 4052754
+        }
+    },
+    "2020-12-11": {
+        "delta": {
+            "users": 1222,
+            "deceased": 9,
+            "recovered": 1347,
+            "tested": 29352
+        },
+        "delta7": {
+            "users": 9417,
+            "deceased": 68,
+            "recovered": 9898,
+            "tested": 212324
+        },
+        "total": {
+            "users": 221115,
+            "deceased": 3382,
+            "recovered": 204641,
+            "tested": 4082106
+        }
+    },
+    "2020-12-12": {
+        "delta": {
+            "users": 1282,
+            "deceased": 9,
+            "recovered": 1418,
+            "tested": 29307
+        },
+        "delta7": {
+            "users": 9347,
+            "deceased": 65,
+            "recovered": 9867,
+            "tested": 211679
+        },
+        "total": {
+            "users": 222397,
+            "deceased": 3391,
+            "recovered": 206059,
+            "tested": 4111413
+        }
+    },
+    "2020-12-13": {
+        "delta": {
+            "users": 1181,
+            "deceased": 13,
+            "recovered": 1278,
+            "tested": 27331
+        },
+        "delta7": {
+            "users": 9073,
+            "deceased": 67,
+            "recovered": 9560,
+            "tested": 206514
+        },
+        "total": {
+            "users": 223578,
+            "deceased": 3404,
+            "recovered": 207337,
+            "tested": 4138744
+        }
+    },
+    "2020-12-14": {
+        "delta": {
+            "users": 1058,
+            "deceased": 8,
+            "recovered": 1084,
+            "tested": 26831
+        },
+        "delta7": {
+            "users": 8679,
+            "deceased": 65,
+            "recovered": 9254,
+            "tested": 204023
+        },
+        "total": {
+            "users": 224636,
+            "deceased": 3412,
+            "recovered": 208421,
+            "tested": 4165575
+        }
+    },
+    "2020-12-15": {
+        "delta": {
+            "users": 1073,
+            "deceased": 13,
+            "recovered": 1347,
+            "tested": 27551
+        },
+        "delta7": {
+            "users": 8407,
+            "deceased": 67,
+            "recovered": 9104,
+            "tested": 201589
+        },
+        "total": {
+            "users": 225709,
+            "deceased": 3425,
+            "recovered": 209768,
+            "tested": 4193126
+        }
+    },
+    "2020-12-16": {
+        "delta": {
+            "users": 1079,
+            "deceased": 8,
+            "recovered": 1257,
+            "tested": 29319
+        },
+        "delta7": {
+            "users": 8214,
+            "deceased": 67,
+            "recovered": 9038,
+            "tested": 201411
+        },
+        "total": {
+            "users": 226788,
+            "deceased": 3433,
+            "recovered": 211025,
+            "tested": 4222445
+        }
+    },
+    "2020-12-17": {
+        "delta": {
+            "users": 1161,
+            "deceased": 9,
+            "recovered": 1326,
+            "tested": 30683
+        },
+        "delta7": {
+            "users": 8056,
+            "deceased": 69,
+            "recovered": 9057,
+            "tested": 200374
+        },
+        "total": {
+            "users": 227949,
+            "deceased": 3442,
+            "recovered": 212351,
+            "tested": 4253128
+        }
+    },
+    "2020-12-18": {
+        "delta": {
+            "users": 1181,
+            "deceased": 11,
+            "recovered": 1450,
+            "tested": 29880
+        },
+        "delta7": {
+            "users": 8015,
+            "deceased": 71,
+            "recovered": 9160,
+            "tested": 200902
+        },
+        "total": {
+            "users": 229130,
+            "deceased": 3453,
+            "recovered": 213801,
+            "tested": 4283008
+        }
+    },
+    "2020-12-19": {
+        "delta": {
+            "users": 1085,
+            "deceased": 15,
+            "recovered": 1410,
+            "tested": 27523
+        },
+        "delta7": {
+            "users": 7818,
+            "deceased": 77,
+            "recovered": 9152,
+            "tested": 199118
+        },
+        "total": {
+            "users": 230215,
+            "deceased": 3468,
+            "recovered": 215211,
+            "tested": 4310531
+        }
+    },
+    "2020-12-20": {
+        "delta": {
+            "users": 1069,
+            "deceased": 13,
+            "recovered": 1274,
+            "tested": 28525
+        },
+        "delta7": {
+            "users": 7706,
+            "deceased": 77,
+            "recovered": 9148,
+            "tested": 200312
+        },
+        "total": {
+            "users": 231284,
+            "deceased": 3481,
+            "recovered": 216485,
+            "tested": 4339056
+        }
+    },
+    "2020-12-21": {
+        "delta": {
+            "users": 1035,
+            "deceased": 9,
+            "recovered": 1290,
+            "tested": 26451
+        },
+        "delta7": {
+            "users": 7683,
+            "deceased": 78,
+            "recovered": 9354,
+            "tested": 199932
+        },
+        "total": {
+            "users": 232319,
+            "deceased": 3490,
+            "recovered": 217775,
+            "tested": 4365507
+        }
+    },
+    "2020-12-22": {
+        "delta": {
+            "users": 1005,
+            "deceased": 12,
+            "recovered": 1053,
+            "tested": 28482
+        },
+        "delta7": {
+            "users": 7615,
+            "deceased": 77,
+            "recovered": 9060,
+            "tested": 200863
+        },
+        "total": {
+            "users": 233324,
+            "deceased": 3502,
+            "recovered": 218828,
+            "tested": 4393989
+        }
+    },
+    "2020-12-23": {
+        "delta": {
+            "users": 1007,
+            "deceased": 12,
+            "recovered": 1223,
+            "tested": 26577
+        },
+        "delta7": {
+            "users": 7543,
+            "deceased": 81,
+            "recovered": 9026,
+            "tested": 198121
+        },
+        "total": {
+            "users": 234331,
+            "deceased": 3514,
+            "recovered": 220051,
+            "tested": 4420566
+        }
+    },
+    "2020-12-24": {
+        "delta": {
+            "users": 1038,
+            "deceased": 10,
+            "recovered": 1118,
+            "tested": 29280
+        },
+        "delta7": {
+            "users": 7420,
+            "deceased": 82,
+            "recovered": 8818,
+            "tested": 196718
+        },
+        "total": {
+            "users": 235369,
+            "deceased": 3524,
+            "recovered": 221169,
+            "tested": 4449846
+        }
+    },
+    "2020-12-25": {
+        "delta": {
+            "users": 1031,
+            "deceased": 12,
+            "recovered": 1234,
+            "tested": 29356
+        },
+        "delta7": {
+            "users": 7270,
+            "deceased": 83,
+            "recovered": 8602,
+            "tested": 196194
+        },
+        "total": {
+            "users": 236400,
+            "deceased": 3536,
+            "recovered": 222403,
+            "tested": 4479202
+        }
+    },
+    "2020-12-26": {
+        "delta": {
+            "users": 1006,
+            "deceased": 9,
+            "recovered": 1129,
+            "tested": 25812
+        },
+        "delta7": {
+            "users": 7191,
+            "deceased": 77,
+            "recovered": 8321,
+            "tested": 194483
+        },
+        "total": {
+            "users": 237406,
+            "deceased": 3545,
+            "recovered": 223532,
+            "tested": 4505014
+        }
+    },
+    "2020-12-27": {
+        "delta": {
+            "users": 946,
+            "deceased": 18,
+            "recovered": 1160,
+            "tested": 26845
+        },
+        "delta7": {
+            "users": 7068,
+            "deceased": 82,
+            "recovered": 8207,
+            "tested": 192803
+        },
+        "total": {
+            "users": 238352,
+            "deceased": 3563,
+            "recovered": 224692,
+            "tested": 4531859
+        }
+    },
+    "2020-12-28": {
+        "delta": {
+            "users": 876,
+            "deceased": 9,
+            "recovered": 1090,
+            "tested": 26180
+        },
+        "delta7": {
+            "users": 6909,
+            "deceased": 82,
+            "recovered": 8007,
+            "tested": 192532
+        },
+        "total": {
+            "users": 239228,
+            "deceased": 3572,
+            "recovered": 225782,
+            "tested": 4558039
+        }
+    },
+    "2020-12-29": {
+        "delta": {
+            "users": 853,
+            "deceased": 10,
+            "recovered": 1122,
+            "tested": 28807
+        },
+        "delta7": {
+            "users": 6757,
+            "deceased": 80,
+            "recovered": 8076,
+            "tested": 192857
+        },
+        "total": {
+            "users": 240081,
+            "deceased": 3582,
+            "recovered": 226904,
+            "tested": 4586846
+        }
+    },
+    "2020-12-30": {
+        "delta": {
+            "users": 866,
+            "deceased": 13,
+            "recovered": 1061,
+            "tested": 27081
+        },
+        "delta7": {
+            "users": 6616,
+            "deceased": 81,
+            "recovered": 7914,
+            "tested": 193361
+        },
+        "total": {
+            "users": 240947,
+            "deceased": 3595,
+            "recovered": 227965,
+            "tested": 4613927
+        }
+    },
+    "2020-12-31": {
+        "delta": {
+            "users": 844,
+            "deceased": 11,
+            "recovered": 866,
+            "tested": 27721
+        },
+        "delta7": {
+            "users": 6422,
+            "deceased": 82,
+            "recovered": 7662,
+            "tested": 191802
+        },
+        "total": {
+            "users": 241791,
+            "deceased": 3606,
+            "recovered": 228831,
+            "tested": 4641648
+        }
+    },
+    "2021-01-01": {
+        "delta": {
+            "users": 780,
+            "deceased": 12,
+            "recovered": 900,
+            "tested": 28750
+        },
+        "delta7": {
+            "users": 6171,
+            "deceased": 82,
+            "recovered": 7328,
+            "tested": 191196
+        },
+        "total": {
+            "users": 242571,
+            "deceased": 3618,
+            "recovered": 229731,
+            "tested": 4670398
+        }
+    },
+    "2021-01-02": {
+        "delta": {
+            "users": 731,
+            "deceased": 9,
+            "recovered": 855,
+            "tested": 26144
+        },
+        "delta7": {
+            "users": 5896,
+            "deceased": 82,
+            "recovered": 7054,
+            "tested": 191528
+        },
+        "total": {
+            "users": 243302,
+            "deceased": 3627,
+            "recovered": 230586,
+            "tested": 4696542
+        }
+    },
+    "2021-01-03": {
+        "delta": {
+            "users": 724,
+            "deceased": 14,
+            "recovered": 947,
+            "tested": 26185
+        },
+        "delta7": {
+            "users": 5674,
+            "deceased": 78,
+            "recovered": 6841,
+            "tested": 190868
+        },
+        "total": {
+            "users": 244026,
+            "deceased": 3641,
+            "recovered": 231533,
+            "tested": 4722727
+        }
+    },
+    "2021-01-04": {
+        "delta": {
+            "users": 621,
+            "deceased": 7,
+            "recovered": 857,
+            "tested": 25025
+        },
+        "delta7": {
+            "users": 5419,
+            "deceased": 76,
+            "recovered": 6608,
+            "tested": 189713
+        },
+        "total": {
+            "users": 244647,
+            "deceased": 3648,
+            "recovered": 232390,
+            "tested": 4747752
+        }
+    },
+    "2021-01-05": {
+        "delta": {
+            "users": 671,
+            "deceased": 14,
+            "recovered": 839,
+            "tested": 26375
+        },
+        "delta7": {
+            "users": 5237,
+            "deceased": 80,
+            "recovered": 6325,
+            "tested": 187281
+        },
+        "total": {
+            "users": 245318,
+            "deceased": 3662,
+            "recovered": 233229,
+            "tested": 4774127
+        }
+    },
+    "2021-01-06": {
+        "delta": {
+            "users": 730,
+            "deceased": 8,
+            "recovered": 633,
+            "tested": 26735
+        },
+        "delta7": {
+            "users": 5101,
+            "deceased": 75,
+            "recovered": 5897,
+            "tested": 186935
+        },
+        "total": {
+            "users": 246048,
+            "deceased": 3670,
+            "recovered": 233862,
+            "tested": 4800862
+        }
+    },
+    "2021-01-07": {
+        "delta": {
+            "users": 774,
+            "deceased": 12,
+            "recovered": 750,
+            "tested": 27025
+        },
+        "delta7": {
+            "users": 5031,
+            "deceased": 76,
+            "recovered": 5781,
+            "tested": 186239
+        },
+        "total": {
+            "users": 246822,
+            "deceased": 3682,
+            "recovered": 234612,
+            "tested": 4827887
+        }
+    },
+    "2021-01-08": {
+        "delta": {
+            "users": 614,
+            "deceased": 9,
+            "recovered": 809,
+            "tested": 25324
+        },
+        "delta7": {
+            "users": 4865,
+            "deceased": 73,
+            "recovered": 5690,
+            "tested": 182813
+        },
+        "total": {
+            "users": 247436,
+            "deceased": 3691,
+            "recovered": 235421,
+            "tested": 4853211
+        }
+    },
+    "2021-01-09": {
+        "delta": {
+            "users": 541,
+            "deceased": 10,
+            "recovered": 826,
+            "tested": 24203
+        },
+        "delta7": {
+            "users": 4675,
+            "deceased": 74,
+            "recovered": 5661,
+            "tested": 180872
+        },
+        "total": {
+            "users": 247977,
+            "deceased": 3701,
+            "recovered": 236247,
+            "tested": 4877414
+        }
+    },
+    "2021-01-10": {
+        "delta": {
+            "users": 620,
+            "deceased": 10,
+            "recovered": 816,
+            "tested": 25229
+        },
+        "delta7": {
+            "users": 4571,
+            "deceased": 70,
+            "recovered": 5530,
+            "tested": 179916
+        },
+        "total": {
+            "users": 248597,
+            "deceased": 3711,
+            "recovered": 237063,
+            "tested": 4902643
+        }
+    },
+    "2021-01-11": {
+        "delta": {
+            "users": 485,
+            "deceased": 7,
+            "recovered": 650,
+            "tested": 23217
+        },
+        "delta7": {
+            "users": 4435,
+            "deceased": 70,
+            "recovered": 5323,
+            "tested": 178108
+        },
+        "total": {
+            "users": 249082,
+            "deceased": 3718,
+            "recovered": 237713,
+            "tested": 4925860
+        }
+    },
+    "2021-01-12": {
+        "delta": {
+            "users": 471,
+            "deceased": 8,
+            "recovered": 615,
+            "tested": 24069
+        },
+        "delta7": {
+            "users": 4235,
+            "deceased": 64,
+            "recovered": 5099,
+            "tested": 175802
+        },
+        "total": {
+            "users": 249553,
+            "deceased": 3726,
+            "recovered": 238328,
+            "tested": 4949929
+        }
+    },
+    "2021-01-13": {
+        "delta": {
+            "users": 456,
+            "deceased": 6,
+            "recovered": 655,
+            "tested": 24280
+        },
+        "delta7": {
+            "users": 3961,
+            "deceased": 62,
+            "recovered": 5121,
+            "tested": 173347
+        },
+        "total": {
+            "users": 250009,
+            "deceased": 3732,
+            "recovered": 238983,
+            "tested": 4974209
+        }
+    },
+    "2021-01-14": {
+        "delta": {
+            "users": 420,
+            "deceased": 8,
+            "recovered": 598,
+            "tested": 24327
+        },
+        "delta7": {
+            "users": 3607,
+            "deceased": 58,
+            "recovered": 4969,
+            "tested": 170649
+        },
+        "total": {
+            "users": 250429,
+            "deceased": 3740,
+            "recovered": 239581,
+            "tested": 4998536
+        }
+    },
+    "2021-01-15": {
+        "delta": {
+            "users": 429,
+            "deceased": 6,
+            "recovered": 574,
+            "tested": 23363
+        },
+        "delta7": {
+            "users": 3422,
+            "deceased": 55,
+            "recovered": 4734,
+            "tested": 168688
+        },
+        "total": {
+            "users": 250858,
+            "deceased": 3746,
+            "recovered": 240155,
+            "tested": 5021899
+        }
+    },
+    "2021-01-16": {
+        "delta": {
+            "users": 365,
+            "deceased": 5,
+            "recovered": 793,
+            "tested": 23577,
+            "vaccinated": 9219
+        },
+        "delta7": {
+            "users": 3246,
+            "deceased": 50,
+            "recovered": 4701,
+            "tested": 168062,
+            "vaccinated": 9219
+        },
+        "total": {
+            "users": 251223,
+            "deceased": 3751,
+            "recovered": 240948,
+            "tested": 5045476,
+            "vaccinated": 9219
+        }
+    },
+    "2021-01-17": {
+        "delta": {
+            "users": 355,
+            "deceased": 2,
+            "recovered": 478,
+            "tested": 23816
+        },
+        "delta7": {
+            "users": 2981,
+            "deceased": 42,
+            "recovered": 4363,
+            "tested": 166649,
+            "vaccinated": 9219
+        },
+        "total": {
+            "users": 251578,
+            "deceased": 3753,
+            "recovered": 241426,
+            "tested": 5069292,
+            "vaccinated": 9219
+        }
+    },
+    "2021-01-18": {
+        "delta": {
+            "users": 304,
+            "deceased": 3,
+            "recovered": 540,
+            "tested": 20449,
+            "vaccinated": 8955
+        },
+        "delta7": {
+            "users": 2800,
+            "deceased": 38,
+            "recovered": 4253,
+            "tested": 163881,
+            "vaccinated": 18174
+        },
+        "total": {
+            "users": 251882,
+            "deceased": 3756,
+            "recovered": 241966,
+            "tested": 5089741,
+            "vaccinated": 18174
+        }
+    },
+    "2021-01-19": {
+        "delta": {
+            "users": 304,
+            "deceased": 7,
+            "recovered": 725,
+            "tested": 22690
+        },
+        "delta7": {
+            "users": 2633,
+            "deceased": 37,
+            "recovered": 4363,
+            "tested": 162502,
+            "vaccinated": 18174
+        },
+        "total": {
+            "users": 252186,
+            "deceased": 3763,
+            "recovered": 242691,
+            "tested": 5112431,
+            "vaccinated": 18174
+        }
+    },
+    "2021-01-20": {
+        "delta": {
+            "users": 280,
+            "deceased": 7,
+            "recovered": 997,
+            "tested": 22385,
+            "vaccinated": 9596
+        },
+        "delta7": {
+            "users": 2457,
+            "deceased": 38,
+            "recovered": 4705,
+            "tested": 160607,
+            "vaccinated": 27770
+        },
+        "total": {
+            "users": 252466,
+            "deceased": 3770,
+            "recovered": 243688,
+            "tested": 5134816,
+            "vaccinated": 27770
+        }
+    },
+    "2021-01-21": {
+        "delta": {
+            "users": 301,
+            "deceased": 6,
+            "recovered": 704,
+            "tested": 24779,
+            "vaccinated": 10508
+        },
+        "delta7": {
+            "users": 2338,
+            "deceased": 36,
+            "recovered": 4811,
+            "tested": 161059,
+            "vaccinated": 38278
+        },
+        "total": {
+            "users": 252767,
+            "deceased": 3776,
+            "recovered": 244392,
+            "tested": 5159595,
+            "vaccinated": 38278
+        }
+    },
+    "2021-01-22": {
+        "delta": {
+            "users": 347,
+            "deceased": 4,
+            "recovered": 463,
+            "tested": 26248
+        },
+        "delta7": {
+            "users": 2256,
+            "deceased": 34,
+            "recovered": 4700,
+            "tested": 163944,
+            "vaccinated": 38278
+        },
+        "total": {
+            "users": 253114,
+            "deceased": 3780,
+            "recovered": 244855,
+            "tested": 5185843,
+            "vaccinated": 38278
+        }
+    },
+    "2021-01-23": {
+        "delta": {
+            "users": 291,
+            "deceased": 6,
+            "recovered": 454,
+            "tested": 24591
+        },
+        "delta7": {
+            "users": 2182,
+            "deceased": 35,
+            "recovered": 4361,
+            "tested": 164958,
+            "vaccinated": 29059
+        },
+        "total": {
+            "users": 253405,
+            "deceased": 3786,
+            "recovered": 245309,
+            "tested": 5210434,
+            "vaccinated": 38278
+        }
+    },
+    "2021-01-24": {
+        "delta": {
+            "users": 252,
+            "deceased": 3,
+            "recovered": 388,
+            "tested": 24059
+        },
+        "delta7": {
+            "users": 2079,
+            "deceased": 36,
+            "recovered": 4271,
+            "tested": 165201,
+            "vaccinated": 29059
+        },
+        "total": {
+            "users": 253657,
+            "deceased": 3789,
+            "recovered": 245697,
+            "tested": 5234493,
+            "vaccinated": 38278
+        }
+    },
+    "2021-01-25": {
+        "delta": {
+            "users": 200,
+            "deceased": 2,
+            "recovered": 861,
+            "tested": 20612,
+            "vaccinated": 28805
+        },
+        "delta7": {
+            "users": 1975,
+            "deceased": 35,
+            "recovered": 4592,
+            "tested": 165364,
+            "vaccinated": 48909
+        },
+        "total": {
+            "users": 253857,
+            "deceased": 3791,
+            "recovered": 246558,
+            "tested": 5255105,
+            "vaccinated": 67083
+        }
+    },
+    "2021-01-26": {
+        "delta": {
+            "users": 228,
+            "deceased": 2,
+            "recovered": 515,
+            "tested": 19319
+        },
+        "delta7": {
+            "users": 1899,
+            "deceased": 30,
+            "recovered": 4382,
+            "tested": 161993,
+            "vaccinated": 48909
+        },
+        "total": {
+            "users": 254085,
+            "deceased": 3793,
+            "recovered": 247073,
+            "tested": 5274424,
+            "vaccinated": 67083
+        }
+    },
+    "2021-01-27": {
+        "delta": {
+            "users": 185,
+            "deceased": 6,
+            "recovered": 345,
+            "tested": 16423,
+            "vaccinated": 64596
+        },
+        "delta7": {
+            "users": 1804,
+            "deceased": 29,
+            "recovered": 3730,
+            "tested": 156031,
+            "vaccinated": 103909
+        },
+        "total": {
+            "users": 254270,
+            "deceased": 3799,
+            "recovered": 247418,
+            "tested": 5290847,
+            "vaccinated": 131679
+        }
+    },
+    "2021-01-28": {
+        "delta": {
+            "users": 226,
+            "deceased": 3,
+            "recovered": 321,
+            "tested": 16248,
+            "vaccinated": 63508
+        },
+        "delta7": {
+            "users": 1729,
+            "deceased": 26,
+            "recovered": 3347,
+            "tested": 147500,
+            "vaccinated": 156909
+        },
+        "total": {
+            "users": 254496,
+            "deceased": 3802,
+            "recovered": 247739,
+            "tested": 5307095,
+            "vaccinated": 195187
+        }
+    },
+    "2021-01-29": {
+        "delta": {
+            "users": 171,
+            "deceased": 3,
+            "recovered": 297,
+            "tested": 18012,
+            "vaccinated": 50994
+        },
+        "delta7": {
+            "users": 1553,
+            "deceased": 25,
+            "recovered": 3181,
+            "tested": 139264,
+            "vaccinated": 207903
+        },
+        "total": {
+            "users": 254667,
+            "deceased": 3805,
+            "recovered": 248036,
+            "tested": 5325107,
+            "vaccinated": 246181
+        }
+    },
+    "2021-01-30": {
+        "delta": {
+            "users": 219,
+            "deceased": 2,
+            "recovered": 283,
+            "tested": 18655,
+            "vaccinated": 52195
+        },
+        "delta7": {
+            "users": 1481,
+            "deceased": 21,
+            "recovered": 3010,
+            "tested": 133328,
+            "vaccinated": 260098
+        },
+        "total": {
+            "users": 254886,
+            "deceased": 3807,
+            "recovered": 248319,
+            "tested": 5343762,
+            "vaccinated": 298376
+        }
+    },
+    "2021-01-31": {
+        "delta": {
+            "users": 226,
+            "deceased": 3,
+            "recovered": 318,
+            "tested": 18143
+        },
+        "delta7": {
+            "users": 1455,
+            "deceased": 21,
+            "recovered": 2940,
+            "tested": 127412,
+            "vaccinated": 260098
+        },
+        "total": {
+            "users": 255112,
+            "deceased": 3810,
+            "recovered": 248637,
+            "tested": 5361905,
+            "vaccinated": 298376
+        }
+    },
+    "2021-02-01": {
+        "delta": {
+            "users": 151,
+            "deceased": 2,
+            "recovered": 260,
+            "tested": 15017
+        },
+        "delta7": {
+            "users": 1406,
+            "deceased": 21,
+            "recovered": 2339,
+            "tested": 121817,
+            "vaccinated": 231293
+        },
+        "total": {
+            "users": 255263,
+            "deceased": 3812,
+            "recovered": 248897,
+            "tested": 5376922,
+            "vaccinated": 298376
+        }
+    },
+    "2021-02-02": {
+        "delta": {
+            "users": 168,
+            "deceased": 3,
+            "recovered": 296,
+            "tested": 15154
+        },
+        "delta7": {
+            "users": 1346,
+            "deceased": 22,
+            "recovered": 2120,
+            "tested": 117652,
+            "vaccinated": 231293
+        },
+        "total": {
+            "users": 255431,
+            "deceased": 3815,
+            "recovered": 249193,
+            "tested": 5392076,
+            "vaccinated": 298376
+        }
+    },
+    "2021-02-03": {
+        "delta": {
+            "users": 258,
+            "deceased": 1,
+            "recovered": 250,
+            "tested": 13713,
+            "vaccinated": 32346
+        },
+        "delta7": {
+            "users": 1419,
+            "deceased": 17,
+            "recovered": 2025,
+            "tested": 114942,
+            "vaccinated": 199043
+        },
+        "total": {
+            "users": 255689,
+            "deceased": 3816,
+            "recovered": 249443,
+            "tested": 5405789,
+            "vaccinated": 330722
+        }
+    },
+    "2021-02-04": {
+        "delta": {
+            "users": 166,
+            "deceased": 2,
+            "recovered": 263,
+            "tested": 15138,
+            "vaccinated": 8664
+        },
+        "delta7": {
+            "users": 1359,
+            "deceased": 16,
+            "recovered": 1967,
+            "tested": 113832,
+            "vaccinated": 144199
+        },
+        "total": {
+            "users": 255855,
+            "deceased": 3818,
+            "recovered": 249706,
+            "tested": 5420927,
+            "vaccinated": 339386
+        }
+    },
+    "2021-02-05": {
+        "delta": {
+            "users": 162,
+            "deceased": 1,
+            "recovered": 299,
+            "tested": 16663,
+            "vaccinated": 1239
+        },
+        "delta7": {
+            "users": 1350,
+            "deceased": 14,
+            "recovered": 1969,
+            "tested": 112483,
+            "vaccinated": 94444
+        },
+        "total": {
+            "users": 256017,
+            "deceased": 3819,
+            "recovered": 250005,
+            "tested": 5437590,
+            "vaccinated": 340625
+        }
+    },
+    "2021-02-06": {
+        "delta": {
+            "users": 197,
+            "deceased": 1,
+            "recovered": 315,
+            "tested": 17063,
+            "vaccinated": 1391
+        },
+        "delta7": {
+            "users": 1328,
+            "deceased": 13,
+            "recovered": 2001,
+            "tested": 110891,
+            "vaccinated": 43640
+        },
+        "total": {
+            "users": 256214,
+            "deceased": 3820,
+            "recovered": 250320,
+            "tested": 5454653,
+            "vaccinated": 342016
+        }
+    },
+    "2021-02-07": {
+        "delta": {
+            "users": 184,
+            "recovered": 217,
+            "tested": 15446
+        },
+        "delta7": {
+            "users": 1286,
+            "deceased": 10,
+            "recovered": 1900,
+            "tested": 108194,
+            "vaccinated": 43640
+        },
+        "total": {
+            "users": 256398,
+            "deceased": 3820,
+            "recovered": 250537,
+            "tested": 5470099,
+            "vaccinated": 342016
+        }
+    },
+    "2021-02-08": {
+        "delta": {
+            "users": 193,
+            "deceased": 3,
+            "recovered": 190,
+            "tested": 13489,
+            "vaccinated": 37235
+        },
+        "delta7": {
+            "users": 1328,
+            "deceased": 11,
+            "recovered": 1830,
+            "tested": 106666,
+            "vaccinated": 80875
+        },
+        "total": {
+            "users": 256591,
+            "deceased": 3823,
+            "recovered": 250727,
+            "tested": 5483588,
+            "vaccinated": 379251
+        }
+    },
+    "2021-02-09": {
+        "delta": {
+            "users": 167,
+            "deceased": 2,
+            "recovered": 219,
+            "tested": 15282,
+            "vaccinated": 1034
+        },
+        "delta7": {
+            "users": 1327,
+            "deceased": 10,
+            "recovered": 1753,
+            "tested": 106794,
+            "vaccinated": 81909
+        },
+        "total": {
+            "users": 256758,
+            "deceased": 3825,
+            "recovered": 250946,
+            "tested": 5498870,
+            "vaccinated": 380285
+        }
+    },
+    "2021-02-10": {
+        "delta": {
+            "users": 141,
+            "deceased": 2,
+            "recovered": 175,
+            "tested": 14442,
+            "vaccinated": 51417
+        },
+        "delta7": {
+            "users": 1210,
+            "deceased": 11,
+            "recovered": 1678,
+            "tested": 107523,
+            "vaccinated": 100980
+        },
+        "total": {
+            "users": 256899,
+            "deceased": 3827,
+            "recovered": 251121,
+            "tested": 5513312,
+            "vaccinated": 431702
+        }
+    },
+    "2021-02-11": {
+        "delta": {
+            "users": 169,
+            "deceased": 1,
+            "recovered": 199,
+            "tested": 15608,
+            "vaccinated": 55569
+        },
+        "delta7": {
+            "users": 1213,
+            "deceased": 10,
+            "recovered": 1614,
+            "tested": 107993,
+            "vaccinated": 147885
+        },
+        "total": {
+            "users": 257068,
+            "deceased": 3828,
+            "recovered": 251320,
+            "tested": 5528920,
+            "vaccinated": 487271
+        }
+    },
+    "2021-02-12": {
+        "delta": {
+            "users": 161,
+            "deceased": 1,
+            "recovered": 218,
+            "tested": 16524,
+            "vaccinated": 38824
+        },
+        "delta7": {
+            "users": 1212,
+            "deceased": 10,
+            "recovered": 1533,
+            "tested": 107854,
+            "vaccinated": 185470
+        },
+        "total": {
+            "users": 257229,
+            "deceased": 3829,
+            "recovered": 251538,
+            "tested": 5545444,
+            "vaccinated": 526095
+        }
+    },
+    "2021-02-13": {
+        "delta": {
+            "users": 194,
+            "recovered": 227,
+            "tested": 15671,
+            "vaccinated": 31010
+        },
+        "delta7": {
+            "users": 1209,
+            "deceased": 9,
+            "recovered": 1445,
+            "tested": 106462,
+            "vaccinated": 215089
+        },
+        "total": {
+            "users": 257423,
+            "deceased": 3829,
+            "recovered": 251765,
+            "tested": 5561115,
+            "vaccinated": 557105
+        }
+    },
+    "2021-02-14": {
+        "delta": {
+            "users": 223,
+            "deceased": 5,
+            "recovered": 205,
+            "tested": 14798
+        },
+        "delta7": {
+            "users": 1248,
+            "deceased": 14,
+            "recovered": 1433,
+            "tested": 105814,
+            "vaccinated": 215089
+        },
+        "total": {
+            "users": 257646,
+            "deceased": 3834,
+            "recovered": 251970,
+            "tested": 5575913,
+            "vaccinated": 557105
+        }
+    },
+    "2021-02-15": {
+        "delta": {
+            "users": 203,
+            "deceased": 4,
+            "recovered": 194,
+            "tested": 13374,
+            "vaccinated": 18623
+        },
+        "delta7": {
+            "users": 1258,
+            "deceased": 15,
+            "recovered": 1437,
+            "tested": 105699,
+            "vaccinated": 196477
+        },
+        "total": {
+            "users": 257849,
+            "deceased": 3838,
+            "recovered": 252164,
+            "tested": 5589287,
+            "vaccinated": 575728
+        }
+    },
+    "2021-02-16": {
+        "delta": {
+            "users": 233,
+            "deceased": 3,
+            "recovered": 221,
+            "tested": 13729,
+            "vaccinated": 882
+        },
+        "delta7": {
+            "users": 1324,
+            "deceased": 16,
+            "recovered": 1439,
+            "tested": 104146,
+            "vaccinated": 196325
+        },
+        "total": {
+            "users": 258082,
+            "deceased": 3841,
+            "recovered": 252385,
+            "tested": 5603016,
+            "vaccinated": 576610
+        }
+    },
+    "2021-02-17": {
+        "delta": {
+            "users": 251,
+            "deceased": 1,
+            "recovered": 243,
+            "tested": 15339,
+            "vaccinated": 20927
+        },
+        "delta7": {
+            "users": 1434,
+            "deceased": 15,
+            "recovered": 1507,
+            "tested": 105043,
+            "vaccinated": 165835
+        },
+        "total": {
+            "users": 258333,
+            "deceased": 3842,
+            "recovered": 252628,
+            "tested": 5618355,
+            "vaccinated": 597537
+        }
+    },
+    "2021-02-18": {
+        "delta": {
+            "users": 241,
+            "deceased": 2,
+            "recovered": 193,
+            "tested": 14576,
+            "vaccinated": 14103
+        },
+        "delta7": {
+            "users": 1506,
+            "deceased": 16,
+            "recovered": 1501,
+            "tested": 104011,
+            "vaccinated": 124369
+        },
+        "total": {
+            "users": 258574,
+            "deceased": 3844,
+            "recovered": 252821,
+            "tested": 5632931,
+            "vaccinated": 611640
+        }
+    },
+    "2021-02-19": {
+        "delta": {
+            "users": 297,
+            "deceased": 2,
+            "recovered": 250,
+            "tested": 14910,
+            "vaccinated": 14751
+        },
+        "delta7": {
+            "users": 1642,
+            "deceased": 17,
+            "recovered": 1533,
+            "tested": 102397,
+            "vaccinated": 100296
+        },
+        "total": {
+            "users": 258871,
+            "deceased": 3846,
+            "recovered": 253071,
+            "tested": 5647841,
+            "vaccinated": 626391
+        }
+    },
+    "2021-02-20": {
+        "delta": {
+            "users": 257,
+            "deceased": 4,
+            "recovered": 213,
+            "tested": 14334,
+            "vaccinated": 18192
+        },
+        "delta7": {
+            "users": 1705,
+            "deceased": 21,
+            "recovered": 1519,
+            "tested": 101060,
+            "vaccinated": 87478
+        },
+        "total": {
+            "users": 259128,
+            "deceased": 3850,
+            "recovered": 253284,
+            "tested": 5662175,
+            "vaccinated": 644583
+        }
+    },
+    "2021-02-21": {
+        "delta": {
+            "users": 299,
+            "deceased": 4,
+            "recovered": 238,
+            "tested": 14834
+        },
+        "delta7": {
+            "users": 1781,
+            "deceased": 20,
+            "recovered": 1552,
+            "tested": 101096,
+            "vaccinated": 87478
+        },
+        "total": {
+            "users": 259427,
+            "deceased": 3854,
+            "recovered": 253522,
+            "tested": 5677009,
+            "vaccinated": 644583
+        }
+    },
+    "2021-02-22": {
+        "delta": {
+            "users": 294,
+            "recovered": 241,
+            "tested": 13283,
+            "vaccinated": 30818
+        },
+        "delta7": {
+            "users": 1872,
+            "deceased": 16,
+            "recovered": 1599,
+            "tested": 101005,
+            "vaccinated": 99673
+        },
+        "total": {
+            "users": 259721,
+            "deceased": 3854,
+            "recovered": 253763,
+            "tested": 5690292,
+            "vaccinated": 675401
+        }
+    },
+    "2021-02-23": {
+        "delta": {
+            "users": 246,
+            "deceased": 1,
+            "recovered": 200,
+            "tested": 14385,
+            "vaccinated": 1559
+        },
+        "delta7": {
+            "users": 1885,
+            "deceased": 14,
+            "recovered": 1578,
+            "tested": 101661,
+            "vaccinated": 100350
+        },
+        "total": {
+            "users": 259967,
+            "deceased": 3855,
+            "recovered": 253963,
+            "tested": 5704677,
+            "vaccinated": 676960
+        }
+    },
+    "2021-02-24": {
+        "delta": {
+            "users": 346,
+            "deceased": 2,
+            "recovered": 223,
+            "tested": 15000,
+            "vaccinated": 47390
+        },
+        "delta7": {
+            "users": 1980,
+            "deceased": 15,
+            "recovered": 1558,
+            "tested": 101322,
+            "vaccinated": 126813
+        },
+        "total": {
+            "users": 260313,
+            "deceased": 3857,
+            "recovered": 254186,
+            "tested": 5719677,
+            "vaccinated": 724350
+        }
+    },
+    "2021-02-25": {
+        "delta": {
+            "users": 368,
+            "deceased": 2,
+            "recovered": 201,
+            "tested": 15839,
+            "vaccinated": 56115
+        },
+        "delta7": {
+            "users": 2107,
+            "deceased": 15,
+            "recovered": 1566,
+            "tested": 102585,
+            "vaccinated": 168825
+        },
+        "total": {
+            "users": 260681,
+            "deceased": 3859,
+            "recovered": 254387,
+            "tested": 5735516,
+            "vaccinated": 780465
+        }
+    },
+    "2021-02-26": {
+        "delta": {
+            "users": 332,
+            "deceased": 3,
+            "recovered": 246,
+            "tested": 16070,
+            "vaccinated": 30851
+        },
+        "delta7": {
+            "users": 2142,
+            "deceased": 16,
+            "recovered": 1562,
+            "tested": 103745,
+            "vaccinated": 184925
+        },
+        "total": {
+            "users": 261013,
+            "deceased": 3862,
+            "recovered": 254633,
+            "tested": 5751586,
+            "vaccinated": 811316
+        }
+    },
+    "2021-02-27": {
+        "delta": {
+            "users": 390,
+            "deceased": 1,
+            "recovered": 241,
+            "tested": 18212
+        },
+        "delta7": {
+            "users": 2275,
+            "deceased": 13,
+            "recovered": 1590,
+            "tested": 107623,
+            "vaccinated": 166733
+        },
+        "total": {
+            "users": 261403,
+            "deceased": 3863,
+            "recovered": 254874,
+            "tested": 5769798,
+            "vaccinated": 811316
+        }
+    },
+    "2021-02-28": {
+        "delta": {
+            "users": 363,
+            "deceased": 1,
+            "recovered": 243,
+            "tested": 16220
+        },
+        "delta7": {
+            "users": 2339,
+            "deceased": 10,
+            "recovered": 1595,
+            "tested": 109009,
+            "vaccinated": 166733
+        },
+        "total": {
+            "users": 261766,
+            "deceased": 3864,
+            "recovered": 255117,
+            "tested": 5786018,
+            "vaccinated": 811316
+        }
+    },
+    "2021-03-01": {
+        "delta": {
+            "users": 336,
+            "deceased": 1,
+            "recovered": 219,
+            "tested": 12844,
+            "vaccinated": 43781
+        },
+        "delta7": {
+            "users": 2381,
+            "deceased": 11,
+            "recovered": 1573,
+            "tested": 108570,
+            "vaccinated": 179696
+        },
+        "total": {
+            "users": 262102,
+            "deceased": 3865,
+            "recovered": 255336,
+            "tested": 5798862,
+            "vaccinated": 855097
+        }
+    },
+    "2021-03-02": {
+        "delta": {
+            "users": 331,
+            "recovered": 259,
+            "tested": 15019
+        },
+        "delta7": {
+            "users": 2466,
+            "deceased": 10,
+            "recovered": 1632,
+            "tested": 109204,
+            "vaccinated": 178137
+        },
+        "total": {
+            "users": 262433,
+            "deceased": 3865,
+            "recovered": 255595,
+            "tested": 5813881,
+            "vaccinated": 855097
+        }
+    },
+    "2021-03-03": {
+        "delta": {
+            "users": 417,
+            "recovered": 293,
+            "tested": 16552,
+            "vaccinated": 71109
+        },
+        "delta7": {
+            "users": 2537,
+            "deceased": 8,
+            "recovered": 1702,
+            "tested": 110756,
+            "vaccinated": 201856
+        },
+        "total": {
+            "users": 262850,
+            "deceased": 3865,
+            "recovered": 255888,
+            "tested": 5830433,
+            "vaccinated": 926206
+        }
+    },
+    "2021-03-04": {
+        "delta": {
+            "users": 440,
+            "deceased": 1,
+            "recovered": 228,
+            "tested": 15987,
+            "vaccinated": 72685
+        },
+        "delta7": {
+            "users": 2609,
+            "deceased": 7,
+            "recovered": 1729,
+            "tested": 110904,
+            "vaccinated": 218426
+        },
+        "total": {
+            "users": 263290,
+            "deceased": 3866,
+            "recovered": 256116,
+            "tested": 5846420,
+            "vaccinated": 998891
+        }
+    },
+    "2021-03-05": {
+        "delta": {
+            "users": 457,
+            "recovered": 308,
+            "tested": 16921,
+            "vaccinated": 10716
+        },
+        "delta7": {
+            "users": 2734,
+            "deceased": 4,
+            "recovered": 1791,
+            "tested": 111755,
+            "vaccinated": 198291
+        },
+        "total": {
+            "users": 263747,
+            "deceased": 3866,
+            "recovered": 256424,
+            "tested": 5863341,
+            "vaccinated": 1009607
+        }
+    },
+    "2021-03-06": {
+        "delta": {
+            "users": 467,
+            "deceased": 2,
+            "recovered": 395,
+            "tested": 15557,
+            "vaccinated": 83160
+        },
+        "delta7": {
+            "users": 2811,
+            "deceased": 5,
+            "recovered": 1945,
+            "tested": 109100,
+            "vaccinated": 281451
+        },
+        "total": {
+            "users": 264214,
+            "deceased": 3868,
+            "recovered": 256819,
+            "tested": 5878898,
+            "vaccinated": 1092767
+        }
+    },
+    "2021-03-07": {
+        "delta": {
+            "users": 429,
+            "deceased": 3,
+            "recovered": 347,
+            "tested": 16777
+        },
+        "delta7": {
+            "users": 2877,
+            "deceased": 7,
+            "recovered": 2049,
+            "tested": 109657,
+            "vaccinated": 281451
+        },
+        "total": {
+            "users": 264643,
+            "deceased": 3871,
+            "recovered": 257166,
+            "tested": 5895675,
+            "vaccinated": 1092767
+        }
+    },
+    "2021-03-08": {
+        "delta": {
+            "users": 427,
+            "deceased": 1,
+            "recovered": 394,
+            "tested": 16023,
+            "vaccinated": 83565
+        },
+        "delta7": {
+            "users": 2968,
+            "deceased": 7,
+            "recovered": 2224,
+            "tested": 112836,
+            "vaccinated": 321235
+        },
+        "total": {
+            "users": 265070,
+            "deceased": 3872,
+            "recovered": 257560,
+            "tested": 5911698,
+            "vaccinated": 1176332
+        }
+    },
+    "2021-03-09": {
+        "delta": {
+            "users": 457,
+            "deceased": 2,
+            "recovered": 382,
+            "tested": 14886,
+            "vaccinated": 6299
+        },
+        "delta7": {
+            "users": 3094,
+            "deceased": 9,
+            "recovered": 2347,
+            "tested": 112703,
+            "vaccinated": 327534
+        },
+        "total": {
+            "users": 265527,
+            "deceased": 3874,
+            "recovered": 257942,
+            "tested": 5926584,
+            "vaccinated": 1182631
+        }
+    },
+    "2021-03-10": {
+        "delta": {
+            "users": 516,
+            "deceased": 3,
+            "recovered": 309,
+            "tested": 16635,
+            "vaccinated": 105343
+        },
+        "delta7": {
+            "users": 3193,
+            "deceased": 12,
+            "recovered": 2363,
+            "tested": 112786,
+            "vaccinated": 361768
+        },
+        "total": {
+            "users": 266043,
+            "deceased": 3877,
+            "recovered": 258251,
+            "tested": 5943219,
+            "vaccinated": 1287974
+        }
+    },
+    "2021-03-11": {
+        "delta": {
+            "users": 530,
+            "deceased": 4,
+            "recovered": 347,
+            "tested": 15950
+        },
+        "delta7": {
+            "users": 3283,
+            "deceased": 15,
+            "recovered": 2482,
+            "tested": 112749,
+            "vaccinated": 289083
+        },
+        "total": {
+            "users": 266573,
+            "deceased": 3881,
+            "recovered": 258598,
+            "tested": 5959169,
+            "vaccinated": 1287974
+        }
+    },
+    "2021-03-12": {
+        "delta": {
+            "users": 603,
+            "deceased": 2,
+            "recovered": 360,
+            "tested": 14378,
+            "vaccinated": 6840
+        },
+        "delta7": {
+            "users": 3429,
+            "deceased": 17,
+            "recovered": 2534,
+            "tested": 110206,
+            "vaccinated": 285207
+        },
+        "total": {
+            "users": 267176,
+            "deceased": 3883,
+            "recovered": 258958,
+            "tested": 5973547,
+            "vaccinated": 1294814
+        }
+    },
+    "2021-03-13": {
+        "delta": {
+            "users": 675,
+            "deceased": 2,
+            "recovered": 496,
+            "tested": 16040,
+            "vaccinated": 170791
+        },
+        "delta7": {
+            "users": 3637,
+            "deceased": 17,
+            "recovered": 2635,
+            "tested": 110689,
+            "vaccinated": 372838
+        },
+        "total": {
+            "users": 267851,
+            "deceased": 3885,
+            "recovered": 259454,
+            "tested": 5989587,
+            "vaccinated": 1465605
+        }
+    },
+    "2021-03-14": {
+        "delta": {
+            "users": 743,
+            "deceased": 2,
+            "recovered": 513,
+            "tested": 16481
+        },
+        "delta7": {
+            "users": 3951,
+            "deceased": 16,
+            "recovered": 2801,
+            "tested": 110393,
+            "vaccinated": 372838
+        },
+        "total": {
+            "users": 268594,
+            "deceased": 3887,
+            "recovered": 259967,
+            "tested": 6006068,
+            "vaccinated": 1465605
+        }
+    },
+    "2021-03-15": {
+        "delta": {
+            "users": 797,
+            "deceased": 3,
+            "recovered": 510,
+            "tested": 14605,
+            "vaccinated": 2545
+        },
+        "delta7": {
+            "users": 4321,
+            "deceased": 18,
+            "recovered": 2917,
+            "tested": 108975,
+            "vaccinated": 291818
+        },
+        "total": {
+            "users": 269391,
+            "deceased": 3890,
+            "recovered": 260477,
+            "tested": 6020673,
+            "vaccinated": 1468150
+        }
+    },
+    "2021-03-16": {
+        "delta": {
+            "users": 817,
+            "deceased": 1,
+            "recovered": 554,
+            "tested": 15688,
+            "vaccinated": 195711
+        },
+        "delta7": {
+            "users": 4681,
+            "deceased": 17,
+            "recovered": 3089,
+            "tested": 109777,
+            "vaccinated": 481230
+        },
+        "total": {
+            "users": 270208,
+            "deceased": 3891,
+            "recovered": 261031,
+            "tested": 6036361,
+            "vaccinated": 1663861
+        }
+    },
+    "2021-03-17": {
+        "delta": {
+            "users": 832,
+            "deceased": 2,
+            "recovered": 500,
+            "tested": 16987,
+            "vaccinated": 202277
+        },
+        "delta7": {
+            "users": 4997,
+            "deceased": 16,
+            "recovered": 3280,
+            "tested": 110129,
+            "vaccinated": 578164
+        },
+        "total": {
+            "users": 271040,
+            "deceased": 3893,
+            "recovered": 261531,
+            "tested": 6053348,
+            "vaccinated": 1866138
+        }
+    },
+    "2021-03-18": {
+        "delta": {
+            "users": 917,
+            "deceased": 1,
+            "recovered": 500,
+            "tested": 18333
+        },
+        "delta7": {
+            "users": 5384,
+            "deceased": 13,
+            "recovered": 3433,
+            "tested": 112512,
+            "vaccinated": 578164
+        },
+        "total": {
+            "users": 271957,
+            "deceased": 3894,
+            "recovered": 262031,
+            "tested": 6071681,
+            "vaccinated": 1866138
+        }
+    },
+    "2021-03-19": {
+        "delta": {
+            "users": 1140,
+            "deceased": 7,
+            "recovered": 556,
+            "tested": 20770,
+            "vaccinated": 4618
+        },
+        "delta7": {
+            "users": 5921,
+            "deceased": 18,
+            "recovered": 3629,
+            "tested": 118904,
+            "vaccinated": 575942
+        },
+        "total": {
+            "users": 273097,
+            "deceased": 3901,
+            "recovered": 262587,
+            "tested": 6092451,
+            "vaccinated": 1870756
+        }
+    },
+    "2021-03-20": {
+        "delta": {
+            "users": 1308,
+            "deceased": 2,
+            "recovered": 571,
+            "tested": 24695,
+            "vaccinated": 357500
+        },
+        "delta7": {
+            "users": 6554,
+            "deceased": 18,
+            "recovered": 3704,
+            "tested": 127559,
+            "vaccinated": 762651
+        },
+        "total": {
+            "users": 274405,
+            "deceased": 3903,
+            "recovered": 263158,
+            "tested": 6117146,
+            "vaccinated": 2228256
+        }
+    },
+    "2021-03-21": {
+        "delta": {
+            "users": 1322,
+            "deceased": 3,
+            "recovered": 663,
+            "tested": 22980
+        },
+        "delta7": {
+            "users": 7133,
+            "deceased": 19,
+            "recovered": 3854,
+            "tested": 134058,
+            "vaccinated": 762651
+        },
+        "total": {
+            "users": 275727,
+            "deceased": 3906,
+            "recovered": 263821,
+            "tested": 6140126,
+            "vaccinated": 2228256
+        }
+    },
+    "2021-03-22": {
+        "delta": {
+            "users": 1348,
+            "deceased": 2,
+            "recovered": 754,
+            "tested": 25805,
+            "vaccinated": 434378
+        },
+        "delta7": {
+            "users": 7684,
+            "deceased": 18,
+            "recovered": 4098,
+            "tested": 145258,
+            "vaccinated": 1194484
+        },
+        "total": {
+            "users": 277075,
+            "deceased": 3908,
+            "recovered": 264575,
+            "tested": 6165931,
+            "vaccinated": 2662634
+        }
+    },
+    "2021-03-23": {
+        "delta": {
+            "users": 1502,
+            "deceased": 4,
+            "recovered": 798,
+            "tested": 23086,
+            "vaccinated": 3430
+        },
+        "delta7": {
+            "users": 8369,
+            "deceased": 21,
+            "recovered": 4342,
+            "tested": 152656,
+            "vaccinated": 1002203
+        },
+        "total": {
+            "users": 278577,
+            "deceased": 3912,
+            "recovered": 265373,
+            "tested": 6189017,
+            "vaccinated": 2666064
+        }
+    },
+    "2021-03-24": {
+        "delta": {
+            "users": 1712,
+            "deceased": 7,
+            "recovered": 950,
+            "tested": 25505,
+            "vaccinated": 266274
+        },
+        "delta7": {
+            "users": 9249,
+            "deceased": 26,
+            "recovered": 4792,
+            "tested": 161174,
+            "vaccinated": 1066200
+        },
+        "total": {
+            "users": 280289,
+            "deceased": 3919,
+            "recovered": 266323,
+            "tested": 6214522,
+            "vaccinated": 2932338
+        }
+    },
+    "2021-03-25": {
+        "delta": {
+            "users": 1885,
+            "deceased": 9,
+            "recovered": 919,
+            "tested": 27302,
+            "vaccinated": 142586
+        },
+        "delta7": {
+            "users": 10217,
+            "deceased": 34,
+            "recovered": 5211,
+            "tested": 170143,
+            "vaccinated": 1208786
+        },
+        "total": {
+            "users": 282174,
+            "deceased": 3928,
+            "recovered": 267242,
+            "tested": 6241824,
+            "vaccinated": 3074924
+        }
+    },
+    "2021-03-26": {
+        "delta": {
+            "users": 2091,
+            "deceased": 9,
+            "recovered": 1048,
+            "tested": 28504,
+            "vaccinated": 3749
+        },
+        "delta7": {
+            "users": 11168,
+            "deceased": 36,
+            "recovered": 5703,
+            "tested": 177877,
+            "vaccinated": 1207917
+        },
+        "total": {
+            "users": 284265,
+            "deceased": 3937,
+            "recovered": 268290,
+            "tested": 6270328,
+            "vaccinated": 3078673
+        }
+    },
+    "2021-03-27": {
+        "delta": {
+            "users": 2142,
+            "deceased": 10,
+            "recovered": 1175,
+            "tested": 26701,
+            "vaccinated": 109824
+        },
+        "delta7": {
+            "users": 12002,
+            "deceased": 44,
+            "recovered": 6307,
+            "tested": 179883,
+            "vaccinated": 960241
+        },
+        "total": {
+            "users": 286407,
+            "deceased": 3947,
+            "recovered": 269465,
+            "tested": 6297029,
+            "vaccinated": 3188497
+        }
+    },
+    "2021-03-28": {
+        "delta": {
+            "users": 2276,
+            "deceased": 11,
+            "recovered": 1075,
+            "tested": 25483
+        },
+        "delta7": {
+            "users": 12956,
+            "deceased": 52,
+            "recovered": 6719,
+            "tested": 182386,
+            "vaccinated": 960241
+        },
+        "total": {
+            "users": 288683,
+            "deceased": 3958,
+            "recovered": 270540,
+            "tested": 6322512,
+            "vaccinated": 3188497
+        }
+    },
+    "2021-03-29": {
+        "delta": {
+            "users": 2323,
+            "deceased": 9,
+            "recovered": 1349,
+            "tested": 23249
+        },
+        "delta7": {
+            "users": 13931,
+            "deceased": 59,
+            "recovered": 7314,
+            "tested": 179830,
+            "vaccinated": 525863
+        },
+        "total": {
+            "users": 291006,
+            "deceased": 3967,
+            "recovered": 271889,
+            "tested": 6345761,
+            "vaccinated": 3188497
+        }
+    },
+    "2021-03-30": {
+        "delta7": {
+            "users": 12429,
+            "deceased": 55,
+            "recovered": 6516,
+            "tested": 156744,
+            "vaccinated": 522433
+        },
+        "total": {
+            "users": 291006,
+            "deceased": 3967,
+            "recovered": 271889,
+            "tested": 6345761,
+            "vaccinated": 3188497
+        }
+    }
+}

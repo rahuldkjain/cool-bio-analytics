@@ -5,7 +5,9 @@
   },
   "dependencies": {
     "@cloudflare/kv-asset-handler": "^0.0.12",
-    "vitedge": "^0.10.1"
+    "net": "^1.0.2",
+    "tls": "^0.0.1",
+    "vitedge": "^0.10.2"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^2.1.0"

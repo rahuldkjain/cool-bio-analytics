@@ -1,6 +1,4 @@
-import { EdgeProps } from 'vitedge'
-
-export default <EdgeProps>{
+export default {
   handler({ params = {}, query = {}, name = '' }) {
     return {
       data: {
