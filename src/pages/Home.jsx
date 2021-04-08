@@ -1,24 +1,22 @@
-import React, { useState } from 'react'
+import React, { useState, lazy, useEffect } from 'react'
 import { Helmet } from 'react-helmet-async'
 import styled from "@xstyled/styled-components";
 import { useSessionStorage } from 'react-use';
-
-import timeseries from '../config/timeSeries.json'
-import graph from '../config/graph.json'
-import dates from '../config/dates';
 
 import Search from '../components/Search'
 import Actions from '../components/Actions'
 import MapSwitcher from '../components/MapSwitcher'
 import Level from '../components/Level'
 import Minigraphs from '../components/Minigraphs'
-import Map from '../components/Map'
 import MapPanel from '../components/MapPanel'
 import StateHeader from '../components/StateHeader'
 import Table from '../components/Table';
-import Timeseries from '../components/Timeseries';
 import Navbar from '../components/Navbar';
 import { PrivateRoute } from '../components/PrivateRoute';
+
+const Timeseries = lazy(() => import('../components/Timeseries'));
+const Map = lazy(() => import('../components/Map'));
+
 
 const pages = [
   {
@@ -208,7 +206,31 @@ export default function Home(props) {
     'mapStatistic',
     'active'
   );
+  const [graphData, setGraphData] = useState({})
+  const [timeseriesData, setTimeSeriesData] = useState({})
+  const [currentDates, setConfigDates] = useState([]);
   const [date, setDate] = useState('');
+
+  useEffect(() => {
+    async function getData() {
+      const graphs = await import('../config/graph.json');
+      console.log(graphs);
+      setGraphData(graphs.default());
+    }
+    async function getTimeSeriesData() {
+      const currentTimeSeries = await import('../config/timeSeries.json');
+      console.log(currentTimeSeries);
+      setTimeSeriesData(currentTimeSeries.default());
+    }
+    async function getConfigDates() {
+      const currentDates = await import('../config/dates');
+      console.log(currentDates);
+      setConfigDates(currentDates.default());
+    }
+    getData();
+    getTimeSeriesData();
+    getConfigDates();
+  }, [])
   return (
     <PrivateRoute>
       <Navbar
@@ -227,7 +249,7 @@ export default function Home(props) {
           <MapLevelWrapper>
             <MapSwitcher mapStatistic={mapStatistic} setMapStatistic={setMapStatistic} />
             <Level data={data} />
-            <Minigraphs timeseries={timeseries?.dates} {...{ date }} />
+            <Minigraphs timeseries={timeseriesData?.dates} {...{ date }} />
           </MapLevelWrapper>
           <Table columns={columns} data={tableData} />
         </HomeLeft>
@@ -235,7 +257,7 @@ export default function Home(props) {
           <StateHeader />
           <MapPanel mapStatistic={mapStatistic} />
           <Map mapStatistic={mapStatistic} />
-          <Timeseries timeseries={graph} dates={dates} chartType="total" />
+          <Timeseries timeseries={graphData} dates={currentDates} chartType="total" />
         </HomeRight>
       </AppWrapper>
     </PrivateRoute>

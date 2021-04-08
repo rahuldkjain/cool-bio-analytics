@@ -8,7 +8,8 @@
     "build": "rm -rf dist && vitedge build",
     "serve:worker": "cd worker-site && yarn serve",
     "preview": "cd worker-site && wrangler dev",
-    "deploy": "cd worker-site && wrangler publish"
+    "deploy": "cd worker-site && wrangler publish",
+    "build:deploy": "yarn build && yarn deploy"
   },
   "dependencies": {
     "@juggle/resize-observer": "^3.3.0",
