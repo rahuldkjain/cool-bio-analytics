@@ -1,13 +1,9 @@
 export default {
-  handler({ params = {}, query = {}, name = '' }) {
+  handler({ params = {}, query = {} }) {
     return {
       data: {
         server: true,
-        msg:
-          'This is page ' +
-          name.toUpperCase() +
-          '. ' +
-          process.env.VITEDGE_TEST,
+        msg: `This is ABOUT page ${params.resource || ''}`,
       },
     }
   },

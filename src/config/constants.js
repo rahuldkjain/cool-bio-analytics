@@ -1,4 +1,4 @@
-export const API_ROOT_URL = 'https://api.covid19india.org/v4/min';
+export const API_ROOT_URL = 'https://graphql.cool.bio/v1/graphql';
 
 export const LOCALE_SHORTHANDS = {
   english: 'en-US',
@@ -166,3 +166,92 @@ export const TIMESERIES_CHART_TYPES = {
   total: 'Cumulative',
   delta: 'Daily',
 };
+
+export const footerData = [
+  {
+    label: 'Help & Support',
+    key: 'helpSupport',
+    categories: [
+      {
+        label: 'Status',
+        key: 'status',
+        href: 'https://status.cool.bio'
+      },
+      {
+        label: 'Blog',
+        key: 'blog',
+        href: '#'
+      },
+      {
+        label: 'Help',
+        key: 'help',
+        href: '#'
+      },
+      {
+        label: 'Getting Started',
+        key: 'gettingStarted',
+        href: '#'
+      },
+      {
+        label: 'FAQs',
+        key: 'fAQs',
+        href: '#'
+      }
+    ]
+  },
+  {
+    label: 'Legal',
+    key: 'legal',
+    categories: [
+      {
+        label: 'Terms & Conditions',
+        key: 'termsConditions',
+        href: '#'
+      },
+      {
+        label: 'Privacy Policy',
+        key: 'privacyPolicy',
+        href: '#'
+      }
+    ]
+  }
+];
+
+export const pricesData = [
+  {
+    month: 0,
+    year: 0,
+    title: 'Free',
+    label: 'Perfect for hobby projects and experiments.',
+    views: '100k',
+    key: "free",
+    color: "red",
+  },
+  {
+    month: 4,
+    year: 36,
+    title: 'Startups',
+    label: 'Perfect for Startups.',
+    views: '1M',
+    key: "startups",
+    color: "blue",
+  },
+  {
+    month: 4,
+    year: 36,
+    title: 'Pay As You Go',
+    label: 'Perfect for anyone, scaling rapidly.',
+    views: '1M+',
+    key: "payAsYouGo",
+    color: "green",
+  },
+  {
+    month: 10,
+    year: 100,
+    title: 'Enterprise',
+    label: 'Perfect for Enterprise',
+    views: '5M+',
+    key: "enterprise",
+    color: "gray",
+  }
+];

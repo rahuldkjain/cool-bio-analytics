@@ -53,7 +53,7 @@
     "react-use": "^17.2.1",
     "styled-components": "^5.2.1",
     "tls": "^0.0.1",
-    "vitedge": "^0.10.1"
+    "vitedge": "^0.10.5"
   },
   "devDependencies": {
     "@vitejs/plugin-react-refresh": "^1.1.0",

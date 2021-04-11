@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useRef } from 'react';
 import * as Icon from "react-feather";
-import { NavLink as RouterLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useSpring, useTransition, animated } from "react-spring";
 import { useLockBodyScroll, useWindowSize } from "react-use";
 import styled from "@xstyled/styled-components";
@@ -127,7 +127,7 @@ const ExpandBottom = styled.div`
   }
 `;
 
-const WrapperRouterLink = styled(RouterLink)`
+const WrapperRouterLink = styled(Link)`
   pointer-events: ${({ disable }) => (disable ? 'none' : 'auto')};
 
   &.active {
@@ -139,7 +139,7 @@ const WrapperRouterLink = styled(RouterLink)`
   }
 `;
 
-const WrapperRouterIconLink = styled(RouterLink)`
+const WrapperRouterIconLink = styled(Link)`
   pointer-events: ${({ disable }) => (disable ? 'none' : 'auto')};
 
   &.active {

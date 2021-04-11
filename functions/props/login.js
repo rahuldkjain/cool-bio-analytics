@@ -1,6 +1,4 @@
-import { defineEdgeProps } from 'vitedge/define'
-
-export default defineEdgeProps({
+export default {
   handler({ params = {}, query = {} }) {
     return {
       data: {
@@ -15,4 +13,4 @@ export default defineEdgeProps({
       html: 90,
     },
   },
-})
+}

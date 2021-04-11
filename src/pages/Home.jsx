@@ -1,62 +1,79 @@
-import React, { useState, lazy, useEffect } from 'react'
+import React, { lazy } from "react";
+import styled, { x, useColorMode } from "@xstyled/styled-components";
 import { Helmet } from 'react-helmet-async'
-import styled from "@xstyled/styled-components";
-import { useSessionStorage } from 'react-use';
+import { Link } from 'react-router-dom';
 
-import Search from '../components/Search'
-import Actions from '../components/Actions'
-import MapSwitcher from '../components/MapSwitcher'
-import Level from '../components/Level'
-import Minigraphs from '../components/Minigraphs'
-import MapPanel from '../components/MapPanel'
-import StateHeader from '../components/StateHeader'
-import Table from '../components/Table';
-import Navbar from '../components/Navbar';
-import { PrivateRoute } from '../components/PrivateRoute';
+import Navbar from "../components/Navbar";
+import Blob from "../components/icon/Blob";
+import Privacy from "../components/icon/Privacy";
+import OpenSource from "../components/icon/OpenSource";
+import PayAsYouGo from "../components/icon/PayAsYouGo";
+import Api from "../components/icon/Api";
+import Gdpr from "../components/icon/Gdpr";
 
-const Timeseries = lazy(() => import('../components/Timeseries'));
-const Map = lazy(() => import('../components/Map'));
+const Pricing = lazy(() => import("../components/Pricing"));
+const Footer = lazy(() => import("../components/Footer"));
 
 
 const pages = [
   {
-    pageLink: '/',
-    displayName: 'Home',
+    pageLink: "/",
+    displayName: "Home",
     showInNavbar: true,
   },
   {
-    pageLink: '/list',
-    displayName: 'List',
+    pageLink: "/list",
+    displayName: "List",
     showInNavbar: true,
   },
   {
-    pageLink: '/about',
-    displayName: 'About',
+    pageLink: "/about",
+    displayName: "About",
     showInNavbar: true,
   },
   {
-    pageLink: '/state/:stateCode',
-    displayName: 'State',
+    pageLink: "/state/:stateCode",
+    displayName: "State",
     showInNavbar: false,
   },
 ];
 
-const AppWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-left: 0;
-  margin-right: 0;
-  padding-top: 1rem;
-  
-  @media (min-width: md) {
-    margin-left: 9rem;
-    margin-right: 3rem;
-    padding-top: 5rem;
-  }
-`;
-
+const ourServices = {
+  key: "services",
+  description: "Why us?",
+  label: "Leave Analytics on us and focus on your products",
+  copy: "Featured Service that We Provide",
+  options: [
+    {
+      icon: <Privacy height={50} width={50} />,
+      title: "Privacy Friendy",
+      key: "privacy",
+      color: "redLight",
+      fontColor: "red",
+    },
+    {
+      icon: <PayAsYouGo height={50} width={50} />,
+      title: "Pay As You Go",
+      key: "payAsYouGo",
+      color: "blueLight",
+      fontColor: "blue",
+    },
+    {
+      icon: <OpenSource height={50} width={50} />,
+      title: "Open Source",
+      key: "openSource",
+      color: "greenLight",
+      fontColor: "green",
+    },
+    {
+      icon: <Api height={50} width={50} />,
+      title: "Graphql Api",
+      key: "api",
+      color: "grayLight",
+      fontColor: "gray",
+    },
+  ],
+};
 
 const HomeWrapper = styled.div`
   display: flex;
@@ -70,7 +87,6 @@ const HomeWrapper = styled.div`
 
 const HomeLeft = styled(HomeWrapper)`
   margin-right: 2.5rem;
-  min-height: 60rem;
 
   @media (max-width: md) {
     margin-left: 1rem;
@@ -80,7 +96,6 @@ const HomeLeft = styled(HomeWrapper)`
 
 const HomeRight = styled(HomeWrapper)`
   margin-left: 2.5rem;
-  min-height: 10rem;
 
   @media (max-width: md) {
     margin-left: 1rem;
@@ -88,172 +103,244 @@ const HomeRight = styled(HomeWrapper)`
   }
 `;
 
+const Button = styled(Link)`
+  appearance: none;
+  background-color: dropdown;
+  background-position-x: calc(100% - 0.4rem);
+  background-position-y: 50%;
+  background-repeat: no-repeat;
+  background-size: 0.6rem;
+  border: 2px solid;
+  border-color: dropdownBorder;
+  border-radius: 4px;
+  color: gray;
+  cursor: pointer;
+  font-weight: 600;
+  padding: 1rem;
+  padding-right: 1.4rem;
+  width: 150px;
+  text-align: center;
 
-const MapLevelWrapper = styled.div`
-  position: relative;
-  margin-top: 1rem;
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    background-color: dorpdownHover;
+  }
 `;
 
-const data = {
-  "delta": {
-    "confirmed": 2074,
-    "deceased": 5,
-    "recovered": 810
-  },
-  "delta7": {
-    "confirmed": 311737,
-    "deceased": 1490,
-    "other": 91,
-    "recovered": 165540,
-    "tested": 6204434,
-    "vaccinated": 13505932
-  },
-  "meta": {
-    "last_updated": "2021-03-27T18:21:52+05:30",
-    "population": 1332900000,
-    "tested": {
-      "last_updated": "2021-03-26",
-      "source": "https://twitter.com/ICMRDELHI/status/1375661955516538887"
-    },
-    "vaccinated": {
-      "last_updated": "2021-03-26",
-      "source": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=1708008"
-    }
-  },
-  "total": {
-    "confirmed": 11910447,
-    "deceased": 161280,
-    "other": 4802,
-    "recovered": 11293659,
-    "tested": 239769553,
-    "vaccinated": 58109773
-  }
-}
-
-const columns = [
-  {
-    Header: 'Country',
-    accessor: 'country',
-  },
-  {
-    Header: 'Active',
-    accessor: 'active',
-  },
-  {
-    Header: 'Visits',
-    accessor: 'visits',
-  },
-  {
-    Header: 'Users',
-    accessor: 'users',
-  },
-  {
-    Header: 'Progress',
-    accessor: 'progress',
-  },
-]
-
-const tableData = [
-  {
-    users: "rabbit",
-    lastName: "kitten",
-    country: 1,
-    visits: 57,
-    progress: 13,
-    active: "single",
-    subRows: undefined
-  },
-  {
-    users: "rabbit",
-    lastName: "kitten",
-    country: 1,
-    visits: 57,
-    progress: 13,
-    active: "single",
-    subRows: undefined
-  },
-  {
-    users: "rabbit",
-    lastName: "kitten",
-    country: 1,
-    visits: 57,
-    progress: 13,
-    active: "single",
-    subRows: undefined
-  },
-  {
-    users: "rabbit",
-    lastName: "kitten",
-    country: 1,
-    visits: 57,
-    progress: 13,
-    active: "single",
-    subRows: undefined
-  },
-  {
-    users: "rabbit",
-    lastName: "kitten",
-    country: 1,
-    visits: 57,
-    progress: 13,
-    active: "single",
-    subRows: undefined
-  }
-]
-
-export default function Home(props) {
-  const [mapStatistic, setMapStatistic] = useSessionStorage(
-    'mapStatistic',
-    'active'
-  );
-  const [graphData, setGraphData] = useState({})
-  const [timeseriesData, setTimeSeriesData] = useState({})
-  const [currentDates, setConfigDates] = useState([]);
-  const [date, setDate] = useState('');
-
-  useEffect(() => {
-    async function getData() {
-      setGraphData({});
-    }
-    async function getTimeSeriesData() {
-      setTimeSeriesData({});
-    }
-    async function getConfigDates() {
-      setConfigDates([]);
-    }
-    getData();
-    getTimeSeriesData();
-    getConfigDates();
-  }, [])
+function Landing(props) {
+  const [mode] = useColorMode(false);
   return (
-    <PrivateRoute>
-      <Navbar
-        pages={pages}
-      />
-      <AppWrapper>
-        <Helmet>
-          <html lang="en" />
-          <meta charSet="utf-8" />
-          <title>Home</title>
-          <link rel="canonical" href="http://analytics.cool.bio" />
-        </Helmet>
+    <>
+      <Navbar pages={pages} />
+      <Helmet>
+        <title>My page title</title>
+        <script type="text/javascript" src="/productHuntUpcoming.js"></script>
+      </Helmet>
+      <x.div
+        display="flex"
+        flexDirection="row"
+        flexWrap="wrap"
+        justifyContent="center"
+        ml={{ md: "9rem", sm: 0 }}
+        mr={{ md: "3rem", sm: 0 }}
+        pt={{ md: "5rem", xs: "3rem" }}
+      >
         <HomeLeft>
-          <Search />
-          <Actions />
-          <MapLevelWrapper>
-            <MapSwitcher mapStatistic={mapStatistic} setMapStatistic={setMapStatistic} />
-            <Level data={data} />
-            <Minigraphs timeseries={timeseriesData?.dates} {...{ date }} />
-          </MapLevelWrapper>
-          <Table columns={columns} data={tableData} />
+          <a
+            href="https://www.producthunt.com/posts/daku?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-daku"
+            target="_blank"
+          >
+            <img
+              src={`https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=289502&theme=${mode === "dark" ? "dark" : "light"
+                }`}
+              alt="Daku - It's like Tinder for Product Hunt | Product Hunt"
+            />
+          </a>
+          <x.div my={{ md: 8, _: 8 }}>
+            <x.h1
+              color="blue"
+              fontSize={{ md: "5xl", xs: "2xl" }}
+              fontWeight={700}
+            >
+              Ultimate Platform to monitor your Analytics.
+            </x.h1>
+          </x.div>
+          <x.p
+            mb={{ md: 8, _: 8 }}
+            color="gray"
+            lineHeight={1.5}
+            fontSize="16px"
+          >
+            We help to create SaaS product that are innovative, differentiated
+            with a superb User Experience, fully accessible through mobile
+            devices. SaaS products are changing the world.
+          </x.p>
+          <Button to="/login">Try now</Button>
         </HomeLeft>
         <HomeRight>
-          <StateHeader />
-          <MapPanel mapStatistic={mapStatistic} />
-          <Map mapStatistic={mapStatistic} />
-          <Timeseries timeseries={graphData} dates={currentDates} chartType="total" />
+          <x.div position="relative">
+            <Blob fill="redLight" />
+            <x.img
+              src={`/cool-bio-analytics-demo-${mode === "dark" ? "dark" : "light"
+                }.png`}
+              position="absolute"
+              width="100%"
+              top="50%"
+              transform="translateY(-50%)"
+              borderRadius={10}
+            />
+          </x.div>
         </HomeRight>
-      </AppWrapper>
-    </PrivateRoute>
-  )
+      </x.div>
+      <x.div
+        display="flex"
+        flexDirection="row"
+        flexWrap="wrap"
+        justifyContent="center"
+        ml={{ md: "9rem", sm: 0 }}
+        mr={{ md: "3rem", sm: 0 }}
+        pt={{ md: 28, xs: "3rem" }}
+      >
+        <x.div
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+          textAlign="center"
+          flexDirection="column"
+          py={5}
+        >
+          <x.span color="pink" fontSize={{ md: "xl", xs: "lg" }} py={4}>
+            {ourServices.description}
+          </x.span>
+          <x.h2
+            color="silver"
+            py={4}
+            fontSize={{ md: "4xl", xs: "xl" }}
+            fontWeight="700"
+          >
+            {ourServices.label}
+          </x.h2>
+          <x.p color="gray">{ourServices.copy}</x.p>
+          <x.div display="flex" pt={20} flexWrap="wrap">
+            {ourServices.options.map(({ title, color, icon, fontColor, key }) => (
+              <x.div
+                px={4}
+                py={4}
+                display="flex"
+                justifyContent="center"
+                alignItems="center"
+                flexDirection="column"
+                key={key}
+              >
+                <x.div
+                  w={24}
+                  h={24}
+                  borderRadius="35px"
+                  backgroundColor={color}
+                  display="flex"
+                  justifyContent="center"
+                  alignItems="center"
+                  mb={5}
+                >
+                  {icon}
+                </x.div>
+                <x.span color={fontColor} fontSize={{ md: "16px", sm: "sm" }}>
+                  {title}
+                </x.span>
+              </x.div>
+            ))}
+          </x.div>
+        </x.div>
+      </x.div>
+      <x.div
+        display="flex"
+        flexDirection="row"
+        flexWrap="wrap"
+        justifyContent="center"
+        ml={{ md: "9rem", sm: 0 }}
+        mr={{ md: "3rem", sm: 0 }}
+        pt={{ md: 28, xs: "3rem" }}
+      >
+        <HomeLeft>
+          <x.span color="pink" fontSize={{ md: "xl", xs: "lg" }} py={4}>
+            Hate cookies popups?
+          </x.span>
+          <x.h2
+            color="silver"
+            py={4}
+            fontSize={{ md: "4xl", xs: "xl" }}
+            fontWeight="700"
+          >
+            We too. We don't have cookies and fully compliant with GDPR
+          </x.h2>
+          <x.p color="gray" pb={{ md: 24, xs: 16 }}>
+            All the site measurement is carried out absolutely anonymously.
+            Cookies are not used and no personal data is collected. There are no
+            persistent identifiers. No cross-site or cross-device tracking
+            either. Your site data is not used for any other purposes.
+          </x.p>
+        </HomeLeft>
+        <HomeRight>
+          <Gdpr width="100%" height="100%" />
+        </HomeRight>
+      </x.div>
+      <x.div
+        display="flex"
+        flexDirection="row"
+        flexWrap="wrap"
+        justifyContent="center"
+        ml={{ md: "9rem", xs: 0 }}
+        mr={{ md: "3rem", xs: 0 }}
+        pt={{ md: 28, xs: "3rem" }}
+      >
+        <x.div
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+          textAlign="center"
+          flexDirection="column"
+          py={8}
+        >
+          <Pricing />
+
+        </x.div>
+      </x.div>
+      <x.div
+        display="flex"
+        flexDirection="row"
+        flexWrap="wrap"
+        justifyContent="center"
+        ml={{ md: "9rem", xs: 0 }}
+        mr={{ md: "3rem", xs: 0 }}
+        pt={{ md: 28, xs: "3rem" }}
+      >
+        <x.div
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+          textAlign="center"
+          flexDirection="column"
+          py={8}
+        >
+          <x.h2
+            color="silver"
+            pb={12}
+            fontSize={{ md: "4xl", xs: "xl" }}
+            fontWeight="700"
+          >
+            Build in a weekend, track to millions
+          </x.h2>
+          <Button to="/login">Start now</Button>
+        </x.div>
+      </x.div>
+      <Footer />
+    </>
+  );
 }
+
+Landing.propTypes = {};
+
+export default Landing;
