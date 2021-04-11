@@ -1,6 +1,6 @@
-import React, { memo } from "react";
+import React, { memo } from 'react'
 
-function SvgComponent(props) {
+function SvgComponent (props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -71,8 +71,8 @@ function SvgComponent(props) {
         data-original="#000000"
       />
     </svg>
-  );
+  )
 }
 
-const Api = React.memo(SvgComponent);
-export default Api;
+const Api = React.memo(SvgComponent)
+export default Api

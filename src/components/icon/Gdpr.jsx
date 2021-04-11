@@ -1,6 +1,6 @@
-import * as React from "react";
+import * as React from 'react'
 
-function SvgComponent({ width = 1007, height = 890, ...rest }) {
+function SvgComponent ({ width = 1007, height = 890, ...rest }) {
   return (
     <svg
       width={width}
@@ -245,8 +245,8 @@ function SvgComponent({ width = 1007, height = 890, ...rest }) {
         </clipPath>
       </defs>
     </svg>
-  );
+  )
 }
 
-const Gdpr = React.memo(SvgComponent);
-export default Gdpr;
+const Gdpr = React.memo(SvgComponent)
+export default Gdpr

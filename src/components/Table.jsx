@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from '@xstyled/styled-components';
+import styled from '@xstyled/styled-components'
 import { useTable, useSortBy } from 'react-table'
 
 const TableContainer = styled.div`
@@ -12,15 +12,15 @@ const TableContainer = styled.div`
     border-radius: 3px;
     font-size: 12px;
     margin-top: 1rem;
-`;
+`
 
 const TableWrapper = styled.table`
     width: 100%;
-`;
+`
 
 const Tr = styled.tr`
 
-`;
+`
 
 const TbodyTr = styled.tr`
     &:nth-child(odd) td {
@@ -30,7 +30,7 @@ const TbodyTr = styled.tr`
             background-color: tableCell;
         }
     }
-`;
+`
 
 const TheadTh = styled.th`
     background-color: tableCell;
@@ -42,7 +42,7 @@ const TheadTh = styled.th`
     border-radius: 3px;
     color: gray;
     margin-bottom: 0.25rem;
-`;
+`
 
 const Td = styled.td`
     background-color: tableCell;
@@ -54,24 +54,24 @@ const Td = styled.td`
     border-radius: 3px;
     color: gray;
     margin-bottom: 0.25rem;
-`;
+`
 
-export default function Table({ columns, data }) {
-    const {
-        getTableProps,
-        getTableBodyProps,
-        headerGroups,
-        rows,
-        prepareRow,
-    } = useTable(
-        {
-            columns,
-            data,
-        },
-        useSortBy
-    )
+export default function Table ({ columns, data }) {
+  const {
+    getTableProps,
+    getTableBodyProps,
+    headerGroups,
+    rows,
+    prepareRow
+  } = useTable(
+    {
+      columns,
+      data
+    },
+    useSortBy
+  )
 
-    return (
+  return (
         <TableContainer>
             <TableWrapper {...getTableProps()}>
                 <thead>
@@ -82,10 +82,10 @@ export default function Table({ columns, data }) {
                                     <span>{column.render('Header')}</span>
                                     <span>
                                         {column.isSorted
-                                            ? column.isSortedDesc
-                                                ? ' 🔽'
-                                                : ' 🔼'
-                                            : ''}
+                                          ? column.isSortedDesc
+                                            ? ' 🔽'
+                                            : ' 🔼'
+                                          : ''}
                                     </span>
                                 </TheadTh>
                             ))}
@@ -94,21 +94,21 @@ export default function Table({ columns, data }) {
                 </thead>
                 <tbody {...getTableBodyProps()}>
                     {rows.map(
-                        (row, i) => {
-                            prepareRow(row);
-                            return (
+                      (row, i) => {
+                        prepareRow(row)
+                        return (
                                 <TbodyTr {...row.getRowProps()}>
                                     {row.cells.map(cell => {
-                                        return (
+                                      return (
                                             <Td {...cell.getCellProps()}>{cell.render('Cell')}</Td>
-                                        )
+                                      )
                                     })}
                                 </TbodyTr>
-                            )
-                        }
+                        )
+                      }
                     )}
                 </tbody>
             </TableWrapper>
         </TableContainer>
-    )
+  )
 }

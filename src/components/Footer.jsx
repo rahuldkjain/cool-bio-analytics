@@ -1,9 +1,9 @@
 import React from 'react'
 import styled, { x } from '@xstyled/styled-components'
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 
-import Brand from './Brand';
-import { footerData } from '../config/constants';
+import Brand from './Brand'
+import { footerData } from '../config/constants'
 
 const socialLinks = [
   {
@@ -65,7 +65,7 @@ const CopyRight = styled.div`
   @media (min-width: md) {
     font-size: 1rem;
   }
-`;
+`
 
 const Footer = () => {
   return (
@@ -83,9 +83,7 @@ const Footer = () => {
           lineHeight="21px"
           color="#030047"
         >
-          <Link to="/" aria-label="cool.bio">
-            <Brand showRow />
-          </Link>
+          <Brand showRow />
           <x.div>
             <x.div
               display="flex"

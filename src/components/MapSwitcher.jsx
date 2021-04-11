@@ -1,29 +1,29 @@
-import React, { memo, useState, useCallback, useEffect } from 'react';
-import ReactDOM from 'react-dom';
-import { useSpring, animated, config } from 'react-spring';
-import { useMeasure } from 'react-use';
-import styled from '@xstyled/styled-components';
+import React, { memo, useState, useCallback, useEffect } from 'react'
+import ReactDOM from 'react-dom'
+import { useSpring, animated, config } from 'react-spring'
+import { useMeasure } from 'react-use'
+import styled from '@xstyled/styled-components'
 
-import { PRIMARY_STATISTICS, STATISTIC_CONFIGS } from '../config/constants';
+import { PRIMARY_STATISTICS, STATISTIC_CONFIGS } from '../config/constants'
 
-function getBackGround(statistic, theme) {
-    switch (statistic) {
-        case "users":
-            return theme.colors.cherryLight;
-            break;
-        case "active":
-            return theme.colors.blueLight;
-            break;
-        case "sessions":
-            return theme.colors.greenLight;
-            break;
-        case "bounce":
-            return theme.colors.grayLight;
-            break;
-        default:
-            return '';
-            break;
-    }
+function getBackGround (statistic, theme) {
+  switch (statistic) {
+    case 'users':
+      return theme.colors.cherryLight
+      break
+    case 'active':
+      return theme.colors.blueLight
+      break
+    case 'sessions':
+      return theme.colors.greenLight
+      break
+    case 'bounce':
+      return theme.colors.grayLight
+      break
+    default:
+      return ''
+      break
+  }
 }
 
 const MapSwitcherWrapper = styled.div`
@@ -33,7 +33,7 @@ const MapSwitcherWrapper = styled.div`
     justify-content: space-between;
     position: absolute;
     width: 100%;
-`;
+`
 
 const HighlightWrapper = styled(animated.div)`
     pointer-events: none;
@@ -60,43 +60,43 @@ const ClickableWrapper = styled(animated.div)`
 `
 
 const MapSwitcher = ({ mapStatistic, setMapStatistic }) => {
-    const [mapSwitcher, { width }] = useMeasure();
-    const [clicked, setClicked] = useState(false);
-    const [count, setCount] = useState(0);
-    const [spring, set] = useSpring(() => ({
-        opacity: 0,
-        backgroundColor: `${STATISTIC_CONFIGS[mapStatistic].color}20`,
-        transform: `translateX(${width * PRIMARY_STATISTICS.indexOf(mapStatistic) * 0.25
+  const [mapSwitcher, { width }] = useMeasure()
+  const [clicked, setClicked] = useState(false)
+  const [count, setCount] = useState(0)
+  const [spring, set] = useSpring(() => ({
+    opacity: 0,
+    backgroundColor: `${STATISTIC_CONFIGS[mapStatistic].color}20`,
+    transform: `translateX(${width * PRIMARY_STATISTICS.indexOf(mapStatistic) * 0.25
             }px)`,
-        config: config.gentle,
-    }));
+    config: config.gentle
+  }))
 
-    useEffect(() => {
-        if (width > 0) {
-            ReactDOM.unstable_batchedUpdates(() => {
-                set({
-                    transform: `translateX(${width * PRIMARY_STATISTICS.indexOf(mapStatistic) * 0.25
+  useEffect(() => {
+    if (width > 0) {
+      ReactDOM.unstable_batchedUpdates(() => {
+        set({
+          transform: `translateX(${width * PRIMARY_STATISTICS.indexOf(mapStatistic) * 0.25
                         }px)`,
-                    opacity: 1,
-                    background: `${STATISTIC_CONFIGS[mapStatistic].color}20`,
-                    delay: count === 0 ? 1500 : 0,
-                    onStart: setClicked.bind(this, true),
-                    onRest: setClicked.bind(this, false),
-                });
-            });
-        }
-    }, [count, mapStatistic, set, width]);
+          opacity: 1,
+          background: `${STATISTIC_CONFIGS[mapStatistic].color}20`,
+          delay: count === 0 ? 1500 : 0,
+          onStart: setClicked.bind(this, true),
+          onRest: setClicked.bind(this, false)
+        })
+      })
+    }
+  }, [count, mapStatistic, set, width])
 
-    const handleClick = useCallback(
-        (statistic) => {
-            console.log(statistic);
-            setCount((prevCount) => prevCount + 1);
-            setMapStatistic(statistic);
-        },
-        [setMapStatistic]
-    );
+  const handleClick = useCallback(
+    (statistic) => {
+      console.log(statistic)
+      setCount((prevCount) => prevCount + 1)
+      setMapStatistic(statistic)
+    },
+    [setMapStatistic]
+  )
 
-    return (
+  return (
         <MapSwitcherWrapper ref={mapSwitcher}>
             <HighlightWrapper style={spring}></HighlightWrapper>
 
@@ -108,14 +108,14 @@ const MapSwitcher = ({ mapStatistic, setMapStatistic }) => {
                 ></ClickableWrapper>
             ))}
         </MapSwitcherWrapper>
-    );
-};
+  )
+}
 
 const isEqual = (prevProps, currProps) => {
-    if (prevProps.mapStatistic !== currProps.mapStatistic) {
-        return false;
-    }
-    return true;
-};
+  if (prevProps.mapStatistic !== currProps.mapStatistic) {
+    return false
+  }
+  return true
+}
 
-export default memo(MapSwitcher, isEqual);
+export default memo(MapSwitcher, isEqual)

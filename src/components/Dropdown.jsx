@@ -1,6 +1,6 @@
-import PropTypes from "prop-types";
-import React, { useState, useCallback, useRef } from 'react';
-import styled from "@xstyled/styled-components";
+import PropTypes from 'prop-types'
+import React, { useState, useCallback, useRef } from 'react'
+import styled from '@xstyled/styled-components'
 
 const DropdownSelect = styled.select`
   appearance: none;
@@ -23,15 +23,15 @@ const DropdownSelect = styled.select`
   &:focus {
     outline: none;
   }
-`;
+`
 
 const Dropdown = ({ options }) => {
   const handleChange = useCallback(
     ({ target }) => {
-      console.log(target.value);
+      console.log(target.value)
     },
     []
-  );
+  )
 
   return (
     <DropdownSelect
@@ -46,11 +46,11 @@ const Dropdown = ({ options }) => {
             >
               {region.name}
             </option>
-          );
+          )
         })}
     </DropdownSelect>
-  );
-};
+  )
+}
 
 Dropdown.propTypes = {
   options: PropTypes.arrayOf(
@@ -62,4 +62,4 @@ Dropdown.propTypes = {
   value: PropTypes.any
 }
 
-export default Dropdown;
+export default Dropdown

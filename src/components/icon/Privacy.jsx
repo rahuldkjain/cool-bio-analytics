@@ -1,6 +1,6 @@
-import React, { memo } from "react";
+import React, { memo } from 'react'
 
-function SvgComponent({ width = 512, height = 512, ...rest }) {
+function SvgComponent ({ width = 512, height = 512, ...rest }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -63,8 +63,8 @@ function SvgComponent({ width = 512, height = 512, ...rest }) {
         </g>
       </g>
     </svg>
-  );
+  )
 }
 
-const Privacy = memo(SvgComponent);
-export default Privacy;
+const Privacy = memo(SvgComponent)
+export default Privacy

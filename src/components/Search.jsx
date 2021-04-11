@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from '@xstyled/styled-components';
+import styled from '@xstyled/styled-components'
 import Dropdown from './Dropdown'
 
 const SearchWrapper = styled.div`
@@ -9,7 +9,7 @@ const SearchWrapper = styled.div`
     * {
         align-self: center;
     }
-`;
+`
 
 const Label = styled.label`
     color: gray;
@@ -17,27 +17,26 @@ const Label = styled.label`
     margin-bottom: 1rem;
     animation: fadeInUp;
     animation-delay: 250ms;
-`;
+`
 
 const DropdownWrapper = styled.div`
     animation: fadeInUp;
     animation-delay: 500ms;
     min-width: calc(60%);
     display: flex;
-`;
+`
 
 const dropdownOptions = [{
-    key: 'cool.bio',
-    name: 'Cool.bio'
+  key: 'cool.bio',
+  name: 'Cool.bio'
 },
 {
-    key: 'higgle.io',
-    name: 'Higgle'
+  key: 'higgle.io',
+  name: 'Higgle'
 }]
 
-
-export default function Search() {
-    return (
+export default function Search () {
+  return (
         <SearchWrapper>
             <Label>
                 Filter your websites or apps
@@ -46,5 +45,5 @@ export default function Search() {
                 <Dropdown value="cool.bio" options={dropdownOptions} />
             </DropdownWrapper>
         </SearchWrapper>
-    )
+  )
 }

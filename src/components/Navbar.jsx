@@ -1,19 +1,19 @@
-import React, { useState, useCallback, useRef } from 'react';
-import * as Icon from "react-feather";
-import { Link } from 'react-router-dom';
-import { useSpring, useTransition, animated } from "react-spring";
-import { useLockBodyScroll, useWindowSize } from "react-use";
-import styled from "@xstyled/styled-components";
+import React, { useState, useCallback, useRef } from 'react'
+import * as Icon from 'react-feather'
+import { Link } from 'react-router-dom'
+import { useSpring, useTransition, animated } from 'react-spring'
+import { useLockBodyScroll, useWindowSize } from 'react-use'
+import styled from '@xstyled/styled-components'
 
-import Brand from './Brand';
-import SunMoon from './SunMoon';
+import Brand from './Brand'
+import SunMoon from './SunMoon'
 
 import {
   SLIDE_IN,
   SLIDE_OUT,
   SLIDE_IN_MOBILE,
-  SLIDE_OUT_MOBILE,
-} from '../utils/animations';
+  SLIDE_OUT_MOBILE
+} from '../utils/animations'
 
 const NavWrapper = styled(animated.div)`
   align-items: center;
@@ -31,7 +31,7 @@ const NavWrapper = styled(animated.div)`
     position: fixed;
     z-index: 999;
   }
-`;
+`
 
 const NavbarRight = styled.div`
   color: gray;
@@ -63,7 +63,7 @@ const NavbarRight = styled.div`
       }
     }
   }
-`;
+`
 
 const ExpandWrapper = styled.div`
   background-color: nav;
@@ -109,7 +109,7 @@ const ExpandWrapper = styled.div`
       width: 12rem;
     }
   }
-`;
+`
 
 const ExpandBottom = styled.div`
   align-self: flex-start;
@@ -125,7 +125,7 @@ const ExpandBottom = styled.div`
   &:hover {
     background: none;
   }
-`;
+`
 
 const WrapperRouterLink = styled(Link)`
   pointer-events: ${({ disable }) => (disable ? 'none' : 'auto')};
@@ -137,7 +137,7 @@ const WrapperRouterLink = styled(Link)`
       padding: 0.25rem;
     }
   }
-`;
+`
 
 const WrapperRouterIconLink = styled(Link)`
   pointer-events: ${({ disable }) => (disable ? 'none' : 'auto')};
@@ -147,33 +147,33 @@ const WrapperRouterIconLink = styled(Link)`
       stroke: pblue;
     }
   }
-`;
+`
 
-function Navbar({
+function Navbar ({
   pages,
-  darkMode,
+  darkMode
 }) {
-  const [expand, setExpand] = useState(false);
+  const [expand, setExpand] = useState(false)
 
-  useLockBodyScroll(expand);
-  const windowSize = useWindowSize();
+  useLockBodyScroll(expand)
+  const windowSize = useWindowSize()
 
-  const [spring, set, stop] = useSpring(() => ({ opacity: 0 }));
-  set({ opacity: 1 });
-  stop();
+  const [spring, set, stop] = useSpring(() => ({ opacity: 0 }))
+  set({ opacity: 1 })
+  stop()
 
   const transitions = useTransition(expand, null, {
     from: windowSize.width < 769 ? SLIDE_IN_MOBILE : SLIDE_IN,
     enter: windowSize.width < 769 ? SLIDE_OUT_MOBILE : SLIDE_OUT,
     leave: windowSize.width < 769 ? SLIDE_IN_MOBILE : SLIDE_IN,
-    config: { mass: 1, tension: 210, friction: 26 },
-  });
+    config: { mass: 1, tension: 210, friction: 26 }
+  })
 
   const handleMouseEnter = useCallback(() => {
     if (windowSize.width > 769) {
-      setExpand(true);
+      setExpand(true)
     }
-  }, [windowSize.width]);
+  }, [windowSize.width])
 
   return (
     <NavWrapper style={spring}>
@@ -181,11 +181,11 @@ function Navbar({
       <NavbarRight
         onMouseEnter={handleMouseEnter}
         {...(windowSize.width < 769 && {
-          onClick: setExpand.bind(this, !expand),
+          onClick: setExpand.bind(this, !expand)
         })}
       >
         {windowSize.width < 769 && (
-          <span>{expand ? "Close" : "Menu"}</span>
+          <span>{expand ? 'Close' : 'Menu'}</span>
         )}
 
         {windowSize.width > 769 && (
@@ -213,24 +213,26 @@ function Navbar({
       </NavbarRight>
 
       {transitions.map(({ item, key, props }) =>
-        item ? (
+        item
+          ? (
           <animated.div key={key} style={props}>
             <Expand {...{ pages, setExpand, darkMode, windowSize }} />
           </animated.div>
-        ) : (
+            )
+          : (
           <animated.div key={key} style={props}></animated.div>
-        )
+            )
       )}
     </NavWrapper>
-  );
+  )
 }
 
-function Expand({ pages, setExpand, darkMode, windowSize }) {
-  const expandElement = useRef(null);
+function Expand ({ pages, setExpand, darkMode, windowSize }) {
+  const expandElement = useRef(null)
 
   const handleMouseLeave = useCallback(() => {
-    windowSize.width > 768 && setExpand(false);
-  }, [setExpand, windowSize.width]);
+    windowSize.width > 768 && setExpand(false)
+  }, [setExpand, windowSize.width])
 
   return (
     <ExpandWrapper ref={expandElement} onMouseLeave={handleMouseLeave}>
@@ -241,16 +243,16 @@ function Expand({ pages, setExpand, darkMode, windowSize }) {
               to={page.pageLink}
               key={i}
               {...(windowSize.width < 769 && {
-                onClick: setExpand.bind(this, false),
+                onClick: setExpand.bind(this, false)
               })}
             >
               <span>
                 {page.displayName}
               </span>
             </WrapperRouterLink>
-          );
+          )
         }
-        return null;
+        return null
       })}
 
       {windowSize.width < 768 && <SunMoon {...{ darkMode }} />}
@@ -259,13 +261,13 @@ function Expand({ pages, setExpand, darkMode, windowSize }) {
         <h5>A crowdsourced initiative.</h5>
       </ExpandBottom>
     </ExpandWrapper>
-  );
+  )
 }
 
-export default Navbar;
+export default Navbar
 
 const activeNavIcon = (path) => ({
   style: {
-    stroke: "#4c75f2",
-  },
-});
+    stroke: '#4c75f2'
+  }
+})

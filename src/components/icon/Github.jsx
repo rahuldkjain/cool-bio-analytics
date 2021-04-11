@@ -1,8 +1,8 @@
-import * as React from "react"
+import * as React from 'react'
 
-function Github(props) {
-    const { fill = '#fff' } = props;
-    return (
+function Github (props) {
+  const { fill = '#fff' } = props
+  return (
         <svg
             width={40}
             height={40}
@@ -16,7 +16,7 @@ function Github(props) {
                 fill={fill}
             />
         </svg>
-    )
+  )
 }
 
 export default Github

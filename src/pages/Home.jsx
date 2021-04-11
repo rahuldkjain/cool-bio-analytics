@@ -1,79 +1,78 @@
-import React, { lazy } from "react";
-import styled, { x, useColorMode } from "@xstyled/styled-components";
+import React, { lazy } from 'react'
+import styled, { x, useColorMode } from '@xstyled/styled-components'
 import { Helmet } from 'react-helmet-async'
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 
-import Navbar from "../components/Navbar";
-import Blob from "../components/icon/Blob";
-import Privacy from "../components/icon/Privacy";
-import OpenSource from "../components/icon/OpenSource";
-import PayAsYouGo from "../components/icon/PayAsYouGo";
-import Api from "../components/icon/Api";
-import Gdpr from "../components/icon/Gdpr";
+import Navbar from '../components/Navbar'
+import Blob from '../components/icon/Blob'
+import Privacy from '../components/icon/Privacy'
+import OpenSource from '../components/icon/OpenSource'
+import PayAsYouGo from '../components/icon/PayAsYouGo'
+import Api from '../components/icon/Api'
+import Gdpr from '../components/icon/Gdpr'
 
-const Pricing = lazy(() => import("../components/Pricing"));
-const Footer = lazy(() => import("../components/Footer"));
-
+const Pricing = lazy(() => import('../components/Pricing'))
+const Footer = lazy(() => import('../components/Footer'))
 
 const pages = [
   {
-    pageLink: "/",
-    displayName: "Home",
-    showInNavbar: true,
+    pageLink: '/',
+    displayName: 'Home',
+    showInNavbar: true
   },
   {
-    pageLink: "/list",
-    displayName: "List",
-    showInNavbar: true,
+    pageLink: '/list',
+    displayName: 'List',
+    showInNavbar: true
   },
   {
-    pageLink: "/about",
-    displayName: "About",
-    showInNavbar: true,
+    pageLink: '/about',
+    displayName: 'About',
+    showInNavbar: true
   },
   {
-    pageLink: "/state/:stateCode",
-    displayName: "State",
-    showInNavbar: false,
-  },
-];
+    pageLink: '/state/:stateCode',
+    displayName: 'State',
+    showInNavbar: false
+  }
+]
 
 const ourServices = {
-  key: "services",
-  description: "Why us?",
-  label: "Leave Analytics on us and focus on your products",
-  copy: "Featured Service that We Provide",
+  key: 'services',
+  description: 'Why us?',
+  label: 'Leave Analytics on us and focus on your products',
+  copy: 'Featured Service that We Provide',
   options: [
     {
       icon: <Privacy height={50} width={50} />,
-      title: "Privacy Friendy",
-      key: "privacy",
-      color: "redLight",
-      fontColor: "red",
+      title: 'Privacy Friendy',
+      key: 'privacy',
+      color: 'redLight',
+      fontColor: 'red'
     },
     {
       icon: <PayAsYouGo height={50} width={50} />,
-      title: "Pay As You Go",
-      key: "payAsYouGo",
-      color: "blueLight",
-      fontColor: "blue",
+      title: 'Pay As You Go',
+      key: 'payAsYouGo',
+      color: 'blueLight',
+      fontColor: 'blue'
     },
     {
       icon: <OpenSource height={50} width={50} />,
-      title: "Open Source",
-      key: "openSource",
-      color: "greenLight",
-      fontColor: "green",
+      title: 'Open Source',
+      key: 'openSource',
+      color: 'greenLight',
+      fontColor: 'green'
     },
     {
       icon: <Api height={50} width={50} />,
-      title: "Graphql Api",
-      key: "api",
-      color: "grayLight",
-      fontColor: "gray",
-    },
-  ],
-};
+      title: 'Graphql Api',
+      key: 'api',
+      color: 'grayLight',
+      fontColor: 'gray'
+    }
+  ]
+}
 
 const HomeWrapper = styled.div`
   display: flex;
@@ -83,7 +82,7 @@ const HomeWrapper = styled.div`
   @media (max-width: md) {
     width: 100%;
   }
-`;
+`
 
 const HomeLeft = styled(HomeWrapper)`
   margin-right: 2.5rem;
@@ -92,7 +91,7 @@ const HomeLeft = styled(HomeWrapper)`
     margin-left: 1rem;
     margin-right: 1rem;
   }
-`;
+`
 
 const HomeRight = styled(HomeWrapper)`
   margin-left: 2.5rem;
@@ -101,7 +100,7 @@ const HomeRight = styled(HomeWrapper)`
     margin-left: 1rem;
     margin-right: 1rem;
   }
-`;
+`
 
 const Button = styled(Link)`
   appearance: none;
@@ -128,10 +127,10 @@ const Button = styled(Link)`
   &:hover {
     background-color: dorpdownHover;
   }
-`;
+`
 
-function Landing(props) {
-  const [mode] = useColorMode(false);
+function Landing (props) {
+  const [mode] = useColorMode(false)
   return (
     <>
       <Navbar pages={pages} />
@@ -144,17 +143,17 @@ function Landing(props) {
         flexDirection="row"
         flexWrap="wrap"
         justifyContent="center"
-        ml={{ md: "9rem", sm: 0 }}
-        mr={{ md: "3rem", sm: 0 }}
-        pt={{ md: "5rem", xs: "3rem" }}
+        ml={{ md: '9rem', sm: 0 }}
+        mr={{ md: '3rem', sm: 0 }}
+        pt={{ md: '5rem', xs: '3rem' }}
       >
         <HomeLeft>
           <a
             href="https://www.producthunt.com/posts/daku?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-daku"
-            target="_blank"
+            target="_blank" rel="noreferrer"
           >
             <img
-              src={`https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=289502&theme=${mode === "dark" ? "dark" : "light"
+              src={`https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=289502&theme=${mode === 'dark' ? 'dark' : 'light'
                 }`}
               alt="Daku - It's like Tinder for Product Hunt | Product Hunt"
             />
@@ -162,7 +161,7 @@ function Landing(props) {
           <x.div my={{ md: 8, _: 8 }}>
             <x.h1
               color="blue"
-              fontSize={{ md: "5xl", xs: "2xl" }}
+              fontSize={{ md: '5xl', xs: '2xl' }}
               fontWeight={700}
             >
               Ultimate Platform to monitor your Analytics.
@@ -184,7 +183,7 @@ function Landing(props) {
           <x.div position="relative">
             <Blob fill="redLight" />
             <x.img
-              src={`/cool-bio-analytics-demo-${mode === "dark" ? "dark" : "light"
+              src={`/cool-bio-analytics-demo-${mode === 'dark' ? 'dark' : 'light'
                 }.png`}
               position="absolute"
               width="100%"
@@ -200,9 +199,9 @@ function Landing(props) {
         flexDirection="row"
         flexWrap="wrap"
         justifyContent="center"
-        ml={{ md: "9rem", sm: 0 }}
-        mr={{ md: "3rem", sm: 0 }}
-        pt={{ md: 28, xs: "3rem" }}
+        ml={{ md: '9rem', sm: 0 }}
+        mr={{ md: '3rem', sm: 0 }}
+        pt={{ md: 28, xs: '3rem' }}
       >
         <x.div
           display="flex"
@@ -212,13 +211,13 @@ function Landing(props) {
           flexDirection="column"
           py={5}
         >
-          <x.span color="pink" fontSize={{ md: "xl", xs: "lg" }} py={4}>
+          <x.span color="pink" fontSize={{ md: 'xl', xs: 'lg' }} py={4}>
             {ourServices.description}
           </x.span>
           <x.h2
             color="silver"
             py={4}
-            fontSize={{ md: "4xl", xs: "xl" }}
+            fontSize={{ md: '4xl', xs: 'xl' }}
             fontWeight="700"
           >
             {ourServices.label}
@@ -247,7 +246,7 @@ function Landing(props) {
                 >
                   {icon}
                 </x.div>
-                <x.span color={fontColor} fontSize={{ md: "16px", sm: "sm" }}>
+                <x.span color={fontColor} fontSize={{ md: '16px', sm: 'sm' }}>
                   {title}
                 </x.span>
               </x.div>
@@ -260,18 +259,18 @@ function Landing(props) {
         flexDirection="row"
         flexWrap="wrap"
         justifyContent="center"
-        ml={{ md: "9rem", sm: 0 }}
-        mr={{ md: "3rem", sm: 0 }}
-        pt={{ md: 28, xs: "3rem" }}
+        ml={{ md: '9rem', sm: 0 }}
+        mr={{ md: '3rem', sm: 0 }}
+        pt={{ md: 28, xs: '3rem' }}
       >
         <HomeLeft>
-          <x.span color="pink" fontSize={{ md: "xl", xs: "lg" }} py={4}>
+          <x.span color="pink" fontSize={{ md: 'xl', xs: 'lg' }} py={4}>
             Hate cookies popups?
           </x.span>
           <x.h2
             color="silver"
             py={4}
-            fontSize={{ md: "4xl", xs: "xl" }}
+            fontSize={{ md: '4xl', xs: 'xl' }}
             fontWeight="700"
           >
             We too. We don't have cookies and fully compliant with GDPR
@@ -292,9 +291,9 @@ function Landing(props) {
         flexDirection="row"
         flexWrap="wrap"
         justifyContent="center"
-        ml={{ md: "9rem", xs: 0 }}
-        mr={{ md: "3rem", xs: 0 }}
-        pt={{ md: 28, xs: "3rem" }}
+        ml={{ md: '9rem', xs: 0 }}
+        mr={{ md: '3rem', xs: 0 }}
+        pt={{ md: 28, xs: '3rem' }}
       >
         <x.div
           display="flex"
@@ -313,9 +312,9 @@ function Landing(props) {
         flexDirection="row"
         flexWrap="wrap"
         justifyContent="center"
-        ml={{ md: "9rem", xs: 0 }}
-        mr={{ md: "3rem", xs: 0 }}
-        pt={{ md: 28, xs: "3rem" }}
+        ml={{ md: '9rem', xs: 0 }}
+        mr={{ md: '3rem', xs: 0 }}
+        pt={{ md: 28, xs: '3rem' }}
       >
         <x.div
           display="flex"
@@ -328,7 +327,7 @@ function Landing(props) {
           <x.h2
             color="silver"
             pb={12}
-            fontSize={{ md: "4xl", xs: "xl" }}
+            fontSize={{ md: '4xl', xs: 'xl' }}
             fontWeight="700"
           >
             Build in a weekend, track to millions
@@ -338,9 +337,9 @@ function Landing(props) {
       </x.div>
       <Footer />
     </>
-  );
+  )
 }
 
-Landing.propTypes = {};
+Landing.propTypes = {}
 
-export default Landing;
+export default Landing

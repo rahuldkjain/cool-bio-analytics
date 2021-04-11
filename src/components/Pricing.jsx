@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import styled, { x } from '@xstyled/styled-components';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react'
+import styled, { x } from '@xstyled/styled-components'
+import { Link } from 'react-router-dom'
 
-import { pricesData } from '../config/constants';
+import { pricesData } from '../config/constants'
 
 const Button = styled(Link)`
   appearance: none;
@@ -29,21 +29,21 @@ const Button = styled(Link)`
   &:hover {
     background-color: dorpdownHover;
   }
-`;
+`
 
-export default function Pricing({ products }) {
-    const [billingInterval, setBillingInterval] = useState('month');
+export default function Pricing ({ products }) {
+  const [billingInterval, setBillingInterval] = useState('month')
 
-    const onBillingIntervalChange = (val) => () => {
-        setBillingInterval(val)
-    }
+  const onBillingIntervalChange = (val) => () => {
+    setBillingInterval(val)
+  }
 
-    return (
+  return (
         <>
             <x.h2
                 color="silver"
                 py={4}
-                fontSize={{ md: "4xl", xs: "xl" }}
+                fontSize={{ md: '4xl', xs: 'xl' }}
                 fontWeight="700"
             >Pricing Plans</x.h2>
             <x.p color="gray" pb={{ md: 24, xs: 16 }}>Start tracking for free, then add a site plan to track more. Account plans unlock additional features.</x.p>
@@ -60,7 +60,7 @@ export default function Pricing({ products }) {
                     px={8}
                     py={4}
                     borderRadius=".375rem"
-                    backgroundColor={billingInterval === 'month' ? "greenLight" : "transparent"}
+                    backgroundColor={billingInterval === 'month' ? 'greenLight' : 'transparent'}
                     color="green"
                     onClick={onBillingIntervalChange('month')}
                 >
@@ -71,7 +71,7 @@ export default function Pricing({ products }) {
                     px={8}
                     py={4}
                     borderRadius=".375rem"
-                    backgroundColor={billingInterval === 'year' ? "greenLight" : "transparent"}
+                    backgroundColor={billingInterval === 'year' ? 'greenLight' : 'transparent'}
                     color="green"
                     onClick={onBillingIntervalChange('year')}
                 >
@@ -85,7 +85,7 @@ export default function Pricing({ products }) {
                 justifyContent="center"
             >
                 {
-                    pricesData.map(({ color, month, year, title, label, views }) => (
+                    pricesData.map(({ color, month, year, title, label, views, key }) => (
                         <x.div
                             p={8}
                             borderRadius="35px"
@@ -95,12 +95,13 @@ export default function Pricing({ products }) {
                             flexDirection="column"
                             m={5}
                             flex="1"
-                            maxWidth={{ md: "25%", xs: "80%" }}
+                            maxWidth={{ md: '25%', xs: '80%' }}
+                            key={key}
                         >
                             <x.h3
                                 fontWeight="700"
                                 color={color}
-                                fontSize={{ md: "2xl", xs: "xl" }}
+                                fontSize={{ md: '2xl', xs: 'xl' }}
                                 mb={5}
                             >
                                 {title}
@@ -113,13 +114,13 @@ export default function Pricing({ products }) {
                             </x.p>
                             <x.span
                                 color={color}
-                                fontSize={{ md: "4xl", xs: "2xl" }}
+                                fontSize={{ md: '4xl', xs: '2xl' }}
                                 pt={4}
                                 pb={8}
                             >
                                 ${billingInterval === 'month' ? month : year}
                                 <x.span
-                                    fontSize={{ md: "16px", xs: "sm" }}
+                                    fontSize={{ md: '16px', xs: 'sm' }}
                                     color="gray"
                                     pl={2}
                                 >/{billingInterval}</x.span>
@@ -130,5 +131,5 @@ export default function Pricing({ products }) {
                 }
             </x.div>
         </>
-    )
+  )
 }

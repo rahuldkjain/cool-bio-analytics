@@ -1,10 +1,10 @@
 import React from 'react'
 import { Helmet } from 'react-helmet-async'
-import styled, { useColorMode } from "@xstyled/styled-components";
-import Brand from '../components/Brand';
-import SunMoon from '../components/SunMoon';
-import Github from '../components/icon/Github';
-import Google from '../components/icon/Google';
+import styled, { useColorMode } from '@xstyled/styled-components'
+import Brand from '../components/Brand'
+import SunMoon from '../components/SunMoon'
+import Github from '../components/icon/Github'
+import Google from '../components/icon/Google'
 
 const LoginWrapper = styled.div`
   display: flex;
@@ -17,7 +17,7 @@ const LoginWrapper = styled.div`
   @media (max-width: md) {
     width: 100%;
   }
-`;
+`
 
 const LoginContainer = styled.div`
     display: flex;
@@ -25,22 +25,21 @@ const LoginContainer = styled.div`
     align-items: center;
     padding: 30px;
     flex: 1;
-`;
+`
 
 const BrandWrapper = styled.div`
     display: flex;
     justify-content: space-between;
     width: 100%;
-`;
-
+`
 
 const H1 = styled.h1`
     color: gray;
-`;
+`
 
 const LoginLogo = styled.a`
   margin-right: 40px;
-`;
+`
 
 const LogoinLogoWrapper = styled.div`
   display: flex;
@@ -49,7 +48,7 @@ const LogoinLogoWrapper = styled.div`
   @media (min-width: md) {
     margin-top: 50px;
   }
-`;
+`
 
 const CopyRight = styled.div`
   background-color: pinkLight;
@@ -61,13 +60,11 @@ const CopyRight = styled.div`
   @media (min-width: md) {
     font-size: 1rem;
   }
-`;
+`
 
-
-
-export default function Login(props) {
-    const [mode] = useColorMode(false);
-    return (
+export default function Login (props) {
+  const [mode] = useColorMode(false)
+  return (
         <>
             <Helmet>
                 <html lang="en" />
@@ -91,7 +88,7 @@ export default function Login(props) {
                                 <Google />
                             </LoginLogo>
                             <LoginLogo href="https://backend.cool.bio/auth/providers/github">
-                                <Github fill={mode === "dark" ? '#fff' : '#000'} />
+                                <Github fill={mode === 'dark' ? '#fff' : '#000'} />
                             </LoginLogo>
                         </LogoinLogoWrapper>
                     </div>
@@ -101,5 +98,5 @@ export default function Login(props) {
                 </LoginWrapper>
             </LoginContainer>
         </>
-    )
+  )
 }

@@ -1,13 +1,12 @@
-import React from 'react';
+import React from 'react'
 import { Link, Route, Switch, Redirect } from 'react-router-dom'
 import styled, { defaultTheme, ThemeProvider, Preflight, ColorModeProvider, createGlobalStyle } from '@xstyled/styled-components'
-import { th } from "@xstyled/system";
-import { Provider } from "jotai";
-import { NhostApolloProvider } from "@nhost/react-apollo";
-import { NhostAuthProvider } from "@nhost/react-auth";
+import { th } from '@xstyled/system'
+import { Provider } from 'jotai'
+import { NhostApolloProvider } from '@nhost/react-apollo'
+import { NhostAuthProvider } from '@nhost/react-auth'
 
-import { auth } from "./utils/hbp";
-
+import { auth } from './utils/hbp'
 
 const GlobalStyle = createGlobalStyle`
   html, body {
@@ -71,14 +70,13 @@ const GlobalStyle = createGlobalStyle`
     color: inherit;
     text-decoration: none;
   }
-`;
-
+`
 
 const theme = {
   ...defaultTheme,
   defaultColorModeName: 'dark',
   animations: {
-    'fadeInUp': 'fadeInUp 0.45s both',
+    fadeInUp: 'fadeInUp 0.45s both'
   },
   colors: {
     white: '#fff',
@@ -156,26 +154,26 @@ const theme = {
     darkMPurpleLight: '#40008050',
     darkNav: '#1e1e30',
 
-    background: th.color("white"),
+    background: th.color('white'),
     text: '#000',
     primary: '#07c',
-    nav: th.color("grayLightOpaque"),
-    dropdown: th.color("grayGallery"),
-    dorpdownHover: th.color("grayHover"),
+    nav: th.color('grayLightOpaque'),
+    dropdown: th.color('grayGallery'),
+    dorpdownHover: th.color('grayHover'),
     dropdownBorder: '#e8e8e9',
-    tableCell: th.color("grayLightOpaque"),
+    tableCell: th.color('grayLightOpaque'),
     tableBodyCell: 'transparent',
     modes: {
       dark: {
-        background: th.color("darkMGray"),
+        background: th.color('darkMGray'),
         text: '#fff',
         primary: '#0cf',
-        nav: th.color("darkNav"),
-        dropdown: th.color("darkNav"),
-        dorpdownHover: th.color("grayHover"),
+        nav: th.color('darkNav'),
+        dropdown: th.color('darkNav'),
+        dorpdownHover: th.color('grayHover'),
         dropdownBorder: '#9494941a',
-        tableCell: th.color("darkNav"),
-        tableBodyCell: th.color("grayLight"),
+        tableCell: th.color('darkNav'),
+        tableBodyCell: th.color('grayLight')
       }
     }
   }
@@ -185,9 +183,9 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-`;
+`
 
-export default function App({ router }) {
+export default function App ({ router }) {
   return (
     <ThemeProvider theme={theme}>
       <ColorModeProvider>
@@ -202,11 +200,12 @@ export default function App({ router }) {
               <Wrapper>
                 <Switch>
                   {router.routes.map((route) => {
+                    console.log(route)
                     return (
                       <Route exact key={route.path} path={route.path}>
                         <route.component />
                       </Route>
-                    );
+                    )
                   })}
                   <Redirect to="/" />
                 </Switch>

@@ -1,9 +1,9 @@
-import React, { memo, useMemo } from 'react';
-import { animated, useSpring } from 'react-spring';
-import styled from '@xstyled/styled-components';
+import React, { memo, useMemo } from 'react'
+import { animated, useSpring } from 'react-spring'
+import styled from '@xstyled/styled-components'
 
-import { SPRING_CONFIG_NUMBERS } from '../config/constants';
-import { formatDate, formatNumber, getStatistic } from '../utils/commonFunctions';
+import { SPRING_CONFIG_NUMBERS } from '../config/constants'
+import { formatDate, formatNumber, getStatistic } from '../utils/commonFunctions'
 
 const Header = styled.h1`
     background-color: brickLight;
@@ -13,7 +13,7 @@ const Header = styled.h1`
     color: brick;
     animation: fadeInUp;
     animation-delay: 0ms;
-`;
+`
 
 const HeaderRight = styled.div`
     color: purpleMid;
@@ -22,7 +22,7 @@ const HeaderRight = styled.div`
     text-align: right;
     animation: fadeInUp;
     animation-delay: 500ms;
-`;
+`
 
 const StateHeaderWrapper = styled.div`
   align-self: center;
@@ -33,20 +33,20 @@ const StateHeaderWrapper = styled.div`
   margin-bottom: 1rem;
   position: relative;
   width: 100%;
-`;
+`
 
 const HeaderWrapper = styled.div`
   display: flex;
-`;
+`
 
 const HeaderRightWrapper = styled.h5`
   font-weight: 600;
-`;
+`
 
 const HeaderRightH2 = styled(animated.h2)`
   color: purple;
   font-weight: 900;
-`;
+`
 
 const SubHeader = styled.h5`
   animation: fadeInUp;
@@ -54,13 +54,13 @@ const SubHeader = styled.h5`
   color: gray;
   margin-top: .5rem;
   font-weight: 600;
-`;
+`
 
-function StateHeader({ data, stateCode }) {
+function StateHeader ({ data, stateCode }) {
   const spring = useSpring({
     total: getStatistic(data, 'total', 'tested'),
-    config: SPRING_CONFIG_NUMBERS,
-  });
+    config: SPRING_CONFIG_NUMBERS
+  })
 
   return (
     <StateHeaderWrapper>
@@ -86,7 +86,7 @@ function StateHeader({ data, stateCode }) {
         </HeaderRightWrapper>
       </HeaderRight>
     </StateHeaderWrapper>
-  );
+  )
 }
 
-export default memo(StateHeader);
+export default memo(StateHeader)
