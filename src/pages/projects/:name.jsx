@@ -1,19 +1,22 @@
 import React, { useState, useEffect } from 'react'
 import styled from '@xstyled/styled-components'
 import { useSessionStorage } from 'react-use'
+import {
+  useParams
+} from "react-router-dom";
 
-import Search from '../components/Search'
-import Actions from '../components/Actions'
-import MapSwitcher from '../components/MapSwitcher'
-import Level from '../components/Level'
-import Minigraphs from '../components/Minigraphs'
-import MapPanel from '../components/MapPanel'
-import StateHeader from '../components/StateHeader'
-import Table from '../components/Table'
-import Navbar from '../components/Navbar'
-import PrivateRoute from '../components/PrivateRoute'
-import Timeseries from '../components/Timeseries'
-import Map from '../components/Map'
+import Search from '../../components/Search'
+import Actions from '../../components/Actions'
+import MapSwitcher from '../../components/MapSwitcher'
+import Level from '../../components/Level'
+import Minigraphs from '../../components/Minigraphs'
+import MapPanel from '../../components/MapPanel'
+import StateHeader from '../../components/StateHeader'
+import Table from '../../components/Table'
+import Navbar from '../../components/Navbar'
+import PrivateRoute from '../../components/PrivateRoute'
+import Timeseries from '../../components/Timeseries'
+import Map from '../../components/Map'
 
 const pages = [
   {
@@ -196,8 +199,9 @@ const tableData = [
   }
 ]
 
-function List (props) {
-  console.log('home----->')
+function ListPage (props) {
+  const { name } = useParams()
+  console.log('home----->', name)
   const [mapStatistic, setMapStatistic] = useSessionStorage(
     'mapStatistic',
     'active'
@@ -231,4 +235,4 @@ function List (props) {
   )
 }
 
-export default List
+export default ListPage

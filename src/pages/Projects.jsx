@@ -1,19 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import styled from '@xstyled/styled-components'
+import styled, { x } from '@xstyled/styled-components'
 import { useSessionStorage } from 'react-use'
 
-import Search from '../../components/Search'
-import Actions from '../../components/Actions'
-import MapSwitcher from '../../components/MapSwitcher'
-import Level from '../../components/Level'
-import Minigraphs from '../../components/Minigraphs'
-import MapPanel from '../../components/MapPanel'
-import StateHeader from '../../components/StateHeader'
-import Table from '../../components/Table'
-import Navbar from '../../components/Navbar'
-import PrivateRoute from '../../components/PrivateRoute'
-import Timeseries from '../../components/Timeseries'
-import Map from '../../components/Map'
+import Navbar from '../components/Navbar'
+import PrivateRoute from '../components/PrivateRoute'
 
 const pages = [
   {
@@ -196,7 +186,7 @@ const tableData = [
   }
 ]
 
-function ListPage (props) {
+function Projects (props) {
   console.log('home----->')
   const [mapStatistic, setMapStatistic] = useSessionStorage(
     'mapStatistic',
@@ -210,25 +200,10 @@ function ListPage (props) {
     <PrivateRoute>
       <Navbar pages={pages} />
       <AppWrapper>
-        <HomeLeft>
-          <Search />
-          <Actions />
-          <MapLevelWrapper>
-            <MapSwitcher mapStatistic={mapStatistic} setMapStatistic={setMapStatistic} />
-            <Level data={data} />
-            <Minigraphs timeseries={timeseriesData?.dates} {...{ date }} />
-          </MapLevelWrapper>
-          <Table columns={columns} data={tableData} />
-        </HomeLeft>
-        <HomeRight>
-          <StateHeader />
-          <MapPanel mapStatistic={mapStatistic} />
-          <Map mapStatistic={mapStatistic} />
-          <Timeseries timeseries={graphData} dates={currentDates} chartType="total" />
-        </HomeRight>
+        <x.div>Add your site here!</x.div>
       </AppWrapper>
     </PrivateRoute>
   )
 }
 
-export default ListPage
+export default Projects

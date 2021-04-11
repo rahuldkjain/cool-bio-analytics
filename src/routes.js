@@ -2,18 +2,19 @@ import React from 'react'
 
 // Auto generates routes from files under ./pages
 // https://vitejs.dev/guide/features.html#glob-import
-const pages = import.meta.glob('./pages/*.jsx')
+const pages = import.meta.glob('./pages/**/*.jsx')
 
 // Follow `react-router-config` route structure
 export const routes = Object.keys(pages).map((path) => {
   const name = path.match(/\.\/pages\/(.*)\.jsx$/)[1]
+  console.log(name);
   let component = null
 
   return {
     name: name.toLowerCase(),
     path: name === 'Home' ? '/' : `/${name.toLowerCase()}`,
     // Async pages
-    component: (props) => {
+    component (props) {
       if (!component) {
         const loadingComponent = pages[path]().then((result) => {
           component = result.default
@@ -24,6 +25,6 @@ export const routes = Object.keys(pages).map((path) => {
       }
 
       return React.createElement(component, props)
-    },
+    }
   }
 })
