@@ -187,7 +187,6 @@ const tableData = [
 ]
 
 function Projects (props) {
-  console.log('home----->')
   const [mapStatistic, setMapStatistic] = useSessionStorage(
     'mapStatistic',
     'active'

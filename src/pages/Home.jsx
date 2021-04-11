@@ -135,7 +135,10 @@ function Landing (props) {
     <>
       <Navbar pages={pages} />
       <Helmet>
-        <title>My page title</title>
+        <html lang="en" />
+        <meta charSet="utf-8" />
+        <title>Analytics | cool.bio</title>
+        <link rel="canonical" href="http://analytics.cool.bio" />
         <script type="text/javascript" src="/productHuntUpcoming.js"></script>
       </Helmet>
       <x.div

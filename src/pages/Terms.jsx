@@ -74,7 +74,6 @@ const HomeRight = styled(HomeWrapper)`
 `
 
 function Terms (props) {
-  console.log('Terms----->')
   return (
     <PrivateRoute>
       <Navbar pages={pages} />

@@ -7,7 +7,6 @@ const pages = import.meta.glob('./pages/**/*.jsx')
 // Follow `react-router-config` route structure
 export const routes = Object.keys(pages).map((path) => {
   const name = path.match(/\.\/pages\/(.*)\.jsx$/)[1]
-  console.log(name);
   let component = null
 
   return {

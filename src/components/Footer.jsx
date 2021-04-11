@@ -154,12 +154,12 @@ const Footer = () => {
           )
         })}
       </x.div>
-      <hr
+      <x.hr
         style={{
           margin: '0',
           height: '15px'
         }}
-        color={'#F87E0F'}
+        backgroundColor="brick"
       />
     </x.div>
   )

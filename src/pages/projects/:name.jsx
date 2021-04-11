@@ -3,7 +3,7 @@ import styled from '@xstyled/styled-components'
 import { useSessionStorage } from 'react-use'
 import {
   useParams
-} from "react-router-dom";
+} from 'react-router-dom'
 
 import Search from '../../components/Search'
 import Actions from '../../components/Actions'
@@ -201,7 +201,6 @@ const tableData = [
 
 function ListPage (props) {
   const { name } = useParams()
-  console.log('home----->', name)
   const [mapStatistic, setMapStatistic] = useSessionStorage(
     'mapStatistic',
     'active'

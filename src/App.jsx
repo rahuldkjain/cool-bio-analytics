@@ -1,5 +1,6 @@
+import PropTypes from 'prop-types'
 import React from 'react'
-import { Link, Route, Switch, Redirect } from 'react-router-dom'
+import { Route, Switch, Redirect } from 'react-router-dom'
 import styled, { defaultTheme, ThemeProvider, Preflight, ColorModeProvider, createGlobalStyle } from '@xstyled/styled-components'
 import { th } from '@xstyled/system'
 import { Provider } from 'jotai'
@@ -185,7 +186,7 @@ const Wrapper = styled.div`
   min-height: 100vh;
 `
 
-export default function App ({ router }) {
+function App ({ router }) {
   return (
     <ThemeProvider theme={theme}>
       <ColorModeProvider>
@@ -200,7 +201,6 @@ export default function App ({ router }) {
               <Wrapper>
                 <Switch>
                   {router.routes.map((route) => {
-                    console.log(route)
                     return (
                       <Route exact key={route.path} path={route.path}>
                         <route.component />
@@ -217,3 +217,11 @@ export default function App ({ router }) {
     </ThemeProvider>
   )
 }
+
+App.propTypes = {
+  router: PropTypes.shape({
+    routes: PropTypes.arrayOf(PropTypes.shape())
+  })
+}
+
+export default App

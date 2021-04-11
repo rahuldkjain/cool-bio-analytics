@@ -1,6 +1,9 @@
 import React from 'react'
 import { Helmet } from 'react-helmet-async'
 import styled, { useColorMode } from '@xstyled/styled-components'
+import { useAuth } from '@nhost/react-auth'
+import { Redirect } from 'react-router-dom'
+
 import Brand from '../components/Brand'
 import SunMoon from '../components/SunMoon'
 import Github from '../components/icon/Github'
@@ -64,6 +67,12 @@ const CopyRight = styled.div`
 
 export default function Login (props) {
   const [mode] = useColorMode(false)
+  const { signedIn } = useAuth()
+
+  if (signedIn) {
+    return <Redirect to="/projects" />
+  }
+
   return (
         <>
             <Helmet>
