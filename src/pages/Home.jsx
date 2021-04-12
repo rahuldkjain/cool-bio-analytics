@@ -3,7 +3,6 @@ import styled, { x, useColorMode } from '@xstyled/styled-components'
 import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
 
-import Navbar from '../components/Navbar'
 import Blob from '../components/icon/Blob'
 import Privacy from '../components/icon/Privacy'
 import OpenSource from '../components/icon/OpenSource'
@@ -11,6 +10,7 @@ import PayAsYouGo from '../components/icon/PayAsYouGo'
 import Api from '../components/icon/Api'
 import Gdpr from '../components/icon/Gdpr'
 
+const Navbar = lazy(() => import('../components/Navbar'))
 const Pricing = lazy(() => import('../components/Pricing'))
 const Footer = lazy(() => import('../components/Footer'))
 

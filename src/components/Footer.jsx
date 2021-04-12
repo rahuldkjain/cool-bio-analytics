@@ -3,31 +3,37 @@ import styled, { x } from '@xstyled/styled-components'
 import { Link } from 'react-router-dom'
 
 import Brand from './Brand'
+import Fb from './icon/Fb'
+import Github from './icon/Github'
+import Instagram from './icon/Instagram'
+import Linkedin from './icon/Linkedin'
+import Twitter from './icon/Twitter'
+
 import { footerData } from '../config/constants'
 
 const socialLinks = [
   {
-    icon: 'assets/github.svg',
+    icon: <Github width={30} height={30} fill="#F87E0F" />,
     link: 'https://github.com/subhendukundu/cool-bio-analytics',
     key: 'github'
   },
   {
-    icon: 'assets/fb.svg',
+    icon: <Fb width={30} height={30} />,
     link: 'https://www.facebook.com/thecoolbio',
     key: 'fb'
   },
   {
-    icon: 'assets/instagram.svg',
+    icon: <Instagram width={30} height={30} />,
     link: 'https://www.instagram.com/thecoolbio',
     key: 'Insta'
   },
   {
-    icon: 'assets/linkedin.svg',
+    icon: <Linkedin />,
     link: 'https://www.linkedin.com/company/thecoolbio',
     key: 'Linkedin'
   },
   {
-    icon: 'assets/twitter.svg',
+    icon: <Twitter />,
     link: 'https://twitter.com/thecoolbio',
     key: 'Twitter'
   }
@@ -143,13 +149,7 @@ const Footer = () => {
               href={link}
               aria-label={key}
             >
-              <x.img
-                w="30px"
-                h="30px"
-                src={icon}
-                objectFit="contain"
-                alt={`cool.bio's ${key} profile`}
-              />
+              {icon}
             </x.div>
           )
         })}

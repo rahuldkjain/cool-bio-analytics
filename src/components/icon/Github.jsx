@@ -1,11 +1,12 @@
+import PropTypes from 'prop-types'
 import * as React from 'react'
 
 function Github (props) {
-  const { fill = '#fff' } = props
+  const { fill = '#fff', width = 40, height = 40 } = props
   return (
         <svg
-            width={40}
-            height={40}
+            width={width}
+            height={height}
             viewBox="0 0 40 40"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -17,6 +18,12 @@ function Github (props) {
             />
         </svg>
   )
+}
+
+Github.propTypes = {
+  fill: PropTypes.string,
+  height: PropTypes.number,
+  width: PropTypes.number
 }
 
 export default Github

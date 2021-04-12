@@ -1,9 +1,9 @@
-import { createClient } from "nhost-js-sdk";
+import { createClient } from 'nhost-js-sdk'
 
 const config = {
-  baseURL: "https://backend.cool.bio",
-};
+  baseURL: 'https://backend.cool.bio'
+}
 
-const { auth, storage } = createClient(config);
+const { auth, storage } = createClient(config)
 
-export { auth, storage };
+export { auth, storage }

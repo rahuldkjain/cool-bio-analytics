@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, lazy } from 'react'
 import styled from '@xstyled/styled-components'
 import { useSessionStorage } from 'react-use'
 import {
@@ -15,8 +15,9 @@ import StateHeader from '../../components/StateHeader'
 import Table from '../../components/Table'
 import Navbar from '../../components/Navbar'
 import PrivateRoute from '../../components/PrivateRoute'
-import Timeseries from '../../components/Timeseries'
-import Map from '../../components/Map'
+
+const Map = lazy(() => import('../../components/Map'))
+const Timeseries = lazy(() => import('../../components/Timeseries'))
 
 const pages = [
   {

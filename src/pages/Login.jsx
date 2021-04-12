@@ -69,6 +69,10 @@ export default function Login (props) {
   const [mode] = useColorMode(false)
   const { signedIn } = useAuth()
 
+  if (signedIn === null) {
+    return <div>loading...</div>
+  }
+
   if (signedIn) {
     return <Redirect to="/projects" />
   }
