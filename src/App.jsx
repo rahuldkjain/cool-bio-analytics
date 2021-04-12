@@ -187,7 +187,6 @@ const Wrapper = styled.div`
 `
 
 function App ({ router }) {
-  console.log(process.env.VITE_TEST, process.env.VITE_SOME_KEY)
   return (
     <ThemeProvider theme={theme}>
       <ColorModeProvider>
@@ -195,7 +194,7 @@ function App ({ router }) {
           <NhostAuthProvider auth={auth}>
             <NhostApolloProvider
               auth={auth}
-              gqlEndpoint="https://graphql.cool.bio/v1/graphql"
+              gqlEndpoint={import.meta.env.VITE_GRAPHQL_API}
             >
               <Preflight />
               <GlobalStyle />

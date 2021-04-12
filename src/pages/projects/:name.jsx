@@ -12,12 +12,12 @@ import Level from '../../components/Level'
 import Minigraphs from '../../components/Minigraphs'
 import MapPanel from '../../components/MapPanel'
 import StateHeader from '../../components/StateHeader'
-import Table from '../../components/Table'
 import Navbar from '../../components/Navbar'
 import PrivateRoute from '../../components/PrivateRoute'
 
 const Map = lazy(() => import('../../components/Map'))
 const Timeseries = lazy(() => import('../../components/Timeseries'))
+const Table = lazy(() => import('../../components/Table'))
 
 const pages = [
   {
@@ -131,8 +131,8 @@ const data = {
 
 const columns = [
   {
-    Header: 'Country',
-    accessor: 'country'
+    Header: 'Id',
+    accessor: 'id'
   },
   {
     Header: 'Active',
@@ -156,7 +156,7 @@ const tableData = [
   {
     users: 'rabbit',
     lastName: 'kitten',
-    country: 1,
+    id: 1,
     visits: 57,
     progress: 13,
     active: 'single',
@@ -165,7 +165,7 @@ const tableData = [
   {
     users: 'rabbit',
     lastName: 'kitten',
-    country: 1,
+    id: 1,
     visits: 57,
     progress: 13,
     active: 'single',
@@ -174,7 +174,7 @@ const tableData = [
   {
     users: 'rabbit',
     lastName: 'kitten',
-    country: 1,
+    id: 1,
     visits: 57,
     progress: 13,
     active: 'single',
@@ -183,7 +183,7 @@ const tableData = [
   {
     users: 'rabbit',
     lastName: 'kitten',
-    country: 1,
+    id: 1,
     visits: 57,
     progress: 13,
     active: 'single',
@@ -192,7 +192,7 @@ const tableData = [
   {
     users: 'rabbit',
     lastName: 'kitten',
-    country: 1,
+    id: 1,
     visits: 57,
     progress: 13,
     active: 'single',

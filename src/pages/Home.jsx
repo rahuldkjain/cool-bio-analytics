@@ -1,7 +1,8 @@
 import React, { lazy } from 'react'
 import styled, { x, useColorMode } from '@xstyled/styled-components'
 import { Helmet } from 'react-helmet-async'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
+import { useAuth } from '@nhost/react-auth'
 
 import Blob from '../components/icon/Blob'
 import Privacy from '../components/icon/Privacy'
@@ -9,6 +10,8 @@ import OpenSource from '../components/icon/OpenSource'
 import PayAsYouGo from '../components/icon/PayAsYouGo'
 import Api from '../components/icon/Api'
 import Gdpr from '../components/icon/Gdpr'
+
+import GdprSvg from '.././assets/gdpr.svg'
 
 const Navbar = lazy(() => import('../components/Navbar'))
 const Pricing = lazy(() => import('../components/Pricing'))
@@ -130,7 +133,16 @@ const Button = styled(Link)`
 `
 
 function Landing (props) {
+  const { signedIn } = useAuth()
   const [mode] = useColorMode(false)
+  if (signedIn === null) {
+    return <div>loading...</div>
+  }
+
+  if (signedIn) {
+    return <Redirect to="/projects" />
+  }
+
   return (
     <>
       <Navbar pages={pages} />
@@ -286,7 +298,7 @@ function Landing (props) {
           </x.p>
         </HomeLeft>
         <HomeRight>
-          <Gdpr width="100%" height="100%" />
+          <img src={GdprSvg} alt="Gdpr logo" />
         </HomeRight>
       </x.div>
       <x.div

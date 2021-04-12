@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, lazy } from 'react'
 import styled, { x } from '@xstyled/styled-components'
 import { useSessionStorage } from 'react-use'
 
-import Navbar from '../components/Navbar'
 import PrivateRoute from '../components/PrivateRoute'
+
+const Table = lazy(() => import('../components/Table'))
+const Navbar = lazy(() => import('../components/Navbar'))
 
 const pages = [
   {
@@ -30,9 +32,8 @@ const pages = [
 
 const AppWrapper = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
-  justify-content: center;
   margin-left: 0;
   margin-right: 0;
   padding-top: 1rem;
@@ -44,39 +45,31 @@ const AppWrapper = styled.div`
   }
 `
 
-const HomeWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 34rem;
+const Button = styled.button`
+  appearance: none;
+  background-color: dropdown;
+  background-position-x: calc(100% - 0.4rem);
+  background-position-y: 50%;
+  background-repeat: no-repeat;
+  background-size: 0.6rem;
+  border: 2px solid;
+  border-color: dropdownBorder;
+  border-radius: 4px;
+  color: gray;
+  cursor: pointer;
+  font-weight: 600;
+  padding: 1rem;
+  padding-right: 1.4rem;
+  width: 150px;
+  text-align: center;
 
-  @media (max-width: md) {
-    width: 100%;
+  &:focus {
+    outline: none;
   }
-`
 
-const HomeLeft = styled(HomeWrapper)`
-  margin-right: 2.5rem;
-  min-height: 60rem;
-
-  @media (max-width: md) {
-    margin-left: 1rem;
-    margin-right: 1rem;
+  &:hover {
+    background-color: dorpdownHover;
   }
-`
-
-const HomeRight = styled(HomeWrapper)`
-  margin-left: 2.5rem;
-  min-height: 10rem;
-
-  @media (max-width: md) {
-    margin-left: 1rem;
-    margin-right: 1rem;
-  }
-`
-
-const MapLevelWrapper = styled.div`
-  position: relative;
-  margin-top: 1rem;
 `
 
 const data = {
@@ -186,7 +179,12 @@ const tableData = [
   }
 ]
 
-function Projects (props) {
+function Projects(props) {
+  const [billingInterval, setBillingInterval] = useState('month')
+
+  const onBillingIntervalChange = (val) => () => {
+    setBillingInterval(val)
+  }
   const [mapStatistic, setMapStatistic] = useSessionStorage(
     'mapStatistic',
     'active'
@@ -199,7 +197,72 @@ function Projects (props) {
     <PrivateRoute>
       <Navbar pages={pages} />
       <AppWrapper>
-        <x.div>Add your site here!</x.div>
+        <x.h1
+          fontSize={{ md: '4xl', xs: '2xl' }}
+          fontWeight="500"
+          color="blue"
+        >Add your site here!</x.h1>
+        <x.div
+          my={{ md: 8, xs: 4 }}
+          p={2}
+          borderRadius=".5rem"
+          border="1px solid"
+          borderColor="dropdownBorder"
+          backgroundColor="grayLight"
+          w="max-content"
+        >
+          <x.button
+            fontSize="sm"
+            px={8}
+            py={4}
+            borderRadius=".375rem"
+            backgroundColor={billingInterval === 'month' ? 'greenLight' : 'transparent'}
+            color="green"
+            onClick={onBillingIntervalChange('month')}
+          >
+            Ascending
+          </x.button>
+          <x.button
+            fontSize="sm"
+            px={8}
+            py={4}
+            borderRadius=".375rem"
+            backgroundColor={billingInterval === 'year' ? 'greenLight' : 'transparent'}
+            color="green"
+            onClick={onBillingIntervalChange('year')}
+          >
+            Descending
+          </x.button>
+        </x.div>
+        <x.div
+          animation="fadeInUp"
+          animationDelay="0ms"
+          display="flex"
+          flexDirection="row"
+          alignItems="center"
+        >
+          <x.h2
+            color="silver"
+            py={4}
+            fontSize={{ md: 'xl', xs: 'lg' }}
+            fontWeight="700"
+          >
+            Total Pages
+          </x.h2>
+          <x.span
+            backgroundColor="brickLight"
+            borderRadius="5px"
+            padding={2}
+            max-width={10}
+            color="brick"
+            fontSize={{ md: 'xl', xs: 'lg' }}
+            ml={4}
+          >
+            4
+          </x.span>
+        </x.div>
+        <Table columns={columns} data={tableData} />
+        <Button>Add another</Button>
       </AppWrapper>
     </PrivateRoute>
   )

@@ -31,7 +31,7 @@ const Button = styled(Link)`
   }
 `
 
-export default function Pricing ({ products }) {
+export default function Pricing () {
   const [billingInterval, setBillingInterval] = useState('month')
 
   const onBillingIntervalChange = (val) => () => {

@@ -1,9 +1,6 @@
 import DeviceDetector from 'device-detector-js'
-import BotDetector from 'device-detector-js/dist/parsers/bot'
-import { API_ROOT_URL } from '../../../src/config/constants';
 
 const deviceDetector = new DeviceDetector()
-const botDetector = new BotDetector()
 
 const query = `
   mutation postSession($objects: [session_insert_input!]!) {
@@ -11,31 +8,31 @@ const query = `
       affected_rows
     }
   }
-`;
+`
 
 export default ({
-  async handler({ request }) {
-    if (request.method !== "POST") {
+  async handler ({ request }) {
+    if (request.method !== 'POST') {
       // return new Response("Blocked Method", { status: 403 });
       throw new Error('Method not supported!')
     }
-    const userAgent = request.headers.get("User-Agent") || "";
-    if (userAgent.includes("bot")) {
+    const userAgent = request.headers.get('User-Agent') || ''
+    if (userAgent.includes('bot')) {
       // return new Response("Block User Agent containing bot", { status: 403 });
       throw new Error('Block User Agent containing bot.')
     }
 
-    const { websiteId } = await request.json();
+    const { websiteId } = await request.json()
 
-    if(!websiteId) {
+    if (!websiteId) {
       // return new Response("Website Id is required", { status: 403 });
       throw new Error('Website Id is required.')
     }
 
-    const device = deviceDetector.parse(userAgent);
+    const device = deviceDetector.parse(userAgent)
 
-    const headers = Object.fromEntries(request.headers);
-    const origin = request.headers.get("Origin");
+    const headers = Object.fromEntries(request.headers)
+    const origin = request.headers.get('Origin')
     const {
       latitude,
       longitude,
@@ -45,11 +42,11 @@ export default ({
       continent,
       city,
       regionCode,
-      postalCode,
-    } = request.cf;
+      postalCode
+    } = request.cf
 
     const data = {
-      ip: headers["x-real-ip"] || headers["cf-connecting-ip"],
+      ip: headers['x-real-ip'] || headers['cf-connecting-ip'],
       website_id: websiteId,
       client_name: device?.client?.name,
       client_type: device?.client?.type,
@@ -60,7 +57,7 @@ export default ({
       device_type: device?.device?.type,
       device_brand: device?.device?.brand,
       device_model: device?.device?.model,
-      language: headers["accept-language"],
+      language: headers['accept-language'],
       origin,
       latitude,
       longitude,
@@ -70,23 +67,23 @@ export default ({
       continent,
       city,
       region_code: regionCode,
-      postal_code: postalCode,
-    };
+      postal_code: postalCode
+    }
 
-    const postCall = await fetch(API_ROOT_URL, {
-      method: "post",
+    const postCall = await fetch(process.env.VITEDGE_GRAPHQL_API, {
+      method: 'post',
       headers: {
-        "Content-Type": "application/json",
-        "x-hasura-admin-secret":
-          process.env.VITEDGE_WORKER_HASURA_GRAPHQL_ADMIN_SECRET,
+        'Content-Type': 'application/json',
+        'x-hasura-admin-secret':
+          process.env.VITEDGE_WORKER_HASURA_GRAPHQL_ADMIN_SECRET
       },
       body: JSON.stringify({
         query,
         variables: {
-          objects: data,
-        },
-      }),
-    });
+          objects: data
+        }
+      })
+    })
 
     return {
       data: postCall.body,
@@ -98,7 +95,7 @@ export default ({
   options: {
     cache: {
       api: 90,
-      html: 90,
-    },
-  },
+      html: 90
+    }
+  }
 })

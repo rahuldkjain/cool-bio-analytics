@@ -18,10 +18,6 @@ const TableWrapper = styled.table`
     width: 100%;
 `
 
-const Tr = styled.tr`
-
-`
-
 const TbodyTr = styled.tr`
     &:nth-child(odd) td {
         background-color: tableBodyCell;
@@ -56,7 +52,7 @@ const Td = styled.td`
     margin-bottom: 0.25rem;
 `
 
-export default function Table ({ columns, data }) {
+export default function Table({ columns, data }) {
   const {
     getTableProps,
     getTableBodyProps,
@@ -72,43 +68,45 @@ export default function Table ({ columns, data }) {
   )
 
   return (
-        <TableContainer>
-            <TableWrapper {...getTableProps()}>
-                <thead>
-                    {headerGroups.map(headerGroup => (
-                        <tr {...headerGroup.getHeaderGroupProps()}>
-                            {headerGroup.headers.map(column => (
-                                <TheadTh {...column.getHeaderProps(column.getSortByToggleProps())}>
-                                    <span>{column.render('Header')}</span>
-                                    <span>
-                                        {column.isSorted
-                                          ? column.isSortedDesc
-                                            ? ' 🔽'
-                                            : ' 🔼'
-                                          : ''}
-                                    </span>
-                                </TheadTh>
-                            ))}
-                        </tr>
-                    ))}
-                </thead>
-                <tbody {...getTableBodyProps()}>
-                    {rows.map(
-                      (row, i) => {
-                        prepareRow(row)
-                        return (
-                                <TbodyTr {...row.getRowProps()}>
-                                    {row.cells.map(cell => {
-                                      return (
-                                            <Td {...cell.getCellProps()}>{cell.render('Cell')}</Td>
-                                      )
-                                    })}
-                                </TbodyTr>
-                        )
-                      }
-                    )}
-                </tbody>
-            </TableWrapper>
-        </TableContainer>
+    <TableContainer>
+      <TableWrapper {...getTableProps()}>
+        <thead>
+          {headerGroups.map((headerGroup, i) => (
+            <tr {...headerGroup.getHeaderGroupProps()} key={`header-${i}`}>
+              {headerGroup.headers.map(column => (
+                <TheadTh
+                  {...column.getHeaderProps(column.getSortByToggleProps())}
+                  key={column.render('Header')}>
+                  <span>{column.render('Header')}</span>
+                  <span>
+                    {column.isSorted
+                      ? column.isSortedDesc
+                        ? ' 🔽'
+                        : ' 🔼'
+                      : ''}
+                  </span>
+                </TheadTh>
+              ))}
+            </tr>
+          ))}
+        </thead>
+        <tbody {...getTableBodyProps()}>
+          {rows.map(
+            (row, i) => {
+              prepareRow(row)
+              return (
+                <TbodyTr {...row.getRowProps()} key={`row-${i}`}>
+                  {row.cells.map(cell => {
+                    return (
+                      <Td {...cell.getCellProps()} key={cell.render('Cell')}>{cell.render('Cell')}</Td>
+                    )
+                  })}
+                </TbodyTr>
+              )
+            }
+          )}
+        </tbody>
+      </TableWrapper>
+    </TableContainer>
   )
 }
