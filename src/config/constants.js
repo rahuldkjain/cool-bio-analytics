@@ -253,3 +253,146 @@ export const pricesData = [
     color: 'gray'
   }
 ]
+
+export const timeZones = [
+  {
+    key: 'Etc/GMT+12',
+    name: '(GMT-12:00) International Date Line West'
+  },
+  {
+    key: 'Pacific/Midway',
+    name: '(GMT-11:00) Midway Island, Samoa'
+  },
+  {
+    key: 'Pacific/Honolulu',
+    name: '(GMT-10:00) Hawaii'
+  },
+  {
+    key: 'US/Alaska',
+    name: '(GMT-09:00) Alaska'
+  },
+  {
+    key: 'America/Los_Angeles',
+    name: '(GMT-08:00) Pacific Time (US & Canada)'
+  },
+  {
+    key: 'US/Arizona',
+    name: '(GMT-07:00) Arizona'
+  },
+  {
+    key: 'America/Managua',
+    name: '(GMT-06:00) Central America'
+  },
+  {
+    key: 'US/Central',
+    name: '(GMT-06:00) Central Time (US & Canada)'
+  },
+  {
+    key: 'America/Bogota',
+    name: '(GMT-05:00) Bogota, Lima, Quito, Rio Branco'
+  },
+  {
+    key: 'US/Eastern',
+    name: '(GMT-05:00) Eastern Time (US & Canada)'
+  },
+  {
+    key: 'Canada/Atlantic',
+    name: '(GMT-04:00) Atlantic Time (Canada)'
+  },
+  {
+    key: 'America/Argentina/Buenos_Aires',
+    name: '(GMT-03:00) Buenos Aires, Georgetown'
+  },
+  {
+    key: 'America/Noronha',
+    name: '(GMT-02:00) Mid-Atlantic'
+  },
+  {
+    key: 'Atlantic/Azores',
+    name: '(GMT-01:00) Azores'
+  },
+  {
+    key: 'Etc/Greenwich',
+    name: '(GMT+00:00) Greenwich Mean Time : Dublin, Edinburgh, Lisbon, London'
+  },
+  {
+    key: 'Europe/Amsterdam',
+    name: '(GMT+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna'
+  },
+  {
+    key: 'Europe/Helsinki',
+    name: '(GMT+02:00) Helsinki, Kyiv, Riga, Sofia, Tallinn, Vilnius'
+  },
+  {
+    key: 'Europe/Moscow',
+    name: '(GMT+03:00) Moscow, St. Petersburg, Volgograd'
+  },
+  {
+    key: 'Asia/Tehran',
+    name: '(GMT+03:30) Tehran'
+  },
+  {
+    key: 'Asia/Yerevan',
+    name: '(GMT+04:00) Yerevan'
+  },
+  {
+    key: 'Asia/Kabul',
+    name: '(GMT+04:30) Kabul'
+  },
+  {
+    key: 'Asia/Yekaterinburg',
+    name: '(GMT+05:00) Yekaterinburg'
+  },
+  {
+    key: 'Asia/Karachi',
+    name: '(GMT+05:00) Islamabad, Karachi, Tashkent'
+  },
+  {
+    key: 'Asia/Calcutta',
+    name: '(GMT+05:30) Chennai, Kolkata, Mumbai, New Delhi'
+  },
+  {
+    key: 'Asia/Katmandu',
+    name: '(GMT+05:45) Kathmandu'
+  },
+  {
+    key: 'Asia/Dhaka',
+    name: '(GMT+06:00) Astana, Dhaka'
+  },
+  {
+    key: 'Asia/Rangoon',
+    name: '(GMT+06:30) Yangon (Rangoon)'
+  },
+  {
+    key: 'Asia/Bangkok',
+    name: '(GMT+07:00) Bangkok, Hanoi, Jakarta'
+  },
+  {
+    key: 'Asia/Hong_Kong',
+    name: '(GMT+08:00) Beijing, Chongqing, Hong Kong, Urumqi'
+  },
+  {
+    key: 'Asia/Seoul',
+    name: '(GMT+09:00) Seoul'
+  },
+  {
+    key: 'Australia/Adelaide',
+    name: '(GMT+09:30) Adelaide'
+  },
+  {
+    key: 'Australia/Canberra',
+    name: '(GMT+10:00) Canberra, Melbourne, Sydney'
+  },
+  {
+    key: 'Asia/Magadan',
+    name: '(GMT+11:00) Magadan, Solomon Is., New Caledonia'
+  },
+  {
+    key: 'Pacific/Auckland',
+    name: '(GMT+12:00) Auckland, Wellington'
+  },
+  {
+    key: 'Pacific/Tongatapu',
+    name: "(GMT+13:00) Nuku'alofa"
+  }
+]

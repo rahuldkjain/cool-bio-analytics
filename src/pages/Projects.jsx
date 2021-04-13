@@ -6,6 +6,7 @@ import PrivateRoute from '../components/PrivateRoute'
 
 const Table = lazy(() => import('../components/Table'))
 const Navbar = lazy(() => import('../components/Navbar'))
+const CreateProject = lazy(() => import('../components/CreateProject'))
 
 const pages = [
   {
@@ -36,39 +37,15 @@ const AppWrapper = styled.div`
   flex-wrap: wrap;
   margin-left: 0;
   margin-right: 0;
-  padding-top: 1rem;
+  padding: .7rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 
   @media (min-width: md) {
     margin-left: 9rem;
     margin-right: 3rem;
     padding-top: 5rem;
-  }
-`
-
-const Button = styled.button`
-  appearance: none;
-  background-color: dropdown;
-  background-position-x: calc(100% - 0.4rem);
-  background-position-y: 50%;
-  background-repeat: no-repeat;
-  background-size: 0.6rem;
-  border: 2px solid;
-  border-color: dropdownBorder;
-  border-radius: 4px;
-  color: gray;
-  cursor: pointer;
-  font-weight: 600;
-  padding: 1rem;
-  padding-right: 1.4rem;
-  width: 150px;
-  text-align: center;
-
-  &:focus {
-    outline: none;
-  }
-
-  &:hover {
-    background-color: dorpdownHover;
+    padding-bottom: 5rem;
   }
 `
 
@@ -262,7 +239,7 @@ function Projects(props) {
           </x.span>
         </x.div>
         <Table columns={columns} data={tableData} />
-        <Button>Add another</Button>
+        <CreateProject />
       </AppWrapper>
     </PrivateRoute>
   )
