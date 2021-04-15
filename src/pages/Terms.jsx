@@ -4,29 +4,6 @@ import styled, { x } from '@xstyled/styled-components'
 import Navbar from '../components/Navbar'
 import PrivateRoute from '../components/PrivateRoute'
 
-const pages = [
-  {
-    pageLink: '/',
-    displayName: 'Home',
-    showInNavbar: true
-  },
-  {
-    pageLink: '/list',
-    displayName: 'List',
-    showInNavbar: true
-  },
-  {
-    pageLink: '/about',
-    displayName: 'About',
-    showInNavbar: true
-  },
-  {
-    pageLink: '/state/:stateCode',
-    displayName: 'State',
-    showInNavbar: false
-  }
-]
-
 const AppWrapper = styled.div`
   display: flex;
   flex-direction: row;
@@ -76,7 +53,7 @@ const HomeRight = styled(HomeWrapper)`
 function Terms (props) {
   return (
     <PrivateRoute>
-      <Navbar pages={pages} />
+      <Navbar />
       <AppWrapper>
         <x.div>Add your site here!</x.div>
       </AppWrapper>

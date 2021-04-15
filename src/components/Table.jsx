@@ -52,7 +52,7 @@ const Td = styled.td`
     margin-bottom: 0.25rem;
 `
 
-export default function Table({ columns, data }) {
+export default function Table ({ columns, data }) {
   const {
     getTableProps,
     getTableBodyProps,
@@ -72,11 +72,11 @@ export default function Table({ columns, data }) {
       <TableWrapper {...getTableProps()}>
         <thead>
           {headerGroups.map((headerGroup, i) => (
-            <tr {...headerGroup.getHeaderGroupProps()} key={`header-${i}`}>
+            <tr key={headerGroup.getHeaderGroupProps().key} {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map(column => (
                 <TheadTh
-                  {...column.getHeaderProps(column.getSortByToggleProps())}
-                  key={column.render('Header')}>
+                  key={column.getHeaderProps(column.getSortByToggleProps()).key}
+                  {...column.getHeaderProps(column.getSortByToggleProps())}>
                   <span>{column.render('Header')}</span>
                   <span>
                     {column.isSorted
@@ -95,10 +95,10 @@ export default function Table({ columns, data }) {
             (row, i) => {
               prepareRow(row)
               return (
-                <TbodyTr {...row.getRowProps()} key={`row-${i}`}>
+                <TbodyTr key={row.getRowProps().key} {...row.getRowProps()}>
                   {row.cells.map(cell => {
                     return (
-                      <Td {...cell.getCellProps()} key={cell.render('Cell')}>{cell.render('Cell')}</Td>
+                      <Td key={cell.getCellProps().key} {...cell.getCellProps()}>{cell.render('Cell')}</Td>
                     )
                   })}
                 </TbodyTr>

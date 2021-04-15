@@ -19,29 +19,6 @@ const Map = lazy(() => import('../../components/Map'))
 const Timeseries = lazy(() => import('../../components/Timeseries'))
 const Table = lazy(() => import('../../components/Table'))
 
-const pages = [
-  {
-    pageLink: '/',
-    displayName: 'Home',
-    showInNavbar: true
-  },
-  {
-    pageLink: '/list',
-    displayName: 'List',
-    showInNavbar: true
-  },
-  {
-    pageLink: '/about',
-    displayName: 'About',
-    showInNavbar: true
-  },
-  {
-    pageLink: '/state/:stateCode',
-    displayName: 'State',
-    showInNavbar: false
-  }
-]
-
 const AppWrapper = styled.div`
   display: flex;
   flex-direction: row;
@@ -212,7 +189,7 @@ function ListPage (props) {
   const [date, setDate] = useState('')
   return (
     <PrivateRoute>
-      <Navbar pages={pages} />
+      <Navbar />
       <AppWrapper>
         <HomeLeft>
           <Search />

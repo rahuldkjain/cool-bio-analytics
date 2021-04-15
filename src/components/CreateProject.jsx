@@ -1,8 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useCallback } from 'react'
 import styled, { x } from '@xstyled/styled-components'
+import { useMutation } from '@apollo/client'
 
 import Dropdown from './Dropdown'
+import Loading from './Loading'
 
+import { INSERT_WEBSITE } from '../graphql/mutation'
 import { timeZones } from '../config/constants'
 
 const Button = styled.button`
@@ -24,6 +27,8 @@ const Button = styled.button`
   text-align: center;
   animation: fadeInUp;
   animation-delay: 0ms;
+  display: flex;
+  justify-content: center;
 
   &:focus {
     outline: none;
@@ -42,7 +47,7 @@ const Base = styled.div`
     position: relative;
     background-color: dropdown;
     border-radius: 5px;
-    margin: 1.5rem 0;
+    margin: 1.8rem 0;
     padding-left: 1rem;
     padding-right: 1rem;
     max-width: 350px;
@@ -58,58 +63,125 @@ const Base = styled.div`
     }
 `
 
-export default function CreateProject () {
-  const [isShowingForm, setShowForm] = useState(false)
-  const [domainName, setDomainName] = useState('')
+export default function CreateProject() {
+  const [insertItem] = useMutation(INSERT_WEBSITE)
+  const [selected, setSelectedData] = useState({
+    domain: '',
+    timezone: timeZones[0].key,
+    isShowingForm: false,
+    loading: false,
+    error: null
+  })
 
-  function showForm () {
-    setShowForm(true)
+  function showForm() {
+    setSelectedData(prevState => ({
+      ...prevState,
+      isShowingForm: true
+    }))
   }
 
-  function onDomainNameChange (event) {
-    const { value } = event.target
-    setDomainName(value)
-  }
+  const handleChange = useCallback(({ target: { name, value } }) => {
+    console.log(name, value)
+    setSelectedData(prevState => ({
+      ...prevState,
+      [name]: value,
+      error: null
+    }))
+  }, [])
 
-  function submitHandler (event) {
+  async function submitHandler(event) {
     event.preventDefault()
-    console.log(domainName)
-    setShowForm(false)
+    console.log(selected)
+    setSelectedData(prevState => ({
+      ...prevState,
+      loading: true
+    }))
+    if (selected.domain.length > 0) {
+      try {
+        await insertItem({
+          variables: {
+            item: {
+              domain: selected.domain,
+              timezone: selected.timezone
+            }
+          }
+        })
+        setSelectedData({
+          domain: '',
+          timezone: timeZones[0].key,
+          isShowingForm: false,
+          loading: false,
+          error: null
+        })
+      } catch (error) {
+        console.error(error)
+        setSelectedData({
+          loading: false,
+          error: 'There was an error. Try again!'
+        })
+      }
+    } else {
+      setSelectedData(prevState => ({
+        ...prevState,
+        error: 'This is required.',
+        loading: false
+      }))
+    }
   }
 
   return (
-        <x.div>
-            {isShowingForm
-              ? <x.form
-                    animation="fadeInUp"
-                    animationDelay="0ms"
-                    onSubmit={submitHandler}
-                    display="flex"
-                    flexDirection="column"
-                >
-                    <x.label color="gray" fontSize={{ md: 'xl', xs: 'lg' }}>Add domain</x.label>
-                    <Base>
-                        <x.span color="silver" fontSize="16px">https://</x.span>
-                        <x.input
-                            type='text'
-                            name='domainName'
-                            onChange={onDomainNameChange}
-                            fontSize="16px"
-                            py={4}
-                            px={1}
-                            placeholder="Enter domain name"
-                            color="gray"
-                            w="100%"
-                            outline="none"
-                            backgroundColor="dropdown"
-                        />
-                    </Base>
-                    <x.label color="gray" fontSize={{ md: 'xl', xs: 'lg' }}>Reporting Timezone</x.label>
-                    <Dropdown value="cool.bio" options={timeZones} styles={{ maxWidth: 350, my: '1.5rem' }} />
-                    <Button type="submit">Submit</Button>
-                </x.form>
-              : <Button onClick={showForm}>Add another</Button>
-            }
-        </x.div>
+    <x.div>
+      {selected.isShowingForm
+        ? <x.form
+          animation="fadeInUp"
+          animationDelay="0ms"
+          onSubmit={submitHandler}
+          display="flex"
+          flexDirection="column"
+        >
+          <x.label color="gray" fontSize={{ md: 'xl', xs: 'lg' }}>Add domain</x.label>
+          <Base>
+            <x.span color="silver" fontSize="16px">https://</x.span>
+            <x.input
+              type='text'
+              name='domain'
+              onChange={handleChange}
+              fontSize="16px"
+              py={4}
+              px={1}
+              placeholder="Enter domain name"
+              color="gray"
+              w="100%"
+              outline="none"
+              backgroundColor="dropdown"
+            />
+          </Base>
+          {selected.error &&
+            <x.div
+              fontSize="sm"
+              color="red"
+              mt={-6}
+              animation="fadeInUp"
+              animationDelay="0ms"
+            >
+              Input is required!
+            </x.div>
+          }
+          <x.label color="gray" fontSize={{ md: 'xl', xs: 'lg' }}>Reporting Timezone</x.label>
+          <Dropdown
+            value="cool.bio"
+            options={timeZones}
+            styles={{ maxWidth: 350, my: '1.5rem' }}
+            onChange={handleChange}
+            name="timezone"
+          />
+          <Button type="submit">
+            {selected.loading && <Loading />}
+            Submit
+          </Button>
+        </x.form>
+        : <Button onClick={showForm}>Add another</Button>
+      }
+    </x.div>
   )
 }

@@ -165,6 +165,39 @@ export const TIMESERIES_CHART_TYPES = {
   delta: 'Daily'
 }
 
+export const pages = [
+  {
+    pageLink: '/',
+    displayName: 'Home',
+    showInNavbar: true,
+    exact: true
+  },
+  {
+    pageLink: '/projects',
+    displayName: 'Projects',
+    showInNavbar: true,
+    exact: false
+  },
+  {
+    pageLink: '/projects/:websiteId',
+    displayName: 'Projects Details',
+    showInNavbar: false,
+    exact: false
+  },
+  {
+    pageLink: '/about',
+    displayName: 'About',
+    showInNavbar: true,
+    exact: true
+  },
+  {
+    pageLink: '/state/:stateCode',
+    displayName: 'State',
+    showInNavbar: false,
+    exact: true
+  }
+]
+
 export const footerData = [
   {
     label: 'Help & Support',

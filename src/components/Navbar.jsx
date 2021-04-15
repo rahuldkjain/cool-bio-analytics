@@ -1,19 +1,23 @@
+import PropTypes from "prop-types";
 import React, { useState, useCallback, useRef } from 'react'
 import * as Icon from 'react-feather'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { useSpring, useTransition, animated } from 'react-spring'
 import { useLockBodyScroll, useWindowSize } from 'react-use'
-import styled from '@xstyled/styled-components'
+import styled, { x } from '@xstyled/styled-components'
 
 import Brand from './Brand'
 import SunMoon from './SunMoon'
 
+import { auth } from '../utils/hbp'
 import {
   SLIDE_IN,
   SLIDE_OUT,
   SLIDE_IN_MOBILE,
   SLIDE_OUT_MOBILE
 } from '../utils/animations'
+
+import { pages } from '../config/constants'
 
 const NavWrapper = styled(animated.div)`
   align-items: center;
@@ -127,7 +131,7 @@ const ExpandBottom = styled.div`
   }
 `
 
-const WrapperRouterLink = styled(Link)`
+const WrapperRouterLink = styled(NavLink)`
   pointer-events: ${({ disable }) => (disable ? 'none' : 'auto')};
 
   &.active {
@@ -139,7 +143,7 @@ const WrapperRouterLink = styled(Link)`
   }
 `
 
-const WrapperRouterIconLink = styled(Link)`
+const WrapperRouterIconLink = styled(NavLink)`
   pointer-events: ${({ disable }) => (disable ? 'none' : 'auto')};
 
   &.active {
@@ -150,14 +154,12 @@ const WrapperRouterIconLink = styled(Link)`
 `
 
 function Navbar ({
-  pages,
   darkMode
 }) {
   const [expand, setExpand] = useState(false)
-
+  const user = auth.user()
   useLockBodyScroll(expand)
   const windowSize = useWindowSize()
-
   const [spring, set, stop] = useSpring(() => ({ opacity: 0 }))
   set({ opacity: 1 })
   stop()
@@ -175,8 +177,26 @@ function Navbar ({
     }
   }, [windowSize.width])
 
+  const logout = async () => {
+    await auth.logout()
+  }
+
   return (
     <NavWrapper style={spring}>
+      {user &&
+        <x.button
+          order={3}
+          textAlign="center"
+          mb={8}
+          mt="auto"
+          color="gray"
+          fontSize="sm"
+          backgroundColor="transparent"
+          onClick={logout}
+        >
+          Logout
+      </x.button>
+      }
       <Brand />
       <NavbarRight
         onMouseEnter={handleMouseEnter}
@@ -190,17 +210,17 @@ function Navbar ({
 
         {windowSize.width > 769 && (
           <>
-            <WrapperRouterIconLink to="/">
+            <WrapperRouterIconLink to="/" exact>
               <span>
                 <Icon.Home />
               </span>
             </WrapperRouterIconLink>
-            <WrapperRouterIconLink to="/blog">
+            <WrapperRouterIconLink to="/projects">
               <span>
                 <Icon.Book />
               </span>
             </WrapperRouterIconLink>
-            <WrapperRouterIconLink to="/about">
+            <WrapperRouterIconLink to="/about" exact>
               <span>
                 <Icon.HelpCircle />
               </span>
@@ -215,12 +235,12 @@ function Navbar ({
       {transitions.map(({ item, key, props }) =>
         item
           ? (
-          <animated.div key={key} style={props}>
-            <Expand {...{ pages, setExpand, darkMode, windowSize }} />
-          </animated.div>
+            <animated.div key={key} style={props}>
+              <Expand {...{ pages, setExpand, darkMode, windowSize }} />
+            </animated.div>
             )
           : (
-          <animated.div key={key} style={props}></animated.div>
+            <animated.div key={key} style={props}></animated.div>
             )
       )}
     </NavWrapper>
@@ -242,6 +262,7 @@ function Expand ({ pages, setExpand, darkMode, windowSize }) {
             <WrapperRouterLink
               to={page.pageLink}
               key={i}
+              exact={page.exact}
               {...(windowSize.width < 769 && {
                 onClick: setExpand.bind(this, false)
               })}
@@ -255,7 +276,7 @@ function Expand ({ pages, setExpand, darkMode, windowSize }) {
         return null
       })}
 
-      {windowSize.width < 768 && <SunMoon {...{ darkMode }} />}
+      {windowSize?.width < 768 && <SunMoon {...{ darkMode }} />}
 
       <ExpandBottom>
         <h5>A crowdsourced initiative.</h5>
@@ -264,10 +285,13 @@ function Expand ({ pages, setExpand, darkMode, windowSize }) {
   )
 }
 
-export default Navbar
+Expand.propTypes = {
+  darkMode: PropTypes.any,
+  pages: PropTypes.arrayOf(PropTypes.shape()),
+  setExpand: PropTypes.func,
+  windowSize: PropTypes.shape({
+    width: PropTypes.number
+  })
+}
 
-const activeNavIcon = (path) => ({
-  style: {
-    stroke: '#4c75f2'
-  }
-})
+export default Navbar

@@ -17,29 +17,6 @@ const Navbar = lazy(() => import('../components/Navbar'))
 const Pricing = lazy(() => import('../components/Pricing'))
 const Footer = lazy(() => import('../components/Footer'))
 
-const pages = [
-  {
-    pageLink: '/',
-    displayName: 'Home',
-    showInNavbar: true
-  },
-  {
-    pageLink: '/list',
-    displayName: 'List',
-    showInNavbar: true
-  },
-  {
-    pageLink: '/about',
-    displayName: 'About',
-    showInNavbar: true
-  },
-  {
-    pageLink: '/state/:stateCode',
-    displayName: 'State',
-    showInNavbar: false
-  }
-]
-
 const ourServices = {
   key: 'services',
   description: 'Why us?',
@@ -145,7 +122,7 @@ function Landing (props) {
 
   return (
     <>
-      <Navbar pages={pages} />
+      <Navbar />
       <Helmet>
         <html lang="en" />
         <meta charSet="utf-8" />
