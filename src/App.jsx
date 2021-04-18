@@ -6,6 +6,7 @@ import { th } from '@xstyled/system'
 import { Provider } from 'jotai'
 import { NhostApolloProvider } from '@nhost/react-apollo'
 import { NhostAuthProvider } from '@nhost/react-auth'
+import { Helmet } from 'react-helmet-async'
 
 import { auth } from './utils/hbp'
 
@@ -193,6 +194,9 @@ const Wrapper = styled.div`
 function App ({ router }) {
   return (
     <ThemeProvider theme={theme}>
+      <Helmet>
+        <script async defer src="https://analytics.cool.bio/tracking.js"></script>
+      </Helmet>
       <ColorModeProvider>
         <Provider>
           <NhostAuthProvider auth={auth}>

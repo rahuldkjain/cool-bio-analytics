@@ -5,7 +5,7 @@ import { useMutation } from '@apollo/client'
 import Dropdown from './Dropdown'
 import Loading from './Loading'
 
-import { INSERT_WEBSITE } from '../graphql/mutation'
+import { INSERT_PROJECT } from '../graphql/mutation'
 import { timeZones } from '../config/constants'
 
 const Button = styled.button`
@@ -63,8 +63,8 @@ const Base = styled.div`
     }
 `
 
-export default function CreateProject() {
-  const [insertItem] = useMutation(INSERT_WEBSITE)
+export default function CreateProject () {
+  const [insertItem] = useMutation(INSERT_PROJECT)
   const [selected, setSelectedData] = useState({
     domain: '',
     timezone: timeZones[0].key,
@@ -73,7 +73,7 @@ export default function CreateProject() {
     error: null
   })
 
-  function showForm() {
+  function showForm () {
     setSelectedData(prevState => ({
       ...prevState,
       isShowingForm: true

@@ -27,13 +27,13 @@ export async function getSession(req) {
       throw new Error(`Website not found: ${website_uuid}`);
     }
   
-    const { website_id } = website;
-    const session_uuid = uuid(website_id, hostname, ip, userAgent, os);
+    const { project_id } = website;
+    const session_uuid = uuid(project_id, hostname, ip, userAgent, os);
   
     let session = await getSessionByUuid(session_uuid);
   
     if (!session) {
-      session = await createSession(website_id, {
+      session = await createSession(project_id, {
         session_uuid,
         hostname,
         browser,
@@ -48,7 +48,7 @@ export async function getSession(req) {
     const { session_id } = session;
   
     return {
-      website_id,
+      project_id,
       session_id,
     };
   }

@@ -31,7 +31,7 @@ const columns = [
   },
   {
     Header: 'Tracking Id',
-    accessor: 'websiteId'
+    accessor: 'projectId'
   },
   {
     Header: 'Created at',
@@ -56,7 +56,7 @@ const columns = [
     Cell ({ cell }) {
       return (
                 <x.div display="flex" justifyContent="center">
-                    <ActionLink to={`/projects/${cell?.row?.original?.websiteId}`}>
+                    <ActionLink to={`/projects/${cell?.row?.original?.projectId}`}>
                         View
                 </ActionLink>
                 </x.div>
@@ -123,10 +123,10 @@ function AddedProjects (props) {
                     fontSize={{ md: 'xl', xs: 'lg' }}
                     ml={4}
                 >
-                    {data?.website?.length || 0}
+                    {data?.project?.length || 0}
                 </x.span>
             </x.div>
-            <Table columns={columns} data={data?.website} />
+            <Table columns={columns} data={data?.project} />
         </>
   )
 }

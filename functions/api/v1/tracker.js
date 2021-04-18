@@ -4,11 +4,40 @@ const deviceDetector = new DeviceDetector()
 
 const query = `
   mutation postSession($objects: [session_insert_input!]!) {
-    insert_session(objects: $objects) {
-      affected_rows
+    sessionData: insert_session(objects: $objects) {
+      returning {
+        sessionId: session_id
+      }
     }
   }
 `
+const updateQuery = `
+  mutation updateSession($sessionId: session_pk_columns_input! ,$objects: session_set_input) {
+    sessionData: update_session_by_pk(pk_columns: $sessionId, _set: $objects) {
+      sessionId: session_id
+    }
+  }
+`
+
+async function postSession (postCall) {
+  const responseData = await postCall.json()
+
+  const {
+    data: {
+      sessionData: {
+        returning
+      }
+    }
+  } = responseData
+
+  const [sessionData] = returning
+  const { sessionId } = sessionData
+  return sessionId
+}
+
+async function updateSession (sessionId) {
+  return sessionId
+}
 
 export default ({
   async handler ({ request }) {
@@ -22,17 +51,13 @@ export default ({
       throw new Error('Block User Agent containing bot.')
     }
 
-    const { websiteId } = await request.json()
-
-    if (!websiteId) {
-      // return new Response("Website Id is required", { status: 403 });
-      throw new Error('Website Id is required.')
-    }
+    const { projectId, pathname, referrer, sessionId } = await request.json()
 
     const device = deviceDetector.parse(userAgent)
 
     const headers = Object.fromEntries(request.headers)
     const origin = request.headers.get('Origin')
+    const url = new URL(origin)
     const {
       latitude,
       longitude,
@@ -47,7 +72,7 @@ export default ({
 
     const data = {
       ip: headers['x-real-ip'] || headers['cf-connecting-ip'],
-      website_id: websiteId,
+      project_id: projectId,
       client_name: device?.client?.name,
       client_type: device?.client?.type,
       client_version: device?.client?.version,
@@ -58,7 +83,8 @@ export default ({
       device_brand: device?.device?.brand,
       device_model: device?.device?.model,
       language: headers['accept-language'],
-      origin,
+      origin: url.hostname,
+      protocol: url.protocol,
       latitude,
       longitude,
       timezone,
@@ -67,26 +93,44 @@ export default ({
       continent,
       city,
       region_code: regionCode,
-      postal_code: postalCode
+      postal_code: postalCode,
+      referrer,
+      pathname
     }
+
+    const body = sessionId
+      ? {
+          query: updateQuery,
+          variables: {
+            sessionId: {
+              session_id: sessionId
+            },
+            objects: data
+          }
+        }
+      : {
+          query,
+          variables: {
+            objects: data
+          }
+        }
 
     const postCall = await fetch(process.env.VITEDGE_GRAPHQL_API, {
       method: 'post',
       headers: {
         'Content-Type': 'application/json',
         'x-hasura-admin-secret':
-          process.env.VITEDGE_WORKER_HASURA_GRAPHQL_ADMIN_SECRET
+        process.env.VITEDGE_WORKER_HASURA_GRAPHQL_ADMIN_SECRET
       },
-      body: JSON.stringify({
-        query,
-        variables: {
-          objects: data
-        }
-      })
+      body: JSON.stringify(body)
     })
 
+    const returningSessionId = sessionId ? await updateSession(sessionId) : await postSession(postCall)
+
     return {
-      data: postCall.body,
+      data: {
+        sessionId: returningSessionId
+      },
       options: {
         status: postCall.status
       }

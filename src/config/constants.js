@@ -179,7 +179,7 @@ export const pages = [
     exact: false
   },
   {
-    pageLink: '/projects/:websiteId',
+    pageLink: '/projects/:projectId',
     displayName: 'Projects Details',
     showInNavbar: false,
     exact: false
