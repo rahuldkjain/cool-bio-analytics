@@ -2,9 +2,9 @@
 
 ## Showoff Hasura Power
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screen Shot][product-screenshot]](https://analytics.cool.bio)
 
-This is an open source Analytics Project to keep track our project. Simple and Fair.
+This is an open source Analytics Project to keep track our project. Simple, Safe and Fair.
 
 Here's why:
 
@@ -20,7 +20,9 @@ Here's why:
 
 ## Use cases
 
-- Show country wise view count for today/last 7 days/ last 30 days
+- Show country wise view count for today/last 7 days/ last 30 days.
+
+    For example, How many visiters I had from which country for today or last 7 days or 30 days?
 
   1. create a view goin to hasura console -> data -> sql runner -> run
 
@@ -63,7 +65,9 @@ Here's why:
         ```
     
 
-- Show count of sessions and deltas with distinct ip count for today/last 7 days/ last 30 days
+- Show count of sessions and deltas with distinct ip count for today/last 7 days/ last 30 days.
+    For example, How many total unique visiters I had for today or last 7 days or 30 days?
+
   1. create a view goin to hasura console -> data -> sql runner -> run
 
      ```sh
@@ -136,7 +140,8 @@ Here's why:
             }
         }
         ```
-- Show sessions count and deltas for today/last 7 days/ last 30 days
+- Show sessions count and deltas for today/last 7 days/ last 30 days.
+For example, How many total visiters I had for today or last 7 days or 30 days?
   1. create a view goin to hasura console -> data -> sql runner -> run
 
      ```sh
@@ -209,5 +214,6 @@ Here's why:
         }
         ```
 
-[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
-[product-screenshot]: public/cool-bio-analytics-demo-dark.png
+[license-url]: https://github.com/subhendukundu/cool-bio-analytics/blob/main/LICENSE
+[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
+[product-screenshot]: https://analytics.cool.bio/cool-bio-analytics-demo-dark.png
