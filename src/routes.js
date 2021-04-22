@@ -11,7 +11,7 @@ export const routes = Object.keys(pages).map((path) => {
 
   return {
     name: name.toLowerCase(),
-    path: name === 'Home' ? '/' : `/${name.toLowerCase()}`,
+    path: name === 'Home' ? '/' : `/${name.replace(/\[(\w+)\]/g, (_, s1) => `:${s1}`).toLowerCase()}`,
     // Async pages
     component (props) {
       if (!component) {

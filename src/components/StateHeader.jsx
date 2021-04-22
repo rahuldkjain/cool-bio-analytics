@@ -1,9 +1,16 @@
+import PropTypes from 'prop-types'
 import React, { memo, useMemo } from 'react'
 import { animated, useSpring } from 'react-spring'
 import styled from '@xstyled/styled-components'
 
 import { SPRING_CONFIG_NUMBERS } from '../config/constants'
 import { formatDate, formatNumber, getStatistic } from '../utils/commonFunctions'
+
+import dayjs from 'dayjs'
+import timezone from 'dayjs/plugin/timezone'
+import utc from 'dayjs/plugin/utc'
+dayjs.extend(timezone)
+dayjs.extend(utc)
 
 const Header = styled.h1`
     background-color: brickLight;
@@ -57,8 +64,14 @@ const SubHeader = styled.h5`
 `
 
 function StateHeader ({ data, stateCode }) {
+  const total = data?.totalViews?.aggregate?.count || 0
+  const { timezone, domain } = data || {}
+  const [lastUpdatedData] = data?.totalSessions || []
+  const { updatedAt } = lastUpdatedData || {}
+  const formattedUpdatedDate = dayjs(updatedAt).tz(timezone).format('MMMM D, YYYY h:mm A')
+  const totalUpdateDate = dayjs(updatedAt).tz(timezone).format('MMMM D')
   const spring = useSpring({
-    total: getStatistic(data, 'total', 'tested'),
+    total,
     config: SPRING_CONFIG_NUMBERS
   })
 
@@ -66,27 +79,38 @@ function StateHeader ({ data, stateCode }) {
     <StateHeaderWrapper>
       <div>
         <HeaderWrapper>
-          <Header>Cool Bio</Header>
+          <Header>{domain}</Header>
         </HeaderWrapper>
         <SubHeader>
-          {`Last Updated on ${formatDate(
-            10992002000,
-            'dd MMM, p'
-          )} IST`}
+          {`Last Updated on ${formattedUpdatedDate} ${timezone}`}
         </SubHeader>
       </div>
 
       <HeaderRight>
-        <HeaderRightWrapper>Viewed</HeaderRightWrapper>
+        <HeaderRightWrapper>Total viewes</HeaderRightWrapper>
         <HeaderRightH2>
           {spring.total.interpolate((total) => formatNumber(Math.floor(total)))}
         </HeaderRightH2>
         <HeaderRightWrapper className="timestamp">
-          {`As of ${formatDate(10992002000, 'dd MMMM')}`}
+          {`As of ${totalUpdateDate}`}
         </HeaderRightWrapper>
       </HeaderRight>
     </StateHeaderWrapper>
   )
+}
+
+StateHeader.propTypes = {
+  data: PropTypes.shape({
+    domain: PropTypes.string,
+    timezone: PropTypes.string,
+    totalSessions: PropTypes.any,
+    totalViews: PropTypes.shape({
+      aggregate: PropTypes.shape({
+        count: PropTypes.number
+      })
+    })
+  }),
+  stateCode: PropTypes.any
 }
 
 export default memo(StateHeader)

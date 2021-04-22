@@ -61,13 +61,14 @@ function getBackGround (statistic) {
   }
 }
 
-function MapPanel ({ mapStatistic }) {
+function MapPanel ({ mapStatistic, data = {} }) {
   const currentStatistic = getBackGround(mapStatistic)
   const color = useColor(currentStatistic)
   const [selected] = useAtom(selectedCountry)
+  console.log(data, mapStatistic)
 
   const spring = useSpring({
-    total: 2300,
+    total: selected.name ? 10 : 1000, // data[mapStatistic]?.aggregate?.count,
     config: { tension: 250, ...SPRING_CONFIG_NUMBERS }
   })
 
@@ -98,6 +99,7 @@ function MapPanel ({ mapStatistic }) {
 }
 
 MapPanel.propTypes = {
+  data: PropTypes.object,
   mapStatistic: PropTypes.string
 }
 

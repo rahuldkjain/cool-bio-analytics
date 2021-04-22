@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import React, { memo, useMemo } from 'react'
 
 import equal from 'fast-deep-equal'
@@ -9,25 +10,60 @@ import {
   STATISTIC_CONFIGS,
   SPRING_CONFIG_NUMBERS
 } from '../config/constants'
-import { capitalize, formatNumber, getStatistic } from '../utils/commonFunctions'
+import { capitalize, formatNumber } from '../utils/commonFunctions'
+
+function calculateBouce (session = 0, user = 0) {
+  const bounce = ((session - user) / session) * 100
+  return bounce
+}
+
+function getStatistic (data, statistic) {
+  switch (statistic) {
+    case 'users' :
+      return {
+        count: data?.users?.aggregate?.sum?.count || 0,
+        delta: data?.users?.aggregate?.sum?.delta || 0
+      }
+
+    case 'active' :
+      return {
+        count: data?.active?.aggregate?.sum?.count || 0,
+        delta: data?.active?.aggregate?.sum?.delta || 0
+      }
+
+    case 'sessions' :
+      return {
+        count: data?.sessions?.aggregate?.sum?.count || 0,
+        delta: data?.sessions?.aggregate?.sum?.delta || 0
+      }
+
+    case 'bounce' :
+      return {
+        count: calculateBouce(data?.sessions?.aggregate?.sum?.count, data?.users?.aggregate?.sum?.count),
+        delta: calculateBouce(data?.sessions?.aggregate?.sum?.delta, data?.users?.aggregate?.sum?.delta)
+      }
+
+    default:
+      return ''
+  }
+}
 
 function getColor (statistic, theme) {
   switch (statistic) {
     case 'users' :
       return theme.colors.cherry
-      break
+
     case 'active' :
       return theme.colors.blue
-      break
+
     case 'sessions' :
       return theme.colors.green
-      break
+
     case 'bounce' :
       return theme.colors.gray
-      break
+
     default:
       return ''
-      break
   }
 }
 
@@ -35,19 +71,18 @@ function getMidColor (statistic, theme) {
   switch (statistic) {
     case 'users' :
       return theme.colors.cherryMid
-      break
+
     case 'active' :
       return theme.colors.blueMid
-      break
+
     case 'sessions' :
       return theme.colors.greenMid
-      break
+
     case 'bounce' :
       return theme.colors.grayMid
-      break
+
     default:
       return ''
-      break
   }
 }
 
@@ -122,11 +157,17 @@ function PureLevelItem ({ statistic, total, delta }) {
             </H4Wrapper>
             <H1Wrapper statistic={statistic}>
                 {spring.total.interpolate((total) =>
-                  formatNumber(total, statisticConfig.format, statistic)
+                  `${formatNumber(total, statisticConfig.format, statistic)}${statistic === 'bounce' ? '%' : ''}`
                 )}
             </H1Wrapper>
         </>
   )
+}
+
+PureLevelItem.propTypes = {
+  delta: PropTypes.any,
+  statistic: PropTypes.string,
+  total: PropTypes.any
 }
 
 const LevelItem = memo(PureLevelItem)
@@ -154,13 +195,17 @@ function Level ({ data }) {
                 >
                     <LevelItem
                         {...{ statistic }}
-                        total={getStatistic(data, 'total', statistic)}
-                        delta={getStatistic(data, 'delta', statistic)}
+                        total={getStatistic(data, statistic).count}
+                        delta={getStatistic(data, statistic).delta}
                     />
                 </LevelItemWrapper>
             ))}
         </LevelWrapper>
   )
+}
+
+Level.propTypes = {
+  data: PropTypes.any
 }
 
 const isEqual = (prevProps, currProps) => {

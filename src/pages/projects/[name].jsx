@@ -4,6 +4,8 @@ import { useSessionStorage } from 'react-use'
 import {
   useParams
 } from 'react-router-dom'
+import { useSubscription, useQuery } from '@apollo/client'
+import dayjs from 'dayjs'
 
 import Search from '../../components/Search'
 import Actions from '../../components/Actions'
@@ -14,6 +16,10 @@ import MapPanel from '../../components/MapPanel'
 import StateHeader from '../../components/StateHeader'
 import Navbar from '../../components/Navbar'
 import PrivateRoute from '../../components/PrivateRoute'
+import CountryCount from '../../components/CountryCount'
+
+// import { GET_PROJECTS_DETAILS } from '../../graphql/subscription'
+import { GET_PROJECTS_DETAILS } from '../../graphql/queries'
 
 const Map = lazy(() => import('../../components/Map'))
 const Timeseries = lazy(() => import('../../components/Timeseries'))
@@ -70,123 +76,41 @@ const MapLevelWrapper = styled.div`
   margin-top: 1rem;
 `
 
-const data = {
-  delta: {
-    confirmed: 2074,
-    deceased: 5,
-    recovered: 810
-  },
-  delta7: {
-    confirmed: 311737,
-    deceased: 1490,
-    other: 91,
-    recovered: 165540,
-    tested: 6204434,
-    vaccinated: 13505932
-  },
-  meta: {
-    last_updated: '2021-03-27T18:21:52+05:30',
-    population: 1332900000,
-    tested: {
-      last_updated: '2021-03-26',
-      source: 'https://twitter.com/ICMRDELHI/status/1375661955516538887'
-    },
-    vaccinated: {
-      last_updated: '2021-03-26',
-      source: 'https://www.pib.gov.in/PressReleasePage.aspx?PRID=1708008'
-    }
-  },
-  total: {
-    confirmed: 11910447,
-    deceased: 161280,
-    other: 4802,
-    recovered: 11293659,
-    tested: 239769553,
-    vaccinated: 58109773
-  }
-}
-
-const columns = [
-  {
-    Header: 'Id',
-    accessor: 'id'
-  },
-  {
-    Header: 'Active',
-    accessor: 'active'
-  },
-  {
-    Header: 'Visits',
-    accessor: 'visits'
-  },
-  {
-    Header: 'Users',
-    accessor: 'users'
-  },
-  {
-    Header: 'Progress',
-    accessor: 'progress'
-  }
-]
-
-const tableData = [
-  {
-    users: 'rabbit',
-    lastName: 'kitten',
-    id: 1,
-    visits: 57,
-    progress: 13,
-    active: 'single',
-    subRows: undefined
-  },
-  {
-    users: 'rabbit',
-    lastName: 'kitten',
-    id: 1,
-    visits: 57,
-    progress: 13,
-    active: 'single',
-    subRows: undefined
-  },
-  {
-    users: 'rabbit',
-    lastName: 'kitten',
-    id: 1,
-    visits: 57,
-    progress: 13,
-    active: 'single',
-    subRows: undefined
-  },
-  {
-    users: 'rabbit',
-    lastName: 'kitten',
-    id: 1,
-    visits: 57,
-    progress: 13,
-    active: 'single',
-    subRows: undefined
-  },
-  {
-    users: 'rabbit',
-    lastName: 'kitten',
-    id: 1,
-    visits: 57,
-    progress: 13,
-    active: 'single',
-    subRows: undefined
-  }
-]
-
 function ListPage (props) {
   const { name } = useParams()
   const [mapStatistic, setMapStatistic] = useSessionStorage(
     'mapStatistic',
     'active'
   )
+  const dateFor = dayjs().subtract(7, 'day').format('YYYY-MM-DD')
+  /* const { loading, error, data = {} } = useSubscription(GET_PROJECTS_DETAILS, {
+    variables: {
+      projectId: name,
+      where: {
+        created_at: {
+          _gte: dateFor
+        }
+      }
+    }
+  }) */
+  const { loading, error, data = {} } = useQuery(GET_PROJECTS_DETAILS, {
+    variables: {
+      projectId: name,
+      at: {
+        _eq: dateFor
+      },
+      createdAt: {
+        _eq: dateFor
+      }
+    }
+  })
+  console.log(loading, error, data, dateFor)
   const [graphData, setGraphData] = useState({})
   const [timeseriesData, setTimeSeriesData] = useState({})
   const [currentDates, setConfigDates] = useState([])
   const [date, setDate] = useState('')
+  const { project, sessions, users } = data
+
   return (
     <PrivateRoute>
       <Navbar />
@@ -196,14 +120,14 @@ function ListPage (props) {
           <Actions />
           <MapLevelWrapper>
             <MapSwitcher mapStatistic={mapStatistic} setMapStatistic={setMapStatistic} />
-            <Level data={data} />
+            <Level data={{ ...project, sessions, users }} />
             <Minigraphs timeseries={timeseriesData?.dates} {...{ date }} />
           </MapLevelWrapper>
-          <Table columns={columns} data={tableData} />
+          <CountryCount projectId={name} />
         </HomeLeft>
         <HomeRight>
-          <StateHeader />
-          <MapPanel mapStatistic={mapStatistic} />
+          <StateHeader data={project} />
+          <MapPanel mapStatistic={mapStatistic} data={project} />
           <Map mapStatistic={mapStatistic} />
           <Timeseries timeseries={graphData} dates={currentDates} chartType="total" />
         </HomeRight>

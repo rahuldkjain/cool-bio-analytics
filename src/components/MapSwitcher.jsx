@@ -10,19 +10,14 @@ function getBackGround (statistic, theme) {
   switch (statistic) {
     case 'users':
       return theme.colors.cherryLight
-      break
     case 'active':
       return theme.colors.blueLight
-      break
     case 'sessions':
       return theme.colors.greenLight
-      break
     case 'bounce':
       return theme.colors.grayLight
-      break
     default:
       return ''
-      break
   }
 }
 

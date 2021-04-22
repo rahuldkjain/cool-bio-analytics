@@ -1,5 +1,5 @@
 export default {
-  handler({ query, body, request }) {
+  handler ({ query, body, request }) {
     if (request.method !== 'GET') {
       throw new Error('Method not supported!')
     }
@@ -8,13 +8,13 @@ export default {
     const { origin } = url
 
     return {
-      data: ['/', '/about'].map((path) => origin + path).join('\n'),
+      data: ['/', '/about'].map((path) => origin + path).join('\n')
     }
   },
   options: {
     headers: { 'content-type': 'text/plain' },
     cache: {
-      api: 85,
-    },
-  },
+      api: 85
+    }
+  }
 }

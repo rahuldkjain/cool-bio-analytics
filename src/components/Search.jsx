@@ -1,6 +1,12 @@
 import React from 'react'
 import styled from '@xstyled/styled-components'
+import { useQuery } from '@apollo/client'
+import { useHistory } from 'react-router-dom'
+
 import Dropdown from './Dropdown'
+
+import { auth } from '../utils/hbp'
+import { GET_ALL_PROJECTS } from '../graphql/queries'
 
 const SearchWrapper = styled.div`
     display: flex;
@@ -26,23 +32,24 @@ const DropdownWrapper = styled.div`
     display: flex;
 `
 
-const dropdownOptions = [{
-  key: 'cool.bio',
-  name: 'Cool.bio'
-},
-{
-  key: 'higgle.io',
-  name: 'Higgle'
-}]
-
 export default function Search () {
+  const history = useHistory()
+  const user = auth.user()
+  const { loading, error, data } = useQuery(GET_ALL_PROJECTS, {
+    variables: { userId: user.id }
+  })
+
+  function onDropdownChange (e) {
+    history.push(`/projects/${e.target.value}`)
+  }
+
   return (
         <SearchWrapper>
             <Label>
                 Filter your websites or apps
             </Label>
             <DropdownWrapper>
-                <Dropdown value="cool.bio" options={dropdownOptions} />
+                <Dropdown value="cool.bio" options={data?.project || []} onChange={onDropdownChange} />
             </DropdownWrapper>
         </SearchWrapper>
   )
