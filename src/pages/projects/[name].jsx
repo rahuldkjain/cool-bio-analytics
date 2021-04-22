@@ -19,7 +19,13 @@ import PrivateRoute from '../../components/PrivateRoute'
 import CountryCount from '../../components/CountryCount'
 
 // import { GET_PROJECTS_DETAILS } from '../../graphql/subscription'
-import { GET_PROJECTS_DETAILS } from '../../graphql/queries'
+import {
+  GET_PROJECTS_DETAILS,
+  GET_SESSIONS_COUNT_WITH_COUNTRY,
+  GET_SESSIONS_COUNT_WITH_CLIENT_NAME,
+  GET_SESSIONS_COUNT_WITH_PAGES,
+  GET_SESSIONS_COUNT_WITH_REFERRER
+} from '../../graphql/queries'
 
 const Map = lazy(() => import('../../components/Map'))
 const Timeseries = lazy(() => import('../../components/Timeseries'))
@@ -76,7 +82,51 @@ const MapLevelWrapper = styled.div`
   margin-top: 1rem;
 `
 
-function ListPage (props) {
+const countryColumns = [
+  {
+    Header: 'Country',
+    accessor: 'country'
+  },
+  {
+    Header: 'Count',
+    accessor: 'count'
+  }
+]
+
+const browserColumns = [
+  {
+    Header: 'Browser',
+    accessor: 'client_name'
+  },
+  {
+    Header: 'Count',
+    accessor: 'count'
+  }
+]
+
+const pagesColumns = [
+  {
+    Header: 'Pages',
+    accessor: 'pathname'
+  },
+  {
+    Header: 'Count',
+    accessor: 'count'
+  }
+]
+
+const referrerColumns = [
+  {
+    Header: 'Referrer',
+    accessor: 'referrer'
+  },
+  {
+    Header: 'Count',
+    accessor: 'count'
+  }
+]
+
+function ListPage(props) {
   const { name } = useParams()
   const [mapStatistic, setMapStatistic] = useSessionStorage(
     'mapStatistic',
@@ -123,7 +173,10 @@ function ListPage (props) {
             <Level data={{ ...project, sessions, users }} />
             <Minigraphs timeseries={timeseriesData?.dates} {...{ date }} />
           </MapLevelWrapper>
-          <CountryCount projectId={name} />
+          <CountryCount projectId={name} query={GET_SESSIONS_COUNT_WITH_COUNTRY} columns={countryColumns} />
+          <CountryCount projectId={name} query={GET_SESSIONS_COUNT_WITH_CLIENT_NAME} columns={browserColumns} />
+          <CountryCount projectId={name} query={GET_SESSIONS_COUNT_WITH_PAGES} columns={pagesColumns} />
+          <CountryCount projectId={name} query={GET_SESSIONS_COUNT_WITH_REFERRER} columns={referrerColumns} />
         </HomeLeft>
         <HomeRight>
           <StateHeader data={project} />

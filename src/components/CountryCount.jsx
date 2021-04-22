@@ -1,74 +1,14 @@
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types'
 import React, { lazy } from 'react'
 import { useQuery } from '@apollo/client'
 import dayjs from 'dayjs'
 
 // import { GET_PROJECTS_DETAILS } from '../../graphql/subscription'
-import { GET_SESSIONS_COUNT_WITH_COUNTRY } from '../graphql/queries'
 
 const Table = lazy(() => import('./Table'))
 
-const columns = [
-  {
-    Header: 'country',
-    accessor: 'country'
-  },
-  {
-    Header: 'Count',
-    accessor: 'count'
-  }
-]
-
-const tableData = [
-  {
-    users: 'rabbit',
-    lastName: 'kitten',
-    id: 1,
-    visits: 57,
-    progress: 13,
-    active: 'single',
-    subRows: undefined
-  },
-  {
-    users: 'rabbit',
-    lastName: 'kitten',
-    id: 1,
-    visits: 57,
-    progress: 13,
-    active: 'single',
-    subRows: undefined
-  },
-  {
-    users: 'rabbit',
-    lastName: 'kitten',
-    id: 1,
-    visits: 57,
-    progress: 13,
-    active: 'single',
-    subRows: undefined
-  },
-  {
-    users: 'rabbit',
-    lastName: 'kitten',
-    id: 1,
-    visits: 57,
-    progress: 13,
-    active: 'single',
-    subRows: undefined
-  },
-  {
-    users: 'rabbit',
-    lastName: 'kitten',
-    id: 1,
-    visits: 57,
-    progress: 13,
-    active: 'single',
-    subRows: undefined
-  }
-]
-
-function CountryCount ({ projectId }) {
-  const dateFor = dayjs().subtract(7, 'day').format('YYYY-MM-DD')
+function CountryCount ({ projectId, query, columns }) {
+  const dateFor = dayjs().subtract(0, 'day').format('YYYY-MM-DD')
   /* const { loading, error, data = {} } = useSubscription(GET_PROJECTS_DETAILS, {
     variables: {
       projectId: name,
@@ -79,7 +19,7 @@ function CountryCount ({ projectId }) {
       }
     }
   }) */
-  const { loading, error, data = {} } = useQuery(GET_SESSIONS_COUNT_WITH_COUNTRY, {
+  const { loading, error, data = {} } = useQuery(query, {
     variables: {
       projectId: projectId,
       at: {
@@ -89,15 +29,17 @@ function CountryCount ({ projectId }) {
   })
   console.log(loading, error, data, dateFor)
 
-  const { countries = [] } = data
+  const { table = [] } = data
 
   return (
-    <Table columns={columns} data={countries} />
+    <Table columns={columns} data={table} />
   )
 }
 
 CountryCount.propTypes = {
-  projectId: PropTypes.string
+  columns: PropTypes.any,
+  projectId: PropTypes.string,
+  query: PropTypes.string
 }
 
 export default CountryCount

@@ -213,6 +213,11 @@ For example, How many total visiters I had for today or last 7 days or 30 days?
             }
         }
         ```
+## Pain Points
+1. With this approach, have to create each view manually so far.
+2. If needs to add a new grouping/filtering with the exsisting view?
+3. Create relationship manually. Cant inherite from table?
+4. If had to set new sets of rules, need to go update each one of view
 
 [license-url]: https://github.com/subhendukundu/cool-bio-analytics/blob/main/LICENSE
 [license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge

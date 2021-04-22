@@ -57,11 +57,52 @@ export const GET_PROJECTS_DETAILS = gql`
 
 export const GET_SESSIONS_COUNT_WITH_COUNTRY = gql`
   query checkWithDelta($projectId: uuid!, $at: timestamptz_comparison_exp) {
-    countries: all_session_counts_country(
+    table: all_session_counts_country(
       where: { project_id: { _eq: $projectId }, day: $at }
     ) {
       count
       country
+    }
+  }
+`
+
+export const GET_SESSIONS_COUNT_WITH_CLIENT_NAME = gql`
+  query checkBrowsersWithDelta(
+    $projectId: uuid!
+    $at: timestamptz_comparison_exp
+  ) {
+    table: all_session_counts_client_name(
+      where: { project_id: { _eq: $projectId }, day: $at }
+    ) {
+      count
+      client_name
+    }
+  }
+`
+
+export const GET_SESSIONS_COUNT_WITH_PAGES = gql`
+  query checkPagesWithDelta(
+    $projectId: uuid!
+    $at: timestamptz_comparison_exp
+  ) {
+    table: all_session_counts_pages(
+      where: { project_id: { _eq: $projectId }, day: $at }
+    ) {
+      count
+      pathname
+    }
+  }
+`
+export const GET_SESSIONS_COUNT_WITH_REFERRER = gql`
+  query checkReferrerWithDelta(
+    $projectId: uuid!
+    $at: timestamptz_comparison_exp
+  ) {
+    table: all_session_counts_referrer(
+      where: { project_id: { _eq: $projectId }, day: $at }
+    ) {
+      count
+      referrer
     }
   }
 `
