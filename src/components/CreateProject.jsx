@@ -81,7 +81,6 @@ export default function CreateProject () {
   }
 
   const handleChange = useCallback(({ target: { name, value } }) => {
-    console.log(name, value)
     setSelectedData(prevState => ({
       ...prevState,
       [name]: value,
@@ -89,9 +88,8 @@ export default function CreateProject () {
     }))
   }, [])
 
-  async function submitHandler(event) {
+  async function submitHandler (event) {
     event.preventDefault()
-    console.log(selected)
     setSelectedData(prevState => ({
       ...prevState,
       loading: true

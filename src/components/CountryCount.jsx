@@ -23,11 +23,10 @@ function CountryCount ({ projectId, query, columns }) {
     variables: {
       projectId: projectId,
       at: {
-        _eq: dateFor
+        _gte: dateFor
       }
     }
   })
-  console.log(loading, error, data, dateFor)
 
   const { table = [] } = data
 

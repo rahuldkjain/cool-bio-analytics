@@ -45,8 +45,6 @@ const Td = styled.td`
     font-size: 13px;
     font-weight: 600;
     padding: 1.25rem 0.5rem 0.75rem;
-    cursor: pointer;
-    user-select: none;
     border-radius: 3px;
     color: gray;
     margin-bottom: 0.25rem;

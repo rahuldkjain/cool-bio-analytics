@@ -38,6 +38,9 @@ const HighlightWrapper = styled(animated.div)`
     height: 13rem;
     width: calc(25%);
     z-index: 10;
+    background-color: ${({ statistic, theme }) => getBackGround(statistic, theme)};
+    transform: translateX(${({ statistic, width }) => 0.25 * PRIMARY_STATISTICS.indexOf(statistic) * width}px);
+    transition: all .5s;
 `
 
 const ClickableWrapper = styled(animated.div)`
@@ -55,45 +58,45 @@ const ClickableWrapper = styled(animated.div)`
 `
 
 const MapSwitcher = ({ mapStatistic, setMapStatistic }) => {
-  const [mapSwitcher, { width }] = useMeasure()
+  const [mapSwitcherWrapper, { width }] = useMeasure()
+/*   const [mapSwitcher, { width }] = useMeasure()
   const [clicked, setClicked] = useState(false)
-  const [count, setCount] = useState(0)
-  const [spring, set] = useSpring(() => ({
+  const [count, setCount] = useState(0) */
+/*   const [spring, set] = useSpring(() => ({
     opacity: 0,
     backgroundColor: `${STATISTIC_CONFIGS[mapStatistic].color}20`,
     transform: `translateX(${width * PRIMARY_STATISTICS.indexOf(mapStatistic) * 0.25
             }px)`,
     config: config.gentle
-  }))
+  })) */
 
-  useEffect(() => {
+/*   useEffect(() => {
     if (width > 0) {
       ReactDOM.unstable_batchedUpdates(() => {
         set({
           transform: `translateX(${width * PRIMARY_STATISTICS.indexOf(mapStatistic) * 0.25
                         }px)`,
           opacity: 1,
-          background: `${STATISTIC_CONFIGS[mapStatistic].color}20`,
+          backgroundColor: `${STATISTIC_CONFIGS[mapStatistic].color}20`,
           delay: count === 0 ? 1500 : 0,
           onStart: setClicked.bind(this, true),
           onRest: setClicked.bind(this, false)
         })
       })
     }
-  }, [count, mapStatistic, set, width])
+  }, [count, mapStatistic, set, width]) */
 
   const handleClick = useCallback(
     (statistic) => {
       console.log(statistic)
-      setCount((prevCount) => prevCount + 1)
       setMapStatistic(statistic)
     },
     [setMapStatistic]
   )
 
   return (
-        <MapSwitcherWrapper ref={mapSwitcher}>
-            <HighlightWrapper style={spring}></HighlightWrapper>
+        <MapSwitcherWrapper ref={mapSwitcherWrapper}>
+            <HighlightWrapper statistic={mapStatistic} width={width}></HighlightWrapper>
 
             {PRIMARY_STATISTICS.map((statistic, index) => (
                 <ClickableWrapper

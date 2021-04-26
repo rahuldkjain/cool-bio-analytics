@@ -7,7 +7,8 @@ import { useAtom } from 'jotai'
 
 import { formatNumber, getStatistic, capitalize } from '../utils/commonFunctions'
 import {
-  SPRING_CONFIG_NUMBERS
+  SPRING_CONFIG_NUMBERS,
+  STATISTIC_DEFINITIONS
 } from '../config/constants'
 import { selectedCountry } from '../atoms'
 
@@ -65,10 +66,9 @@ function MapPanel ({ mapStatistic, data = {} }) {
   const currentStatistic = getBackGround(mapStatistic)
   const color = useColor(currentStatistic)
   const [selected] = useAtom(selectedCountry)
-  console.log(data, mapStatistic)
 
   const spring = useSpring({
-    total: selected.name ? 10 : 1000, // data[mapStatistic]?.aggregate?.count,
+    total: selected.count,
     config: { tension: 250, ...SPRING_CONFIG_NUMBERS }
   })
 
@@ -83,12 +83,12 @@ function MapPanel ({ mapStatistic, data = {} }) {
                         {spring.total.interpolate((total) =>
                           formatNumber(
                             total,
-                            'int',
+                            STATISTIC_DEFINITIONS[mapStatistic].format,
                             'active'
                           )
                         )}
                     </animated.div>
-                    <span>Active</span>
+                    <span>{STATISTIC_DEFINITIONS[mapStatistic].displayName}</span>
                 </PanelH1>
             </LeftPanel>
 

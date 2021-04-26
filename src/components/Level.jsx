@@ -10,43 +10,7 @@ import {
   STATISTIC_CONFIGS,
   SPRING_CONFIG_NUMBERS
 } from '../config/constants'
-import { capitalize, formatNumber } from '../utils/commonFunctions'
-
-function calculateBouce (session = 0, user = 0) {
-  const bounce = ((session - user) / session) * 100
-  return bounce
-}
-
-function getStatistic (data, statistic) {
-  switch (statistic) {
-    case 'users' :
-      return {
-        count: data?.users?.aggregate?.sum?.count || 0,
-        delta: data?.users?.aggregate?.sum?.delta || 0
-      }
-
-    case 'active' :
-      return {
-        count: data?.active?.aggregate?.sum?.count || 0,
-        delta: data?.active?.aggregate?.sum?.delta || 0
-      }
-
-    case 'sessions' :
-      return {
-        count: data?.sessions?.aggregate?.sum?.count || 0,
-        delta: data?.sessions?.aggregate?.sum?.delta || 0
-      }
-
-    case 'bounce' :
-      return {
-        count: calculateBouce(data?.sessions?.aggregate?.sum?.count, data?.users?.aggregate?.sum?.count),
-        delta: calculateBouce(data?.sessions?.aggregate?.sum?.delta, data?.users?.aggregate?.sum?.delta)
-      }
-
-    default:
-      return ''
-  }
-}
+import { capitalize, formatNumber, getStatisticData } from '../utils/commonFunctions'
 
 function getColor (statistic, theme) {
   switch (statistic) {
@@ -146,8 +110,10 @@ function PureLevelItem ({ statistic, total, delta }) {
                   ? (
                       (
                         spring.delta.interpolate(
-                          (delta) =>
-                                `+${formatNumber(delta, statisticConfig.format, statistic)}`
+                          (delta) => {
+                            const currentDelta = formatNumber(delta, statisticConfig.format, statistic)
+                            return currentDelta === 0 ? 0 : currentDelta > 0 ? `+${currentDelta}` : currentDelta
+                          }
                         )
                       )
                     )
@@ -157,7 +123,7 @@ function PureLevelItem ({ statistic, total, delta }) {
             </H4Wrapper>
             <H1Wrapper statistic={statistic}>
                 {spring.total.interpolate((total) =>
-                  `${formatNumber(total, statisticConfig.format, statistic)}${statistic === 'bounce' ? '%' : ''}`
+                  `${formatNumber(total, statisticConfig.format, statistic)}`
                 )}
             </H1Wrapper>
         </>
@@ -195,8 +161,8 @@ function Level ({ data }) {
                 >
                     <LevelItem
                         {...{ statistic }}
-                        total={getStatistic(data, statistic).count}
-                        delta={getStatistic(data, statistic).delta}
+                        total={getStatisticData(data, statistic).count}
+                        delta={getStatisticData(data, statistic).delta}
                     />
                 </LevelItemWrapper>
             ))}

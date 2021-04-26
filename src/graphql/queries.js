@@ -11,12 +11,11 @@ export const GET_ALL_PROJECTS = gql`
 export const GET_PROJECTS_DETAILS = gql`
   query checkWithDelta(
     $projectId: uuid!
-    $at: date_comparison_exp
-    $createdAt: timestamptz_comparison_exp
+    $at: timestamptz_comparison_exp
+    $updatedAt: timestamptz_comparison_exp
   ) {
-    users: all_session_counts_views_delta_aggregate(
-      distinct_on: ipaddress
-      where: { pid: { _eq: $projectId }, date: $at }
+    users: unique_session_counts_users_aggregate(
+      where: { project_id: { _eq: $projectId }, date: $at }
     ) {
       aggregate {
         sum {
@@ -26,7 +25,8 @@ export const GET_PROJECTS_DETAILS = gql`
       }
     }
     sessions: all_session_counts_views_delta_aggregate(
-      where: { pid: { _eq: $projectId }, date: $at }
+      where: { project_id: { _eq: $projectId }, date: $at }
+      distinct_on: ip
     ) {
       aggregate {
         sum {
@@ -35,11 +35,12 @@ export const GET_PROJECTS_DETAILS = gql`
         }
       }
     }
+
     project: project_by_pk(project_id: $projectId) {
       domain
       timezone
       active: sessions_aggregate(
-        where: { created_at: $createdAt }
+        where: { updated_at: $updatedAt }
         distinct_on: ip
       ) {
         aggregate {
@@ -62,6 +63,43 @@ export const GET_SESSIONS_COUNT_WITH_COUNTRY = gql`
     ) {
       count
       country
+      countryName: all_session_counts_country_table {
+        name
+      }
+    }
+  }
+`
+
+export const GET_SESSIONS_USERS_COUNT_WITH_COUNTRY = gql`
+  query checkWithDelta($projectId: uuid!, $at: timestamptz_comparison_exp) {
+    table: unique_session_counts_country(
+      where: { project_id: { _eq: $projectId }, day: $at }
+    ) {
+      count
+      country
+    }
+  }
+`
+
+export const GET_SESSIONS_BOUNCE_COUNT_WITH_COUNTRY = gql`
+  query checkWithDelta($projectId: uuid!, $at: timestamptz_comparison_exp) {
+    table: all_session_counts_bounce_country(
+      where: { date: $at, project_id: { _eq: $projectId } }
+    ) {
+      count: bounce
+      country
+    }
+  }
+`
+
+export const GET_SESSIONS_WITH_COUNTRY = gql`
+  query checkWithDelta($projectId: uuid!, $at: timestamptz_comparison_exp) {
+    table: all_session_active_counts_country(
+      where: { project_id: { _eq: $projectId }, day: $at }
+    ) {
+      count
+      country
+      day
     }
   }
 `
@@ -103,6 +141,62 @@ export const GET_SESSIONS_COUNT_WITH_REFERRER = gql`
     ) {
       count
       referrer
+    }
+  }
+`
+export const GET_SESSIONS_COUNT_WITH_FOR_MINIGRAPHS = gql`
+  query checkForMinigraphs($projectId: uuid!, $at: timestamptz_comparison_exp) {
+    sessions: all_session_counts_views_delta_per_hour(
+      where: { date: $at, project_id: { _eq: $projectId } }
+      order_by: { date: desc }
+    ) {
+      date
+      count
+    }
+    users: all_session_counts_views_delta_per_hour(
+      where: { date: $at, project_id: { _eq: $projectId } }
+      distinct_on: ip
+    ) {
+      date
+      count
+    }
+    active: all_session_counts_ip_hour(
+      where: { project_id: { _eq: $projectId }, hour: $at }
+    ) {
+      date: hour
+      count
+    }
+  }
+`
+export const GET_SESSIONS_COUNT_FOR_TIMESERIES = gql`
+  query checkWithDelta($projectId: uuid!, $at: timestamptz_comparison_exp) {
+    sessions: all_session_counts_by_hour(
+      where: { project_id: { _eq: $projectId }, hour: $at }
+      order_by: { hour: asc }
+    ) {
+      count
+      hour
+    }
+    users: all_session_counts_ip_hour(
+      where: { project_id: { _eq: $projectId }, hour: $at }
+      order_by: { hour: asc }
+    ) {
+      count
+      hour
+    }
+    active: all_session_counts_by_hour(
+      where: { project_id: { _eq: $projectId }, hour: $at }
+      order_by: { hour: asc }
+    ) {
+      count
+      hour
+    }
+    bounce: all_session_counts_bounce_hour(
+      where: { project_id: { _eq: $projectId }, hour: $at }
+      order_by: { hour: asc }
+    ) {
+      count: bounce
+      hour
     }
   }
 `

@@ -14,92 +14,33 @@ export const LOCALE_SHORTHANDS = {
 
 export const STATISTIC_DEFINITIONS = {
   users: {
-    displayName: 'users',
-    color: '#ff073a',
+    displayName: 'Users',
+    color: 'cherryMid',
+    dotColor: 'cherry',
     format: 'int',
     options: { key: 'users' }
   },
   active: {
-    displayName: 'active',
-    color: '#007bff',
+    displayName: 'Active',
+    color: 'blueMid',
+    dotColor: 'blue',
     format: 'int',
     options: { key: 'active' },
     hideDelta: true
   },
   sessions: {
-    displayName: 'sessions',
-    color: '#28a745',
+    displayName: 'Sessions',
+    color: 'greenMid',
+    dotColor: 'green',
     format: 'int',
     options: { key: 'sessions' }
   },
   bounce: {
-    displayName: 'bounce',
-    color: '#6c757d',
-    format: 'int',
+    displayName: 'Bounce',
+    color: 'grayMid',
+    dotColor: 'gray',
+    format: '%',
     options: { key: 'bounce' }
-  },
-  other: {
-    displayName: 'other',
-    format: 'int',
-    options: { key: 'other' }
-  },
-  tested: {
-    displayName: 'tested',
-    color: '#4b1eaa',
-    format: 'short',
-    options: { key: 'tested' }
-  },
-  vaccinated: {
-    displayName: 'vaccine doses administered',
-    color: '#fb5581',
-    format: 'short',
-    options: { key: 'vaccinated' }
-  },
-  activeRatio: {
-    displayName: 'active ratio',
-    format: '%',
-    options: {
-      key: 'active',
-      normalizeByKey: 'confirmed',
-      multiplyFactor: 100
-    },
-    hideDelta: true
-  },
-  recoveryRatio: {
-    displayName: 'recovery ratio',
-    format: '%',
-    options: {
-      key: 'recovered',
-      normalizeByKey: 'confirmed',
-      multiplyFactor: 100
-    },
-    hideDelta: true
-  },
-  cfr: {
-    displayName: 'case fatality ratio',
-    format: '%',
-    options: {
-      key: 'deceased',
-      normalizeByKey: 'confirmed',
-      multiplyFactor: 100
-    },
-    hideDelta: true
-  },
-  tpr: {
-    displayName: 'test positivity ratio',
-    format: '%',
-    options: {
-      key: 'confirmed',
-      normalizeByKey: 'tested',
-      multiplyFactor: 100
-    },
-    hideDelta: true
-  },
-  population: {
-    displayName: 'population',
-    format: 'short',
-    options: { key: 'population' },
-    hideDelta: true
   }
 }
 

@@ -8,7 +8,6 @@
       const referrer = document.referrer
       const key = `cool.bio:analytics:${hostname}`
       const sessionId = sessionStorage.getItem(key)
-      console.log('cool.bio')
       const response = await fetch(
         'https://analytics.cool.bio/api/v1/tracker',
         {
@@ -58,7 +57,6 @@
       history.pushState = ((f) =>
         function pushState () {
           const ret = f.apply(this, arguments)
-          console.log('why called, pushState')
           onVisibilityAndStateChange()
           return ret
         })(history.pushState)
@@ -66,13 +64,11 @@
       history.replaceState = ((f) =>
         function replaceState () {
           const ret = f.apply(this, arguments)
-          console.log('why called, replaceState')
           onVisibilityAndStateChange()
           return ret
         })(history.replaceState)
 
       window.addEventListener('popstate', () => {
-        console.log('why called, popstate')
         onVisibilityAndStateChange()
       })
       document.addEventListener('visibilitychange', onVisibilityAndStateChange)

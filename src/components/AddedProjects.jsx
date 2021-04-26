@@ -38,7 +38,6 @@ const columns = [
     accessor: 'createdAt',
     Cell: ({ cell }) => {
       const date = dateFormat(cell?.row?.original?.createdAt, cell?.row?.original?.timezone)
-      console.log(date)
       return date
     }
   },
@@ -67,8 +66,6 @@ const columns = [
 
 function AddedProjects (props) {
   const { loading, error, data } = useSubscription(GET_PROJECTS)
-
-  console.log(loading, error, data)
 
   if (loading) {
     return (
