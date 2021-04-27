@@ -45,7 +45,8 @@ const TimeseriesWrapper = styled.div`
 `
 
 function tickFormatter (data) {
-  return dayjs(data).format('HH:mm')
+  const date = dayjs(data)
+  return date.isValid() ? dayjs(data).format('HH:mm') : dayjs().format('HH:mm')
 }
 
 function Timeseries ({
@@ -104,7 +105,7 @@ function Timeseries ({
                       visibility: 'visible'
                     }}
                     position={{ x: 10, y: 10 }}
-                    content={<CustomTooltip item={item} statistic={statistic} defaultData={defaultData} /> }
+                    content={<CustomTooltip item={item} statistic={statistic} defaultData={defaultData} />}
                     cursor={false}
                   />
                   <Line type="monotone" dataKey="count" strokeWidth={4} stroke={strokeColor} fill={strokeColor} />
@@ -120,7 +121,7 @@ function Timeseries ({
 }
 
 Timeseries.propTypes = {
-  data: PropTypes.any,
+  data: PropTypes.any
 }
 
 export default memo(Timeseries)

@@ -166,7 +166,7 @@ function getStatistic (data, statistic) {
       return ''
   }
 }
-const updatedAt = dayjs().subtract(2, 'minutes')
+const updatedAt = dayjs().subtract(1, 'minutes')
 
 function ListPage () {
   const { name } = useParams()
@@ -198,21 +198,18 @@ function ListPage () {
     }
   })
   console.log(loading, error, data)
-  const [timeseriesData, setTimeSeriesData] = useState(timeData)
-  const [date, setDate] = useState('')
+
   const { project, sessions, users } = data
 
   const currentStatics = getStatistic(data, mapStatistic)?.count
 
-  console.log('mapStatisticmapStatistic', mapStatistic)
-
-/*   useEffect(() => {
+  useEffect(() => {
     setSelectedCountry({
       id: '',
       name: '',
       count: currentStatics || 0
     })
-  }, [currentStatics]) */
+  }, [currentStatics])
 
   return (
     <PrivateRoute>
@@ -224,7 +221,7 @@ function ListPage () {
           <MapLevelWrapper>
             <MapSwitcher mapStatistic={mapStatistic} setMapStatistic={setMapStatistic} />
             <Level data={{ ...project, sessions, users }} />
-            <Minigraphs timeseries={timeseriesData?.dates} projectId={name} {...{ date }} />
+            <Minigraphs projectId={name} />
           </MapLevelWrapper>
           <CountryCount projectId={name} query={GET_SESSIONS_COUNT_WITH_COUNTRY} columns={countryColumns} />
           <CountryCount projectId={name} query={GET_SESSIONS_COUNT_WITH_CLIENT_NAME} columns={browserColumns} />
