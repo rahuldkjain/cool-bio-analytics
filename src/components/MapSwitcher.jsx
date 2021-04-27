@@ -88,7 +88,6 @@ const MapSwitcher = ({ mapStatistic, setMapStatistic }) => {
 
   const handleClick = useCallback(
     (statistic) => {
-      console.log(statistic)
       setMapStatistic(statistic)
     },
     [setMapStatistic]

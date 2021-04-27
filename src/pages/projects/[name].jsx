@@ -12,7 +12,6 @@ import Search from '../../components/Search'
 import Actions from '../../components/Actions'
 import MapSwitcher from '../../components/MapSwitcher'
 import Level from '../../components/Level'
-import Minigraphs from '../../components/Minigraphs'
 import MapPanel from '../../components/MapPanel'
 import StateHeader from '../../components/StateHeader'
 import Navbar from '../../components/Navbar'
@@ -27,13 +26,11 @@ import {
   GET_SESSIONS_COUNT_WITH_REFERRER
 } from '../../graphql/queries'
 
-import timeData from '../../config/timeSeries.json'
-import { getStatisticData } from '../../utils/commonFunctions'
-
 import { selectedCountry } from '../../atoms'
 
 const Map = lazy(() => import('../../components/Map'))
 const Timeseries = lazy(() => import('../../components/Timeseries'))
+const Minigraphs = lazy(() => import('../../components/Minigraphs'))
 
 const AppWrapper = styled.div`
   display: flex;
@@ -136,7 +133,6 @@ function calculateBouce (session = 0, user = 0) {
 }
 
 function getStatistic (data, statistic) {
-  console.log(data?.users?.aggregate?.sum?.count)
   switch (statistic) {
     case 'users' :
       return {
@@ -197,7 +193,6 @@ function ListPage () {
       }
     }
   })
-  console.log(loading, error, data)
 
   const { project, sessions, users } = data
 

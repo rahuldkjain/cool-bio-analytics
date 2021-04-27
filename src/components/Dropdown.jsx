@@ -5,7 +5,6 @@ import { x } from '@xstyled/styled-components'
 const Dropdown = ({ options, styles, onChange, name }) => {
   const handleChange = useCallback(
     (event) => {
-      console.log(event)
       if (typeof onChange === 'function') {
         onChange(event)
       }

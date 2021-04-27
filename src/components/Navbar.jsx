@@ -158,7 +158,6 @@ function Navbar ({
 }) {
   const [expand, setExpand] = useState(false)
   const user = auth.user()
-  console.log(user)
   useLockBodyScroll(expand)
   const windowSize = useWindowSize()
   const [spring, set, stop] = useSpring(() => ({ opacity: 0 }))
