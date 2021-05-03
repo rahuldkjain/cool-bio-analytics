@@ -103,12 +103,14 @@ export default function Pricing () {
                                 color={color}
                                 fontSize={{ md: '2xl', xs: 'xl' }}
                                 mb={5}
+                                flex={1}
                             >
                                 {title}
                             </x.h3>
                             <x.p
                                 color="gray"
                                 fontSize="sm"
+                                flex={1}
                             >
                                 {label} Upto {views} views.
                             </x.p>

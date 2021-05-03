@@ -9,13 +9,13 @@ import Privacy from '../components/icon/Privacy'
 import OpenSource from '../components/icon/OpenSource'
 import PayAsYouGo from '../components/icon/PayAsYouGo'
 import Api from '../components/icon/Api'
-import Gdpr from '../components/icon/Gdpr'
 
 import GdprSvg from '.././assets/gdpr.svg'
 
 const Navbar = lazy(() => import('../components/Navbar'))
 const Pricing = lazy(() => import('../components/Pricing'))
 const Footer = lazy(() => import('../components/Footer'))
+const LottieAnimations = lazy(() => import('../components/LottieAnimations'))
 
 const ourServices = {
   key: 'services',
@@ -128,7 +128,6 @@ function Landing (props) {
         <meta charSet="utf-8" />
         <title>Analytics | cool.bio</title>
         <link rel="canonical" href="http://analytics.cool.bio" />
-        <script type="text/javascript" src="/productHuntUpcoming.js"></script>
       </Helmet>
       <x.div
         display="flex"
@@ -243,6 +242,40 @@ function Landing (props) {
                 </x.span>
               </x.div>
             ))}
+          </x.div>
+        </x.div>
+      </x.div>
+      <x.div
+        display="flex"
+        flexDirection="row"
+        flexWrap="wrap"
+        justifyContent="center"
+        ml={{ md: '9rem', sm: 0 }}
+        mr={{ md: '3rem', sm: 0 }}
+        pt={{ md: 28, xs: '3rem' }}
+      >
+        <x.div
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+          textAlign="center"
+          flexDirection="column"
+          py={5}
+        >
+          <x.span color="pink" fontSize={{ md: 'xl', xs: 'lg' }} py={4}>
+            Speed?
+          </x.span>
+          <x.h2
+            color="silver"
+            py={4}
+            fontSize={{ md: '4xl', xs: 'xl' }}
+            fontWeight="700"
+          >
+            It’s fast, very fast
+          </x.h2>
+          <x.p color="gray">Our Cloudflare® powered servers are built for speed. Spans over 200 cities in more than 100 countries.</x.p>
+          <x.div pt={20} maxWidth={800}>
+            <LottieAnimations animationName="world-ping" />
           </x.div>
         </x.div>
       </x.div>

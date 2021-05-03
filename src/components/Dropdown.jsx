@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import React, { useCallback } from 'react'
 import { x } from '@xstyled/styled-components'
 
-const Dropdown = ({ options, styles, onChange, name }) => {
+const Dropdown = ({ options, styles, onChange, name, value }) => {
   const handleChange = useCallback(
     (event) => {
       if (typeof onChange === 'function') {
@@ -16,7 +16,6 @@ const Dropdown = ({ options, styles, onChange, name }) => {
     <x.select
       onChange={handleChange}
       name={name}
-      {...styles}
       appearance="none"
       backgroundColor="dropdown"
       backgroundImage={'url(\'data:image/svg+xml,<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="m0,6l12,12l12,-12l-24,0z" fill="gray"/><path fill="none" d="m0,0l24,0l0,24l-24,0l0,-24z"/></svg>\')'}
@@ -32,6 +31,8 @@ const Dropdown = ({ options, styles, onChange, name }) => {
       p="1rem"
       w="100%"
       focusOutline="none"
+      value={value}
+      {...styles}
     >
   {
     options

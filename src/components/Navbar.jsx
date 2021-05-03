@@ -1,10 +1,10 @@
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types'
 import React, { useState, useCallback, useRef } from 'react'
 import * as Icon from 'react-feather'
 import { NavLink } from 'react-router-dom'
 import { useSpring, useTransition, animated } from 'react-spring'
 import { useLockBodyScroll, useWindowSize } from 'react-use'
-import styled, { x } from '@xstyled/styled-components'
+import styled, { x, useUp } from '@xstyled/styled-components'
 
 import Brand from './Brand'
 import SunMoon from './SunMoon'
@@ -183,8 +183,8 @@ function Navbar ({
 
   return (
     <NavWrapper style={spring}>
-      {user &&
-        <x.button
+      {windowSize.width > 769 && (user
+        ? <x.button
           order={3}
           textAlign="center"
           mb={8}
@@ -195,7 +195,19 @@ function Navbar ({
           onClick={logout}
         >
           Logout
-      </x.button>
+        </x.button>
+        : <x.a
+          order={3}
+          textAlign="center"
+          mb={8}
+          mt="auto"
+          color="gray"
+          fontSize="sm"
+          backgroundColor="transparent"
+          href="/login"
+        >
+          Login
+      </x.a>)
       }
       <Brand />
       <NavbarRight
@@ -236,7 +248,7 @@ function Navbar ({
         item
           ? (
             <animated.div key={key} style={props}>
-              <Expand {...{ pages, setExpand, darkMode, windowSize }} />
+              <Expand {...{ pages, setExpand, darkMode, windowSize, user, logout }} />
             </animated.div>
             )
           : (
@@ -251,8 +263,9 @@ Navbar.propTypes = {
   darkMode: PropTypes.any
 }
 
-function Expand ({ pages, setExpand, darkMode, windowSize }) {
+function Expand ({ pages, setExpand, darkMode, windowSize, logout, user }) {
   const expandElement = useRef(null)
+  const upMd = useUp('md')
 
   const handleMouseLeave = useCallback(() => {
     windowSize.width > 768 && setExpand(false)
@@ -280,6 +293,33 @@ function Expand ({ pages, setExpand, darkMode, windowSize }) {
         return null
       })}
 
+      {
+        user
+          ? <x.button
+            textAlign="left"
+            mb={8}
+            mt="auto"
+            color="gray"
+            fontSize="sm"
+            backgroundColor="transparent"
+            display={{ md: 'none', xs: 'block' }}
+            onClick={logout}
+          >
+            Logout
+        </x.button>
+          : <WrapperRouterLink
+            to="/login"
+            exact
+            style={{
+              display: upMd ? 'none' : 'block'
+            }}
+          >
+            <span>
+              Login
+            </span>
+          </WrapperRouterLink>
+      }
+
       {windowSize?.width < 768 && <SunMoon {...{ darkMode }} />}
 
       <ExpandBottom>
@@ -291,8 +331,10 @@ function Expand ({ pages, setExpand, darkMode, windowSize }) {
 
 Expand.propTypes = {
   darkMode: PropTypes.any,
-  pages: PropTypes.arrayOf(PropTypes.shape()),
+  logout: PropTypes.any,
+  pages: PropTypes.arrayOf(PropTypes.any),
   setExpand: PropTypes.func,
+  user: PropTypes.any,
   windowSize: PropTypes.shape({
     width: PropTypes.number
   })

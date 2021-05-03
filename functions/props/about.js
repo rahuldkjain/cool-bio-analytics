@@ -4,8 +4,8 @@ export default defineEdgeProps({
   handler ({ params = {}, query = {} }) {
     return {
       data: {
-        server: true,
-        msg: `This is ABOUT page ${params.resource || ''}`
+        heading1: 'cool.bio Analytics is an open-source project dedicated to making web analytics more privacy-friendly. Our mission is to reduce corporate surveillance by providing an alternative web analytics tool which doesn’t come from the AdTech world.',
+        heading2: 'We are trusted by 100+ subscribers. We are completely independent, self-funded and bootstrapped.'
       }
     }
   },

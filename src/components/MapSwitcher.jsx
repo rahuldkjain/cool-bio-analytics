@@ -1,10 +1,10 @@
-import React, { memo, useState, useCallback, useEffect } from 'react'
-import ReactDOM from 'react-dom'
-import { useSpring, animated, config } from 'react-spring'
+import PropTypes from "prop-types";
+import React, { memo, useCallback } from 'react'
+import { animated } from 'react-spring'
 import { useMeasure } from 'react-use'
 import styled from '@xstyled/styled-components'
 
-import { PRIMARY_STATISTICS, STATISTIC_CONFIGS } from '../config/constants'
+import { PRIMARY_STATISTICS } from '../config/constants'
 
 function getBackGround (statistic, theme) {
   switch (statistic) {
@@ -106,6 +106,11 @@ const MapSwitcher = ({ mapStatistic, setMapStatistic }) => {
             ))}
         </MapSwitcherWrapper>
   )
+}
+
+MapSwitcher.propTypes = {
+  mapStatistic: PropTypes.any,
+  setMapStatistic: PropTypes.func
 }
 
 const isEqual = (prevProps, currProps) => {

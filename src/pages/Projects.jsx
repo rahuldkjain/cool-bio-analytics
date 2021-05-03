@@ -1,5 +1,6 @@
 import React, { useState, lazy } from 'react'
 import styled, { x } from '@xstyled/styled-components'
+import { Helmet } from 'react-helmet-async'
 
 import PrivateRoute from '../components/PrivateRoute'
 
@@ -34,6 +35,12 @@ function Projects (props) {
 
   return (
     <PrivateRoute>
+      <Helmet>
+        <html lang="en" />
+        <meta charSet="utf-8" />
+        <title>Projects | Cool Analytics</title>
+        <link rel="canonical" href="http://analytics.cool.bio/projects" />
+      </Helmet>
       <Navbar />
       <AppWrapper>
         <x.h1

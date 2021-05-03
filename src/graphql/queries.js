@@ -8,6 +8,15 @@ export const GET_ALL_PROJECTS = gql`
     }
   }
 `
+export const GET_PROJECT_DETAILS_BY_ID_FOR_SETTINGS = gql`
+    query checkWithDelta($projectId: uuid!) {
+        project: project_by_pk(project_id: $projectId) {
+            domain
+            timezone
+        }
+    } 
+`
+
 export const GET_PROJECTS_DETAILS = gql`
   query checkWithDelta(
     $projectId: uuid!

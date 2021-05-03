@@ -82,7 +82,7 @@ export default function Login (props) {
             <Helmet>
                 <html lang="en" />
                 <meta charSet="utf-8" />
-                <title>Cool Analytics | Login</title>
+                <title>Login | Cool Analytics</title>
                 <link rel="canonical" href="http://analytics.cool.bio" />
             </Helmet>
             <LoginContainer>

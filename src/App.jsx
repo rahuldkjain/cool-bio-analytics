@@ -1,12 +1,13 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import { Route, Switch, Redirect } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import styled, { defaultTheme, ThemeProvider, Preflight, ColorModeProvider, createGlobalStyle } from '@xstyled/styled-components'
 import { th } from '@xstyled/system'
 import { Provider } from 'jotai'
 import { NhostApolloProvider } from '@nhost/react-apollo'
 import { NhostAuthProvider } from '@nhost/react-auth'
 import { Helmet } from 'react-helmet-async'
+import NotFound from './pages/NotFound'
 
 import { auth } from './utils/hbp'
 
@@ -36,6 +37,14 @@ const GlobalStyle = createGlobalStyle`
       opacity: 1;
       transform: translateY(0);
     }
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+      transition: background-color 5000s ease-in-out 0s;
+      -webkit-text-fill-color: #6c757d;
   }
 
   h1 {
@@ -215,7 +224,9 @@ function App ({ router }) {
                       </Route>
                     )
                   })}
-                  <Redirect to="/" />
+                  <Route path="*">
+                    <NotFound />
+                  </Route>
                 </Switch>
               </Wrapper>
             </NhostApolloProvider>

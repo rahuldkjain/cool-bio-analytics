@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import * as React from 'react'
 import { x } from '@xstyled/styled-components'
 
@@ -10,6 +11,10 @@ function Blob ({ fill = '#dc354520', ...rest }) {
       />
     </svg>
   )
+}
+
+Blob.propTypes = {
+  fill: PropTypes.string
 }
 
 export default Blob

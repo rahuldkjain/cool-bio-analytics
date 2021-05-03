@@ -55,9 +55,12 @@ const columns = [
     Cell ({ cell }) {
       return (
                 <x.div display="flex" justifyContent="center">
+                    <ActionLink to={`/projects/${cell?.row?.original?.projectId}/settings`} style={{ marginRight: 20 }}>
+                        Settings
+                    </ActionLink>
                     <ActionLink to={`/projects/${cell?.row?.original?.projectId}`}>
                         View
-                </ActionLink>
+                    </ActionLink>
                 </x.div>
       )
     }

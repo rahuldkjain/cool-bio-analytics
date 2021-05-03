@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import styled, { x } from '@xstyled/styled-components'
+import { Helmet } from 'react-helmet-async'
 
 import Navbar from '../components/Navbar'
-import PrivateRoute from '../components/PrivateRoute'
 
 const AppWrapper = styled.div`
   display: flex;
@@ -52,12 +52,18 @@ const HomeRight = styled(HomeWrapper)`
 
 function Terms (props) {
   return (
-    <PrivateRoute>
+    <>
+      <Helmet>
+        <html lang="en" />
+        <meta charSet="utf-8" />
+        <title>Terms | Cool Analytics</title>
+        <link rel="canonical" href="http://analytics.cool.bio/terms" />
+      </Helmet>
       <Navbar />
       <AppWrapper>
         <x.div>Add your site here!</x.div>
       </AppWrapper>
-    </PrivateRoute>
+    </>
   )
 }
 

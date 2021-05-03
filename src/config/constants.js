@@ -145,6 +145,11 @@ export const footerData = [
     key: 'helpSupport',
     categories: [
       {
+        label: 'About',
+        key: 'about',
+        href: '/about'
+      },
+      {
         label: 'Status',
         key: 'status',
         href: 'https://status.cool.bio'
@@ -193,10 +198,10 @@ export const pricesData = [
   {
     month: 0,
     year: 0,
-    title: 'Free',
+    title: 'Hobby',
     label: 'Perfect for hobby projects and experiments.',
     views: '100k',
-    key: 'free',
+    key: 'hobby',
     color: 'red'
   },
   {

@@ -87,7 +87,6 @@ const Footer = () => {
           fontWeight="normal"
           fontSize="14px"
           lineHeight="21px"
-          color="#030047"
         >
           <Brand showRow />
           <x.div>
@@ -97,7 +96,7 @@ const Footer = () => {
               fontWeight="normal"
               fontSize="14px"
               lineHeight="21px"
-              color="#030047"
+              color="#F87E0F"
               pb={4}
             >
               The new Cool Analytics tool

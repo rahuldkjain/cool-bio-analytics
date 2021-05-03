@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import React, { useState, useCallback } from 'react'
 import styled, { x } from '@xstyled/styled-components'
 import { useMutation } from '@apollo/client'
@@ -5,25 +6,23 @@ import { useMutation } from '@apollo/client'
 import Dropdown from './Dropdown'
 import Loading from './Loading'
 
-import { INSERT_PROJECT } from '../graphql/mutation'
+import { INSERT_PROJECT, UPDATE_PROJECT_BY_ID } from '../graphql/mutation'
 import { timeZones } from '../config/constants'
 
 const Button = styled.button`
   appearance: none;
-  background-color: dropdown;
+  background-color: greenLight;
   background-position-x: calc(100% - 0.4rem);
   background-position-y: 50%;
   background-repeat: no-repeat;
   background-size: 0.6rem;
-  border: 2px solid;
   border-color: dropdownBorder;
   border-radius: 4px;
-  color: gray;
+  color: green;
   cursor: pointer;
   font-weight: 600;
-  padding: 1rem;
-  padding-right: 1.4rem;
-  width: 150px;
+  padding: 3 6;
+  width: auto;
   text-align: center;
   animation: fadeInUp;
   animation-delay: 0ms;
@@ -63,12 +62,18 @@ const Base = styled.div`
     }
 `
 
-export default function CreateProject () {
-  const [insertItem] = useMutation(INSERT_PROJECT)
+export default function CreateProject ({
+  editEnabled,
+  domain,
+  timezone = timeZones[0].key,
+  disableEdits = {},
+  projectId
+}) {
+  const [insertItem] = useMutation(editEnabled ? UPDATE_PROJECT_BY_ID : INSERT_PROJECT)
   const [selected, setSelectedData] = useState({
-    domain: '',
-    timezone: timeZones[0].key,
-    isShowingForm: false,
+    domain,
+    timezone,
+    isShowingForm: editEnabled,
     loading: false,
     error: null
   })
@@ -97,20 +102,32 @@ export default function CreateProject () {
     if (selected.domain.length > 0) {
       try {
         await insertItem({
-          variables: {
-            item: {
-              domain: selected.domain,
-              timezone: selected.timezone
+          variables: editEnabled
+            ? {
+                projectId,
+                data: {
+                  timezone: selected.timezone
+                }
+              }
+            : {
+                item: {
+                  domain: selected.domain,
+                  timezone: selected.timezone
+                }
+              }
+        })
+        setSelectedData(prevState => editEnabled
+          ? {
+              ...prevState,
+              loading: false
             }
-          }
-        })
-        setSelectedData({
-          domain: '',
-          timezone: timeZones[0].key,
-          isShowingForm: false,
-          loading: false,
-          error: null
-        })
+          : {
+              domain: '',
+              timezone: timeZones[0].key,
+              isShowingForm: false,
+              loading: false,
+              error: null
+            })
       } catch (error) {
         console.error(error)
         setSelectedData({
@@ -145,13 +162,15 @@ export default function CreateProject () {
               name='domain'
               onChange={handleChange}
               fontSize="16px"
-              py={4}
+              py={3}
               px={1}
               placeholder="Enter domain name"
               color="gray"
               w="100%"
               outline="none"
               backgroundColor="dropdown"
+              value={selected.domain}
+              disabled={disableEdits.domain}
             />
           </Base>
           {selected.error &&
@@ -167,19 +186,31 @@ export default function CreateProject () {
           }
           <x.label color="gray" fontSize={{ md: 'xl', xs: 'lg' }}>Reporting Timezone</x.label>
           <Dropdown
-            value="cool.bio"
+            value={selected.timezone}
             options={timeZones}
-            styles={{ maxWidth: 350, my: '1.5rem' }}
+            styles={{ maxWidth: 350, my: '1.5rem', py: 3 }}
             onChange={handleChange}
             name="timezone"
           />
-          <Button type="submit">
-            {selected.loading && <Loading />}
-            Submit
-          </Button>
+          <div>
+            <Button type="submit">
+              {selected.loading && <Loading />}
+              Submit
+            </Button>
+          </div>
         </x.form>
         : <Button onClick={showForm}>Add another</Button>
       }
     </x.div>
   )
+}
+
+CreateProject.propTypes = {
+  disableEdits: PropTypes.shape({
+    domain: PropTypes.bool
+  }),
+  domain: PropTypes.string,
+  editEnabled: PropTypes.bool,
+  projectId: PropTypes.string,
+  timezone: PropTypes.string
 }
