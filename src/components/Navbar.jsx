@@ -1,23 +1,23 @@
-import PropTypes from 'prop-types'
-import React, { useState, useCallback, useRef } from 'react'
-import * as Icon from 'react-feather'
-import { NavLink } from 'react-router-dom'
-import { useSpring, useTransition, animated } from 'react-spring'
-import { useLockBodyScroll, useWindowSize } from 'react-use'
-import styled, { x, useUp } from '@xstyled/styled-components'
+import PropTypes from "prop-types";
+import React, { useState, useCallback, useRef } from "react";
+import * as Icon from "react-feather";
+import { NavLink } from "react-router-dom";
+import { useSpring, useTransition, animated } from "react-spring";
+import { useLockBodyScroll, useWindowSize } from "react-use";
+import styled, { x, useUp } from "@xstyled/styled-components";
 
-import Brand from './Brand'
-import SunMoon from './SunMoon'
+import Brand from "./Brand";
+import SunMoon from "./SunMoon";
 
-import { auth } from '../utils/hbp'
+import { getClient } from "../utils/hbp";
 import {
   SLIDE_IN,
   SLIDE_OUT,
   SLIDE_IN_MOBILE,
-  SLIDE_OUT_MOBILE
-} from '../utils/animations'
+  SLIDE_OUT_MOBILE,
+} from "../utils/animations";
 
-import { pages } from '../config/constants'
+import { pages } from "../config/constants";
 
 const NavWrapper = styled(animated.div)`
   align-items: center;
@@ -35,7 +35,7 @@ const NavWrapper = styled(animated.div)`
     position: fixed;
     z-index: 999;
   }
-`
+`;
 
 const NavbarRight = styled.div`
   color: gray;
@@ -67,7 +67,7 @@ const NavbarRight = styled.div`
       }
     }
   }
-`
+`;
 
 const ExpandWrapper = styled.div`
   background-color: nav;
@@ -113,7 +113,7 @@ const ExpandWrapper = styled.div`
       width: 12rem;
     }
   }
-`
+`;
 
 const ExpandBottom = styled.div`
   align-self: flex-start;
@@ -129,10 +129,10 @@ const ExpandBottom = styled.div`
   &:hover {
     background: none;
   }
-`
+`;
 
 const WrapperRouterLink = styled(NavLink)`
-  pointer-events: ${({ disable }) => (disable ? 'none' : 'auto')};
+  pointer-events: ${({ disable }) => (disable ? "none" : "auto")};
 
   &.active {
     span {
@@ -141,84 +141,83 @@ const WrapperRouterLink = styled(NavLink)`
       padding: 0.25rem;
     }
   }
-`
+`;
 
 const WrapperRouterIconLink = styled(NavLink)`
-  pointer-events: ${({ disable }) => (disable ? 'none' : 'auto')};
+  pointer-events: ${({ disable }) => (disable ? "none" : "auto")};
 
   &.active {
     svg {
       stroke: pblue;
     }
   }
-`
+`;
 
-function Navbar ({
-  darkMode
-}) {
-  const [expand, setExpand] = useState(false)
-  const user = auth.user()
-  useLockBodyScroll(expand)
-  const windowSize = useWindowSize()
-  const [spring, set, stop] = useSpring(() => ({ opacity: 0 }))
-  set({ opacity: 1 })
-  stop()
+function Navbar({ darkMode }) {
+  const [expand, setExpand] = useState(false);
+  const { auth } = getClient();
+  const user = auth.user();
+  useLockBodyScroll(expand);
+  const windowSize = useWindowSize();
+  const [spring, set, stop] = useSpring(() => ({ opacity: 0 }));
+  set({ opacity: 1 });
+  stop();
 
   const transitions = useTransition(expand, null, {
     from: windowSize.width < 769 ? SLIDE_IN_MOBILE : SLIDE_IN,
     enter: windowSize.width < 769 ? SLIDE_OUT_MOBILE : SLIDE_OUT,
     leave: windowSize.width < 769 ? SLIDE_IN_MOBILE : SLIDE_IN,
-    config: { mass: 1, tension: 210, friction: 26 }
-  })
+    config: { mass: 1, tension: 210, friction: 26 },
+  });
 
   const handleMouseEnter = useCallback(() => {
     if (windowSize.width > 769) {
-      setExpand(true)
+      setExpand(true);
     }
-  }, [windowSize.width])
+  }, [windowSize.width]);
 
   const logout = async () => {
-    await auth.logout()
-  }
+    await auth.logout();
+  };
 
   return (
     <NavWrapper style={spring}>
-      {windowSize.width > 769 && (user
-        ? <x.button
-          order={3}
-          textAlign="center"
-          mb={8}
-          mt="auto"
-          color="gray"
-          fontSize="sm"
-          backgroundColor="transparent"
-          onClick={logout}
-        >
-          Logout
-        </x.button>
-        : <x.a
-          order={3}
-          textAlign="center"
-          mb={8}
-          mt="auto"
-          color="gray"
-          fontSize="sm"
-          backgroundColor="transparent"
-          href="/login"
-        >
-          Login
-      </x.a>)
-      }
+      {windowSize.width > 769 &&
+        (user ? (
+          <x.button
+            order={3}
+            textAlign="center"
+            mb={8}
+            mt="auto"
+            color="gray"
+            fontSize="sm"
+            backgroundColor="transparent"
+            onClick={logout}
+          >
+            Logout
+          </x.button>
+        ) : (
+          <x.a
+            order={3}
+            textAlign="center"
+            mb={8}
+            mt="auto"
+            color="gray"
+            fontSize="sm"
+            backgroundColor="transparent"
+            href="/login"
+          >
+            Login
+          </x.a>
+        ))}
       <Brand />
       <NavbarRight
         onMouseEnter={handleMouseEnter}
         {...(windowSize.width < 769 && {
-          onClick: setExpand.bind(this, !expand)
+          onClick: setExpand.bind(this, !expand),
         })}
       >
-        {windowSize.width < 769 && (
-          <span>{expand ? 'Close' : 'Menu'}</span>
-        )}
+        {windowSize.width < 769 && <span>{expand ? "Close" : "Menu"}</span>}
 
         {windowSize.width > 769 && (
           <>
@@ -245,31 +244,31 @@ function Navbar ({
       </NavbarRight>
 
       {transitions.map(({ item, key, props }) =>
-        item
-          ? (
-            <animated.div key={key} style={props}>
-              <Expand {...{ pages, setExpand, darkMode, windowSize, user, logout }} />
-            </animated.div>
-            )
-          : (
-            <animated.div key={key} style={props}></animated.div>
-            )
+        item ? (
+          <animated.div key={key} style={props}>
+            <Expand
+              {...{ pages, setExpand, darkMode, windowSize, user, logout }}
+            />
+          </animated.div>
+        ) : (
+          <animated.div key={key} style={props}></animated.div>
+        )
       )}
     </NavWrapper>
-  )
+  );
 }
 
 Navbar.propTypes = {
-  darkMode: PropTypes.any
-}
+  darkMode: PropTypes.any,
+};
 
-function Expand ({ pages, setExpand, darkMode, windowSize, logout, user }) {
-  const expandElement = useRef(null)
-  const upMd = useUp('md')
+function Expand({ pages, setExpand, darkMode, windowSize, logout, user }) {
+  const expandElement = useRef(null);
+  const upMd = useUp("md");
 
   const handleMouseLeave = useCallback(() => {
-    windowSize.width > 768 && setExpand(false)
-  }, [setExpand, windowSize.width])
+    windowSize.width > 768 && setExpand(false);
+  }, [setExpand, windowSize.width]);
 
   return (
     <ExpandWrapper ref={expandElement} onMouseLeave={handleMouseLeave}>
@@ -281,44 +280,40 @@ function Expand ({ pages, setExpand, darkMode, windowSize, logout, user }) {
               key={i}
               exact={page.exact}
               {...(windowSize.width < 769 && {
-                onClick: setExpand.bind(this, false)
+                onClick: setExpand.bind(this, false),
               })}
             >
-              <span>
-                {page.displayName}
-              </span>
+              <span>{page.displayName}</span>
             </WrapperRouterLink>
-          )
+          );
         }
-        return null
+        return null;
       })}
 
-      {
-        user
-          ? <x.button
-            textAlign="left"
-            mb={8}
-            mt="auto"
-            color="gray"
-            fontSize="sm"
-            backgroundColor="transparent"
-            display={{ md: 'none', xs: 'block' }}
-            onClick={logout}
-          >
-            Logout
+      {user ? (
+        <x.button
+          textAlign="left"
+          mb={8}
+          mt="auto"
+          color="gray"
+          fontSize="sm"
+          backgroundColor="transparent"
+          display={{ md: "none", xs: "block" }}
+          onClick={logout}
+        >
+          Logout
         </x.button>
-          : <WrapperRouterLink
-            to="/login"
-            exact
-            style={{
-              display: upMd ? 'none' : 'block'
-            }}
-          >
-            <span>
-              Login
-            </span>
-          </WrapperRouterLink>
-      }
+      ) : (
+        <WrapperRouterLink
+          to="/login"
+          exact
+          style={{
+            display: upMd ? "none" : "block",
+          }}
+        >
+          <span>Login</span>
+        </WrapperRouterLink>
+      )}
 
       {windowSize?.width < 768 && <SunMoon {...{ darkMode }} />}
 
@@ -326,7 +321,7 @@ function Expand ({ pages, setExpand, darkMode, windowSize, logout, user }) {
         <h5>A crowdsourced initiative.</h5>
       </ExpandBottom>
     </ExpandWrapper>
-  )
+  );
 }
 
 Expand.propTypes = {
@@ -336,8 +331,8 @@ Expand.propTypes = {
   setExpand: PropTypes.func,
   user: PropTypes.any,
   windowSize: PropTypes.shape({
-    width: PropTypes.number
-  })
-}
+    width: PropTypes.number,
+  }),
+};
 
-export default Navbar
+export default Navbar;

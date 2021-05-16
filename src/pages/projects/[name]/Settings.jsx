@@ -1,11 +1,10 @@
 import React, { lazy } from 'react'
-import PropTypes from 'prop-types'
 import {
   useParams
 } from 'react-router-dom'
 
 import { Helmet } from 'react-helmet-async'
-import styled, { x, useColorMode } from '@xstyled/styled-components'
+import styled, { x } from '@xstyled/styled-components'
 
 import PrivateRoute from '../../../components/PrivateRoute'
 import SettingsDetails from '../../../components/SettingsDetails'

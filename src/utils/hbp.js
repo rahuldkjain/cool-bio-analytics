@@ -1,9 +1,15 @@
-import { createClient } from 'nhost-js-sdk'
+import { createClient } from "nhost-js-sdk";
 
 const config = {
-  baseURL: import.meta.env.VITE_BACKEND_BASE_API
-}
+    baseURL: import.meta.env.VITE_BACKEND_BASE_API,
+};
 
-const { auth, storage } = createClient(config)
+let client;
 
-export { auth, storage }
+export const getClient = () => {
+    if (!client) {
+        client = createClient(config);
+    }
+
+    return client;
+};
