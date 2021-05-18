@@ -1,6 +1,5 @@
 import { BadRequestError } from "vitedge/errors";
-
-import { decodeToken } from "./helpers";
+import { decodeToken } from "./crypto";
 
 const customerQuery = `
     query getCustomer($userId: uuid!) {
@@ -41,14 +40,18 @@ const activeProducts = `
         ) {
         id
         name
-        prices(where: {
-            active: {
-            _eq: true
+        description
+        prices(
+            where: {
+                active: {
+                _eq: true
+                }
+            }) {
+                id
+                unit_amount
+                interval
+                currency
             }
-        }) {
-            id
-            unit_amount
-        }
         }
     }
 `;
@@ -70,15 +73,18 @@ async function postGraphQlData(query, variables) {
 }
 
 export async function getActiveProductsWithPrices() {
-    const data = await postGraphQlData(activeProducts, {});
-    return data?.product || {};
+    const productData = await postGraphQlData(activeProducts, null);
+    console.log(productData);
+    return productData?.data?.product || {};
 }
 
 export async function getCustomer(token) {
     console.log("getUser", token);
     try {
         const data = await decodeToken(token);
+        console.log("data----->", typeof data);
         const userId = data["https://hasura.io/jwt/claims"]["x-hasura-user-id"];
+        console.log("userId----->", userId);
         const customer = await postGraphQlData(customerQuery, {
             userId,
         });

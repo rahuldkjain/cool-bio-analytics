@@ -2,8 +2,8 @@ import { defineEdgeProps } from "vitedge/define";
 import { getActiveProductsWithPrices } from "../../../utils/database";
 
 export default defineEdgeProps({
-    handler({ params = {}, query = {} }) {
-        const products = getActiveProductsWithPrices();
+    async handler({ params = {}, query = {} }) {
+        const products = await getActiveProductsWithPrices();
         console.log("products----->", products);
         return {
             data: {

@@ -36,41 +36,42 @@ const Button = styled.button`
   }
 `;
 
-function getBackGround(statistic) {
-  switch (statistic) {
-    case "hobby":
+function getBackGround(index) {
+  switch (index) {
+    case 0:
       return "cherryLight";
-    case "startup":
+    case 1:
       return "blueLight";
-    case "payAsYouGo":
+    case 2:
       return "greenLight";
-    case "enterprise":
+    case 3:
       return "grayLight";
     default:
       return "";
   }
 }
 
-function getColor(statistic) {
-  switch (statistic) {
-    case "hobby":
+function getColor(index) {
+  switch (index) {
+    case 0:
       return "cherry";
-    case "startup":
+    case 1:
       return "blue";
-    case "payAsYouGo":
+    case 2:
       return "green";
-    case "enterprise":
+    case 3:
       return "gray";
     default:
       return "";
   }
 }
 
-function Pricing({ currentPlan, signedIn }) {
+function Pricing({ currentPlan, signedIn, products }) {
   const [billingInterval, setBillingInterval] = useState("month");
   const { auth } = getClient();
   const token = auth.getJWTToken();
   const history = useHistory();
+  console.log('products-------->', products);
 
   console.log("token", signedIn, token);
 
@@ -177,51 +178,65 @@ function Pricing({ currentPlan, signedIn }) {
         animation="fadeInUp"
         animationDelay="250ms"
       >
-        {pricesData.map(({ color, month, year, title, label, views, key }) => (
-          <x.div
-            p={8}
-            borderRadius="35px"
-            backgroundColor={
-              key === currentPlan ? getBackGround(key) : "transparent"
-            }
-            display="flex"
-            alignItems="center"
-            flexDirection="column"
-            m={5}
-            flex="1"
-            maxWidth={{ md: "25%", xs: "80%" }}
-            key={key}
-          >
-            <x.h3
-              fontWeight="700"
-              color={color}
-              fontSize={{ md: "2xl", xs: "xl" }}
-              mb={5}
-              flex={1}
+        {products.map(({ key, id, name, description, prices = [] }, index) => {
+          console.log(index, "------------");
+          const price = prices.find(
+            (item) => item.interval === billingInterval
+          );
+          const priceString = new Intl.NumberFormat("en-US", {
+            style: "currency",
+            currency: price?.currency || "usd",
+            minimumFractionDigits: 0,
+          }).format((price?.unit_amount || 0) / 100);
+          const color = pricesData[index].color;
+
+          return (
+            <x.div
+              p={8}
+              borderRadius="35px"
+              backgroundColor={
+                key === currentPlan ? getBackGround(index) : "transparent"
+              }
+              display="flex"
+              alignItems="center"
+              flexDirection="column"
+              m={5}
+              flex="1"
+              maxWidth={{ md: "25%", xs: "80%" }}
+              key={id}
+              textAlign="center"
             >
-              {title}
-            </x.h3>
-            <x.p color="gray" fontSize="sm" flex={1}>
-              {label} Upto {views} views.
-            </x.p>
-            <x.span
-              color={color}
-              fontSize={{ md: "4xl", xs: "2xl" }}
-              pt={4}
-              pb={8}
-            >
-              <x.span>${billingInterval === "month" ? month : year}</x.span>
-              <x.span fontSize={{ md: "16px", xs: "sm" }} color="gray" pl={2}>
-                /{billingInterval}
+              <x.h3
+                fontWeight="700"
+                color={color}
+                fontSize={{ md: "2xl", xs: "xl" }}
+                mb={5}
+                flex={1}
+              >
+                {name}
+              </x.h3>
+              <x.p color="gray" fontSize="sm" flex={1}>
+                {description}
+              </x.p>
+              <x.span
+                color={color}
+                fontSize={{ md: "4xl", xs: "2xl" }}
+                pt={4}
+                pb={8}
+              >
+                <x.span>{priceString}</x.span>
+                <x.span fontSize={{ md: "16px", xs: "sm" }} color="gray" pl={2}>
+                  /{billingInterval}
+                </x.span>
               </x.span>
-            </x.span>
-            {currentPlan === key ? (
-              <x.span color={getColor(key)}>Current plan</x.span>
-            ) : (
-              <Button onClick={handleCheckout(key)}>Start</Button>
-            )}
-          </x.div>
-        ))}
+              {currentPlan === key ? (
+                <x.span color={getColor(index)}>Current plan</x.span>
+              ) : (
+                <Button onClick={handleCheckout(price?.id)}>Start</Button>
+              )}
+            </x.div>
+          );
+        })}
       </x.div>
     </>
   );
@@ -229,6 +244,7 @@ function Pricing({ currentPlan, signedIn }) {
 
 Pricing.propTypes = {
   currentPlan: PropTypes.string,
+  products: PropTypes.arrayOf(PropTypes.shape()),
   signedIn: PropTypes.bool,
 };
 

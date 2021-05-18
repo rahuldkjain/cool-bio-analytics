@@ -7,8 +7,7 @@ import { Redirect } from "react-router-dom";
 const Navbar = lazy(() => import("../../../components/Navbar"));
 const Pricing = lazy(() => import("../../../components/Pricing"));
 
-export default function Account(props) {
-  console.log(props);
+export default function Account({ products }) {
   const { signedIn } = useAuth();
 
   if (signedIn === null) {
@@ -25,7 +24,7 @@ export default function Account(props) {
       <Helmet>
         <html lang="en" />
         <meta charSet="utf-8" />
-        <title>Account | Cool Analytics</title>
+        <title>Plans | Cool Analytics</title>
         <link rel="canonical" href="http://analytics.cool.bio" />
       </Helmet>
       <x.div
@@ -38,7 +37,11 @@ export default function Account(props) {
           <div>Plans,</div>
           Add or Edit
         </x.h1>
-        <Pricing currentPlan="hobby" signedIn={signedIn} />
+        <Pricing
+          currentPlan="price_1IrnPsSHqEB1Jj1Zl3egeG24"
+          signedIn={signedIn}
+          products={products}
+        />
       </x.div>
     </>
   );

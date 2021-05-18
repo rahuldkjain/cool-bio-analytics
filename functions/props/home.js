@@ -1,8 +1,12 @@
+import { getActiveProductsWithPrices } from "../utils/database";
+
 export default {
-    handler({ params = {}, query = {} }) {
+    async handler({ params = {}, query = {} }) {
+        const products = await getActiveProductsWithPrices();
         return {
             data: {
                 server: true,
+                products,
                 msg: `This is home page ${params.resource || ""}`,
             },
         };

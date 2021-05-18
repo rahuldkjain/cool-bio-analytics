@@ -1,5 +1,3 @@
-import { BadRequestError } from "vitedge/errors";
-import jwt from "@tsndr/cloudflare-worker-jwt";
 import qs from "qs";
 
 export function getUrl() {
@@ -8,20 +6,6 @@ export function getUrl() {
             ? "http://localhost:3000"
             : "https://analytics.cool.bio";
     return url;
-}
-
-export function decodeToken(token) {
-    try {
-        const isValid = jwt.verify(token, process.env.VITEDGE_HASURA_JWT_TOKEN);
-        if (isValid) {
-            const payload = jwt.decode(token);
-            return payload;
-        } else {
-            throw new BadRequestError("Method not supported!");
-        }
-    } catch {
-        throw new BadRequestError("Method not supported!");
-    }
 }
 
 export const corsHeaders = {

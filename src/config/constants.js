@@ -189,39 +189,15 @@ export const footerData = [
 
 export const pricesData = [
     {
-        month: 0,
-        year: 0,
-        title: "Hobby",
-        label: "Perfect for hobby projects and experiments.",
-        views: "100k",
-        key: "hobby",
         color: "red",
     },
     {
-        month: 4,
-        year: 36,
-        title: "Startups",
-        label: "Perfect for Startups.",
-        views: "500K",
-        key: "startups",
         color: "blue",
     },
     {
-        month: 4,
-        year: 36,
-        title: "Pay As You Go",
-        label: "Perfect for anyone, scaling rapidly.",
-        views: "Unlimited",
-        key: "payAsYouGo",
         color: "green",
     },
     {
-        month: 10,
-        year: 100,
-        title: "Enterprise",
-        label: "Perfect for Enterprise",
-        views: "Unlimited",
-        key: "enterprise",
         color: "gray",
     },
 ];

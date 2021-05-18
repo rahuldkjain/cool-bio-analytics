@@ -8,7 +8,7 @@ export default {
         if (request.method !== "POST") {
             throw new BadRequestError("Method not supported!");
         }
-        const { price, quantity = 1, metadata = {} } = await request.json();
+        const { price, metadata = {} } = await request.json();
         const token = request.headers.get("token");
         console.log("tokeeennnnn-------->", token);
         try {
@@ -23,7 +23,6 @@ export default {
                     line_items: [
                         {
                             price,
-                            quantity,
                         },
                     ],
                     mode: "subscription",

@@ -49,12 +49,8 @@ export default {
             throw new Error("Block User Agent containing bot.");
         }
 
-        const {
-            projectId,
-            pathname,
-            referrer,
-            sessionId,
-        } = await request.json();
+        const { projectId, pathname, referrer, sessionId } =
+            await request.json();
 
         const device = deviceDetector.parse(userAgent);
 
