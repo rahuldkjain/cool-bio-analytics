@@ -1,6 +1,6 @@
 export const postData = async ({ url, token, data = {} }) => {
-    const withHost = `https://analytics.cool.bio${url}`;
-    const res = await fetch(withHost, {
+    // const withHost = `${url}`;
+    const res = await fetch(url, {
         method: "POST",
         headers: new Headers({ "Content-Type": "application/json", token }),
         credentials: "same-origin",

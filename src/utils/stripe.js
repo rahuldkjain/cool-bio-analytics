@@ -4,7 +4,7 @@ let stripePromise;
 
 export const getStripe = () => {
     if (!stripePromise) {
-        stripePromise = loadStripe(process.env.VITE_STRIPE_PUBLISH_KEY);
+        stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLISH_KEY);
     }
 
     return stripePromise;

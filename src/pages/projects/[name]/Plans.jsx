@@ -1,14 +1,16 @@
+import PropTypes from "prop-types";
 import React, { lazy } from "react";
 import { Helmet } from "react-helmet-async";
 import styled, { x } from "@xstyled/styled-components";
 import { useAuth } from "@nhost/react-auth";
-import { Redirect } from "react-router-dom";
+import { Redirect, useParams } from "react-router-dom";
 
 const Navbar = lazy(() => import("../../../components/Navbar"));
 const Pricing = lazy(() => import("../../../components/Pricing"));
 
-export default function Account({ products }) {
+function Plans({ products }) {
   const { signedIn } = useAuth();
+  const { name } = useParams();
 
   if (signedIn === null) {
     return <div>loading...</div>;
@@ -37,12 +39,14 @@ export default function Account({ products }) {
           <div>Plans,</div>
           Add or Edit
         </x.h1>
-        <Pricing
-          currentPlan="price_1IrnPsSHqEB1Jj1Zl3egeG24"
-          signedIn={signedIn}
-          products={products}
-        />
+        <Pricing signedIn={signedIn} products={products} projectId={name} />
       </x.div>
     </>
   );
 }
+
+Plans.propTypes = {
+  products: PropTypes.any,
+};
+
+export default Plans;

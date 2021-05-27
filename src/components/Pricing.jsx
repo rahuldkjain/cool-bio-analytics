@@ -2,12 +2,15 @@ import PropTypes from "prop-types";
 import React, { useState } from "react";
 import styled, { x, useTheme } from "@xstyled/styled-components";
 import { Link, useHistory } from "react-router-dom";
-import { useAuth } from "@nhost/react-auth";
+import { useQuery, useMutation } from "@apollo/client";
+
+import Loading from "./Loading";
 
 import { getClient } from "../utils/hbp";
 import { pricesData } from "../config/constants";
 import { postData } from "../utils/helpers";
 import { getStripe } from "../utils/stripe";
+import { GET_PROJECT_CURRENT_PLAN } from "../graphql/queries";
 
 const Button = styled.button`
   appearance: none;
@@ -66,50 +69,81 @@ function getColor(index) {
   }
 }
 
-function Pricing({ currentPlan, signedIn, products }) {
+function Pricing({ signedIn, products = [], projectId }) {
   const [billingInterval, setBillingInterval] = useState("month");
+  const [checkoutPortalLoading, setcheckoutPortalLoading] = useState(false);
   const { auth } = getClient();
   const token = auth.getJWTToken();
   const history = useHistory();
-  console.log('products-------->', products);
-
-  console.log("token", signedIn, token);
-
+  const {
+    loading,
+    error,
+    data = {},
+  } = useQuery(GET_PROJECT_CURRENT_PLAN, {
+    variables: {
+      projectId,
+    },
+  });
+  const currentPlan = data?.project?.subscriptions?.[0]?.price?.product?.id;
   const onBillingIntervalChange = (val) => async () => {
     setBillingInterval(val);
   };
 
-  const handleCheckout = (price) => async () => {
-    // setBillingInterval(val);
-    // setPriceIdLoading(price.id);
-    if (!signedIn) {
-      return history.push("/login");
-    }
-    /* if (subscription) {
-      return history.push("/account");
-    } */
-
+  const redirectToCustomerPortal = async () => {
+    setcheckoutPortalLoading(true);
     try {
-      const { data } = await postData({
-        url: "/api/v1/payment/checkout",
-        data: { price },
+      const portalData = await postData({
+        url: "/api/v1/payment/create-portal-link",
+        data: {},
         token,
       });
 
-      console.log(data);
-      if (data) {
+      if (portalData) {
+        window.location.assign(portalData?.url);
+      }
+    } catch (e) {
+      console.log(e);
+    } finally {
+      setcheckoutPortalLoading(false);
+    }
+  };
+
+  const handleCheckout = (price) => async () => {
+    setcheckoutPortalLoading(true);
+    if (!signedIn) {
+      return history.push("/login");
+    }
+
+    try {
+      const projectData = await postData({
+        url: "/api/v1/payment/checkout",
+        data: {
+          price,
+          metadata: {
+            projectId,
+          },
+        },
+        token,
+      });
+
+      console.log(projectData);
+      if (projectData) {
         const stripe = await getStripe();
-        stripe.redirectToCheckout({ sessionId: data.sessionId });
+        stripe.redirectToCheckout({ sessionId: projectData.sessionId });
       }
     } catch (error) {
       return console.log(error.message);
     } finally {
-      // setPriceIdLoading(false);
+      setcheckoutPortalLoading(false);
     }
   };
 
   if (signedIn === null) {
     return <div>loading...</div>;
+  }
+
+  if (error) {
+    <x.div color="red">{error.toString()}</x.div>;
   }
 
   return (
@@ -178,8 +212,7 @@ function Pricing({ currentPlan, signedIn, products }) {
         animation="fadeInUp"
         animationDelay="250ms"
       >
-        {products.map(({ key, id, name, description, prices = [] }, index) => {
-          console.log(index, "------------");
+        {products.map(({ id, name, description, prices = [] }, index) => {
           const price = prices.find(
             (item) => item.interval === billingInterval
           );
@@ -195,7 +228,7 @@ function Pricing({ currentPlan, signedIn, products }) {
               p={8}
               borderRadius="35px"
               backgroundColor={
-                key === currentPlan ? getBackGround(index) : "transparent"
+                id === currentPlan ? getBackGround(index) : "transparent"
               }
               display="flex"
               alignItems="center"
@@ -229,10 +262,25 @@ function Pricing({ currentPlan, signedIn, products }) {
                   /{billingInterval}
                 </x.span>
               </x.span>
-              {currentPlan === key ? (
+              {currentPlan === id ? (
                 <x.span color={getColor(index)}>Current plan</x.span>
               ) : (
-                <Button onClick={handleCheckout(price?.id)}>Start</Button>
+                <Button
+                  onClick={
+                    currentPlan
+                      ? redirectToCustomerPortal
+                      : handleCheckout(price?.id)
+                  }
+                  disabled={loading}
+                >
+                  {checkoutPortalLoading ? (
+                    <Loading />
+                  ) : currentPlan ? (
+                    "Change"
+                  ) : (
+                    "Start"
+                  )}
+                </Button>
               )}
             </x.div>
           );
@@ -243,8 +291,8 @@ function Pricing({ currentPlan, signedIn, products }) {
 }
 
 Pricing.propTypes = {
-  currentPlan: PropTypes.string,
-  products: PropTypes.arrayOf(PropTypes.shape()),
+  projectId: PropTypes.string,
+  products: PropTypes.arrayOf(PropTypes.any),
   signedIn: PropTypes.bool,
 };
 

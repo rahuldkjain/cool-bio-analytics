@@ -8,31 +8,16 @@ export default {
         if (request.method !== "POST") {
             throw new BadRequestError("Method not supported!");
         }
-        const { price, metadata = {} } = await request.json();
         const token = request.headers.get("token");
         console.log("tokeeennnnn-------->", token);
         try {
             const customer = await getCustomer(token);
             console.log("checkout customer", customer);
             const session = await stripe(
-                "/checkout/sessions",
+                "/billing_portal/sessions",
                 {
-                    payment_method_types: ["card"],
-                    billing_address_collection: "required",
                     customer,
-                    line_items: [
-                        {
-                            price,
-                        },
-                    ],
-                    mode: "subscription",
-                    allow_promotion_codes: true,
-                    subscription_data: {
-                        trial_from_plan: true,
-                        metadata,
-                    },
-                    success_url: `${getUrl()}/projects`,
-                    cancel_url: `${getUrl()}/`,
+                    return_url: `${getUrl()}/projects`,
                 },
                 "POST"
             );
@@ -40,7 +25,7 @@ export default {
             console.log('session', session)
 
             return {
-                data: { sessionId: session.id },
+                data: { url: session?.url },
             };
         } catch (err) {
             console.log(err);

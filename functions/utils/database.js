@@ -1,10 +1,12 @@
-import { BadRequestError } from "vitedge/errors";
+import { UnknownError } from "vitedge/errors";
 import { decodeToken } from "./crypto";
 
 const customerQuery = `
     query getCustomer($userId: uuid!) {
-        customers_by_pk(id: $userId) {
-            stripe_customer_id
+        userById: users_by_pk(id: $userId) {
+            customers {
+                id: stripe_customer_id
+            }
         }
     }
 `;
@@ -82,20 +84,18 @@ export async function getCustomer(token) {
     console.log("getUser", token);
     try {
         const data = await decodeToken(token);
-        console.log("data----->", typeof data);
         const userId = data["https://hasura.io/jwt/claims"]["x-hasura-user-id"];
-        console.log("userId----->", userId);
         const customer = await postGraphQlData(customerQuery, {
             userId,
         });
-        console.log("customer-------->", customer);
         const {
-            data: { customers_by_pk: customerById },
+            data: { userById },
         } = customer;
-        console.log("customerById-------->", customerById);
-        return customerById ? customerById.stripe_customer_id : customerById;
+        console.log("userId------->", userById);
+        const [current] = userById?.customers || [];
+        return current?.id;
     } catch (err) {
-        throw new BadRequestError("Method not supported!");
+        throw new UnknownError("There was an error!");
     }
 }
 

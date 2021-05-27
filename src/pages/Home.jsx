@@ -1,58 +1,59 @@
-import React, { lazy } from 'react'
-import styled, { x, useColorMode } from '@xstyled/styled-components'
-import { Helmet } from 'react-helmet-async'
-import { Link, Redirect } from 'react-router-dom'
-import { useAuth } from '@nhost/react-auth'
+import PropTypes from "prop-types";
+import React, { lazy } from "react";
+import styled, { x, useColorMode } from "@xstyled/styled-components";
+import { Helmet } from "react-helmet-async";
+import { Link, Redirect } from "react-router-dom";
+import { useAuth } from "@nhost/react-auth";
 
-import Blob from '../components/icon/Blob'
-import Privacy from '../components/icon/Privacy'
-import OpenSource from '../components/icon/OpenSource'
-import PayAsYouGo from '../components/icon/PayAsYouGo'
-import Api from '../components/icon/Api'
+import Blob from "../components/icon/Blob";
+import Privacy from "../components/icon/Privacy";
+import OpenSource from "../components/icon/OpenSource";
+import PayAsYouGo from "../components/icon/PayAsYouGo";
+import Api from "../components/icon/Api";
 
-import GdprSvg from '.././assets/gdpr.svg'
+import GdprSvg from ".././assets/gdpr.svg";
 
-const Navbar = lazy(() => import('../components/Navbar'))
-const Pricing = lazy(() => import('../components/Pricing'))
-const Footer = lazy(() => import('../components/Footer'))
-const LottieAnimations = lazy(() => import('../components/LottieAnimations'))
+const Navbar = lazy(() => import("../components/Navbar"));
+const Pricing = lazy(() => import("../components/Pricing"));
+const Footer = lazy(() => import("../components/Footer"));
+const LottieAnimations = lazy(() => import("../components/LottieAnimations"));
 
 const ourServices = {
-  key: 'services',
-  description: 'Why us?',
-  label: 'Leave Analytics on us and focus on your products',
-  copy: 'Featured Service that We Provide',
+  key: "services",
+  description: "Why us?",
+  label: "Leave Analytics on us and focus on your products",
+  copy: "Featured Service that We Provide",
   options: [
     {
       icon: <Privacy height={50} width={50} />,
-      title: 'Privacy Friendy',
-      key: 'privacy',
-      color: 'redLight',
-      fontColor: 'red'
+      title: "Privacy Friendy",
+      key: "privacy",
+      color: "redLight",
+      fontColor: "red",
     },
     {
       icon: <PayAsYouGo height={50} width={50} />,
-      title: 'Pay As You Go',
-      key: 'payAsYouGo',
-      color: 'blueLight',
-      fontColor: 'blue'
+      title: "Pay As You Go",
+      key: "payAsYouGo",
+      color: "blueLight",
+      fontColor: "blue",
     },
     {
       icon: <OpenSource height={50} width={50} />,
-      title: 'Open Source',
-      key: 'openSource',
-      color: 'greenLight',
-      fontColor: 'green'
+      title: "Open Source",
+      key: "openSource",
+      color: "greenLight",
+      fontColor: "green",
     },
     {
       icon: <Api height={50} width={50} />,
-      title: 'Graphql Api',
-      key: 'api',
-      color: 'grayLight',
-      fontColor: 'gray'
-    }
-  ]
-}
+      title: "Graphql Api",
+      key: "api",
+      color: "grayLight",
+      fontColor: "gray",
+    },
+  ],
+};
 
 const HomeWrapper = styled.div`
   display: flex;
@@ -62,7 +63,7 @@ const HomeWrapper = styled.div`
   @media (max-width: md) {
     width: 100%;
   }
-`
+`;
 
 const HomeLeft = styled(HomeWrapper)`
   margin-right: 2.5rem;
@@ -71,7 +72,7 @@ const HomeLeft = styled(HomeWrapper)`
     margin-left: 1rem;
     margin-right: 1rem;
   }
-`
+`;
 
 const HomeRight = styled(HomeWrapper)`
   margin-left: 2.5rem;
@@ -80,7 +81,7 @@ const HomeRight = styled(HomeWrapper)`
     margin-left: 1rem;
     margin-right: 1rem;
   }
-`
+`;
 
 const Button = styled(Link)`
   appearance: none;
@@ -107,17 +108,17 @@ const Button = styled(Link)`
   &:hover {
     background-color: dorpdownHover;
   }
-`
+`;
 
-function Landing (props) {
-  const { signedIn } = useAuth()
-  const [mode] = useColorMode(false)
+function Landing({ products }) {
+  const { signedIn } = useAuth();
+  const [mode] = useColorMode(false);
   if (signedIn === null) {
-    return <div>loading...</div>
+    return <div>loading...</div>;
   }
 
   if (signedIn) {
-    return <Redirect to="/projects" />
+    return <Redirect to="/projects" />;
   }
 
   return (
@@ -134,25 +135,27 @@ function Landing (props) {
         flexDirection="row"
         flexWrap="wrap"
         justifyContent="center"
-        ml={{ md: '9rem', sm: 0 }}
-        mr={{ md: '3rem', sm: 0 }}
-        pt={{ md: '5rem', xs: '3rem' }}
+        ml={{ md: "9rem", sm: 0 }}
+        mr={{ md: "3rem", sm: 0 }}
+        pt={{ md: "5rem", xs: "3rem" }}
       >
         <HomeLeft>
           <a
             href="https://www.producthunt.com/posts/daku?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-daku"
-            target="_blank" rel="noreferrer"
+            target="_blank"
+            rel="noreferrer"
           >
             <img
-              src={`https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=289502&theme=${mode === 'dark' ? 'dark' : 'light'
-                }`}
+              src={`https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=289502&theme=${
+                mode === "dark" ? "dark" : "light"
+              }`}
               alt="Daku - It's like Tinder for Product Hunt | Product Hunt"
             />
           </a>
           <x.div my={{ md: 8, _: 8 }}>
             <x.h1
               color="blue"
-              fontSize={{ md: '5xl', xs: '2xl' }}
+              fontSize={{ md: "5xl", xs: "2xl" }}
               fontWeight={700}
             >
               Ultimate Platform to monitor your Analytics.
@@ -174,8 +177,9 @@ function Landing (props) {
           <x.div position="relative">
             <Blob fill="redLight" />
             <x.img
-              src={`/cool-bio-analytics-demo-${mode === 'dark' ? 'dark' : 'light'
-                }.png`}
+              src={`/cool-bio-analytics-demo-${
+                mode === "dark" ? "dark" : "light"
+              }.png`}
               position="absolute"
               width="100%"
               top="50%"
@@ -190,9 +194,9 @@ function Landing (props) {
         flexDirection="row"
         flexWrap="wrap"
         justifyContent="center"
-        ml={{ md: '9rem', sm: 0 }}
-        mr={{ md: '3rem', sm: 0 }}
-        pt={{ md: 28, xs: '3rem' }}
+        ml={{ md: "9rem", sm: 0 }}
+        mr={{ md: "3rem", sm: 0 }}
+        pt={{ md: 28, xs: "3rem" }}
       >
         <x.div
           display="flex"
@@ -202,46 +206,48 @@ function Landing (props) {
           flexDirection="column"
           py={5}
         >
-          <x.span color="pink" fontSize={{ md: 'xl', xs: 'lg' }} py={4}>
+          <x.span color="pink" fontSize={{ md: "xl", xs: "lg" }} py={4}>
             {ourServices.description}
           </x.span>
           <x.h2
             color="silver"
             py={4}
-            fontSize={{ md: '4xl', xs: 'xl' }}
+            fontSize={{ md: "4xl", xs: "xl" }}
             fontWeight="700"
           >
             {ourServices.label}
           </x.h2>
           <x.p color="gray">{ourServices.copy}</x.p>
           <x.div display="flex" pt={20} flexWrap="wrap">
-            {ourServices.options.map(({ title, color, icon, fontColor, key }) => (
-              <x.div
-                px={4}
-                py={4}
-                display="flex"
-                justifyContent="center"
-                alignItems="center"
-                flexDirection="column"
-                key={key}
-              >
+            {ourServices.options.map(
+              ({ title, color, icon, fontColor, key }) => (
                 <x.div
-                  w={24}
-                  h={24}
-                  borderRadius="35px"
-                  backgroundColor={color}
+                  px={4}
+                  py={4}
                   display="flex"
                   justifyContent="center"
                   alignItems="center"
-                  mb={5}
+                  flexDirection="column"
+                  key={key}
                 >
-                  {icon}
+                  <x.div
+                    w={24}
+                    h={24}
+                    borderRadius="35px"
+                    backgroundColor={color}
+                    display="flex"
+                    justifyContent="center"
+                    alignItems="center"
+                    mb={5}
+                  >
+                    {icon}
+                  </x.div>
+                  <x.span color={fontColor} fontSize={{ md: "16px", sm: "sm" }}>
+                    {title}
+                  </x.span>
                 </x.div>
-                <x.span color={fontColor} fontSize={{ md: '16px', sm: 'sm' }}>
-                  {title}
-                </x.span>
-              </x.div>
-            ))}
+              )
+            )}
           </x.div>
         </x.div>
       </x.div>
@@ -250,9 +256,9 @@ function Landing (props) {
         flexDirection="row"
         flexWrap="wrap"
         justifyContent="center"
-        ml={{ md: '9rem', sm: 0 }}
-        mr={{ md: '3rem', sm: 0 }}
-        pt={{ md: 28, xs: '3rem' }}
+        ml={{ md: "9rem", sm: 0 }}
+        mr={{ md: "3rem", sm: 0 }}
+        pt={{ md: 28, xs: "3rem" }}
       >
         <x.div
           display="flex"
@@ -262,18 +268,21 @@ function Landing (props) {
           flexDirection="column"
           py={5}
         >
-          <x.span color="pink" fontSize={{ md: 'xl', xs: 'lg' }} py={4}>
+          <x.span color="pink" fontSize={{ md: "xl", xs: "lg" }} py={4}>
             Speed?
           </x.span>
           <x.h2
             color="silver"
             py={4}
-            fontSize={{ md: '4xl', xs: 'xl' }}
+            fontSize={{ md: "4xl", xs: "xl" }}
             fontWeight="700"
           >
             It’s fast, very fast
           </x.h2>
-          <x.p color="gray">Our Cloudflare® powered servers are built for speed. Spans over 200 cities in more than 100 countries.</x.p>
+          <x.p color="gray">
+            Our Cloudflare® powered servers are built for speed. Spans over 200
+            cities in more than 100 countries.
+          </x.p>
           <x.div pt={20} maxWidth={800}>
             <LottieAnimations animationName="world-ping" />
           </x.div>
@@ -284,18 +293,18 @@ function Landing (props) {
         flexDirection="row"
         flexWrap="wrap"
         justifyContent="center"
-        ml={{ md: '9rem', sm: 0 }}
-        mr={{ md: '3rem', sm: 0 }}
-        pt={{ md: 28, xs: '3rem' }}
+        ml={{ md: "9rem", sm: 0 }}
+        mr={{ md: "3rem", sm: 0 }}
+        pt={{ md: 28, xs: "3rem" }}
       >
         <HomeLeft>
-          <x.span color="pink" fontSize={{ md: 'xl', xs: 'lg' }} py={4}>
+          <x.span color="pink" fontSize={{ md: "xl", xs: "lg" }} py={4}>
             Hate cookies popups?
           </x.span>
           <x.h2
             color="silver"
             py={4}
-            fontSize={{ md: '4xl', xs: 'xl' }}
+            fontSize={{ md: "4xl", xs: "xl" }}
             fontWeight="700"
           >
             We too. We don't have cookies and fully compliant with GDPR
@@ -316,9 +325,9 @@ function Landing (props) {
         flexDirection="row"
         flexWrap="wrap"
         justifyContent="center"
-        ml={{ md: '9rem', xs: 0 }}
-        mr={{ md: '3rem', xs: 0 }}
-        pt={{ md: 28, xs: '3rem' }}
+        ml={{ md: "9rem", xs: 0 }}
+        mr={{ md: "3rem", xs: 0 }}
+        pt={{ md: 28, xs: "3rem" }}
       >
         <x.div
           display="flex"
@@ -328,8 +337,7 @@ function Landing (props) {
           flexDirection="column"
           py={8}
         >
-          <Pricing />
-
+          <Pricing products={products} />
         </x.div>
       </x.div>
       <x.div
@@ -337,9 +345,9 @@ function Landing (props) {
         flexDirection="row"
         flexWrap="wrap"
         justifyContent="center"
-        ml={{ md: '9rem', xs: 0 }}
-        mr={{ md: '3rem', xs: 0 }}
-        pt={{ md: 28, xs: '3rem' }}
+        ml={{ md: "9rem", xs: 0 }}
+        mr={{ md: "3rem", xs: 0 }}
+        pt={{ md: 28, xs: "3rem" }}
       >
         <x.div
           display="flex"
@@ -352,7 +360,7 @@ function Landing (props) {
           <x.h2
             color="silver"
             pb={12}
-            fontSize={{ md: '4xl', xs: 'xl' }}
+            fontSize={{ md: "4xl", xs: "xl" }}
             fontWeight="700"
           >
             Build in a weekend, track to millions
@@ -362,9 +370,11 @@ function Landing (props) {
       </x.div>
       <Footer />
     </>
-  )
+  );
 }
 
-Landing.propTypes = {}
+Landing.propTypes = {
+  products: PropTypes.any,
+}
 
-export default Landing
+export default Landing;
