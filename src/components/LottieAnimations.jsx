@@ -1,29 +1,26 @@
-import PropTypes from 'prop-types'
-import React, { useEffect, useState } from 'react'
-import Lottie from 'react-lottie-player'
+import PropTypes from "prop-types";
+import React, { useEffect, useState } from "react";
+import Lottie from "react-lottie-player";
 
-function Animation ({ animationName, width, loop = true }) {
-  const [animationData, setAnimationData] = useState()
+function Animation({ animationName, width, loop = true }) {
+  const [animationData, setAnimationData] = useState();
 
   useEffect(() => {
-    fetch(`assets/lotties/${animationName}.json`).then(async res => {
-      const data = await res.json()
-      setAnimationData(data)
-    })
-  }, [])
+    fetch(`assets/lotties/${animationName}.json`).then(async (res) => {
+      const data = await res.json();
+      setAnimationData(data);
+    });
+  }, []);
 
-  if (!animationData) return <div>Loading...</div>
-  return <Lottie
-    loop={loop}
-    animationData={animationData}
-    play
-    style={{ width }}
-  />
+  if (!animationData) return <div>Loading...</div>;
+  return (
+    <Lottie loop={loop} animationData={animationData} play style={{ width }} />
+  );
 }
 
 Animation.propTypes = {
   animationName: PropTypes.string,
   loop: PropTypes.bool,
-  width: PropTypes.number
-}
-export default Animation
+  width: PropTypes.number,
+};
+export default Animation;

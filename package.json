@@ -48,7 +48,7 @@
     "stripe": "^8.148.0",
     "styled-components": "^5.2.1",
     "tls": "^0.0.1",
-    "vitedge": "^0.12.0"
+    "vitedge": "^0.13.2"
   },
   "devDependencies": {
     "@vitejs/plugin-react-refresh": "^1.1.0",
@@ -64,6 +64,6 @@
     "prettier": "^2.2.1",
     "ts-node": "^9.1.1",
     "typescript": "^4.2.3",
-    "vite": "^2.0.0"
+    "vite": "^2.3.7"
   }
 }

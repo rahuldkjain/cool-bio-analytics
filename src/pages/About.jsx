@@ -1,12 +1,12 @@
-import PropTypes from 'prop-types'
-import React, { lazy } from 'react'
-import { Helmet } from 'react-helmet-async'
-import styled, { x, useColorMode } from '@xstyled/styled-components'
+import PropTypes from "prop-types";
+import React, { lazy } from "react";
+import { Helmet } from "react-helmet-async";
+import styled, { x } from "@xstyled/styled-components";
 
-import Blob from '../components/icon/Blob'
+import Blob from "../components/icon/Blob";
 
-const LottieAnimations = lazy(() => import('../components/LottieAnimations'))
-const Navbar = lazy(() => import('../components/Navbar'))
+const LottieAnimations = lazy(() => import("../components/LottieAnimations"));
+const Navbar = lazy(() => import("../components/Navbar"));
 
 const HomeWrapper = styled.div`
   display: flex;
@@ -17,11 +17,11 @@ const HomeWrapper = styled.div`
   @media (max-width: md) {
     width: 100%;
   }
-`
+`;
 
 const H1 = styled.h1`
-    color: gray;
-`
+  color: gray;
+`;
 
 const HomeLeft = styled(HomeWrapper)`
   margin-right: 2.5rem;
@@ -30,7 +30,7 @@ const HomeLeft = styled(HomeWrapper)`
     margin-left: 1rem;
     margin-right: 1rem;
   }
-`
+`;
 
 const HomeRight = styled(HomeWrapper)`
   margin-left: 2.5rem;
@@ -39,7 +39,7 @@ const HomeRight = styled(HomeWrapper)`
     margin-left: 1rem;
     margin-right: 1rem;
   }
-`
+`;
 
 const CopyRight = styled.div`
   background-color: pinkLight;
@@ -53,10 +53,9 @@ const CopyRight = styled.div`
   @media (min-width: md) {
     font-size: 1rem;
   }
-`
+`;
 
-function About ({ heading1, heading2 }) {
-  const [mode] = useColorMode(false)
+function About({ heading1, heading2 }) {
   return (
     <>
       <Navbar />
@@ -67,10 +66,10 @@ function About ({ heading1, heading2 }) {
         <link rel="canonical" href="http://analytics.cool.bio/about" />
       </Helmet>
       <x.div
-        ml={{ md: '9rem', xs: 4 }}
-        mr={{ md: '3rem', xs: 4 }}
+        ml={{ md: "9rem", xs: 4 }}
+        mr={{ md: "3rem", xs: 4 }}
         mb={8}
-        pt={{ md: '5rem', xs: '3rem' }}
+        pt={{ md: "5rem", xs: "3rem" }}
       >
         <H1>
           <div>About,</div>
@@ -79,14 +78,16 @@ function About ({ heading1, heading2 }) {
         <x.div>
           <x.div
             display="flex"
-            flexDirection={{ md: 'row', xs: 'column' }}
+            flexDirection={{ md: "row", xs: "column" }}
             alignItems="center"
             justifyContent="center"
             mb={32}
             mt={{ md: 0, xs: 32 }}
           >
             <HomeLeft>
-              <x.span color="silver" pb={16}>{heading1}</x.span>
+              <x.span color="silver" pb={16}>
+                {heading1}
+              </x.span>
             </HomeLeft>
             <HomeRight>
               <x.div position="relative">
@@ -105,7 +106,7 @@ function About ({ heading1, heading2 }) {
           </x.div>
           <x.div
             display="flex"
-            flexDirection={{ md: 'row', xs: 'column-reverse' }}
+            flexDirection={{ md: "row", xs: "column-reverse" }}
             alignItems="center"
             justifyContent="center"
             mb={32}
@@ -129,21 +130,21 @@ function About ({ heading1, heading2 }) {
               </x.div>
             </HomeLeft>
             <HomeRight>
-              <x.span color="silver" pb={16}>{heading2}</x.span>
+              <x.span color="silver" pb={16}>
+                {heading2}
+              </x.span>
             </HomeRight>
           </x.div>
         </x.div>
-        <CopyRight>
-          ©2021 cool.bio Analytics. All rights reserved.
-        </CopyRight>
+        <CopyRight>©2021 cool.bio Analytics. All rights reserved.</CopyRight>
       </x.div>
     </>
-  )
+  );
 }
 
-export default About
+export default About;
 
 About.propTypes = {
   heading1: PropTypes.string,
-  heading2: PropTypes.string
-}
+  heading2: PropTypes.string,
+};

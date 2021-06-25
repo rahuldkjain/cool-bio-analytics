@@ -186,7 +186,11 @@ function ListPage() {
       }
     }
   }) */
-  const { loading, error, data = {} } = useQuery(GET_PROJECTS_DETAILS, {
+  const {
+    loading,
+    error,
+    data = {},
+  } = useQuery(GET_PROJECTS_DETAILS, {
     variables: {
       projectId: name,
       at: {

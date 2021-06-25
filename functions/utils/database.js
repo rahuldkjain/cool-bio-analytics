@@ -50,9 +50,8 @@ const activeProducts = `
                 }
             }) {
                 id
-                unit_amount
+                description
                 interval
-                currency
             }
         }
     }

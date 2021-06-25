@@ -1,6 +1,6 @@
-import * as React from 'react'
+import * as React from "react";
 
-function SvgComponent (props) {
+function SvgComponent(props) {
   return (
     <svg
       width={20}
@@ -14,8 +14,8 @@ function SvgComponent (props) {
         fill="#F87E0F"
       />
     </svg>
-  )
+  );
 }
 
-const Twitter = React.memo(SvgComponent)
-export default Twitter
+const Twitter = React.memo(SvgComponent);
+export default Twitter;

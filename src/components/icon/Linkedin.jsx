@@ -1,6 +1,6 @@
-import * as React from 'react'
+import * as React from "react";
 
-function SvgComponent (props) {
+function SvgComponent(props) {
   return (
     <svg
       width={29}
@@ -23,8 +23,8 @@ function SvgComponent (props) {
         </clipPath>
       </defs>
     </svg>
-  )
+  );
 }
 
-const Linkedin = React.memo(SvgComponent)
-export default Linkedin
+const Linkedin = React.memo(SvgComponent);
+export default Linkedin;

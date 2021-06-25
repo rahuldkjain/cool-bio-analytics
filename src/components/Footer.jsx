@@ -1,43 +1,43 @@
-import React from 'react'
-import styled, { x } from '@xstyled/styled-components'
-import { Link } from 'react-router-dom'
+import React from "react";
+import styled, { x } from "@xstyled/styled-components";
+import { Link } from "react-router-dom";
 
-import Brand from './Brand'
-import Fb from './icon/Fb'
-import Github from './icon/Github'
-import Instagram from './icon/Instagram'
-import Linkedin from './icon/Linkedin'
-import Twitter from './icon/Twitter'
+import Brand from "./Brand";
+import Fb from "./icon/Fb";
+import Github from "./icon/Github";
+import Instagram from "./icon/Instagram";
+import Linkedin from "./icon/Linkedin";
+import Twitter from "./icon/Twitter";
 
-import { footerData } from '../config/constants'
+import { footerData } from "../config/constants";
 
 const socialLinks = [
   {
     icon: <Github width={30} height={30} fill="#F87E0F" />,
-    link: 'https://github.com/subhendukundu/cool-bio-analytics',
-    key: 'github'
+    link: "https://github.com/subhendukundu/cool-bio-analytics",
+    key: "github",
   },
   {
     icon: <Fb width={30} height={30} />,
-    link: 'https://www.facebook.com/thecoolbio',
-    key: 'fb'
+    link: "https://www.facebook.com/thecoolbio",
+    key: "fb",
   },
   {
     icon: <Instagram width={30} height={30} />,
-    link: 'https://www.instagram.com/thecoolbio',
-    key: 'Insta'
+    link: "https://www.instagram.com/thecoolbio",
+    key: "Insta",
   },
   {
     icon: <Linkedin />,
-    link: 'https://www.linkedin.com/company/thecoolbio',
-    key: 'Linkedin'
+    link: "https://www.linkedin.com/company/thecoolbio",
+    key: "Linkedin",
   },
   {
     icon: <Twitter />,
-    link: 'https://twitter.com/thecoolbio',
-    key: 'Twitter'
-  }
-]
+    link: "https://twitter.com/thecoolbio",
+    key: "Twitter",
+  },
+];
 
 const Wrapper = styled.footer`
   font-style: normal;
@@ -59,7 +59,7 @@ const Wrapper = styled.footer`
     grid-gap: 10px;
     grid-template-columns: auto auto;
   }
-`
+`;
 
 const CopyRight = styled.div`
   background-color: pinkLight;
@@ -71,7 +71,7 @@ const CopyRight = styled.div`
   @media (min-width: md) {
     font-size: 1rem;
   }
-`
+`;
 
 const Footer = () => {
   return (
@@ -109,7 +109,7 @@ const Footer = () => {
         {footerData.map((item) => (
           <x.div display="flex" flexDirection="column" key={item.key}>
             <x.h3
-              fontSize={{ xs: 'xl', md: '2xl' }}
+              fontSize={{ xs: "xl", md: "2xl" }}
               fontWeight="500"
               marginBottom="1.2rem"
               color="gray"
@@ -123,7 +123,7 @@ const Footer = () => {
                     aria-label={category.label}
                     href={category.href}
                     color="rgb(174, 175, 179)"
-                    fontSize={{ xs: 'sm', md: 'base' }}
+                    fontSize={{ xs: "sm", md: "base" }}
                   >
                     {category.label}
                   </x.a>
@@ -150,18 +150,18 @@ const Footer = () => {
             >
               {icon}
             </x.div>
-          )
+          );
         })}
       </x.div>
       <x.hr
         style={{
-          margin: '0',
-          height: '15px'
+          margin: "0",
+          height: "15px",
         }}
         backgroundColor="brick"
       />
     </x.div>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

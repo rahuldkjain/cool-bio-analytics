@@ -2,8 +2,7 @@ import PropTypes from "prop-types";
 import React, { lazy } from "react";
 import styled, { x, useColorMode } from "@xstyled/styled-components";
 import { Helmet } from "react-helmet-async";
-import { Link, Redirect } from "react-router-dom";
-import { useAuth } from "@nhost/react-auth";
+import { Link } from "react-router-dom";
 
 import Blob from "../components/icon/Blob";
 import Privacy from "../components/icon/Privacy";
@@ -111,15 +110,7 @@ const Button = styled(Link)`
 `;
 
 function Landing({ products }) {
-  const { signedIn } = useAuth();
   const [mode] = useColorMode(false);
-  if (signedIn === null) {
-    return <div>loading...</div>;
-  }
-
-  if (signedIn) {
-    return <Redirect to="/projects" />;
-  }
 
   return (
     <>
@@ -375,6 +366,6 @@ function Landing({ products }) {
 
 Landing.propTypes = {
   products: PropTypes.any,
-}
+};
 
 export default Landing;

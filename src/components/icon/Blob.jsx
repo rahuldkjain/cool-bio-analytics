@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
-import * as React from 'react'
-import { x } from '@xstyled/styled-components'
+import * as React from "react";
+import { x } from "@xstyled/styled-components";
 
-function Blob ({ fill = '#dc354520', ...rest }) {
+function Blob({ fill = "#dc354520", ...rest }) {
   return (
     <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" {...rest}>
       <x.path
@@ -10,11 +10,11 @@ function Blob ({ fill = '#dc354520', ...rest }) {
         fill={fill}
       />
     </svg>
-  )
+  );
 }
 
 Blob.propTypes = {
-  fill: PropTypes.string
-}
+  fill: PropTypes.string,
+};
 
-export default Blob
+export default Blob;

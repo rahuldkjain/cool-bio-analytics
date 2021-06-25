@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import React, { lazy } from "react";
 import { useQuery } from "@apollo/client";
 import dayjs from "dayjs";
+import LoadingAndErrorHandler from "./LoadingAndErrorHandler";
 
 // import { GET_PROJECTS_DETAILS } from '../../graphql/subscription'
 
@@ -34,7 +35,11 @@ function CountryCount({ projectId, query, columns }) {
 
   const { table = [] } = data;
 
-  return <Table columns={columns} data={table} />;
+  return (
+    <LoadingAndErrorHandler loading={loading} error={error}>
+      <Table columns={columns} data={table} />
+    </LoadingAndErrorHandler>
+  );
 }
 
 CountryCount.propTypes = {

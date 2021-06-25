@@ -1,6 +1,6 @@
-import * as React from 'react'
+import * as React from "react";
 
-function Google (props) {
+function Google(props) {
   return (
     <svg
       width={40}
@@ -34,7 +34,7 @@ function Google (props) {
         </clipPath>
       </defs>
     </svg>
-  )
+  );
 }
 
-export default Google
+export default Google;

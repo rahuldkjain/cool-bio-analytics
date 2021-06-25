@@ -1,13 +1,13 @@
-import PropTypes from 'prop-types'
-import React, { useState, useCallback } from 'react'
-import styled, { x } from '@xstyled/styled-components'
-import { useMutation } from '@apollo/client'
+import PropTypes from "prop-types";
+import React, { useState, useCallback } from "react";
+import styled, { x } from "@xstyled/styled-components";
+import { useMutation } from "@apollo/client";
 
-import Dropdown from './Dropdown'
-import Loading from './Loading'
+import Dropdown from "./Dropdown";
+import Loading from "./Loading";
 
-import { INSERT_PROJECT, UPDATE_PROJECT_BY_ID } from '../graphql/mutation'
-import { timeZones } from '../config/constants'
+import { INSERT_PROJECT, UPDATE_PROJECT_BY_ID } from "../graphql/mutation";
+import { timeZones } from "../config/constants";
 
 const Button = styled.button`
   appearance: none;
@@ -36,69 +36,71 @@ const Button = styled.button`
   &:hover {
     background-color: dorpdownHover;
   }
-`
+`;
 
 const Base = styled.div`
-    border: 2px solid;
-    border-color: dropdownBorder;
-    display: flex;
-    align-items: center;
-    position: relative;
-    background-color: dropdown;
-    border-radius: 5px;
-    margin: 1.8rem 0;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    max-width: 350px;
+  border: 2px solid;
+  border-color: dropdownBorder;
+  display: flex;
+  align-items: center;
+  position: relative;
+  background-color: dropdown;
+  border-radius: 5px;
+  margin: 1.8rem 0;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  max-width: 350px;
 
-    &:focus-within {
-        @media (-webkit-min-device-pixel-ratio: 0): {
-          outlineColor: -webkit-focus-ring-color;
-          outlineStyle: auto;
-        }
-        outline-width: 2px;
-        outline-style: solid;
-        outline-color: Highlight;
+  &:focus-within {
+    @media (-webkit-min-device-pixel-ratio: 0) : {
+      outlinecolor: -webkit-focus-ring-color;
+      outlinestyle: auto;
     }
-`
+    outline-width: 2px;
+    outline-style: solid;
+    outline-color: Highlight;
+  }
+`;
 
-export default function CreateProject ({
+export default function CreateProject({
   editEnabled,
   domain,
   timezone = timeZones[0].key,
   disableEdits = {},
-  projectId
+  projectId,
 }) {
-  const [insertItem] = useMutation(editEnabled ? UPDATE_PROJECT_BY_ID : INSERT_PROJECT)
+  const [insertItem] = useMutation(
+    editEnabled ? UPDATE_PROJECT_BY_ID : INSERT_PROJECT
+  );
   const [selected, setSelectedData] = useState({
     domain,
     timezone,
     isShowingForm: editEnabled,
     loading: false,
-    error: null
-  })
+    error: null,
+  });
 
-  function showForm () {
-    setSelectedData(prevState => ({
+  function showForm() {
+    setSelectedData((prevState) => ({
       ...prevState,
-      isShowingForm: true
-    }))
+      isShowingForm: true,
+    }));
   }
 
   const handleChange = useCallback(({ target: { name, value } }) => {
-    setSelectedData(prevState => ({
+    setSelectedData((prevState) => ({
       ...prevState,
       [name]: value,
-      error: null
-    }))
-  }, [])
+      error: null,
+    }));
+  }, []);
 
-  async function submitHandler (event) {
-    event.preventDefault()
-    setSelectedData(prevState => ({
+  async function submitHandler(event) {
+    event.preventDefault();
+    setSelectedData((prevState) => ({
       ...prevState,
-      loading: true
-    }))
+      loading: true,
+    }));
     if (selected.domain.length > 0) {
       try {
         await insertItem({
@@ -106,60 +108,66 @@ export default function CreateProject ({
             ? {
                 projectId,
                 data: {
-                  timezone: selected.timezone
-                }
+                  timezone: selected.timezone,
+                },
               }
             : {
                 item: {
                   domain: selected.domain,
-                  timezone: selected.timezone
-                }
+                  timezone: selected.timezone,
+                },
+              },
+        });
+        setSelectedData((prevState) =>
+          editEnabled
+            ? {
+                ...prevState,
+                loading: false,
               }
-        })
-        setSelectedData(prevState => editEnabled
-          ? {
-              ...prevState,
-              loading: false
-            }
-          : {
-              domain: '',
-              timezone: timeZones[0].key,
-              isShowingForm: false,
-              loading: false,
-              error: null
-            })
+            : {
+                domain: "",
+                timezone: timeZones[0].key,
+                isShowingForm: false,
+                loading: false,
+                error: null,
+              }
+        );
       } catch (error) {
-        console.error(error)
+        console.error(error);
         setSelectedData({
           loading: false,
-          error: 'There was an error. Try again!'
-        })
+          error: "There was an error. Try again!",
+        });
       }
     } else {
-      setSelectedData(prevState => ({
+      setSelectedData((prevState) => ({
         ...prevState,
-        error: 'This is required.',
-        loading: false
-      }))
+        error: "This is required.",
+        loading: false,
+      }));
     }
   }
 
   return (
     <x.div>
-      {selected.isShowingForm
-        ? <x.form
+      {selected.isShowingForm ? (
+        <x.form
           animation="fadeInUp"
           animationDelay="0ms"
           onSubmit={submitHandler}
           display="flex"
           flexDirection="column"
         >
-          <x.label color="gray" fontSize={{ md: 'xl', xs: 'lg' }}>Add domain</x.label>
+          <x.label color="gray" fontSize={{ md: "xl", xs: "lg" }}>
+            Add domain
+          </x.label>
           <Base>
-            <x.span color="silver" fontSize="16px">https://</x.span>
+            <x.span color="silver" fontSize="16px">
+              https://
+            </x.span>
             <x.input
-              type='text'
-              name='domain'
+              type="text"
+              name="domain"
               onChange={handleChange}
               fontSize="16px"
               py={3}
@@ -173,7 +181,7 @@ export default function CreateProject ({
               disabled={disableEdits.domain}
             />
           </Base>
-          {selected.error &&
+          {selected.error && (
             <x.div
               fontSize="sm"
               color="red"
@@ -183,12 +191,14 @@ export default function CreateProject ({
             >
               Input is required!
             </x.div>
-          }
-          <x.label color="gray" fontSize={{ md: 'xl', xs: 'lg' }}>Reporting Timezone</x.label>
+          )}
+          <x.label color="gray" fontSize={{ md: "xl", xs: "lg" }}>
+            Reporting Timezone
+          </x.label>
           <Dropdown
             value={selected.timezone}
             options={timeZones}
-            styles={{ maxWidth: 350, my: '1.5rem', py: 3 }}
+            styles={{ maxWidth: 350, my: "1.5rem", py: 3 }}
             onChange={handleChange}
             name="timezone"
           />
@@ -199,18 +209,19 @@ export default function CreateProject ({
             </Button>
           </div>
         </x.form>
-        : <Button onClick={showForm}>Add another</Button>
-      }
+      ) : (
+        <Button onClick={showForm}>Add another</Button>
+      )}
     </x.div>
-  )
+  );
 }
 
 CreateProject.propTypes = {
   disableEdits: PropTypes.shape({
-    domain: PropTypes.bool
+    domain: PropTypes.bool,
   }),
   domain: PropTypes.string,
   editEnabled: PropTypes.bool,
   projectId: PropTypes.string,
-  timezone: PropTypes.string
-}
+  timezone: PropTypes.string,
+};

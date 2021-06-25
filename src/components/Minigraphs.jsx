@@ -40,17 +40,18 @@ function Minigraphs({ projectId }) {
   const dateFor = dayjs().subtract(0, "day").format("YYYY-MM-DD");
   const theme = useTheme();
   const downMd = useDown("md");
-  const { loading, error, data = {} } = useQuery(
-    GET_SESSIONS_COUNT_FOR_TIMESERIES,
-    {
-      variables: {
-        projectId: projectId,
-        at: {
-          _gte: dateFor,
-        },
+  const {
+    loading,
+    error,
+    data = {},
+  } = useQuery(GET_SESSIONS_COUNT_FOR_TIMESERIES, {
+    variables: {
+      projectId: projectId,
+      at: {
+        _gte: dateFor,
       },
-    }
-  );
+    },
+  });
 
   useEffect(() => {
     setData(data);

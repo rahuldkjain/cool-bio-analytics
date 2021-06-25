@@ -1,134 +1,114 @@
-import React, { lazy } from 'react'
-import styled, { x } from '@xstyled/styled-components'
-import { useSubscription } from '@apollo/client'
-import { GET_PROJECTS } from '../graphql/subscription'
-import { Link } from 'react-router-dom'
+import React, { lazy } from "react";
+import styled, { x } from "@xstyled/styled-components";
+import { useSubscription } from "@apollo/client";
+import { GET_PROJECTS } from "../graphql/subscription";
+import { Link } from "react-router-dom";
 
-import dayjs from 'dayjs'
-import timezone from 'dayjs/plugin/timezone'
-import utc from 'dayjs/plugin/utc'
-dayjs.extend(timezone)
-dayjs.extend(utc)
+import dayjs from "dayjs";
+import timezone from "dayjs/plugin/timezone";
+import utc from "dayjs/plugin/utc";
+import LoadingAndErrorHandler from "./LoadingAndErrorHandler";
+dayjs.extend(timezone);
+dayjs.extend(utc);
 
-const Table = lazy(() => import('./Table'))
+const Table = lazy(() => import("./Table"));
 
 const ActionLink = styled(Link)`
-    background-color: greenLight;
-    color: green;
-    border-radius: 5px;
-    padding: 0.5rem;
-    max-width: 20rem;
-`
+  background-color: greenLight;
+  color: green;
+  border-radius: 5px;
+  padding: 0.5rem;
+  max-width: 20rem;
+`;
 
-function dateFormat (date) {
-  return dayjs(date).tz('Europe/Paris').format('MMMM D, YYYY h:mm A')
+function dateFormat(date) {
+  return dayjs(date).tz("Europe/Paris").format("MMMM D, YYYY h:mm A");
 }
 
 const columns = [
   {
-    Header: 'Domain',
-    accessor: 'domain'
+    Header: "Domain",
+    accessor: "domain",
   },
   {
-    Header: 'Tracking Id',
-    accessor: 'projectId'
+    Header: "Tracking Id",
+    accessor: "projectId",
   },
   {
-    Header: 'Created at',
-    accessor: 'createdAt',
+    Header: "Created at",
+    accessor: "createdAt",
     Cell: ({ cell }) => {
-      const date = dateFormat(cell?.row?.original?.createdAt, cell?.row?.original?.timezone)
-      return date
-    }
+      const date = dateFormat(
+        cell?.row?.original?.createdAt,
+        cell?.row?.original?.timezone
+      );
+      return date;
+    },
   },
   {
-    Header: 'Reporting as',
-    accessor: 'timezone'
+    Header: "Reporting as",
+    accessor: "timezone",
   },
   {
-    Header: 'Share Id',
-    accessor: 'shareId'
+    Header: "Share Id",
+    accessor: "shareId",
   },
   {
-    Header: 'Actions',
-    accessor: 'actions',
-    Cell ({ cell }) {
+    Header: "Actions",
+    accessor: "actions",
+    Cell({ cell }) {
       return (
-                <x.div display="flex" justifyContent="center">
-                    <ActionLink to={`/projects/${cell?.row?.original?.projectId}/settings`} style={{ marginRight: 20 }}>
-                        Settings
-                    </ActionLink>
-                    <ActionLink to={`/projects/${cell?.row?.original?.projectId}`}>
-                        View
-                    </ActionLink>
-                </x.div>
-      )
-    }
-  }
-]
+        <x.div display="flex" justifyContent="center">
+          <ActionLink
+            to={`/projects/${cell?.row?.original?.projectId}/settings`}
+            style={{ marginRight: 20 }}
+          >
+            Settings
+          </ActionLink>
+          <ActionLink to={`/projects/${cell?.row?.original?.projectId}`}>
+            View
+          </ActionLink>
+        </x.div>
+      );
+    },
+  },
+];
 
-function AddedProjects (props) {
-  const { loading, error, data } = useSubscription(GET_PROJECTS)
+function AddedProjects(props) {
+  const { loading, error, data } = useSubscription(GET_PROJECTS);
 
-  if (loading) {
-    return (
-            <x.div animation="pulse" pb={12}>
-                <x.div flex="1" py={1}>
-                    <x.div display="flex">
-                        <x.div h={12} bg="grayHover" borderRadius flex={1} mr={4} />
-                        <x.div h={12} bg="grayHover" borderRadius flex={1} mr={4} />
-                        <x.div h={12} bg="grayHover" borderRadius flex={1} mr={4} />
-                    </x.div>
-                </x.div>
-                <x.div flex="1" py={1}>
-                    <x.div display="flex">
-                        <x.div h={12} bg="grayHover" borderRadius flex={1} mr={4} />
-                        <x.div h={12} bg="grayHover" borderRadius flex={1} mr={4} />
-                        <x.div h={12} bg="grayHover" borderRadius flex={1} mr={4} />
-                    </x.div>
-                </x.div>
-                <x.div flex="1" py={1}>
-                    <x.div display="flex">
-                        <x.div h={12} bg="grayHover" borderRadius flex={1} mr={4} />
-                        <x.div h={12} bg="grayHover" borderRadius flex={1} mr={4} />
-                        <x.div h={12} bg="grayHover" borderRadius flex={1} mr={4} />
-                    </x.div>
-                </x.div>
-            </x.div>
-    )
-  }
   return (
-        <>
-            <x.div
-                animation="fadeInUp"
-                animationDelay="0ms"
-                display="flex"
-                flexDirection="row"
-                alignItems="center"
-            >
-                <x.h2
-                    color="silver"
-                    py={4}
-                    fontSize={{ md: 'xl', xs: 'lg' }}
-                    fontWeight="700"
-                >
-                    Total Pages
-            </x.h2>
-                <x.span
-                    backgroundColor="brickLight"
-                    borderRadius="5px"
-                    padding={2}
-                    max-width={10}
-                    color="brick"
-                    fontSize={{ md: 'xl', xs: 'lg' }}
-                    ml={4}
-                >
-                    {data?.project?.length || 0}
-                </x.span>
-            </x.div>
-            <Table columns={columns} data={data?.project} />
-        </>
-  )
+    <LoadingAndErrorHandler loading={loading} error={error}>
+      <x.div
+        animation="fadeInUp"
+        animationDelay="0ms"
+        display="flex"
+        flexDirection="row"
+        alignItems="center"
+      >
+        <x.h2
+          color="silver"
+          py={4}
+          fontSize={{ md: "xl", xs: "lg" }}
+          fontWeight="700"
+        >
+          Total Pages
+        </x.h2>
+        <x.span
+          backgroundColor="brickLight"
+          borderRadius="5px"
+          padding={2}
+          max-width={10}
+          color="brick"
+          fontSize={{ md: "xl", xs: "lg" }}
+          ml={4}
+        >
+          {data?.project?.length || 0}
+        </x.span>
+      </x.div>
+      <Table columns={columns} data={data?.project} />
+    </LoadingAndErrorHandler>
+  );
 }
 
-export default AddedProjects
+export default AddedProjects;

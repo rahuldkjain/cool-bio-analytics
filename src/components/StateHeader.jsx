@@ -1,35 +1,39 @@
-import PropTypes from 'prop-types'
-import React, { memo, useMemo } from 'react'
-import { animated, useSpring } from 'react-spring'
-import styled from '@xstyled/styled-components'
+import PropTypes from "prop-types";
+import React, { memo, useMemo } from "react";
+import { animated, useSpring } from "react-spring";
+import styled from "@xstyled/styled-components";
 
-import { SPRING_CONFIG_NUMBERS } from '../config/constants'
-import { formatDate, formatNumber, getStatistic } from '../utils/commonFunctions'
+import { SPRING_CONFIG_NUMBERS } from "../config/constants";
+import {
+  formatDate,
+  formatNumber,
+  getStatistic,
+} from "../utils/commonFunctions";
 
-import dayjs from 'dayjs'
-import timezone from 'dayjs/plugin/timezone'
-import utc from 'dayjs/plugin/utc'
-dayjs.extend(timezone)
-dayjs.extend(utc)
+import dayjs from "dayjs";
+import timezone from "dayjs/plugin/timezone";
+import utc from "dayjs/plugin/utc";
+dayjs.extend(timezone);
+dayjs.extend(utc);
 
 const Header = styled.h1`
-    background-color: brickLight;
-    border-radius: 5px;
-    padding: 0.25rem;
-    max-width: 20rem;
-    color: brick;
-    animation: fadeInUp;
-    animation-delay: 0ms;
-`
+  background-color: brickLight;
+  border-radius: 5px;
+  padding: 0.25rem;
+  max-width: 20rem;
+  color: brick;
+  animation: fadeInUp;
+  animation-delay: 0ms;
+`;
 
 const HeaderRight = styled.div`
-    color: purpleMid;
-    display: flex;
-    flex-direction: column;
-    text-align: right;
-    animation: fadeInUp;
-    animation-delay: 500ms;
-`
+  color: purpleMid;
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  animation: fadeInUp;
+  animation-delay: 500ms;
+`;
 
 const StateHeaderWrapper = styled.div`
   align-self: center;
@@ -40,40 +44,42 @@ const StateHeaderWrapper = styled.div`
   margin-bottom: 1rem;
   position: relative;
   width: 100%;
-`
+`;
 
 const HeaderWrapper = styled.div`
   display: flex;
-`
+`;
 
 const HeaderRightWrapper = styled.h5`
   font-weight: 600;
-`
+`;
 
 const HeaderRightH2 = styled(animated.h2)`
   color: purple;
   font-weight: 900;
-`
+`;
 
 const SubHeader = styled.h5`
   animation: fadeInUp;
   animation-delay: 250ms;
   color: gray;
-  margin-top: .5rem;
+  margin-top: 0.5rem;
   font-weight: 600;
-`
+`;
 
-function StateHeader ({ data, stateCode }) {
-  const total = data?.totalViews?.aggregate?.count || 0
-  const { timezone, domain } = data || {}
-  const [lastUpdatedData] = data?.totalSessions || []
-  const { updatedAt } = lastUpdatedData || {}
-  const formattedUpdatedDate = dayjs(updatedAt).tz(timezone).format('MMMM D, YYYY h:mm A')
-  const totalUpdateDate = dayjs(updatedAt).tz(timezone).format('MMMM D')
+function StateHeader({ data, stateCode }) {
+  const total = data?.totalViews?.aggregate?.count || 0;
+  const { timezone, domain } = data || {};
+  const [lastUpdatedData] = data?.totalSessions || [];
+  const { updatedAt } = lastUpdatedData || {};
+  const formattedUpdatedDate = dayjs(updatedAt)
+    .tz(timezone)
+    .format("MMMM D, YYYY h:mm A");
+  const totalUpdateDate = dayjs(updatedAt).tz(timezone).format("MMMM D");
   const spring = useSpring({
     total,
-    config: SPRING_CONFIG_NUMBERS
-  })
+    config: SPRING_CONFIG_NUMBERS,
+  });
 
   return (
     <StateHeaderWrapper>
@@ -96,7 +102,7 @@ function StateHeader ({ data, stateCode }) {
         </HeaderRightWrapper>
       </HeaderRight>
     </StateHeaderWrapper>
-  )
+  );
 }
 
 StateHeader.propTypes = {
@@ -106,11 +112,11 @@ StateHeader.propTypes = {
     totalSessions: PropTypes.any,
     totalViews: PropTypes.shape({
       aggregate: PropTypes.shape({
-        count: PropTypes.number
-      })
-    })
+        count: PropTypes.number,
+      }),
+    }),
   }),
-  stateCode: PropTypes.any
-}
+  stateCode: PropTypes.any,
+};
 
-export default memo(StateHeader)
+export default memo(StateHeader);

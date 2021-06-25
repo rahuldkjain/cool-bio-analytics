@@ -39,6 +39,26 @@ const Button = styled.button`
   }
 `;
 
+const PriceDescription = styled.div`
+  color: gray;
+  font-size: 16px;
+  padding-top: 4;
+  padding-bottom: 8;
+
+  @media (min-width: md) {
+    font-size: sm;
+  }
+
+  > span {
+    color: ${(p) => p.color};
+    font-size: 2xl;
+
+    @media (min-width: md) {
+      font-size: 4xl;
+    }
+  }
+`;
+
 function getBackGround(index) {
   switch (index) {
     case 0:
@@ -70,6 +90,7 @@ function getColor(index) {
 }
 
 function Pricing({ signedIn, products = [], projectId }) {
+  console.log(products);
   const [billingInterval, setBillingInterval] = useState("month");
   const [checkoutPortalLoading, setcheckoutPortalLoading] = useState(false);
   const { auth } = getClient();
@@ -143,7 +164,9 @@ function Pricing({ signedIn, products = [], projectId }) {
   }
 
   if (error) {
-    <x.div color="red">{error.toString()}</x.div>;
+    <x.div color="red">
+      There was an error! Please refresh the page! <p>{error.toString()}</p>
+    </x.div>;
   }
 
   return (
@@ -216,11 +239,7 @@ function Pricing({ signedIn, products = [], projectId }) {
           const price = prices.find(
             (item) => item.interval === billingInterval
           );
-          const priceString = new Intl.NumberFormat("en-US", {
-            style: "currency",
-            currency: price?.currency || "usd",
-            minimumFractionDigits: 0,
-          }).format((price?.unit_amount || 0) / 100);
+          console.log("price", price, prices);
           const color = pricesData[index].color;
 
           return (
@@ -251,17 +270,12 @@ function Pricing({ signedIn, products = [], projectId }) {
               <x.p color="gray" fontSize="sm" flex={1}>
                 {description}
               </x.p>
-              <x.span
+              <PriceDescription
                 color={color}
-                fontSize={{ md: "4xl", xs: "2xl" }}
-                pt={4}
-                pb={8}
-              >
-                <x.span>{priceString}</x.span>
-                <x.span fontSize={{ md: "16px", xs: "sm" }} color="gray" pl={2}>
-                  /{billingInterval}
-                </x.span>
-              </x.span>
+                dangerouslySetInnerHTML={{
+                  __html: price ? price?.description : prices[0]?.description,
+                }}
+              />
               {currentPlan === id ? (
                 <x.span color={getColor(index)}>Current plan</x.span>
               ) : (
