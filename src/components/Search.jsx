@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "@xstyled/styled-components";
 import { useQuery } from "@apollo/client";
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 
 import Dropdown from "./Dropdown";
 
@@ -34,6 +34,7 @@ const DropdownWrapper = styled.div`
 
 export default function Search() {
   const history = useHistory();
+  const { name } = useParams();
   const { auth } = getClient();
   const user = auth.user();
   const { loading, error, data } = useQuery(GET_ALL_PROJECTS, {
@@ -49,7 +50,7 @@ export default function Search() {
       <Label>Filter your websites or apps</Label>
       <DropdownWrapper>
         <Dropdown
-          value="cool.bio"
+          value={name}
           options={data?.project || []}
           onChange={onDropdownChange}
         />

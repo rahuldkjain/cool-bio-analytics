@@ -55,13 +55,13 @@ export default {
             throw new BadRequestError("Method not supported!");
         }
         try {
-            const date = new Date();
+            /* const date = new Date();
             const month = date.getMonth();
-            const year = date.getYear();
+            const year = date.getYear(); */
             const projects = await getProjects({
-                created_at: {
+                /* created_at: {
                     _gt: `${month + 1}-01-${year}`,
-                },
+                }, */
             });
             console.log("projects----", projects);
             const {

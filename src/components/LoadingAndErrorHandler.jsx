@@ -43,9 +43,3 @@ export default function LoadingAndErrorHandler({ loading, error, children }) {
   }
   return children;
 }
-
-LoadingAndErrorHandler.propTypes = {
-  children: PropTypes.children,
-  error: PropTypes.bool,
-  loading: PropTypes.bool,
-};

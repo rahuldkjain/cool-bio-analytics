@@ -106,6 +106,9 @@ function Pricing({ signedIn, products = [], projectId }) {
     },
   });
   const currentPlan = data?.project?.subscriptions?.[0]?.price?.product?.id;
+  const hobbyPlan = token
+    ? products.find((item) => item.name === "Hobby")
+    : null;
   const onBillingIntervalChange = (val) => async () => {
     setBillingInterval(val);
   };
@@ -129,7 +132,7 @@ function Pricing({ signedIn, products = [], projectId }) {
     }
   };
 
-  const handleCheckout = (price) => async () => {
+  const handleCheckout = (id) => async () => {
     setcheckoutPortalLoading(true);
     if (!signedIn) {
       return history.push("/login");
@@ -139,7 +142,7 @@ function Pricing({ signedIn, products = [], projectId }) {
       const projectData = await postData({
         url: "/api/v1/payment/checkout",
         data: {
-          price,
+          id,
           metadata: {
             projectId,
           },
@@ -239,6 +242,7 @@ function Pricing({ signedIn, products = [], projectId }) {
           const price = prices.find(
             (item) => item.interval === billingInterval
           );
+          const active = id === currentPlan || id === hobbyPlan?.id;
           console.log("price", price, prices);
           const color = pricesData[index].color;
 
@@ -246,9 +250,7 @@ function Pricing({ signedIn, products = [], projectId }) {
             <x.div
               p={8}
               borderRadius="35px"
-              backgroundColor={
-                id === currentPlan ? getBackGround(index) : "transparent"
-              }
+              backgroundColor={active ? getBackGround(index) : "transparent"}
               display="flex"
               alignItems="center"
               flexDirection="column"
@@ -276,12 +278,12 @@ function Pricing({ signedIn, products = [], projectId }) {
                   __html: price ? price?.description : prices[0]?.description,
                 }}
               />
-              {currentPlan === id ? (
+              {active ? (
                 <x.span color={getColor(index)}>Current plan</x.span>
               ) : (
                 <Button
                   onClick={
-                    currentPlan
+                    active
                       ? redirectToCustomerPortal
                       : handleCheckout(price?.id)
                   }
@@ -289,7 +291,7 @@ function Pricing({ signedIn, products = [], projectId }) {
                 >
                   {checkoutPortalLoading ? (
                     <Loading />
-                  ) : currentPlan ? (
+                  ) : active ? (
                     "Change"
                   ) : (
                     "Start"
