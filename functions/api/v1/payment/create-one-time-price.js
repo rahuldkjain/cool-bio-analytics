@@ -13,15 +13,11 @@ export default {
         }
         const { product, amount } = await request.json();
         try {
-            const price = await stripe(
-                "/prices",
-                {
-                    product: product.id,
-                    unit_amount: amount,
-                    currency: "usd",
-                },
-                "POST"
-            );
+            const price = await stripe("/prices", "POST", {
+                product: product.id,
+                unit_amount: amount,
+                currency: "usd",
+            });
 
             console.log("price", price);
 

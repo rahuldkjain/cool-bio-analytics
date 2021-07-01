@@ -13,16 +13,12 @@ export default {
         try {
             const customer = await getCustomer(token);
             console.log("checkout customer", customer);
-            const session = await stripe(
-                "/billing_portal/sessions",
-                {
-                    customer,
-                    return_url: `${getUrl()}/projects`,
-                },
-                "POST"
-            );
+            const session = await stripe("/billing_portal/sessions", "POST", {
+                customer,
+                return_url: `${getUrl()}/projects`,
+            });
 
-            console.log('session', session)
+            console.log("session", session);
 
             return {
                 data: { url: session?.url },

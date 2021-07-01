@@ -34,19 +34,15 @@ export default {
         const product = await request.json();
         const amount = getPrice(product);
         try {
-            const price = await stripe(
-                "/prices",
-                {
-                    product: product.id,
-                    unit_amount: amount,
-                    currency: "usd",
-                    recurring: {
-                        interval: product.name === "year" ? "year" : "month",
-                        usage_type: "metered",
-                    },
+            const price = await stripe("/prices", "POST", {
+                product: product.id,
+                unit_amount: amount,
+                currency: "usd",
+                recurring: {
+                    interval: product.name === "year" ? "year" : "month",
+                    usage_type: "metered",
                 },
-                "POST"
-            );
+            });
 
             console.log("price", price);
 

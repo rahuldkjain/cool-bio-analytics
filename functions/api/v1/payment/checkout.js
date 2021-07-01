@@ -5,13 +5,9 @@ import { getCustomer } from "../../../utils/database";
 
 const createSubscriptionItem = async (input) => {
     try {
-        const subscriptionItem = await stripe(
-            "/subscription_items",
-            {
-                subscription: input.subscription,
-            },
-            "POST"
-        );
+        const subscriptionItem = await stripe("/subscription_items", "POST", {
+            subscription: input.subscription,
+        });
         return subscriptionItem;
     } catch {
         console.log("Error in generating subscription item");
@@ -53,45 +49,41 @@ export default {
         try {
             const customer = await getCustomer(token);
             console.log("checkout customer", customer);
-            const session = await stripe(
-                "/checkout/sessions/create",
-                {
-                    customer: customer,
-                    payment_method_types: ["card"],
-                    billing_address_collection: "required",
-                    line_items: [
-                        {
-                            price: price.id,
-                            quantity: 1,
-                        },
-                        {
-                            price: usageFees.id
-                                ? {
-                                      /* Price from usage fees */
-                                  }
-                                : 0,
-                            quantity: 1,
-                        },
-                        {
-                            price: projectFees.id
-                                ? {
-                                      /* Price from # of projects */
-                                  }
-                                : 0,
-                            quantity: 1,
-                        },
-                    ],
-                    mode: "subscription",
-                    allow_promotion_codes: true,
-                    subscription_data: {
-                        trial_from_plan: true,
-                        metadata,
+            const session = await stripe("/checkout/sessions/create", "POST", {
+                customer: customer,
+                payment_method_types: ["card"],
+                billing_address_collection: "required",
+                line_items: [
+                    {
+                        price: price.id,
+                        quantity: 1,
                     },
-                    success_url: `${getUrl()}/projects`,
-                    cancel_url: `${getUrl()}/`,
+                    {
+                        price: usageFees.id
+                            ? {
+                                  /* Price from usage fees */
+                              }
+                            : 0,
+                        quantity: 1,
+                    },
+                    {
+                        price: projectFees.id
+                            ? {
+                                  /* Price from # of projects */
+                              }
+                            : 0,
+                        quantity: 1,
+                    },
+                ],
+                mode: "subscription",
+                allow_promotion_codes: true,
+                subscription_data: {
+                    trial_from_plan: true,
+                    metadata,
                 },
-                "POST"
-            );
+                success_url: `${getUrl()}/projects`,
+                cancel_url: `${getUrl()}/`,
+            });
 
             console.log("session", session);
 

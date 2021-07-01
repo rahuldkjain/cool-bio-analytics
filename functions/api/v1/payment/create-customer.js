@@ -47,13 +47,9 @@ export default {
         /* const customer = await stripe.customers.create({
             email,
         }); */
-        const customer = await stripe(
-            "/customers",
-            {
-                email,
-            },
-            "POST"
-        );
+        const customer = await stripe("/customers", "POST", {
+            email,
+        });
         const stripeData = await createCustomer({
             stripe_customer_id: customer.id,
             id,

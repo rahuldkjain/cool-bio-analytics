@@ -12,13 +12,9 @@ export default {
         }
         const name = await request.json();
         try {
-            const product = await stripe(
-                "/products",
-                {
-                    name: name,
-                },
-                "POST"
-            );
+            const product = await stripe("/products", "POST", {
+                name: name,
+            });
             console.log("product", product);
             return {
                 data: { product: product },
