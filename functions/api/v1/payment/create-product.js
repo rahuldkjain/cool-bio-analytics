@@ -10,14 +10,15 @@ export default {
         if (request.method !== "POST") {
             throw new BadRequestError("Method not supported!");
         }
-        const name = await request.json();
+        const body = await request.json();
+        const { name } = body;
         try {
             const product = await stripe("/products", "POST", {
-                name: name,
+                name,
             });
             console.log("product", product);
             return {
-                data: { product: product },
+                data: { product },
             };
         } catch (err) {
             console.log(err);

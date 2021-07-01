@@ -39,7 +39,7 @@ export default {
                 unit_amount: amount,
                 currency: "usd",
                 recurring: {
-                    interval: product.name === "year" ? "year" : "month",
+                    interval: product.name.includes("year") ? "year" : "month",
                     usage_type: "metered",
                 },
             });
@@ -47,7 +47,7 @@ export default {
             console.log("price", price);
 
             return {
-                data: { price: price },
+                data: { price },
             };
         } catch (err) {
             console.log(err);
