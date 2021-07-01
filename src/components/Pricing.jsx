@@ -105,6 +105,8 @@ function Pricing({ signedIn, products = [], projectId }) {
       projectId,
     },
   });
+  const { count = 0 } = data?.project?.sessions?.aggregate || {};
+  console.log("total view count", count);
   const currentPlan = data?.project?.subscriptions?.[0]?.price?.product?.id;
   const hobbyPlan = token
     ? products.find((item) => item.name === "Hobby")

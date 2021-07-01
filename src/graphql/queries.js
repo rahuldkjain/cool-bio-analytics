@@ -34,6 +34,11 @@ export const GET_PROJECT_CURRENT_PLAN = gql`
                     }
                 }
             }
+            sessions: sessions_aggregate {
+                aggregate {
+                    count
+                }
+            }
         }
     }
 `;
