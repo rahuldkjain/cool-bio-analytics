@@ -15,6 +15,7 @@ export default {
         try {
             const usageReportSummary = await stripe(
                 "/subscription_items/" + id + "/usage_record_summary",
+                {},
                 "GET"
             );
             console.log("usageReportSummary", usageReportSummary);

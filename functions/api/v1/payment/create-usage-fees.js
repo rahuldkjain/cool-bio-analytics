@@ -11,13 +11,9 @@ export default {
         if (request.method !== "POST") {
             throw new BadRequestError("Method not supported!");
         }
-        const { product, amount } = await request.json();
+        const { id } = await request.json();
         try {
-            const price = await stripe("/prices", "POST", {
-                product: product.id,
-                unit_amount: amount,
-                currency: "usd",
-            });
+            const price = await stripe("/prices/" + id, {}, "GET");
 
             console.log("price", price);
 

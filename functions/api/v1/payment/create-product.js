@@ -3,6 +3,8 @@ import { BadRequestError } from "vitedge/errors";
 import { getUrl, stripe } from "../../../utils/helpers";
 import { getCustomer } from "../../../utils/database";
 
+// NOTE: NO LONGER NEEDED, PRODUCTS ALREADY SET IN THE DASHBOARD
+
 // Creates products (subscription and non-subscription)
 
 export default {
@@ -10,15 +12,18 @@ export default {
         if (request.method !== "POST") {
             throw new BadRequestError("Method not supported!");
         }
-        const body = await request.json();
-        const { name } = body;
+        const name = await request.json();
         try {
-            const product = await stripe("/products", "POST", {
-                name,
-            });
+            const product = await stripe(
+                "/products",
+                {
+                    name: name,
+                },
+                "POST"
+            );
             console.log("product", product);
             return {
-                data: { product },
+                data: { product: product },
             };
         } catch (err) {
             console.log(err);

@@ -144,7 +144,8 @@ function Pricing({ signedIn, products = [], projectId }) {
       const projectData = await postData({
         url: "/api/v1/payment/checkout",
         data: {
-          id,
+          price: id,
+          usageFees: count,
           metadata: {
             projectId,
           },

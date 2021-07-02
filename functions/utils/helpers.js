@@ -13,7 +13,7 @@ export const corsHeaders = {
     "Access-Control-Allow-Origin": "*",
 };
 
-export async function stripe(path, method, body) {
+export async function stripe(path, body, method) {
     const resp = await fetch(`https://api.stripe.com/v1${path}`, {
         ...(method === "POST" ? { body: qs.stringify(body) } : {}),
         headers: {

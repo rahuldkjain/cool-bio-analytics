@@ -3,6 +3,8 @@ import { BadRequestError } from "vitedge/errors";
 import { getUrl, stripe } from "../../../utils/helpers";
 import { getCustomer } from "../../../utils/database";
 
+// NOTE: NO LONGER NEEDED, PRODUCTS ALREADY FETCHED FROM DATABASE
+
 // Retrieves all products listed in Stripe Account
 
 export default {
@@ -11,7 +13,7 @@ export default {
             throw new BadRequestError("Method not supported!");
         }
         try {
-            const productList = await stripe("/products/list", "GET");
+            const productList = await stripe("/products/list", {}, "GET");
             console.log("productList", productList);
             return {
                 data: { products: productList },

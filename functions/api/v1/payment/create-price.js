@@ -3,6 +3,8 @@ import { BadRequestError } from "vitedge/errors";
 import { getUrl, stripe } from "../../../utils/helpers";
 import { getCustomer } from "../../../utils/database";
 
+// NOTE: NO LONGER NEEDED, PRODUCTS ALREADY SET IN THE DASHBOARD
+
 // TO-DO: Revise Price Getting Logic
 
 // Calculates subscription price based on product name
@@ -34,20 +36,26 @@ export default {
         const product = await request.json();
         const amount = getPrice(product);
         try {
-            const price = await stripe("/prices", "POST", {
-                product: product.id,
-                unit_amount: amount,
-                currency: "usd",
-                recurring: {
-                    interval: product.name.includes("year") ? "year" : "month",
-                    usage_type: "metered",
+            const price = await stripe(
+                "/prices",
+                {
+                    product: product.id,
+                    unit_amount: amount,
+                    currency: "usd",
+                    recurring: {
+                        interval: product.name.includes("year")
+                            ? "year"
+                            : "month",
+                        usage_type: "metered",
+                    },
                 },
-            });
+                "POST"
+            );
 
             console.log("price", price);
 
             return {
-                data: { price },
+                data: { price: price },
             };
         } catch (err) {
             console.log(err);

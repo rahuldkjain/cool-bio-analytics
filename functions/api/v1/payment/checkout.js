@@ -3,12 +3,19 @@ import { BadRequestError } from "vitedge/errors";
 import { getUrl, stripe } from "../../../utils/helpers";
 import { getCustomer } from "../../../utils/database";
 
+// TO-DO: Refactor this to get the productID ifromn either the .env file or the fetch all prices API
+const usageFeesProductID = process.env.VITE_USAGE_FEES;
+
 const createSubscriptionItem = async (input) => {
     try {
-        const subscriptionItem = await stripe("/subscription_items", "POST", {
-            subscription: input.subscription,
-        });
-        return subscriptionItem;
+        const subscriptionItem = await stripe(
+            "/subscription_items",
+            {
+                subscription: input.subscription,
+            },
+            "POST"
+        );
+        return { subscriptionItem: subscriptionItem };
     } catch {
         console.log("Error in generating subscription item");
         return null;
@@ -21,7 +28,7 @@ const createUsageReport = async (input) => {
             "/subscription_items/" + input.id + "/usage_records",
             "POST"
         );
-        return usageReport;
+        return { usageReport: usageReport };
     } catch {
         console.log("Error in generating usage report");
         return null;
@@ -33,70 +40,50 @@ export default {
         if (request.method !== "POST") {
             throw new BadRequestError("Method not supported!");
         }
-        const {
-            price,
-            usageFees,
-            projectFees,
-            metadata = {},
-        } = await request.json();
-        /*
-         * price = subscription price, must be a Stripe Price Object
-         * usageFees = usage fees for "pay as you go" payment plan, must be a Stripe Price Object
-         * projectFees = fees based on total number of projects, must be a Stripe Price Object
-         */
+        const { price, usageFees, metadata = {} } = await request.json();
         const token = request.headers.get("token");
         console.log("tokeeennnnn-------->", token);
         try {
             const customer = await getCustomer(token);
             console.log("checkout customer", customer);
-            const session = await stripe("/checkout/sessions/create", "POST", {
-                customer: customer,
-                payment_method_types: ["card"],
-                billing_address_collection: "required",
-                line_items: [
-                    {
-                        price: price.id,
-                        quantity: 1,
-                    },
-                    {
-                        price: usageFees.id
-                            ? {
-                                  /* Price from usage fees */
-                              }
-                            : 0,
-                        quantity: 1,
-                    },
-                    {
-                        price: projectFees.id
-                            ? {
-                                  /* Price from # of projects */
-                              }
-                            : 0,
-                        quantity: 1,
-                    },
-                ],
-                mode: "subscription",
-                allow_promotion_codes: true,
-                subscription_data: {
-                    trial_from_plan: true,
+            const session = await stripe(
+                "/checkout/sessions",
+                {
+                    customer,
+                    payment_method_types: ["card"],
+                    billing_address_collection: "required",
+                    line_items: [
+                        {
+                            price,
+                            quantity: 1,
+                        },
+                        {
+                            price: usageFeesProductID,
+                            quantity: usageFees,
+                        },
+                    ],
+                    mode: "subscription",
                     metadata,
+                    success_url: `${getUrl()}/projects`,
+                    cancel_url: `${getUrl()}`,
                 },
-                success_url: `${getUrl()}/projects`,
-                cancel_url: `${getUrl()}/`,
-            });
+                "POST"
+            );
 
             console.log("session", session);
 
             const subscriptionItem = await createSubscriptionItem(session);
 
-            const usageReport = await createUsageReport(subscriptionItem);
+            const usageReport = await createUsageReport(
+                subscriptionItem.subscriptionItem
+            );
 
             return {
                 data: {
                     sessionId: session.id,
                     subscriptionId: session.subscription,
                     subscriptionItemId: subscriptionItem.id,
-                    usageReport: usageReport,
+                    usageReport: usageReport.usageReport,
                 },
             };
         } catch (err) {
