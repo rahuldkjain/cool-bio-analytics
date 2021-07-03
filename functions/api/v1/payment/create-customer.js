@@ -1,6 +1,5 @@
 import { BadRequestError } from "vitedge/errors";
 import { stripe } from "../../../utils/helpers";
-// import stripe from "stripe";
 
 const addCustomerQuery = `
     mutation createCustomer($object: [customers_insert_input!]!) {

@@ -1,16 +1,16 @@
 import PropTypes from "prop-types";
 import React, { useState } from "react";
-import styled, { x, useTheme } from "@xstyled/styled-components";
-import { Link, useHistory } from "react-router-dom";
+import styled, { x } from "@xstyled/styled-components";
+import { useHistory } from "react-router-dom";
 import { useQuery, useMutation } from "@apollo/client";
 
 import Loading from "./Loading";
 
 import { getClient } from "../utils/hbp";
 import { pricesData } from "../config/constants";
-import { postData } from "../utils/helpers";
 import { getStripe } from "../utils/stripe";
-import { GET_PROJECT_CURRENT_PLAN } from "../graphql/queries";
+import { GET_PROJECT_CURRENT_PLAN, GET_PORTAL_LINK } from "../graphql/queries";
+import { CREATE_CHECKOUT } from "../graphql/mutation";
 
 const Button = styled.button`
   appearance: none;
@@ -91,6 +91,7 @@ function getColor(index) {
 
 function Pricing({ signedIn, products = [], projectId }) {
   console.log(products);
+  const [checkoutProject] = useMutation(CREATE_CHECKOUT);
   const [billingInterval, setBillingInterval] = useState("month");
   const [checkoutPortalLoading, setcheckoutPortalLoading] = useState(false);
   const { auth } = getClient();
@@ -101,6 +102,11 @@ function Pricing({ signedIn, products = [], projectId }) {
     error,
     data = {},
   } = useQuery(GET_PROJECT_CURRENT_PLAN, {
+    variables: {
+      projectId,
+    },
+  });
+  const { portalData = {} } = useQuery(GET_PORTAL_LINK, {
     variables: {
       projectId,
     },
@@ -118,14 +124,9 @@ function Pricing({ signedIn, products = [], projectId }) {
   const redirectToCustomerPortal = async () => {
     setcheckoutPortalLoading(true);
     try {
-      const portalData = await postData({
-        url: "/api/v1/payment/create-portal-link",
-        data: {},
-        token,
-      });
-
-      if (portalData) {
-        window.location.assign(portalData?.url);
+      const { portalLink } = portalData;
+      if (portalLink) {
+        window.location.assign(portalLink?.url);
       }
     } catch (e) {
       console.log(e);
@@ -141,22 +142,22 @@ function Pricing({ signedIn, products = [], projectId }) {
     }
 
     try {
-      const projectData = await postData({
-        url: "/api/v1/payment/checkout",
-        data: {
-          price: id,
-          usageFees: count,
-          metadata: {
-            projectId,
+      const projectData = await checkoutProject({
+        variables: {
+          object: {
+            price: id,
+            metadata: {
+              projectId,
+            },
           },
         },
-        token,
       });
 
-      console.log(projectData);
-      if (projectData) {
+      console.log("projectData", projectData);
+      const { checkoutInfo } = projectData?.data || {};
+      if (checkoutInfo) {
         const stripe = await getStripe();
-        stripe.redirectToCheckout({ sessionId: projectData.sessionId });
+        stripe.redirectToCheckout({ sessionId: checkoutInfo.sessionId });
       }
     } catch (error) {
       return console.log(error.message);

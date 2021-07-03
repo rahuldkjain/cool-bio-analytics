@@ -238,3 +238,11 @@ export const GET_SESSIONS_COUNT_FOR_TIMESERIES = gql`
         }
     }
 `;
+
+export const GET_PORTAL_LINK = gql`
+    query portalLink {
+        portalLink: portal_link {
+            url
+        }
+    }
+`;

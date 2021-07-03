@@ -1,50 +1,28 @@
 import { BadRequestError } from "vitedge/errors";
 
 import { getUrl, stripe } from "../../../utils/helpers";
-import { getCustomer } from "../../../utils/database";
+import { getCustomerByUserId } from "../../../utils/database";
 
-// TO-DO: Refactor this to get the productID ifromn either the .env file or the fetch all prices API
-const usageFeesProductID = process.env.VITE_USAGE_FEES;
-
-const createSubscriptionItem = async (input) => {
-    try {
-        const subscriptionItem = await stripe(
-            "/subscription_items",
-            {
-                subscription: input.subscription,
-            },
-            "POST"
-        );
-        return { subscriptionItem: subscriptionItem };
-    } catch {
-        console.log("Error in generating subscription item");
-        return null;
-    }
-};
-
-const createUsageReport = async (input) => {
-    try {
-        const usageReport = await stripe(
-            "/subscription_items/" + input.id + "/usage_records",
-            "POST"
-        );
-        return { usageReport: usageReport };
-    } catch {
-        console.log("Error in generating usage report");
-        return null;
-    }
-};
+function correctSecretProvided(request) {
+    const requiredSecret = process.env.VITEDGE_CHECKOUT_SECRET;
+    const providedSecret = request.headers.get("CHECKOUT_SECRET");
+    return requiredSecret === providedSecret;
+}
 
 export default {
     async handler({ request }) {
         if (request.method !== "POST") {
             throw new BadRequestError("Method not supported!");
         }
-        const { price, usageFees, metadata = {} } = await request.json();
-        const token = request.headers.get("token");
-        console.log("tokeeennnnn-------->", token);
+        if (!correctSecretProvided(request)) {
+            throw new BadRequestError("Not allowed!");
+        }
+
+        const { input, session_variables: session } = await request.json();
+        const { price, metadata = {} } = input?.object;
+        const userId = session["x-hasura-user-id"];
         try {
-            const customer = await getCustomer(token);
+            const customer = await getCustomerByUserId(userId);
             console.log("checkout customer", customer);
             const session = await stripe(
                 "/checkout/sessions",
@@ -57,33 +35,21 @@ export default {
                             price,
                             quantity: 1,
                         },
-                        {
-                            price: usageFeesProductID,
-                            quantity: usageFees,
-                        },
                     ],
                     mode: "subscription",
                     metadata,
                     success_url: `${getUrl()}/projects`,
-                    cancel_url: `${getUrl()}`,
+                    cancel_url: `${getUrl()}/projects`,
                 },
                 "POST"
             );
 
             console.log("session", session);
 
-            const subscriptionItem = await createSubscriptionItem(session);
-
-            const usageReport = await createUsageReport(
-                subscriptionItem.subscriptionItem
-            );
-
             return {
                 data: {
                     sessionId: session.id,
                     subscriptionId: session.subscription,
-                    subscriptionItemId: subscriptionItem.id,
-                    usageReport: usageReport.usageReport,
                 },
             };
         } catch (err) {
