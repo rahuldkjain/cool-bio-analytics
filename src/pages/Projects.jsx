@@ -27,10 +27,10 @@ const AppWrapper = styled.div`
 `;
 
 function Projects(props) {
-  const [billingInterval, setBillingInterval] = useState("month");
+  const [order, setOrderBy] = useState("asc");
 
-  const onBillingIntervalChange = (val) => () => {
-    setBillingInterval(val);
+  const setOrderByChange = (val) => () => {
+    setOrderBy(val);
   };
 
   return (
@@ -61,11 +61,9 @@ function Projects(props) {
             px={8}
             py={4}
             borderRadius=".375rem"
-            backgroundColor={
-              billingInterval === "month" ? "greenLight" : "transparent"
-            }
+            backgroundColor={order === "asc" ? "greenLight" : "transparent"}
             color="green"
-            onClick={onBillingIntervalChange("month")}
+            onClick={setOrderByChange("asc")}
           >
             Ascending
           </x.button>
@@ -74,16 +72,14 @@ function Projects(props) {
             px={8}
             py={4}
             borderRadius=".375rem"
-            backgroundColor={
-              billingInterval === "year" ? "greenLight" : "transparent"
-            }
+            backgroundColor={order === "desc" ? "greenLight" : "transparent"}
             color="green"
-            onClick={onBillingIntervalChange("year")}
+            onClick={setOrderByChange("desc")}
           >
             Descending
           </x.button>
         </x.div>
-        <AddedProjects />
+        <AddedProjects order={order} />
         <CreateProject />
       </AppWrapper>
     </PrivateRoute>
