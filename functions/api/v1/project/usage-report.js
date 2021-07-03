@@ -77,12 +77,12 @@ export default {
                 const { id } = subscription;
                 const session = await stripe(
                     `/subscription_items/${id}/usage_records`,
+                    "POST",
                     {
                         quantity: count,
                         timestamp: Math.ceil(Date.now() / 1000),
                         action: "set",
-                    },
-                    "POST"
+                    }
                 );
                 return session;
             });

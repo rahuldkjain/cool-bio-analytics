@@ -34,6 +34,11 @@ export const GET_PROJECT_CURRENT_PLAN = gql`
                     }
                 }
             }
+            sessions: sessions_aggregate {
+                aggregate {
+                    count
+                }
+            }
         }
     }
 `;
@@ -230,6 +235,14 @@ export const GET_SESSIONS_COUNT_FOR_TIMESERIES = gql`
         ) {
             count: bounce
             hour
+        }
+    }
+`;
+
+export const GET_PORTAL_LINK = gql`
+    query portalLink {
+        portalLink: portal_link {
+            url
         }
     }
 `;

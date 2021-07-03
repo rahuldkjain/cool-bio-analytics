@@ -1,5 +1,4 @@
 import { UnknownError } from "vitedge/errors";
-import { decodeToken } from "./crypto";
 
 const customerQuery = `
     query getCustomer($userId: uuid!) {
@@ -79,11 +78,9 @@ export async function getActiveProductsWithPrices() {
     return productData?.data?.product || {};
 }
 
-export async function getCustomer(token) {
-    console.log("getUser", token);
+export async function getCustomerByUserId(userId) {
+    console.log("getUser", userId);
     try {
-        const data = await decodeToken(token);
-        const userId = data["https://hasura.io/jwt/claims"]["x-hasura-user-id"];
         const customer = await postGraphQlData(customerQuery, {
             userId,
         });
