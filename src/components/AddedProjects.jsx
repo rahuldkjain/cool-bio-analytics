@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React, { lazy } from "react";
 import styled, { x } from "@xstyled/styled-components";
 import { useSubscription } from "@apollo/client";
@@ -74,8 +75,12 @@ const columns = [
   },
 ];
 
-function AddedProjects(props) {
-  const { loading, error, data } = useSubscription(GET_PROJECTS);
+function AddedProjects({ order }) {
+  const { loading, error, data } = useSubscription(GET_PROJECTS, {
+    variables: {
+      order,
+    },
+  });
 
   return (
     <LoadingAndErrorHandler loading={loading} error={error}>
@@ -110,5 +115,9 @@ function AddedProjects(props) {
     </LoadingAndErrorHandler>
   );
 }
+
+AddedProjects.propTypes = {
+  order: PropTypes.string,
+};
 
 export default AddedProjects;

@@ -45,7 +45,7 @@ function CountryCount({ projectId, query, columns }) {
 CountryCount.propTypes = {
   columns: PropTypes.any,
   projectId: PropTypes.string,
-  query: PropTypes.string,
+  query: PropTypes.any,
 };
 
 export default CountryCount;

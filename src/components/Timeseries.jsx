@@ -62,9 +62,9 @@ function Timeseries({ data: defaultData }) {
             w="100%"
             h="12rem"
             bg={getBackGround(statistic)}
-            key={item.options.statistic}
             mb={4}
             position="relative"
+            key={statistic}
           >
             <ResponsiveContainer width="100%" height="100%">
               <LineChart
