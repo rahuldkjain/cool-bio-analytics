@@ -8,6 +8,7 @@ import Brand from "../components/Brand";
 import SunMoon from "../components/SunMoon";
 import Github from "../components/icon/Github";
 import Google from "../components/icon/Google";
+import { signIn } from "../utils/auth";
 
 const LoginWrapper = styled.div`
   display: flex;
@@ -40,7 +41,7 @@ const H1 = styled.h1`
   color: gray;
 `;
 
-const LoginLogo = styled.a`
+const LoginLogo = styled.button`
   margin-right: 40px;
 `;
 
@@ -97,10 +98,17 @@ export default function Login(props) {
               Singup or Login
             </H1>
             <LogoinLogoWrapper>
-              <LoginLogo href="https://backend.cool.bio/auth/providers/google">
+              <LoginLogo
+                onClick={() =>
+                  signIn("google", {
+                    redirect: true,
+                    callbackUrl: "http://localhost:3000/projects",
+                  })
+                }
+              >
                 <Google />
               </LoginLogo>
-              <LoginLogo href="https://backend.cool.bio/auth/providers/github">
+              <LoginLogo>
                 <Github fill={mode === "dark" ? "#fff" : "#000"} />
               </LoginLogo>
             </LogoinLogoWrapper>
