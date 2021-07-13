@@ -5,7 +5,6 @@ import { useHistory, useParams } from "react-router-dom";
 
 import Dropdown from "./Dropdown";
 
-import { getClient } from "../utils/hbp";
 import { GET_ALL_PROJECTS } from "../graphql/queries";
 
 const SearchWrapper = styled.div`
@@ -35,11 +34,9 @@ const DropdownWrapper = styled.div`
 export default function Search() {
   const history = useHistory();
   const { name } = useParams();
-  const { auth } = getClient();
-  const user = auth.user();
-  const { loading, error, data } = useQuery(GET_ALL_PROJECTS, {
-    variables: { userId: user.id },
-  });
+  const { loading, error, data } = useQuery(GET_ALL_PROJECTS);
+
+  console.log("[data]", data);
 
   function onDropdownChange(e) {
     history.push(`/projects/${e.target.value}`);

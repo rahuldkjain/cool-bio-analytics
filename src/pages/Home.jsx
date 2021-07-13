@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
 import React, { lazy } from "react";
 import styled, { x, useColorMode } from "@xstyled/styled-components";
-import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 
 import Blob from "../components/icon/Blob";
@@ -11,6 +10,7 @@ import PayAsYouGo from "../components/icon/PayAsYouGo";
 import Api from "../components/icon/Api";
 
 import GdprSvg from ".././assets/gdpr.svg";
+import MetaData from "../components/MetaData";
 
 const Navbar = lazy(() => import("../components/Navbar"));
 const Pricing = lazy(() => import("../components/Pricing"));
@@ -115,12 +115,7 @@ function Landing({ products }) {
   return (
     <>
       <Navbar />
-      <Helmet>
-        <html lang="en" />
-        <meta charSet="utf-8" />
-        <title>Analytics | cool.bio</title>
-        <link rel="canonical" href="http://analytics.cool.bio" />
-      </Helmet>
+      <MetaData title="Analytics | cool.bio" />
       <x.div
         display="flex"
         flexDirection="row"
@@ -131,7 +126,7 @@ function Landing({ products }) {
         pt={{ md: "5rem", xs: "3rem" }}
       >
         <HomeLeft>
-          <a
+          {/* <a
             href="https://www.producthunt.com/posts/daku?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-daku"
             target="_blank"
             rel="noreferrer"
@@ -142,7 +137,7 @@ function Landing({ products }) {
               }`}
               alt="Daku - It's like Tinder for Product Hunt | Product Hunt"
             />
-          </a>
+          </a> */}
           <x.div my={{ md: 8, _: 8 }}>
             <x.h1
               color="blue"

@@ -6,7 +6,6 @@ import { useQuery, useMutation } from "@apollo/client";
 
 import Loading from "./Loading";
 
-import { getClient } from "../utils/hbp";
 import { pricesData } from "../config/constants";
 import { getStripe } from "../utils/stripe";
 import { GET_PROJECT_CURRENT_PLAN, GET_PORTAL_LINK } from "../graphql/queries";
@@ -89,13 +88,11 @@ function getColor(index) {
   }
 }
 
-function Pricing({ signedIn, products = [], projectId }) {
+function Pricing({ token, products = [], projectId }) {
   console.log(products);
   const [checkoutProject] = useMutation(CREATE_CHECKOUT);
   const [billingInterval, setBillingInterval] = useState("month");
   const [checkoutPortalLoading, setcheckoutPortalLoading] = useState(false);
-  const { auth } = getClient();
-  const token = auth.getJWTToken();
   const history = useHistory();
   const {
     loading,
@@ -137,7 +134,7 @@ function Pricing({ signedIn, products = [], projectId }) {
 
   const handleCheckout = (id) => async () => {
     setcheckoutPortalLoading(true);
-    if (!signedIn) {
+    if (!token) {
       return history.push("/login");
     }
 
@@ -166,7 +163,7 @@ function Pricing({ signedIn, products = [], projectId }) {
     }
   };
 
-  if (signedIn === null) {
+  if (token === null) {
     return <div>loading...</div>;
   }
 
@@ -313,7 +310,7 @@ function Pricing({ signedIn, products = [], projectId }) {
 Pricing.propTypes = {
   projectId: PropTypes.string,
   products: PropTypes.arrayOf(PropTypes.any),
-  signedIn: PropTypes.bool,
+  token: PropTypes.string,
 };
 
 export default Pricing;

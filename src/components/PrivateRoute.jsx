@@ -1,15 +1,16 @@
 import React from "react";
 import { Redirect } from "react-router-dom";
-import { useAuth } from "@nhost/react-auth";
+import { useAuth } from "../providers/AuthProvider";
 
 export default function PrivateRoute({ children }) {
-  const { signedIn } = useAuth();
+  const { token } = useAuth();
+  console.log("[token]", token);
 
-  if (signedIn === null) {
+  if (token === null) {
     return <div>Loading...</div>;
   }
 
-  if (!signedIn) {
+  if (!token) {
     return <Redirect to="/login" />;
   }
 

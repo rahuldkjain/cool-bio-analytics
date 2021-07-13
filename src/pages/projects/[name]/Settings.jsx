@@ -6,6 +6,7 @@ import styled, { x } from "@xstyled/styled-components";
 
 import PrivateRoute from "../../../components/PrivateRoute";
 import SettingsDetails from "../../../components/SettingsDetails";
+import MetaData from "../../../components/MetaData";
 
 const Navbar = lazy(() => import("../../../components/Navbar"));
 
@@ -19,12 +20,7 @@ function Details() {
   return (
     <PrivateRoute>
       <Navbar />
-      <Helmet>
-        <html lang="en" />
-        <meta charSet="utf-8" />
-        <title>Details | Cool Analytics</title>
-        <link rel="canonical" href="http://analytics.cool.bio/about" />
-      </Helmet>
+      <MetaData title="Details | Cool Analytics" />
       <x.div
         ml={{ md: "9rem", xs: 4 }}
         mr={{ md: "3rem", xs: 4 }}

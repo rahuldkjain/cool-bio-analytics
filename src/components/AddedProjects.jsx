@@ -111,7 +111,7 @@ function AddedProjects({ order }) {
           {data?.project?.length || 0}
         </x.span>
       </x.div>
-      <Table columns={columns} data={data?.project} />
+      <Table columns={columns} data={data?.project || []} />
     </LoadingAndErrorHandler>
   );
 }

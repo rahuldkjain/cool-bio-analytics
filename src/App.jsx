@@ -10,12 +10,9 @@ import styled, {
 } from "@xstyled/styled-components";
 import { th } from "@xstyled/system";
 import { Provider } from "jotai";
-import { NhostApolloProvider } from "@nhost/react-apollo";
-import { NhostAuthProvider } from "@nhost/react-auth";
-import { Helmet } from "react-helmet-async";
 import NotFound from "./pages/NotFound";
-
-import { getClient } from "./utils/hbp";
+import { AuthProvider } from "./providers/AuthProvider";
+import { HasuraApolloClient } from "./components/HasuraApolloClient";
 
 const GlobalStyle = createGlobalStyle`
   html, body {
@@ -207,25 +204,14 @@ const Wrapper = styled.div`
 `;
 
 function App({ router }) {
-  const { auth } = getClient();
   return (
     <ThemeProvider theme={theme}>
-      <Helmet>
-        <script
-          async
-          defer
-          src="https://analytics.cool.bio/tracking.js"
-        ></script>
-      </Helmet>
       <ColorModeProvider>
         <Provider>
-          <NhostAuthProvider auth={auth}>
-            <NhostApolloProvider
-              auth={auth}
-              gqlEndpoint={import.meta.env.VITE_GRAPHQL_API}
-            >
-              <Preflight />
-              <GlobalStyle />
+          <AuthProvider>
+            <Preflight />
+            <GlobalStyle />
+            <HasuraApolloClient>
               <Wrapper>
                 <Switch>
                   {router.routes.map((route) => {
@@ -240,8 +226,8 @@ function App({ router }) {
                   </Route>
                 </Switch>
               </Wrapper>
-            </NhostApolloProvider>
-          </NhostAuthProvider>
+            </HasuraApolloClient>
+          </AuthProvider>
         </Provider>
       </ColorModeProvider>
     </ThemeProvider>

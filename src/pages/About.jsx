@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet-async";
 import styled, { x } from "@xstyled/styled-components";
 
 import Blob from "../components/icon/Blob";
+import MetaData from "../components/MetaData";
 
 const LottieAnimations = lazy(() => import("../components/LottieAnimations"));
 const Navbar = lazy(() => import("../components/Navbar"));
@@ -59,12 +60,7 @@ function About({ heading1, heading2 }) {
   return (
     <>
       <Navbar />
-      <Helmet>
-        <html lang="en" />
-        <meta charSet="utf-8" />
-        <title>About | Cool Analytics</title>
-        <link rel="canonical" href="http://analytics.cool.bio/about" />
-      </Helmet>
+      <MetaData title="About | Cool Analytics" />
       <x.div
         ml={{ md: "9rem", xs: 4 }}
         mr={{ md: "3rem", xs: 4 }}

@@ -56,6 +56,26 @@ const activeProducts = `
     }
 `;
 
+const accountUser = `
+    query check_user($id: String) {
+        accounts(where: {
+            provider_account_id: {
+                _eq: $id
+            }
+        }) {
+            id
+        }
+    }
+`;
+
+const setAccount = `
+    mutation setUser($input: accounts_insert_input!) {
+        user: insert_accounts_one(object: $input) {
+            id
+        }
+    }
+`;
+
 async function postGraphQlData(query, variables) {
     const res = await fetch(process.env.VITEDGE_GRAPHQL_API, {
         method: "post",
@@ -70,6 +90,27 @@ async function postGraphQlData(query, variables) {
         }),
     });
     return await res.json();
+}
+
+export async function setUser(user) {
+    const userData = await postGraphQlData(setAccount, {
+        input: user,
+    });
+    console.log("[set user]", userData);
+    return userData;
+}
+
+export async function checkUser(id) {
+    if (!id) {
+        return null;
+    }
+    const userData = await postGraphQlData(accountUser, {
+        id,
+    });
+    console.log("[hasura user]", userData);
+    const { accounts = [] } = userData?.data || {};
+    const [user] = accounts;
+    return user;
 }
 
 export async function getActiveProductsWithPrices() {

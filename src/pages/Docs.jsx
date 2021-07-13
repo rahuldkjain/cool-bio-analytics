@@ -19,10 +19,10 @@ const AppWrapper = styled.div`
   }
 `;
 
-function Terms(props) {
+function Docs(props) {
   return (
     <>
-      <MetaData title="Terms | Cool Analytics" />
+      <MetaData title="Docs | Cool Analytics" />
       <Navbar />
       <AppWrapper>
         <x.div>Coming soon!</x.div>
@@ -31,4 +31,4 @@ function Terms(props) {
   );
 }
 
-export default Terms;
+export default Docs;

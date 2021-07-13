@@ -1,8 +1,8 @@
 import React, { useState, lazy } from "react";
 import styled, { x } from "@xstyled/styled-components";
-import { Helmet } from "react-helmet-async";
 
 import PrivateRoute from "../components/PrivateRoute";
+import MetaData from "../components/MetaData";
 
 const AddedProjects = lazy(() => import("../components/AddedProjects"));
 const Navbar = lazy(() => import("../components/Navbar"));
@@ -35,12 +35,7 @@ function Projects(props) {
 
   return (
     <PrivateRoute>
-      <Helmet>
-        <html lang="en" />
-        <meta charSet="utf-8" />
-        <title>Projects | Cool Analytics</title>
-        <link rel="canonical" href="http://analytics.cool.bio/projects" />
-      </Helmet>
+      <MetaData title="Projects | Cool Analytics" />
       <Navbar />
       <AppWrapper>
         <x.h1 fontSize={{ md: "4xl", xs: "2xl" }} fontWeight="500" color="gray">

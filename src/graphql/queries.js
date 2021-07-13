@@ -1,8 +1,8 @@
 import { gql } from "@apollo/client";
 
 export const GET_ALL_PROJECTS = gql`
-    query allProjects($userId: uuid!) {
-        project(where: { user_id: { _eq: $userId } }) {
+    query allProjects {
+        project {
             name: domain
             key: project_id
         }

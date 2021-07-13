@@ -119,6 +119,12 @@ export const pages = [
         exact: false,
     },
     {
+        pageLink: "/docs",
+        displayName: "Docs",
+        showInNavbar: true,
+        exact: true,
+    },
+    {
         pageLink: "/about",
         displayName: "About",
         showInNavbar: true,

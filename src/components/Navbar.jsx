@@ -9,7 +9,6 @@ import styled, { x, useUp } from "@xstyled/styled-components";
 import Brand from "./Brand";
 import SunMoon from "./SunMoon";
 
-import { getClient } from "../utils/hbp";
 import {
   SLIDE_IN,
   SLIDE_OUT,
@@ -18,6 +17,7 @@ import {
 } from "../utils/animations";
 
 import { pages } from "../config/constants";
+import { useAuth } from "../providers/AuthProvider";
 
 const NavWrapper = styled(animated.div)`
   align-items: center;
@@ -155,8 +155,7 @@ const WrapperRouterIconLink = styled(NavLink)`
 
 function Navbar({ darkMode }) {
   const [expand, setExpand] = useState(false);
-  const { auth } = getClient();
-  const user = auth.user();
+  const { token } = useAuth();
   useLockBodyScroll(expand);
   const windowSize = useWindowSize();
   const [spring, set, stop] = useSpring(() => ({ opacity: 0 }));
@@ -177,13 +176,13 @@ function Navbar({ darkMode }) {
   }, [windowSize.width]);
 
   const logout = async () => {
-    await auth.logout();
+    // await auth.logout();
   };
 
   return (
     <NavWrapper style={spring}>
       {windowSize.width > 769 &&
-        (user ? (
+        (token ? (
           <x.button
             order={3}
             textAlign="center"
@@ -231,6 +230,11 @@ function Navbar({ darkMode }) {
                 <Icon.Book />
               </span>
             </WrapperRouterIconLink>
+            <WrapperRouterIconLink to="/docs">
+              <span>
+                <Icon.BookOpen />
+              </span>
+            </WrapperRouterIconLink>
             <WrapperRouterIconLink to="/about" exact>
               <span>
                 <Icon.HelpCircle />
@@ -247,7 +251,7 @@ function Navbar({ darkMode }) {
         item ? (
           <animated.div key={key} style={props}>
             <Expand
-              {...{ pages, setExpand, darkMode, windowSize, user, logout }}
+              {...{ pages, setExpand, darkMode, windowSize, token, logout }}
             />
           </animated.div>
         ) : (
@@ -262,7 +266,7 @@ Navbar.propTypes = {
   darkMode: PropTypes.any,
 };
 
-function Expand({ pages, setExpand, darkMode, windowSize, logout, user }) {
+function Expand({ pages, setExpand, darkMode, windowSize, logout, token }) {
   const expandElement = useRef(null);
   const upMd = useUp("md");
 
@@ -290,7 +294,7 @@ function Expand({ pages, setExpand, darkMode, windowSize, logout, user }) {
         return null;
       })}
 
-      {user ? (
+      {token ? (
         <x.button
           textAlign="left"
           mb={8}
@@ -329,7 +333,7 @@ Expand.propTypes = {
   logout: PropTypes.any,
   pages: PropTypes.arrayOf(PropTypes.any),
   setExpand: PropTypes.func,
-  user: PropTypes.any,
+  token: PropTypes.string,
   windowSize: PropTypes.shape({
     width: PropTypes.number,
   }),

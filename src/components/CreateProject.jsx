@@ -62,10 +62,10 @@ const Base = styled.div`
   }
 `;
 
-export default function CreateProject({
+function CreateProject({
   editEnabled,
   domain,
-  timezone = timeZones[0].key,
+  timezone = "Etc/GMT+12",
   disableEdits = {},
   projectId,
 }) {
@@ -225,3 +225,5 @@ CreateProject.propTypes = {
   projectId: PropTypes.string,
   timezone: PropTypes.string,
 };
+
+export default CreateProject;

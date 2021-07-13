@@ -1,13 +1,13 @@
 import React from "react";
-import { Helmet } from "react-helmet-async";
 import styled, { useColorMode } from "@xstyled/styled-components";
-import { useAuth } from "@nhost/react-auth";
 import { Redirect } from "react-router-dom";
 
 import Brand from "../components/Brand";
 import SunMoon from "../components/SunMoon";
 import Github from "../components/icon/Github";
 import Google from "../components/icon/Google";
+import MetaData from "../components/MetaData";
+import { useAuth } from "../providers/AuthProvider";
 
 const LoginWrapper = styled.div`
   display: flex;
@@ -67,24 +67,19 @@ const CopyRight = styled.div`
 
 export default function Login(props) {
   const [mode] = useColorMode(false);
-  const { signedIn } = useAuth();
+  const { token } = useAuth();
 
-  if (signedIn === null) {
+  if (token === null) {
     return <div>loading...</div>;
   }
 
-  if (signedIn) {
+  if (token) {
     return <Redirect to="/projects" />;
   }
 
   return (
     <>
-      <Helmet>
-        <html lang="en" />
-        <meta charSet="utf-8" />
-        <title>Login | Cool Analytics</title>
-        <link rel="canonical" href="http://analytics.cool.bio" />
-      </Helmet>
+      <MetaData title="Login | Cool Analytics" />
       <LoginContainer>
         <LoginWrapper>
           <BrandWrapper>
@@ -97,10 +92,10 @@ export default function Login(props) {
               Singup or Login
             </H1>
             <LogoinLogoWrapper>
-              <LoginLogo href="https://backend.cool.bio/auth/providers/google">
+              <LoginLogo href="/api/v1/auth/google/redirect">
                 <Google />
               </LoginLogo>
-              <LoginLogo href="https://backend.cool.bio/auth/providers/github">
+              <LoginLogo href="/api/v1/auth/github/redirect">
                 <Github fill={mode === "dark" ? "#fff" : "#000"} />
               </LoginLogo>
             </LogoinLogoWrapper>
