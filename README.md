@@ -46,27 +46,65 @@ cd cool-bio-analytics
 ```bash
 npm install
 ```
+**Step 3**: Add Environment Variables
+1. Rename `.envexample` file to `.env`
+2. Rename `functions/.envexample` file to `.env`
 
-**Step 3**: Run it locally
+**Step 4**: Run it locally
 ```bash
-npm run dev
+npm run dev:ssr
 ```
 
 ## 📃 Documentation
 Please refer the [documentation](https://analytics.cool.bio/docs) for more details.
 
 ## 👩‍💻 Tech
-- React
-- Recharts
-- Stripe
-- Styled Components
-- Graphql
+- [React](https://reactjs.org/)
+- [Vitedge](https://vitedge.js.org/)
+- [Styled Components](https://styled-components.com/)
+- [Cloudflare](https://www.cloudflare.com/)
+- [Recharts](https://recharts.org/en-US/)
+- [Graphql](https://graphql.org/)
+- [Hasura](https://hasura.io/)
+- [Stripe](https://stripe.com/en-in)
 
 ## 🍰 Contributing
 Contributions are always welcome!
 See [contributing.md](contributing.md) for ways to get started.
 Please adhere to this project's [code of conduct](code-of-conduct.md).
 
+
+## Roadmap
+
+- Additional browser support
+
+- Add more integrations
+
+
+## Feedback
+
+If you have any feedback, please reach out to us at subhendukundu14@gmail.com
+
+
+## FAQ
+
+#### Why us?
+
+Leave Analytics on us and focus on your products
+
+#### Speed?
+
+It’s fast, very fast. Our Cloudflare® powered servers are built for speed. Spans over 200 cities in more than 100 countries.
+#### Hate cookies popups?
+
+We too. We don't have cookies and fully compliant with GDPR
+#### Pricing Plans?
+
+While we're in Beta Amplication is free to use. In the future, we will offer a free community plan and additional paid business plans.
+Start tracking for free, then add a site plan to track more. Account plans unlock additional features.
+
+
+  
 
 ## ✍️ Authors
 - [@subhendukundu](https://www.github.com/subhendukundu)
